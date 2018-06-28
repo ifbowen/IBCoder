@@ -140,17 +140,21 @@
 //    }
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.timer invalidate];
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self test1];
 //    [self test2];
-//    [self test3];
-    [self test4];
+    [self test3];
+//    [self test4];
 //    [self test5];
 //    [self test6];
 }
@@ -248,6 +252,10 @@
     NSLog(@"run");
 }
 
+- (void)dealloc
+{
+    NSLog(@"%s", __func__);
+}
 
 @end
 
