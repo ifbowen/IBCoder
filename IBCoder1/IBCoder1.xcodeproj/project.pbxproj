@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A26255820C0F447006783DF /* IBController32.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26255720C0F447006783DF /* IBController32.m */; };
+		4A6F19C820E63D1500EAF1A7 /* IBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F19C720E63D1500EAF1A7 /* IBAnimation.m */; };
 		4A6F244A20C62FB200C56C70 /* IBController33.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6F244920C62FB200C56C70 /* IBController33.m */; };
 		4A726B7D20BBBE700013F431 /* IBController30.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A726B7C20BBBE700013F431 /* IBController30.m */; };
 		4A726B8120BBBF7E0013F431 /* IBCoreSpotlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A726B8020BBBF7E0013F431 /* IBCoreSpotlight.m */; };
@@ -237,6 +238,8 @@
 /* Begin PBXFileReference section */
 		4A26255620C0F447006783DF /* IBController32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController32.h; sourceTree = "<group>"; };
 		4A26255720C0F447006783DF /* IBController32.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController32.m; sourceTree = "<group>"; };
+		4A6F19C620E63D1500EAF1A7 /* IBAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBAnimation.h; sourceTree = "<group>"; };
+		4A6F19C720E63D1500EAF1A7 /* IBAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBAnimation.m; sourceTree = "<group>"; };
 		4A6F244820C62FB200C56C70 /* IBController33.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController33.h; sourceTree = "<group>"; };
 		4A6F244920C62FB200C56C70 /* IBController33.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController33.m; sourceTree = "<group>"; };
 		4A726B7B20BBBE700013F431 /* IBController30.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController30.h; sourceTree = "<group>"; };
@@ -718,6 +721,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A6F19C520E63CF700EAF1A7 /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				4A6F19C620E63D1500EAF1A7 /* IBAnimation.h */,
+				4A6F19C720E63D1500EAF1A7 /* IBAnimation.m */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
 		4A726B7E20BBBF220013F431 /* CoreSpotlight */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +783,7 @@
 		4A8B1EAA20B6E77900FACAFD /* IBModule */ = {
 			isa = PBXGroup;
 			children = (
+				4A6F19C520E63CF700EAF1A7 /* animation */,
 				4AC3CAFF20CFA0BC0059B029 /* graphics */,
 				4A8D7E3820C7BF4E004CCF4C /* layer */,
 				4A8B1EAB20B6E77900FACAFD /* Proxy */,
@@ -1572,6 +1585,7 @@
 				4A8B1F8720B6E77A00FACAFD /* IBController11.m in Sources */,
 				4A8B1FC820B6E77B00FACAFD /* SDWebImageWebPCoder.m in Sources */,
 				4A8B1F9C20B6E77A00FACAFD /* IBController17.m in Sources */,
+				4A6F19C820E63D1500EAF1A7 /* IBAnimation.m in Sources */,
 				4A8B1F8620B6E77A00FACAFD /* IBController5.m in Sources */,
 				4A8B1F8D20B6E77A00FACAFD /* IBController2.m in Sources */,
 				4A726B8420BC1F480013F431 /* IBController31.m in Sources */,
