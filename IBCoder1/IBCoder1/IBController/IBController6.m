@@ -158,10 +158,12 @@
     self.iView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:self.iView];
     self.iView.translatesAutoresizingMaskIntoConstraints = NO;
+    
     NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.iView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0.0];
     NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.iView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0];
     NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.iView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0.0];
     NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.iView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1.0 constant:100.0];
+    
     self.height = height;
     [self.view addConstraints:@[left,right,top,height]];
     

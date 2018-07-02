@@ -21,6 +21,7 @@
 
 @end
 /*
+ 简而言之：APP启动主要流程: 点击icon -> 加载动态链接库等 -> 映像文件加载imageLoader ->  runtime -> load  -> main -> delegate.
  
  1、APP启动时间
  1）main之前的系统dylib（动态链接库）和自身App可执行文件的加载的时间
@@ -77,7 +78,6 @@
  6）至此 所有的信息都被加载到内存中
  7）最后dyld调用真正的main函数
  8）注意：dyld会缓存上一次把信息加载内存的缓存，所以第二次比第一次启动快一点
- 
  
  
  pre-main阶段的优化
