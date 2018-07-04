@@ -26,9 +26,10 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self test0];
 //    [self test1];
 //    [self test2];
-    [self test3];
+//    [self test3];
 }
 
 - (void)test3 {
@@ -56,6 +57,25 @@
     [self.name2 appendString:@"2"];
 }
 
+- (void)test0 {
+    
+    //原则，修改新旧对象，不影响旧新对象
+    
+    NSArray *arr1 = @[@1, @2, @3];
+    NSArray *logArr1 = [arr1 copy];
+    NSArray *logArr2 = [arr1 mutableCopy];
+    NSLog(@"%p--%p--%p", arr1, logArr1, logArr2);
+    NSLog(@"123");
+    
+    NSMutableArray *muArr1 = [NSMutableArray arrayWithObjects:@1,@2,@3, nil];
+    NSMutableArray *logMuArr1 = [muArr1 mutableCopy];
+    NSMutableArray *logMuarr2 = [muArr1 copy];
+    NSLog(@"%p--%p--%p", muArr1, logMuArr1, logMuarr2);
+    [logMuarr2 addObject:@4];
+    NSLog(@"123");
+    
+}
+
 - (void)test1 {
     
     NSString *temp = @"bowen";
@@ -67,8 +87,6 @@
     //深拷贝(不可变 = 可变)
     self.name1 = str;
     NSLog(@"%p---%p",str, self.name1);//内存复制
-    
-    
     
     //浅拷贝（可变 = 不可变）
     self.name2 = temp;

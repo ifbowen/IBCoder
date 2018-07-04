@@ -194,6 +194,8 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     [self accessToMemberVariable];
+
+//    [self accessToMemberVariable];
 //    [self accessToProperty];
 //    [self accessToMethod];
 //    [self accessToProtocol];
