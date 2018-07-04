@@ -143,7 +143,7 @@
 
 @end
 
-@implementation Mother(ext1)
+@implementation Mother(ext)
 
 - (void)goodMother {
     NSLog(@"%s",__func__);
@@ -192,9 +192,10 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self accessToMemberVariable];
+    
+    [self accessToMemberVariable];
 //    [self accessToProperty];
-    [self accessToMethod];
+//    [self accessToMethod];
 //    [self accessToProtocol];
 //    [self sendMsg];
 //    [self addMethod];
@@ -296,7 +297,7 @@ void food(id self, SEL _cmd, NSString *food) {
 - (void)accessToMemberVariable {
     NSLog(@"成员变量");
     unsigned int count;
-    Ivar *ivars = class_copyIvarList([Mother class], &count);
+    Ivar *ivars = class_copyIvarList([UIResponder class], &count);
     for (int i = 0; i < count; i++) {
         Ivar ivar = ivars[i];
         const char *nameC = ivar_getName(ivar);
@@ -332,7 +333,7 @@ void food(id self, SEL _cmd, NSString *food) {
     NSLog(@"方法");
     unsigned int count;
     //获得指向该类所有方法的指针
-    Method *methods = class_copyMethodList([Mother class], &count);
+    Method *methods = class_copyMethodList([UIView class], &count);
     
     for (int i = 0; i < count; i++) {
         
