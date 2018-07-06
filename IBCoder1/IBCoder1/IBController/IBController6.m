@@ -98,6 +98,7 @@
     2、在设置完约束之后手动调用layoutIfNeeded方法，让视图立即layout，更新frame。在这之后就可以拿到设置约束的视图的尺寸了。
     3、假如父视图设置frame，子视图约束时，需要父视图先调用[superview setNeedsUpdateConstraints]和
        [superview updateConstraintsIfNeeded]两个方法
+    4、在viewDidLoad中得到的view的frame不一定是最终的frame，比如导航栏设置不透明就不准
  
  五、刷新子布局
  
