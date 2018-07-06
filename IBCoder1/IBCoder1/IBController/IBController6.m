@@ -96,6 +96,8 @@
     解决父视图是约束适配，子视图是frame适配问题
     1、把子视图frame设置写到layoutSubviews中或者写到viewDidLayoutSubviews中即可。因为父视图约束生效时view的center或者bounds就会被修改，center或者bounds被修改时layoutSubview,就会被调用，随后viewDidLayoutSubviews就回被调用。这个时候，设置约束的视图frame就不再是(0,0,0,0)了
     2、在设置完约束之后手动调用layoutIfNeeded方法，让视图立即layout，更新frame。在这之后就可以拿到设置约束的视图的尺寸了。
+    3、假如父视图设置frame，子视图约束时，需要父视图先调用[superview setNeedsUpdateConstraints]和
+       [superview updateConstraintsIfNeeded]两个方法
  
  五、刷新子布局
  
