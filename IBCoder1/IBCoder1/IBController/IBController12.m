@@ -106,6 +106,19 @@
  5、AutoreleasePool自动释放池
  6、UI更新
  
+ 十二、基于RunLoop的事件处理流程
+      按键（HOME键、锁屏键、音量键等）、传感器（摇晃、加速等）、触摸屏幕等【物理事件】会触发IOKit.framework生成
+ 一个IOHIDEvent对象，然后SpringBoard会接收这个对象并通过mach port发给当前App的进程；接下来进程会触发RunLoop
+ 的基于port的Source1回调一个__IOHIDEventSystemClientQueueCallback()的API，这个API会相应触发Source0来调
+ 用__UIApplicationHandleEventQueue()，而此API再将传递到此的IOHIDEvent处理包装成上层所熟悉的UIEvent。最后
+ UIEvent会被分发给UIWindow根据Respond chain来响应事件。
+ 
+      整个事件处理流程是基于RunLoop的基本处理循环进行的。在main函数开始后，主线程的runloop对象被创建完。
+ 如UIEvent、UI绘制等会统一在主线程的runloop对象的即将进入休眠前的时间点触发各自对应的代理回调方法，然后
+ runloop进入休眠，直到被timer定时器或Source1发来的内核消息事件唤醒，再分别对Timer、Source0、Source1
+ 发来的事件进行处理回调。
+
+ 
  */
 
 

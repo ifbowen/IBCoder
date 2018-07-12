@@ -14,10 +14,15 @@
 
 @implementation IBController21
 
+/*
+ 1、UILabel 绘制中文使用clipsToBounds避免出现离屏渲染
+ 2、UILabel为什么约束左上就可以
+    因为UIView的intrinsicContentSize属性，如果你不约束，我就自己计算使用
+ */
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
 }
 
 /*
