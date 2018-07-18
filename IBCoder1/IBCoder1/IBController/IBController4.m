@@ -42,42 +42,6 @@
 @end
 
 
-/**
- Block变量的声明格式为: 返回值类型(^Block名字)(参数列表);
- Block变量的赋值格式为: Block变量 = ^返回值类型(参数列表){函数体}
- 
-全局变量，全局变量由于作用域的原因，于是可以直接在Block里面被改变。他们也都存储在全局区。
-静态变量传递给Block是内存地址值，所以能在Block里面直接改变值
- 
- block进行拷贝的4种情况
- 1.手动调用copy
- 2.Block是函数的返回值
- 3.Block被强引用，Block被赋值给__strong或者id类型
- 4.调用系统API入参中含有usingBlcok的方法
- 
- 针对指向的对象来说，
- 在MRC环境下，__block根本不会对指针所指向的对象执行copy操作，而只是把指针进行的复制。
- 而在ARC环境下，对于声明为__block的外部对象，在block内部会进行retain，以至于在block环境内能安全的引用外部对象。
-
- 针对__block来说
- ARC环境下，一旦Block赋值就会触发copy，__block就会copy到堆上，Block也是__NSMallocBlock。ARC环境下也是存在__NSStackBlock的时候，
- 这种情况下，__block就在栈上。
- MRC环境下，只有copy，__block才会被复制到堆上，否则，__block一直都在栈上，block也只是__NSStackBlock，
- 这个时候__forwarding指针就只指向自己了。
- 
- __block结构体中的变量就是它修饰的变量，这两者没有指针指向关系。指针是__forwarding，作用是针对堆的block
-
-__block对象释放：
- 1、从 BlockDescriptor 取出 dispose_helper 以及 size（block 持有的所有对象的大小）
- 2、通过 (blockLiteral->descriptor->size + ptrSize - 1) / ptrSize 向上取整，获取 block 持有的指针的数量
- 3、初始化两个包含 elements 个 FBBlockStrongRelationDetector 实例的数组，其中第一个数组用于传入 dispose_helper，第二个数组用于检测 _strong 是否被标记为 YES
- 4、在自动释放池中执行 dispose_helper(obj)，释放 block 持有的对象
- 5、因为 dispose_helper 只会调用 release 方法，但是这并不会导致我们的 FBBlockStrongRelationDetector 实例被释放掉，反而会标记 _string 属性，在这里我们只需要判断这个属性的真假，将对应索引加入数组，最后再调用 trueRelease 真正的释放对象。
- 
- 我的疑问：
- 怎么获取栈上的__block,修改栈上的__block修饰的对象会改变值吗？
-
- */
 typedef void (^Block)(void);
 
 @interface IBController4 ()
@@ -221,6 +185,11 @@ typedef void (^Block)(void);
 
 /**
  Block不允许修改外部变量的值，这里所说的外部变量的值，指的是栈中指针的内存地址
+ 嵌套block使用self，__weak, __strong.自己测试没影响
+ 
+ 解析：strongSelf只存在于Block体内里，它的生命周期只在这个block执行的过程中，block执行前它不会存在，block执行完它立刻就被释放了。
+ ①、如果block执行前self变为nil了，那么block不会执行，没有任何引用循环发生；
+ ②、如果block执行过程中self变为nil了，那么block一开始声明的strongSelf会暂时持有着self，此时会有一个暂时的引用循环。当block执行完（即是Block执行完），strongSelf超出作用域被释放，引用循环从这里开始打破。接下来，由于没有任何强引用持有self了，于是self被释放，最后Block也因为没有任何强引用持有它也被释放了。所有对象就都被顺利释放了。
  */
 - (void)testBlock {
     int i = 5;
@@ -228,21 +197,73 @@ typedef void (^Block)(void);
     __block NSString *name = @"bowen";
     NSMutableString *nickname = @"ios".mutableCopy;
     static NSString *weakname = @"OC";
+    __weak typeof(self) weakSelf = self;
     self.block = ^{
-        name = @"b";
-        weakname = @"Objective - C";
-//        a = &name; //不允许
+        __strong typeof(self) strongSelf = weakSelf;
+        int b = 10;
+        *a = b;
+//        a = &b; //不允许
 //        nickname = @"OC"; //不允许
-        [nickname appendString:@"swift"]; //允许
-        NSLog(@"test -- %@%d", name,i);
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            name = @"b";
+            weakname = @"Objective - C";
+            [nickname appendString:@"swift"]; //允许
+            NSLog(@"test -- %@%d", name,i);
+            NSLog(@"弱引用%@---强引用%@", weakSelf, strongSelf);
+        });
     };
-    self.block();
+    [self.student addBlock:self.block];
     NSLog(@"test -- %@ -- %li",self.block,CFGetRetainCount((__bridge CFTypeRef)(self.block)));
 }
+
+- (void)run {
+    NSLog(@"%s", __func__);
+}
+
 
 - (void)dealloc {
     NSLog(@"%s",__func__);
 }
+
+
+/**
+ Block变量的声明格式为: 返回值类型(^Block名字)(参数列表);
+ Block变量的赋值格式为: Block变量 = ^返回值类型(参数列表){函数体}
+ 
+ 全局变量，全局变量由于作用域的原因，于是可以直接在Block里面被改变。他们也都存储在全局区。
+ 静态变量传递给Block是内存地址值，所以能在Block里面直接改变值
+ 
+ block进行拷贝的4种情况
+ 1.手动调用copy
+ 2.Block是函数的返回值
+ 3.Block被强引用，Block被赋值给__strong或者id类型
+ 4.调用系统API入参中含有usingBlcok的方法
+ 
+ 针对指向的对象来说，
+ 在MRC环境下，__block根本不会对指针所指向的对象执行copy操作，而只是把指针进行的复制。
+ 而在ARC环境下，对于声明为__block的外部对象，在block内部会进行retain，以至于在block环境内能安全的引用外部对象。
+ 
+ 针对__block来说
+ ARC环境下，一旦Block赋值就会触发copy，__block就会copy到堆上，Block也是__NSMallocBlock。ARC环境下也是存在__NSStackBlock的时候，
+ 这种情况下，__block就在栈上。
+ MRC环境下，只有copy，__block才会被复制到堆上，否则，__block一直都在栈上，block也只是__NSStackBlock，
+ 这个时候__forwarding指针就只指向自己了。
+ 
+ __block结构体中的变量就是它修饰的变量，这两者没有指针指向关系。指针是__forwarding，作用是针对堆的block
+ 
+ __block对象释放：
+ 1、从 BlockDescriptor 取出 dispose_helper 以及 size（block 持有的所有对象的大小）
+ 2、通过 (blockLiteral->descriptor->size + ptrSize - 1) / ptrSize 向上取整，获取 block 持有的指针的数量
+ 3、初始化两个包含 elements 个 FBBlockStrongRelationDetector 实例的数组，其中第一个数组用于传入 dispose_helper，第二个数组用于检测 _strong 是否被标记为 YES
+ 4、在自动释放池中执行 dispose_helper(obj)，释放 block 持有的对象
+ 5、因为 dispose_helper 只会调用 release 方法，但是这并不会导致我们的 FBBlockStrongRelationDetector 实例被释放掉，反而会标记 _string 属性，在这里我们只需要判断这个属性的真假，将对应索引加入数组，最后再调用 trueRelease 真正的释放对象。
+ 
+ 我的疑问：
+ 怎么获取栈上的__block,修改栈上的__block修饰的对象会改变值吗？
+ 
+ */
+
 
 /*
 1、block数据结构体
