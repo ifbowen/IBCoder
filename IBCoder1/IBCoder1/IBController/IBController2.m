@@ -83,14 +83,14 @@
    autorelease处理过的对象
  */
 - (void)test1 {
-    @autoreleasepool {
-        NSMutableArray *arr = @[].mutableCopy;
-        for (int i = 0; i<10e6; i++) {
+    NSMutableArray *arr = @[].mutableCopy;
+    for (int i = 0; i<10e6; i++) {
+        @autoreleasepool {
             NSString *str = [NSString stringWithFormat:@"%d", i];
             [arr addObject:str];
         }
-        NSLog(@"123");
     }
+    NSLog(@"123");
     NSLog(@"123");
 }
 

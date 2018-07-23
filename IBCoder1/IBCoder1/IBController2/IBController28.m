@@ -423,8 +423,15 @@
  constraint UK_字段 unique key(字段),
  
  5.PRAGMA：可以用在SQLite环境内控制各种环境变量和状态标志
-    
+ 
 
+ 
+ 其他：NSUserDefaults处理
+    系统会保存到该应用下的/Library/Preferences/gongcheng.plist文件中。需要注意的是如果程序意外退出，
+ NSUserDefaultsstandardUserDefaults数据不会被系统写入到该文件，所以，要使用
+［[NSUserDefaults standardUserDefaults] synchronize］命令直接同步到文件里，来避免数据的丢失。
+ 
+ i/o操作优化，写都先进行缓存到达一定条件统一写入，读统一读取所有数据缓存起来
 
  
 
