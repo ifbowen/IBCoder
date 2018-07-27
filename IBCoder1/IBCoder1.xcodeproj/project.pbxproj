@@ -227,6 +227,7 @@
 		4AA0313520DA391D008DC539 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA030D220DA391C008DC539 /* AFNetworkReachabilityManager.m */; };
 		4AA0313620DA391D008DC539 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA030D320DA391C008DC539 /* AFSecurityPolicy.m */; };
 		4AA0313720DA391D008DC539 /* AFHTTPSessionManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA030D520DA391C008DC539 /* AFHTTPSessionManager+RACSupport.m */; };
+		4AAA27C7210AB94A00B0C256 /* IBController38.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27C6210AB94A00B0C256 /* IBController38.m */; };
 		4AC3CAFD20CFA0720059B029 /* IBCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CAFB20CFA0720059B029 /* IBCViewController.m */; };
 		4AC3CAFE20CFA0720059B029 /* IBCMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CAFC20CFA0720059B029 /* IBCMediator.m */; };
 		4AC3CB0220CFA83C0059B029 /* IBGrahpicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB0120CFA83C0059B029 /* IBGrahpicsView.m */; };
@@ -692,6 +693,8 @@
 		4AA030D320DA391C008DC539 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
 		4AA030D420DA391C008DC539 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		4AA030D520DA391C008DC539 /* AFHTTPSessionManager+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+RACSupport.m"; sourceTree = "<group>"; };
+		4AAA27C5210AB94A00B0C256 /* IBController38.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController38.h; sourceTree = "<group>"; };
+		4AAA27C6210AB94A00B0C256 /* IBController38.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController38.m; sourceTree = "<group>"; };
 		4AC3CAF920CFA0720059B029 /* IBCMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCMediator.h; sourceTree = "<group>"; };
 		4AC3CAFA20CFA0720059B029 /* IBCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCViewController.h; sourceTree = "<group>"; };
 		4AC3CAFB20CFA0720059B029 /* IBCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCViewController.m; sourceTree = "<group>"; };
@@ -1082,6 +1085,8 @@
 				4AC3CB0B20D0DB320059B029 /* IBController36.m */,
 				4AA0300220DA38D8008DC539 /* IBController37.h */,
 				4AA0300320DA38D8008DC539 /* IBController37.m */,
+				4AAA27C5210AB94A00B0C256 /* IBController38.h */,
+				4AAA27C6210AB94A00B0C256 /* IBController38.m */,
 			);
 			path = IBController2;
 			sourceTree = "<group>";
@@ -1574,6 +1579,7 @@
 				4A8B1F8C20B6E77A00FACAFD /* IBController8.m in Sources */,
 				4A68970220F5DF35005FBB66 /* RACUnit.m in Sources */,
 				4A8B1FAC20B6E77A00FACAFD /* UIImage+WebP.m in Sources */,
+				4AAA27C7210AB94A00B0C256 /* IBController38.m in Sources */,
 				4A8B1FB120B6E77A00FACAFD /* UIImage+ForceDecode.m in Sources */,
 				4A8B1FAB20B6E77A00FACAFD /* MASViewAttribute.m in Sources */,
 				4A6896B520F5DF35005FBB66 /* NSURLConnection+RACSupport.m in Sources */,

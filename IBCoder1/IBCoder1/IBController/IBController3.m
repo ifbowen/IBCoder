@@ -230,14 +230,14 @@
 //    [self test0];
 //    [self test1];
 //    [self test2];
-//    [self test3];
+    [self test3];
 //    [self test4];
 //    [self test5];
 //    [self test6];
 //    [self test7];
 //    [self test8];
 //    [self test9];
-    [self test10];
+//    [self test10];
 //    [self test11];
 //    [self test12];
 //    [self test13];
@@ -652,7 +652,10 @@ static void create_task_safely(dispatch_block_t block) {
         NSLog(@"group1 --- 4---%@",[NSThread currentThread]);
     });
     
-    
+    dispatch_group_notify(group1, queue1, ^{
+        NSLog(@"123");
+    });
+
     dispatch_group_t group2 = dispatch_group_create();
     dispatch_queue_t queue2 = dispatch_queue_create("leador1", DISPATCH_QUEUE_SERIAL);
 
