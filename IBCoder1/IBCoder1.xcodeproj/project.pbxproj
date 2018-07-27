@@ -228,6 +228,8 @@
 		4AA0313620DA391D008DC539 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA030D320DA391C008DC539 /* AFSecurityPolicy.m */; };
 		4AA0313720DA391D008DC539 /* AFHTTPSessionManager+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA030D520DA391C008DC539 /* AFHTTPSessionManager+RACSupport.m */; };
 		4AAA27C7210AB94A00B0C256 /* IBController38.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27C6210AB94A00B0C256 /* IBController38.m */; };
+		4AAA27CB210B315600B0C256 /* IBController39.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27CA210B315600B0C256 /* IBController39.m */; };
+		4AAA27CE210B3B3E00B0C256 /* IBController40.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27CD210B3B3E00B0C256 /* IBController40.m */; };
 		4AC3CAFD20CFA0720059B029 /* IBCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CAFB20CFA0720059B029 /* IBCViewController.m */; };
 		4AC3CAFE20CFA0720059B029 /* IBCMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CAFC20CFA0720059B029 /* IBCMediator.m */; };
 		4AC3CB0220CFA83C0059B029 /* IBGrahpicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB0120CFA83C0059B029 /* IBGrahpicsView.m */; };
@@ -695,6 +697,10 @@
 		4AA030D520DA391C008DC539 /* AFHTTPSessionManager+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+RACSupport.m"; sourceTree = "<group>"; };
 		4AAA27C5210AB94A00B0C256 /* IBController38.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController38.h; sourceTree = "<group>"; };
 		4AAA27C6210AB94A00B0C256 /* IBController38.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController38.m; sourceTree = "<group>"; };
+		4AAA27C9210B315600B0C256 /* IBController39.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController39.h; sourceTree = "<group>"; };
+		4AAA27CA210B315600B0C256 /* IBController39.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController39.m; sourceTree = "<group>"; };
+		4AAA27CC210B3B3E00B0C256 /* IBController40.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController40.h; sourceTree = "<group>"; };
+		4AAA27CD210B3B3E00B0C256 /* IBController40.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController40.m; sourceTree = "<group>"; };
 		4AC3CAF920CFA0720059B029 /* IBCMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCMediator.h; sourceTree = "<group>"; };
 		4AC3CAFA20CFA0720059B029 /* IBCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCViewController.h; sourceTree = "<group>"; };
 		4AC3CAFB20CFA0720059B029 /* IBCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCViewController.m; sourceTree = "<group>"; };
@@ -974,6 +980,7 @@
 				4A8B1EDB20B6E77A00FACAFD /* IBController */,
 				4A8B1EF720B6E77A00FACAFD /* IBController1 */,
 				4A8B1ED620B6E77900FACAFD /* IBController2 */,
+				4AAA27C8210B312E00B0C256 /* IBcontroller3 */,
 				4A8B1E9420B6E73800FACAFD /* AppDelegate.h */,
 				4A8B1E9520B6E73800FACAFD /* AppDelegate.m */,
 				4A8B1E9720B6E73800FACAFD /* ViewController.h */,
@@ -1419,6 +1426,17 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		4AAA27C8210B312E00B0C256 /* IBcontroller3 */ = {
+			isa = PBXGroup;
+			children = (
+				4AAA27C9210B315600B0C256 /* IBController39.h */,
+				4AAA27CA210B315600B0C256 /* IBController39.m */,
+				4AAA27CC210B3B3E00B0C256 /* IBController40.h */,
+				4AAA27CD210B3B3E00B0C256 /* IBController40.m */,
+			);
+			path = IBcontroller3;
+			sourceTree = "<group>";
+		};
 		4AC3CAF820CFA0720059B029 /* IBCMediator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1599,6 +1617,7 @@
 				4A6896F320F5DF35005FBB66 /* RACEvent.m in Sources */,
 				4A8B1FB320B6E77B00FACAFD /* SDWebImageDownloader.m in Sources */,
 				4A8B1FDD20BA770000FACAFD /* IBDatabaseManager.m in Sources */,
+				4AAA27CB210B315600B0C256 /* IBController39.m in Sources */,
 				4AA030EB20DA391C008DC539 /* EXTRuntimeExtensions.m in Sources */,
 				4A8B1F7620B6E77A00FACAFD /* BBookProvider.m in Sources */,
 				4A6896F520F5DF35005FBB66 /* RACDynamicSignal.m in Sources */,
@@ -1617,6 +1636,7 @@
 				4A6896E520F5DF35005FBB66 /* RACEmptySequence.m in Sources */,
 				4A68970320F5DF36005FBB66 /* RACCompoundDisposable.m in Sources */,
 				4A8B1F9C20B6E77A00FACAFD /* IBController17.m in Sources */,
+				4AAA27CE210B3B3E00B0C256 /* IBController40.m in Sources */,
 				4A6F19C820E63D1500EAF1A7 /* IBAnimation.m in Sources */,
 				4A6896D620F5DF35005FBB66 /* UIButton+RACCommandSupport.m in Sources */,
 				4A6896B420F5DF35005FBB66 /* NSString+RACSupport.m in Sources */,

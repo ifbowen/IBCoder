@@ -52,9 +52,19 @@
     
 //    [self test2];
 //    NSLog(@"%@",self.person.delegate);
+    [self test3];
     
 }
 
+- (void)test3 {
+    __weak id obj;
+    __strong id objc;
+    @autoreleasepool {
+        obj = [[NSObject alloc] init];
+        objc = [[NSObject alloc] init];
+    }
+    NSLog(@"%@--%@", obj, objc);
+}
 
 /**
  1.assign指针赋值，不对引用计数操作，使用之后如果没有置为nil，可能就会产生野指针
