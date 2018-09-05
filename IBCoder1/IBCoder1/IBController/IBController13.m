@@ -103,10 +103,24 @@
  
  十、简述下Objective-C中调用方法的过程（runtime）
  Objective-C是动态语言，每个方法在运行时会被动态转为消息发送，即：objc_msgSend(receiver, selector)，整个过程介绍如下：
+ 
+ a.实例对象发送消息（对象调用实例方法时，是在对应类对象及其继承链上找方法。）
  1.objc在向一个对象发送消息时，runtime库会根据对象的isa指针找到该对象实际所属的类
  2.然后在该类中的方法列表以及其父类方法列表中寻找方法运行
  3.如果，在最顶层的父类（一般也就NSObject）中依然找不到相应的方法时，程序在运行时会挂掉并抛出异常unrecognized selector sent to XXX
    但是在这之前，objc的运行时会给出三次拯救程序崩溃的机会，
+ 
+ b.类对象发送消息(类对象调用类方法时，是在其元类及继承链上找方法。)
+ 1.元类的isa指针都指向根元类（NSObject），根元类的isa指针指向自己NSObject
+ 2.在iOS中静态方法就是类方法，静态方法效率高但占内存
+ 3.如果我们调用一个类方法没有对应实现，但根元类有同名的实例方法的实现，会不会崩溃
+    类的实例方法是存储在类的methodLists中，而类方法则是存储在元类的methodLists中，根据类关系图（工程已导入），
+    NSObject的元类的superclass是指向Class(NSObject)，当调用没有实现的类方法时，在其元类及继承链上找方法，最终会走到根元类。
+    而根元类会指向自己（NSObject）并且实例方法存在NSObject的methodLists，所以会找到实例方法并调用。
+ 
+ 注意点，一般使用频繁的方法用静态方法，用的少的方法用动态的。静态的速度快，占内存。动态的速度相对慢些，
+ 但调用完后，立即释放类，可以节省内存，可以根据自己的需要选择是用动态方法还是静态方法。
+    
  
  */
 
@@ -133,6 +147,39 @@
 
 - (void)sleep {
     NSLog(@"%s",__func__);
+}
+
+///演示对象，类，元类，根元类地址内存
+- (void)print {
+    NSLog(@"This object is %p.", self);
+    NSLog(@"Class is %@, and super is %@.", [self class], [self superclass]);
+    const char *name = object_getClassName(self);
+    Class metaClass = objc_getMetaClass(name);
+    NSLog(@"MetaClass is %p",metaClass);
+    Class currentClass = [self class];
+    for (int i = 1; i < 5; i++)
+    {
+        NSLog(@"Following the isa pointer %d times gives %p", i, currentClass);
+        unsigned int countMethod = 0;
+        NSLog(@"---------------**%d start**-----------------------",i);
+        Method * methods = class_copyMethodList(currentClass, &countMethod);
+        [self printMethod:countMethod methods:methods ];
+        NSLog(@"---------------**%d end**-----------------------",i);
+        currentClass = object_getClass(currentClass);
+    }
+    NSLog(@"NSObject's class is %p", [NSObject class]);
+    NSLog(@"NSObject's meta class is %p", object_getClass([NSObject class]));
+}
+
+- (void)printMethod:(int)count methods:(Method *) methods {
+    for (int j = 0; j < count; j++) {
+        Method method = methods[j];
+        SEL methodSEL = method_getName(method);
+        const char * selName = sel_getName(methodSEL);
+        if (methodSEL) {
+            NSLog(@"sel------%s", selName);
+        }
+    }
 }
 
 @end
@@ -193,7 +240,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    [self accessToMemberVariable];
+//    [self accessToMemberVariable];
 
 //    [self accessToMemberVariable];
 //    [self accessToProperty];
@@ -204,6 +251,7 @@
 //    [self exchangeMethod];
 //    [self addCategoryProperty];
 //    [self createClass];
+    [[[Mother alloc] init] print];
     
 }
 

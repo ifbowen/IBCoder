@@ -102,6 +102,7 @@
 		4A726B7D20BBBE700013F431 /* IBController30.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A726B7C20BBBE700013F431 /* IBController30.m */; };
 		4A726B8120BBBF7E0013F431 /* IBCoreSpotlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A726B8020BBBF7E0013F431 /* IBCoreSpotlight.m */; };
 		4A726B8420BC1F480013F431 /* IBController31.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A726B8320BC1F480013F431 /* IBController31.m */; };
+		4A7D36EB213FC44B00310E7B /* 类，元类，根元类关系图.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7D36EA213FC44B00310E7B /* 类，元类，根元类关系图.png */; };
 		4A8B1E9620B6E73800FACAFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B1E9520B6E73800FACAFD /* AppDelegate.m */; };
 		4A8B1E9920B6E73800FACAFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B1E9820B6E73800FACAFD /* ViewController.m */; };
 		4A8B1E9C20B6E73800FACAFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B1E9A20B6E73800FACAFD /* Main.storyboard */; };
@@ -434,6 +435,7 @@
 		4A726B8020BBBF7E0013F431 /* IBCoreSpotlight.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBCoreSpotlight.m; sourceTree = "<group>"; };
 		4A726B8220BC1F480013F431 /* IBController31.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController31.h; sourceTree = "<group>"; };
 		4A726B8320BC1F480013F431 /* IBController31.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController31.m; sourceTree = "<group>"; };
+		4A7D36EA213FC44B00310E7B /* 类，元类，根元类关系图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "类，元类，根元类关系图.png"; sourceTree = "<group>"; };
 		4A8B1E9120B6E73800FACAFD /* IBCoder1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBCoder1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8B1E9420B6E73800FACAFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A8B1E9520B6E73800FACAFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1101,6 +1103,7 @@
 		4A8B1EDB20B6E77A00FACAFD /* IBController */ = {
 			isa = PBXGroup;
 			children = (
+				4A7D36EA213FC44B00310E7B /* 类，元类，根元类关系图.png */,
 				4A8B1EEC20B6E77A00FACAFD /* IBController1.h */,
 				4A8B1EE020B6E77A00FACAFD /* IBController1.m */,
 				4A8B1EE120B6E77A00FACAFD /* IBController1.xib */,
@@ -1549,6 +1552,7 @@
 				4A8B1E9E20B6E73900FACAFD /* Assets.xcassets in Resources */,
 				4A8B1F8920B6E77A00FACAFD /* IBController1.xib in Resources */,
 				4AA0312E20DA391D008DC539 /* Info.plist in Resources */,
+				4A7D36EB213FC44B00310E7B /* 类，元类，根元类关系图.png in Resources */,
 				4A8B1E9C20B6E73800FACAFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
