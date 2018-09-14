@@ -236,6 +236,7 @@
 		4AC3CB0220CFA83C0059B029 /* IBGrahpicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB0120CFA83C0059B029 /* IBGrahpicsView.m */; };
 		4AC3CB0C20D0DB320059B029 /* IBController36.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB0B20D0DB320059B029 /* IBController36.m */; };
 		4AC3CB1220D0DBAA0059B029 /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB1020D0DBAA0059B029 /* LoggerClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4AE24BD7214B616E006448DC /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE24BD6214B616E006448DC /* IBController41.m */; };
 		9260DD9E398D2EFD865553DE /* libPods-IBCoder1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B568EA09BE717D445EE24A2A /* libPods-IBCoder1.a */; };
 /* End PBXBuildFile section */
 
@@ -715,6 +716,8 @@
 		4AC3CB0F20D0DBAA0059B029 /* LoggerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerCommon.h; sourceTree = "<group>"; };
 		4AC3CB1020D0DBAA0059B029 /* LoggerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerClient.m; sourceTree = "<group>"; };
 		4AC3CB1120D0DBAA0059B029 /* NSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLogger.h; sourceTree = "<group>"; };
+		4AE24BD5214B616E006448DC /* IBController41.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController41.h; sourceTree = "<group>"; };
+		4AE24BD6214B616E006448DC /* IBController41.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController41.m; sourceTree = "<group>"; };
 		4E9DF89DB99F0BB0C869364D /* Pods-IBCoder1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBCoder1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IBCoder1/Pods-IBCoder1.debug.xcconfig"; sourceTree = "<group>"; };
 		6B122B1F256D442D5CD34F0E /* Pods-IBCoder1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBCoder1.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBCoder1/Pods-IBCoder1.release.xcconfig"; sourceTree = "<group>"; };
 		B568EA09BE717D445EE24A2A /* libPods-IBCoder1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IBCoder1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1436,6 +1439,8 @@
 				4AAA27CA210B315600B0C256 /* IBController39.m */,
 				4AAA27CC210B3B3E00B0C256 /* IBController40.h */,
 				4AAA27CD210B3B3E00B0C256 /* IBController40.m */,
+				4AE24BD5214B616E006448DC /* IBController41.h */,
+				4AE24BD6214B616E006448DC /* IBController41.m */,
 			);
 			path = IBcontroller3;
 			sourceTree = "<group>";
@@ -1776,6 +1781,7 @@
 				4A8B1F8A20B6E77A00FACAFD /* IBController6.m in Sources */,
 				4A6896CA20F5DF35005FBB66 /* UIImagePickerController+RACSignalSupport.m in Sources */,
 				4A6896FF20F5DF35005FBB66 /* RACSubscriber.m in Sources */,
+				4AE24BD7214B616E006448DC /* IBController41.m in Sources */,
 				4A6896D320F5DF35005FBB66 /* UIRefreshControl+RACCommandSupport.m in Sources */,
 				4A8B1FD020B7B65E00FACAFD /* FMEncryptQueue.m in Sources */,
 				4A8B1FBE20B6E77B00FACAFD /* SDWebImageTransition.m in Sources */,
