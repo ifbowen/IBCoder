@@ -137,6 +137,10 @@
 
 @implementation Mother
 
+- (void)goodMother:(NSString *)name {
+    NSLog(@"%s--%@",__func__, name);
+}
+
 - (void)run {
     NSLog(@"%s",__func__);
 }
@@ -192,8 +196,8 @@
 
 @implementation Mother(ext)
 
-- (void)goodMother {
-    NSLog(@"%s",__func__);
+- (void)goodMother:(NSString *)name {
+    NSLog(@"%s--%@",__func__, name);
 }
 
 - (void)setSon:(NSString *)son {
@@ -217,9 +221,41 @@
 
 @implementation Mother(ext2)
 
-- (void)goodMother {
-    NSLog(@"%s",__func__);
+- (void)goodMother:(NSString *)name {
+    [self callOriginalMethod:_cmd param:name];
+    NSLog(@"%s--%@",__func__, name);
 }
+
+
+/*
+ 分类重写原类方法时，调用原类方法
+ 1.使用下面这个方法
+ 2.使用Aspects方法
+ 3._cmd 表示当前方法
+ */
+- (void)callOriginalMethod:(SEL)selector param:(NSString *)param {
+    unsigned int count;
+    unsigned int index = 0;
+    
+    //获得指向该类所有方法的指针
+    Method *methods = class_copyMethodList([self class], &count);
+    
+    for (int i = 0; i < count; i++) {
+        //获得该类的一个方法指针
+        Method method = methods[i];
+        //获取方法
+        SEL methodSEL = method_getName(method);
+        if (methodSEL == selector) {
+            index = i;
+        }
+    }
+    SEL fontSEL = method_getName(methods[index]);
+    IMP fontIMP = method_getImplementation(methods[index]);
+    ((void (*)(id, SEL, NSString *))fontIMP)(self,fontSEL,param);
+    
+    free(methods);
+}
+
 
 @end
 
@@ -251,9 +287,11 @@
 //    [self exchangeMethod];
 //    [self addCategoryProperty];
 //    [self createClass];
-    [[[Mother alloc] init] print];
+//    [[[Mother alloc] init] print];
+    [[[Mother alloc] init] goodMother:@"fang"];
     
 }
+
 
 ///创建类
 - (void)createClass {
