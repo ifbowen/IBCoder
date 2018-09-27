@@ -50,6 +50,11 @@
  
  KVC:设置不了类型为指针类型的成员变量
  
+ 注意:禁止使用KVC修改只读属性，使用如下方法
+ + (BOOL)accessInstanceVariablesDirectly {
+    return NO;
+ }
+ 
  */
 
 @implementation IBController16

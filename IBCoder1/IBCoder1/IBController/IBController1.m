@@ -124,6 +124,9 @@
     [self test1];
 //    [self test2];
 //    [self test3];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 100, 3)];
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
 }
 
 
