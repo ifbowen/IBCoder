@@ -128,6 +128,8 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *age;
+@property (nonatomic, copy, readonly) NSString *birthday;
+
 
 - (void)run;
 + (void)run;
@@ -136,6 +138,19 @@
 @end
 
 @implementation Mother
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _birthday = @"1962";
+    }
+    return self;
+}
+
++ (BOOL)accessInstanceVariablesDirectly {
+    return NO;
+}
 
 - (void)goodMother:(NSString *)name {
     NSLog(@"%s--%@",__func__, name);
@@ -287,9 +302,24 @@
 //    [self exchangeMethod];
 //    [self addCategoryProperty];
 //    [self createClass];
-//    [[[Mother alloc] init] print];
-    [[[Mother alloc] init] goodMother:@"fang"];
+    [self forbidKVC];
     
+}
+
+- (void)forbidKVC {
+    Mother *mother = [[Mother alloc] init];
+    NSLog(@"母亲生日:%@", mother.birthday);
+    Ivar _birthday = class_getInstanceVariable([Mother class], "_birthday");
+    object_setIvar(mother, _birthday, @"1992");
+    NSLog(@"母亲生日:%@", mother.birthday);
+    
+    [mother setValue:@"2012" forKey:mother.birthday];
+    NSLog(@"母亲生日:%@", mother.birthday);
+}
+
+- (void)print {
+    [[[Mother alloc] init] print];
+    [[[Mother alloc] init] goodMother:@"fang"]; //测试在分类重写方法中调用原类方法
 }
 
 
