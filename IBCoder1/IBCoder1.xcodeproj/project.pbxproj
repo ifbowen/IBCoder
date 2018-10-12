@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A26255820C0F447006783DF /* IBController32.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26255720C0F447006783DF /* IBController32.m */; };
+		4A5347292170516000FD4439 /* IBController42.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5347282170516000FD4439 /* IBController42.m */; };
+		4A53472D217051B800FD4439 /* UIView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53472C217051B800FD4439 /* UIView+Gesture.m */; };
 		4A6896AF20F5DF35005FBB66 /* NSFileHandle+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6895F620F5DF35005FBB66 /* NSFileHandle+RACSupport.m */; };
 		4A6896B020F5DF35005FBB66 /* NSNotificationCenter+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6895F920F5DF35005FBB66 /* NSNotificationCenter+RACSupport.m */; };
 		4A6896B120F5DF35005FBB66 /* NSObject+RACDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6895FA20F5DF35005FBB66 /* NSObject+RACDescription.m */; };
@@ -220,7 +222,6 @@
 		4A8D7EAC20CE9211004CCF4C /* IBController35.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8D7EAB20CE9211004CCF4C /* IBController35.m */; };
 		4AA0300420DA38D8008DC539 /* IBController37.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0300320DA38D8008DC539 /* IBController37.m */; };
 		4AA030EB20DA391C008DC539 /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0302F20DA391C008DC539 /* EXTRuntimeExtensions.m */; };
-		4AA0312E20DA391D008DC539 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AA030C120DA391C008DC539 /* Info.plist */; };
 		4AA0313120DA391D008DC539 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA030CC20DA391C008DC539 /* AFURLResponseSerialization.m */; };
 		4AA0313220DA391D008DC539 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA030CD20DA391C008DC539 /* AFHTTPSessionManager.m */; };
 		4AA0313320DA391D008DC539 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA030CF20DA391C008DC539 /* AFURLSessionManager.m */; };
@@ -243,6 +244,10 @@
 /* Begin PBXFileReference section */
 		4A26255620C0F447006783DF /* IBController32.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController32.h; sourceTree = "<group>"; };
 		4A26255720C0F447006783DF /* IBController32.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController32.m; sourceTree = "<group>"; };
+		4A5347272170516000FD4439 /* IBController42.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController42.h; sourceTree = "<group>"; };
+		4A5347282170516000FD4439 /* IBController42.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController42.m; sourceTree = "<group>"; };
+		4A53472B217051B800FD4439 /* UIView+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gesture.h"; sourceTree = "<group>"; };
+		4A53472C217051B800FD4439 /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
 		4A6895F620F5DF35005FBB66 /* NSFileHandle+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+RACSupport.m"; sourceTree = "<group>"; };
 		4A6895F720F5DF35005FBB66 /* NSString+RACSequenceAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RACSequenceAdditions.h"; sourceTree = "<group>"; };
 		4A6895F820F5DF35005FBB66 /* NSDictionary+RACSequenceAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RACSequenceAdditions.h"; sourceTree = "<group>"; };
@@ -735,6 +740,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A53472A217051B800FD4439 /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				4A53472B217051B800FD4439 /* UIView+Gesture.h */,
+				4A53472C217051B800FD4439 /* UIView+Gesture.m */,
+			);
+			path = Gesture;
+			sourceTree = "<group>";
+		};
 		4A6895F520F5DF35005FBB66 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1002,6 +1016,7 @@
 		4A8B1EAA20B6E77900FACAFD /* IBModule */ = {
 			isa = PBXGroup;
 			children = (
+				4A53472A217051B800FD4439 /* Gesture */,
 				4A6F19C520E63CF700EAF1A7 /* animation */,
 				4AC3CAFF20CFA0BC0059B029 /* graphics */,
 				4A8D7E3820C7BF4E004CCF4C /* layer */,
@@ -1441,6 +1456,8 @@
 				4AAA27CD210B3B3E00B0C256 /* IBController40.m */,
 				4AE24BD5214B616E006448DC /* IBController41.h */,
 				4AE24BD6214B616E006448DC /* IBController41.m */,
+				4A5347272170516000FD4439 /* IBController42.h */,
+				4A5347282170516000FD4439 /* IBController42.m */,
 			);
 			path = IBcontroller3;
 			sourceTree = "<group>";
@@ -1556,7 +1573,6 @@
 				4A8B1EA120B6E73900FACAFD /* LaunchScreen.storyboard in Resources */,
 				4A8B1E9E20B6E73900FACAFD /* Assets.xcassets in Resources */,
 				4A8B1F8920B6E77A00FACAFD /* IBController1.xib in Resources */,
-				4AA0312E20DA391D008DC539 /* Info.plist in Resources */,
 				4A7D36EB213FC44B00310E7B /* 类，元类，根元类关系图.png in Resources */,
 				4A8B1E9C20B6E73800FACAFD /* Main.storyboard in Resources */,
 			);
@@ -1682,6 +1698,7 @@
 				4A8B1F9E20B6E77A00FACAFD /* IBController26.m in Sources */,
 				4A8B1FB020B6E77A00FACAFD /* SDWebImageFrame.m in Sources */,
 				4A8B1FB820B6E77B00FACAFD /* SDWebImagePrefetcher.m in Sources */,
+				4A5347292170516000FD4439 /* IBController42.m in Sources */,
 				4A6896CF20F5DF35005FBB66 /* UISegmentedControl+RACSignalSupport.m in Sources */,
 				4A8B1F9120B6E77A00FACAFD /* IBController9.m in Sources */,
 				4A6896C920F5DF35005FBB66 /* MKAnnotationView+RACSignalSupport.m in Sources */,
@@ -1813,6 +1830,7 @@
 				4A6896F720F5DF35005FBB66 /* RACQueueScheduler.m in Sources */,
 				4A6896F120F5DF35005FBB66 /* RACMulticastConnection.m in Sources */,
 				4A6896F020F5DF35005FBB66 /* RACBehaviorSubject.m in Sources */,
+				4A53472D217051B800FD4439 /* UIView+Gesture.m in Sources */,
 				4A8B1FA120B6E77A00FACAFD /* IBController25.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
