@@ -10,6 +10,7 @@
 		4A26255820C0F447006783DF /* IBController32.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A26255720C0F447006783DF /* IBController32.m */; };
 		4A5347292170516000FD4439 /* IBController42.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5347282170516000FD4439 /* IBController42.m */; };
 		4A53472D217051B800FD4439 /* UIView+Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53472C217051B800FD4439 /* UIView+Gesture.m */; };
+		4A53474321742EAA00FD4439 /* ASCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A53474221742EAA00FD4439 /* ASCameraButton.m */; };
 		4A6896AF20F5DF35005FBB66 /* NSFileHandle+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6895F620F5DF35005FBB66 /* NSFileHandle+RACSupport.m */; };
 		4A6896B020F5DF35005FBB66 /* NSNotificationCenter+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6895F920F5DF35005FBB66 /* NSNotificationCenter+RACSupport.m */; };
 		4A6896B120F5DF35005FBB66 /* NSObject+RACDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6895FA20F5DF35005FBB66 /* NSObject+RACDescription.m */; };
@@ -248,6 +249,8 @@
 		4A5347282170516000FD4439 /* IBController42.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController42.m; sourceTree = "<group>"; };
 		4A53472B217051B800FD4439 /* UIView+Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Gesture.h"; sourceTree = "<group>"; };
 		4A53472C217051B800FD4439 /* UIView+Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Gesture.m"; sourceTree = "<group>"; };
+		4A53474121742EAA00FD4439 /* ASCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASCameraButton.h; sourceTree = "<group>"; };
+		4A53474221742EAA00FD4439 /* ASCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASCameraButton.m; sourceTree = "<group>"; };
 		4A6895F620F5DF35005FBB66 /* NSFileHandle+RACSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+RACSupport.m"; sourceTree = "<group>"; };
 		4A6895F720F5DF35005FBB66 /* NSString+RACSequenceAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RACSequenceAdditions.h"; sourceTree = "<group>"; };
 		4A6895F820F5DF35005FBB66 /* NSDictionary+RACSequenceAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RACSequenceAdditions.h"; sourceTree = "<group>"; };
@@ -749,6 +752,15 @@
 			path = Gesture;
 			sourceTree = "<group>";
 		};
+		4A53474021742EAA00FD4439 /* CameraButton */ = {
+			isa = PBXGroup;
+			children = (
+				4A53474121742EAA00FD4439 /* ASCameraButton.h */,
+				4A53474221742EAA00FD4439 /* ASCameraButton.m */,
+			);
+			path = CameraButton;
+			sourceTree = "<group>";
+		};
 		4A6895F520F5DF35005FBB66 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1191,6 +1203,7 @@
 		4A8B1F1420B6E77A00FACAFD /* HelperFile */ = {
 			isa = PBXGroup;
 			children = (
+				4A53474021742EAA00FD4439 /* CameraButton */,
 				4AA0300520DA391C008DC539 /* AFNetworking-RACExtensions */,
 				4AC3CB0D20D0DBAA0059B029 /* NSLogger */,
 				4AC3CAF820CFA0720059B029 /* IBCMediator */,
@@ -1776,6 +1789,7 @@
 				4A8B1FBA20B6E77B00FACAFD /* NSButton+WebCache.m in Sources */,
 				4A8B1FB520B6E77B00FACAFD /* UIImage+MultiFormat.m in Sources */,
 				4A8B1F8020B6E77A00FACAFD /* BViewController.m in Sources */,
+				4A53474321742EAA00FD4439 /* ASCameraButton.m in Sources */,
 				4A8B1FB620B6E77B00FACAFD /* SDWebImageCoderHelper.m in Sources */,
 				4A8B1F9820B6E77A00FACAFD /* IBController16.m in Sources */,
 				4A8B1F7E20B6E77A00FACAFD /* AViewController.m in Sources */,
