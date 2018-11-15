@@ -266,6 +266,33 @@
 
 }
 
+
+- (void)animationPause {
+    // 当前时间（暂停时的时间）
+    // CACurrentMediaTime() 是基于内建时钟的，能够更精确更原子化地测量，并且不会因为外部时间变化而变化（例如时区变化、夏时制、秒突变等）,但它和系统的uptime有关,系统重启后CACurrentMediaTime()会被重置
+    CFTimeInterval pauseTime = [self.layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    // 停止动画
+    self.layer.speed = 0;
+    // 动画的位置（动画进行到当前时间所在的位置，如timeOffset=1表示动画进行1秒时的位置）
+    self.layer.timeOffset = pauseTime;
+}
+- (void)animationContinue {
+    // 动画的暂停时间
+    CFTimeInterval pausedTime = self.layer.timeOffset;
+    // 动画初始化
+    self.layer.speed = 1;
+    self.layer.timeOffset = 0;
+    self.layer.beginTime = 0;
+    // 程序到这里，动画就能继续进行了，但不是连贯的，而是动画在背后默默“偷跑”的位置，如果超过一个动画周期，则是初始位置
+    // 当前时间（恢复时的时间）
+    CFTimeInterval continueTime = [self.layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    // 暂停到恢复之间的空档
+    CFTimeInterval timePause = continueTime - pausedTime;
+    // 动画从timePause的位置从动画头开始
+    self.layer.beginTime = timePause;
+}
+
+
 /*
  动画API不难，难的是设计动画的算法(动画拆分，判断是什么属性)
  任何复杂的动画其实都是由一个个简单的动画组装而成的，只要我们善于分解和组装，我们就能实现出满意的效果

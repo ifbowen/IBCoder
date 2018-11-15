@@ -121,12 +121,34 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self test0];
-    [self test1];
+//    [self test1];
 //    [self test2];
 //    [self test3];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 100, 3)];
-    view.backgroundColor = [UIColor redColor];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 300, 300)];
+    view.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:view];
+    
+    UIBezierPath *bezier = [UIBezierPath bezierPath];
+    [bezier addArcWithCenter:CGPointMake(0, 0) radius:80 startAngle:0 endAngle:M_PI_4 clockwise:YES];
+    [bezier addLineToPoint:CGPointMake(0, 0)];
+    CAShapeLayer *sectorLayer = [CAShapeLayer layer];
+    sectorLayer.frame = CGRectMake(0, 0, 80, 60);
+    sectorLayer.path = bezier.CGPath;
+    sectorLayer.fillColor = [UIColor redColor].CGColor;
+    sectorLayer.masksToBounds = YES;
+    
+    CAGradientLayer *gl = [CAGradientLayer layer];
+    gl.frame = CGRectMake(0, 0, 80, 60);
+    gl.startPoint = CGPointMake(0.5, 0.85);
+    gl.endPoint = CGPointMake(0.5, 0);
+    gl.colors = @[(__bridge id)[UIColor colorWithRed:128/255.0 green:39/255.0 blue:254/255.0 alpha:0].CGColor, (__bridge id)[UIColor colorWithRed:128/255.0 green:39/255.0 blue:254/255.0 alpha:1].CGColor];
+    gl.locations = @[@(0), @(1.0f)];
+    gl.mask = sectorLayer;
+
+    
+    
+    [view.layer addSublayer:gl];
+
 }
 
 
