@@ -148,6 +148,8 @@
     
     
     [view.layer addSublayer:gl];
+    CGFloat xiaoshu = (double)arc4random()/0x100000000;
+    NSLog(@"%lf", xiaoshu/100);
 
 }
 
