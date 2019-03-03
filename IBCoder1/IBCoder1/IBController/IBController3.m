@@ -272,8 +272,8 @@
 //    [self test0];
 //    [self test1];
 //    [self test2];
-    [self test3];
-//    [self test4];
+//    [self test3];
+    [self test4];
 //    [self test5];
 //    [self test6];
 //    [self test7];
@@ -596,17 +596,16 @@ static void create_task_safely(dispatch_block_t block) {
 - (void)test4 {
     
     dispatch_queue_t queue = dispatch_queue_create("bowen", DISPATCH_QUEUE_CONCURRENT);
-    
-    dispatch_async(queue, ^{
+    dispatch_barrier_async(queue, ^{
         NSLog(@"----1----%@",[NSThread currentThread]);
     });
-    dispatch_async(queue, ^{
+    dispatch_barrier_async(queue, ^{
         NSLog(@"----2----%@",[NSThread currentThread]);
     });
-    dispatch_async(queue, ^{
+    dispatch_barrier_async(queue, ^{
         NSLog(@"----3----%@",[NSThread currentThread]);
     });
-    dispatch_async(queue, ^{
+    dispatch_barrier_async(queue, ^{
         NSLog(@"----4----%@",[NSThread currentThread]);
     });
     
