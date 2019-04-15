@@ -19,7 +19,7 @@
 /*
  进程：执行中的应用程序【一个应用程序可以有很多进程(网游双开)，在iOS中一个app只有一个进程。】
  资源分配最小单元
- 线程：进程中的一个执行序列，执行调度的最小单元
+ 线程：进程中的一个执行序列，执行调度的最小单元（在iOS上一般开启3~5个线程）
  
  线程与进程的区别：
  a.地址空间和其它资源：进程间拥有独立内存，进程是资源分配的基本单位；线程隶属于某一进程，且同一进程的各线程间共享内存（资源），线程是cpu调度的基本单位。
@@ -271,9 +271,11 @@
     
 //    [self test0];
 //    [self test1];
-//    [self test2];
+    [self test2];
 //    [self test3];
-    [self test4];
+//    [self test4];
+//    [self test4_1];
+//    [self test4_2];
 //    [self test5];
 //    [self test6];
 //    [self test7];
@@ -590,7 +592,7 @@ static void create_task_safely(dispatch_block_t block) {
 
 /**
  * async（异步） --并发队列（最常用）
- * 会不会创建线程：会，并且创建多条线程
+ * 会不会创建线程：会，并且创建多条线程，有复用执行完的线程可能
  * 任务的执行方式：并发执行
  */
 - (void)test4 {
@@ -608,8 +610,52 @@ static void create_task_safely(dispatch_block_t block) {
     dispatch_barrier_async(queue, ^{
         NSLog(@"----4----%@",[NSThread currentThread]);
     });
-    
 }
+
+
+/**
+ 三个线程顺序重复执行
+ */
+- (void)test4_2 {
+    
+    dispatch_semaphore_t sema1 = dispatch_semaphore_create(1);
+    dispatch_semaphore_t sema2 = dispatch_semaphore_create(0);
+    dispatch_semaphore_t sema3 = dispatch_semaphore_create(0);
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    queue.maxConcurrentOperationCount = 3;
+    
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        [[NSThread currentThread] setName:@"thread1"];
+        while (1) {
+            dispatch_semaphore_wait(sema1, DISPATCH_TIME_FOREVER);
+            NSLog(@"----1----%@",[NSThread currentThread]);
+            dispatch_semaphore_signal(sema2);
+        }
+    }];
+    
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        [[NSThread currentThread] setName:@"thread2"];
+        while (1) {
+            dispatch_semaphore_wait(sema2, DISPATCH_TIME_FOREVER);
+            NSLog(@"----2----%@",[NSThread currentThread]);
+            dispatch_semaphore_signal(sema3);
+        }
+    }];
+    
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        [[NSThread currentThread] setName:@"thread3"];
+        while (1) {
+            dispatch_semaphore_wait(sema3, DISPATCH_TIME_FOREVER);
+            NSLog(@"----3----%@",[NSThread currentThread]);
+            dispatch_semaphore_signal(sema1);
+        }
+    }];
+
+    [queue addOperations:@[op1, op2, op3] waitUntilFinished:YES];
+}
+
+
 
 /**
  组内并行，组间串行
@@ -670,7 +716,22 @@ static void create_task_safely(dispatch_block_t block) {
     }];
     [oq addOperationWithBlock:^{
         NSLog(@"4--%@",[NSThread currentThread]);
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSLog(@"----5----%@",[NSThread currentThread]);
+        }];
     }];
+    
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"6--%@",[NSThread currentThread]);
+    }];
+    [operation addExecutionBlock:^{
+        NSLog(@"7--%@",[NSThread currentThread]);
+
+    }];
+    [operation addExecutionBlock:^{
+        NSLog(@"8--%@",[NSThread currentThread]);
+    }];
+    [operation start];
 }
 
 /**
@@ -714,15 +775,35 @@ static void create_task_safely(dispatch_block_t block) {
     });
 }
 
+/*
+ 通知，代理，KVO同步执行
+ 在哪个线程中发出通知或者代理回到就在哪个线程中执行
+ */
 - (void) test0 {//能收到
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti) name:@"hehe" object:nil];
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
     dispatch_async(queue, ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"hehe" object:nil];
+        [[NSThread currentThread] setName:@"obseverrName"];
+        NSLog(@"1--%@",[NSThread currentThread]);
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noti) name:@"hehe" object:nil];
     });
+    
+    dispatch_async(queue, ^{
+        [[NSThread currentThread] setName:@"postName"];
+        NSLog(@"2--%@",[NSThread currentThread]);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"hehe" object:nil];
+        NSLog(@"123");
+    });
+    
+    NSLog(@"456");
 }
 - (void)noti {
-    NSLog(@"%s",__func__);
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        NSLog(@"3--%@",[NSThread currentThread]);
+    });
+    NSLog(@"4--%@",[NSThread currentThread]);
 }
 
 
