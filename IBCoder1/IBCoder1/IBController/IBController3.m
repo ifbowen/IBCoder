@@ -200,7 +200,7 @@
  1、NSThread创建的线程： 使用performSelector: onThread:方法，给线程添加事件看是否运行
  2、GCD的group：原理就是利用dispatch_group_async执行完queue会执行dispatch_group_notify回调
  3、dispatch_barrier_async：一般使用dispatch_barrier_async, 会让barrier之前的线程执行完成之后才会执行barrier后面的操作
- 4、NSOperationQueue：用到addDependency: waitUntilFinished: 方法，如果是YES，必须等到queue中所有Operation执行完毕之后, 才会继续执行。
+ 4、NSOperationQueue：用到addDependency: waitUntilFinished: 方法，如果是YES，必须等到queue中所有Operation执行完毕之后, 才会继续执行。所以会卡住当前线程
  
  十六、杀死一个线程
  1、GCD线程：定义外部变量，用于标记block是否需要取消，如果要取消直接返回return
@@ -271,11 +271,12 @@
     
 //    [self test0];
 //    [self test1];
-    [self test2];
+//    [self test2];
 //    [self test3];
 //    [self test4];
 //    [self test4_1];
-//    [self test4_2];
+    [self test4_2];
+//    [self test4_3];
 //    [self test5];
 //    [self test6];
 //    [self test7];
@@ -614,7 +615,7 @@ static void create_task_safely(dispatch_block_t block) {
 
 
 /**
- 三个线程顺序重复执行
+ 三个线程顺序重复执行,dispatch_semaphore_t 卡住 主线程
  */
 - (void)test4_2 {
     
@@ -652,8 +653,94 @@ static void create_task_safely(dispatch_block_t block) {
         }
     }];
 
-    [queue addOperations:@[op1, op2, op3] waitUntilFinished:YES];
+    [queue addOperations:@[op1, op2, op3] waitUntilFinished:NO];
 }
+
+- (void)test4_3 {
+    
+     __block BOOL thread1 = YES;
+    __block BOOL thread2 = NO;
+    __block BOOL thread3 = NO;
+    
+    dispatch_queue_t queue = dispatch_queue_create("bowen", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        [[NSThread currentThread] setName:@"thread1"];
+        while (1) {
+            if (thread1) {
+                thread1 = NO;
+                NSLog(@"----1----%@",[NSThread currentThread]);
+                thread2 = YES;
+            }
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        [[NSThread currentThread] setName:@"thread2"];
+        while (1) {
+            if (thread2) {
+                thread2 = NO;
+                NSLog(@"----2----%@",[NSThread currentThread]);
+                thread3 = YES;
+            }
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        [[NSThread currentThread] setName:@"thread3"];
+        while (1) {
+            if (thread3) {
+                thread3 = NO;
+                NSLog(@"----3----%@",[NSThread currentThread]);
+                thread1 = YES;
+            }
+        }
+
+    });
+}
+
+
+- (void)test4_4 {
+    
+    __block BOOL thread1 = YES;
+    __block BOOL thread2 = NO;
+    __block BOOL thread3 = NO;
+    
+    dispatch_queue_t queue = dispatch_queue_create("bowen", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        [[NSThread currentThread] setName:@"thread1"];
+        while (1) {
+            if (thread1) {
+                thread1 = NO;
+                NSLog(@"----1----%@",[NSThread currentThread]);
+                thread2 = YES;
+            }
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        [[NSThread currentThread] setName:@"thread2"];
+        while (1) {
+            if (thread2) {
+                thread2 = NO;
+                NSLog(@"----2----%@",[NSThread currentThread]);
+                thread3 = YES;
+            }
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        [[NSThread currentThread] setName:@"thread3"];
+        while (1) {
+            if (thread3) {
+                thread3 = NO;
+                NSLog(@"----3----%@",[NSThread currentThread]);
+                thread1 = YES;
+            }
+        }
+        
+    });
+}
+
 
 
 
