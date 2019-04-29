@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 #import <CoreSpotlight/CoreSpotlight.h>
+#import "ViewController1.h"
+#import "ViewController2.h"
+#import "ViewController3.h"
 
 extern CFAbsoluteTime StartTime;
 
@@ -21,9 +23,25 @@ extern CFAbsoluteTime StartTime;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    
+    UITabBarController *tabbarVC = [[UITabBarController alloc] init];
+    ViewController1 *vc1 = ViewController1.new;
+    UINavigationController *nav1 = [self addControler:vc1];
+    [vc1 setTabBarItem:[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemRecents tag:0]];
+    [tabbarVC addChildViewController:nav1];
+    
+    ViewController2 *vc2 = ViewController2.new;
+    UINavigationController *nav2 = [self addControler:vc2];
+    [vc2 setTabBarItem:[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:0]];
+    [tabbarVC addChildViewController:nav2];
+    
+    ViewController3 *vc3 = ViewController3.new;
+    UINavigationController *nav3 = [self addControler:vc3];
+    [vc3 setTabBarItem:[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:0]];
+    [tabbarVC addChildViewController:nav3];
+    
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = nav;
+    self.window.rootViewController = tabbarVC;
     [self.window makeKeyAndVisible];
     [self initShortcutItems];
     NSLog(@"%@",NSHomeDirectory());
@@ -33,8 +51,11 @@ extern CFAbsoluteTime StartTime;
     return YES;
 }
 
+- (UINavigationController *)addControler:(UIViewController *)vc {
+    return [[UINavigationController alloc] initWithRootViewController:vc];
+}
 
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler {
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *))restorationHandler {
     
     
     if ([userActivity.activityType isEqualToString:CSSearchableItemActionType]) {

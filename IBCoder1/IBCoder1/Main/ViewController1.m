@@ -6,19 +6,19 @@
 //  Copyright © 2018年 BowenCoder. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ViewController1.h"
 #import "UIView+Ext.h"
 #import "IBController1.h"
 #import "IBController4.h"
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface ViewController1 ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *tableArray;
 
 @end
 
-@implementation ViewController
+@implementation ViewController1
 
 - (void)viewDidLoad {
     [super viewDidLoad];

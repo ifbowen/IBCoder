@@ -37,9 +37,9 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self operateFMTokenizers];
+    [self operateFMTokenizers];
 //    [self updateDB];
-    [self updataDB1];
+//    [self updataDB1];
     
 }
 

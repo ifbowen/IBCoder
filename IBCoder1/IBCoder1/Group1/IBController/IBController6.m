@@ -149,6 +149,14 @@
  
  updating constraints->layout->display
  
+ 七、intrinsicContentSize和invalidateIntrinsicContentSize
+    intrinsicContentSize：内置大小，控件本身内容控制控件大小
+    invalidateIntrinsicContentSize：内置大小变化后，需重新计算尺寸，调用invalidateIntrinsicContentSize刷新
+ 
+ 八、setContentHuggingPriority和setContentCompressionResistancePriority
+    setContentHuggingPriority：该优先级表示一个控件抗被拉伸的优先级。优先级越高，越不容易被拉伸。
+    setContentCompressionResistancePriority：该优先级和上面那个优先级相对应，表示一个控件抗压缩的优先级。优先级越高，越不容易被压缩
+ 
 */
 
 - (void)viewDidLoad {
