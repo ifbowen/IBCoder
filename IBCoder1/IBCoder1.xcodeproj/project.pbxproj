@@ -240,6 +240,7 @@
 		4AC3CB1220D0DBAA0059B029 /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB1020D0DBAA0059B029 /* LoggerClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4AD239AD22773B380076BB6D /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD239AC22773B380076BB6D /* ViewController2.m */; };
 		4AD239B022773B450076BB6D /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD239AF22773B450076BB6D /* ViewController3.m */; };
+		4AD239F6227C5D890076BB6D /* IBGroup2Controller1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD239F5227C5D890076BB6D /* IBGroup2Controller1.m */; };
 		4ADB21AC2264B5DA0039480F /* IBController43.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB21AB2264B5DA0039480F /* IBController43.m */; };
 		4AE24BD7214B616E006448DC /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE24BD6214B616E006448DC /* IBController41.m */; };
 		9260DD9E398D2EFD865553DE /* libPods-IBCoder1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B568EA09BE717D445EE24A2A /* libPods-IBCoder1.a */; };
@@ -731,6 +732,8 @@
 		4AD239AC22773B380076BB6D /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		4AD239AE22773B450076BB6D /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		4AD239AF22773B450076BB6D /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		4AD239F4227C5D890076BB6D /* IBGroup2Controller1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller1.h; sourceTree = "<group>"; };
+		4AD239F5227C5D890076BB6D /* IBGroup2Controller1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller1.m; sourceTree = "<group>"; };
 		4ADB21AA2264B5DA0039480F /* IBController43.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController43.h; sourceTree = "<group>"; };
 		4ADB21AB2264B5DA0039480F /* IBController43.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController43.m; sourceTree = "<group>"; };
 		4AE24BD5214B616E006448DC /* IBController41.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController41.h; sourceTree = "<group>"; };
@@ -1013,6 +1016,7 @@
 		4A8B1E9320B6E73800FACAFD /* IBCoder1 */ = {
 			isa = PBXGroup;
 			children = (
+				4AD239F2227C5C370076BB6D /* Group2 */,
 				4AD239B122773F190076BB6D /* Group1 */,
 				4A8B1F1420B6E77A00FACAFD /* HelperFile */,
 				4A8B1EAA20B6E77900FACAFD /* IBModule */,
@@ -1546,6 +1550,23 @@
 			path = other;
 			sourceTree = "<group>";
 		};
+		4AD239F2227C5C370076BB6D /* Group2 */ = {
+			isa = PBXGroup;
+			children = (
+				4AD239F3227C5D490076BB6D /* vc1 */,
+			);
+			path = Group2;
+			sourceTree = "<group>";
+		};
+		4AD239F3227C5D490076BB6D /* vc1 */ = {
+			isa = PBXGroup;
+			children = (
+				4AD239F4227C5D890076BB6D /* IBGroup2Controller1.h */,
+				4AD239F5227C5D890076BB6D /* IBGroup2Controller1.m */,
+			);
+			path = vc1;
+			sourceTree = "<group>";
+		};
 		8D7F63A9C9CFE5D2B4EC8567 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1777,6 +1798,7 @@
 				4A8D7E4720CA48D8004CCF4C /* IBCAGradientLayer.m in Sources */,
 				4A6896D820F5DF35005FBB66 /* RACSubscriptionScheduler.m in Sources */,
 				4A8D7E4420C9414B004CCF4C /* IBCATransformLayer.m in Sources */,
+				4AD239F6227C5D890076BB6D /* IBGroup2Controller1.m in Sources */,
 				4A68970620F5DF36005FBB66 /* RACImmediateScheduler.m in Sources */,
 				4A8B1EA420B6E73900FACAFD /* main.m in Sources */,
 				4A8B1F8F20B6E77A00FACAFD /* IBController7.m in Sources */,
