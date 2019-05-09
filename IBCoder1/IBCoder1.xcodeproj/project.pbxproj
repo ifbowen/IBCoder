@@ -244,6 +244,7 @@
 		4ADB21AC2264B5DA0039480F /* IBController43.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB21AB2264B5DA0039480F /* IBController43.m */; };
 		4AE24BD7214B616E006448DC /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE24BD6214B616E006448DC /* IBController41.m */; };
 		9260DD9E398D2EFD865553DE /* libPods-IBCoder1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B568EA09BE717D445EE24A2A /* libPods-IBCoder1.a */; };
+		F327F5E32284A45B00104711 /* IBGroup2ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F327F5E22284A45B00104711 /* IBGroup2ViewController2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -741,6 +742,8 @@
 		4E9DF89DB99F0BB0C869364D /* Pods-IBCoder1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBCoder1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IBCoder1/Pods-IBCoder1.debug.xcconfig"; sourceTree = "<group>"; };
 		6B122B1F256D442D5CD34F0E /* Pods-IBCoder1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBCoder1.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBCoder1/Pods-IBCoder1.release.xcconfig"; sourceTree = "<group>"; };
 		B568EA09BE717D445EE24A2A /* libPods-IBCoder1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IBCoder1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F327F5E12284A45B00104711 /* IBGroup2ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2ViewController2.h; sourceTree = "<group>"; };
+		F327F5E22284A45B00104711 /* IBGroup2ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2ViewController2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1563,6 +1566,8 @@
 			children = (
 				4AD239F4227C5D890076BB6D /* IBGroup2Controller1.h */,
 				4AD239F5227C5D890076BB6D /* IBGroup2Controller1.m */,
+				F327F5E12284A45B00104711 /* IBGroup2ViewController2.h */,
+				F327F5E22284A45B00104711 /* IBGroup2ViewController2.m */,
 			);
 			path = vc1;
 			sourceTree = "<group>";
@@ -1702,6 +1707,7 @@
 				4A6896E220F5DF35005FBB66 /* RACChannel.m in Sources */,
 				4A8B1FD720B8271400FACAFD /* FMDBMigrationManager.m in Sources */,
 				4A6896C320F5DF35005FBB66 /* NSIndexSet+RACSequenceAdditions.m in Sources */,
+				F327F5E32284A45B00104711 /* IBGroup2ViewController2.m in Sources */,
 				4A6896B620F5DF35005FBB66 /* NSOrderedSet+RACSequenceAdditions.m in Sources */,
 				4A6896FE20F5DF35005FBB66 /* RACSubject.m in Sources */,
 				4A6896BB20F5DF35005FBB66 /* NSDictionary+RACSequenceAdditions.m in Sources */,
