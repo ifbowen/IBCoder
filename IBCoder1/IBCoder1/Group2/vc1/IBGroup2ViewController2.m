@@ -67,11 +67,47 @@
  3、结构体的总大小为结构体最宽基本类型成员大小的整数倍，
     如有需要编译器会在成员末尾加上填充字节
  
+ 四、内存字节对齐
+    选择对齐模式会以牺牲空间的代价提升时间效率.
+    64位8字节对齐：http://stackoverflow.com/questions/21219130/is-8-byte-alignment-for-double-type-necessary
+    The interface to memory might be eight bytes wide and only able to access memory at multiples of eight bytes.
+    Loading an unaligned eight-byte double then requires two reads on the bus. Stores are worse, because an
+    aligned eight-byte store can simply write eight bytes to memory, but an unaligned eight-byte store must
+    read two eight-byte pieces, merge the new data with the old data, and write two eight-byte pieces.
+ 
+    32位4字节对齐：
+    因为地址总线的关系，有2根总线不参与寻址，导致只能获取到4的整数倍的地址，所以默认是4字节对齐
+ 
+ 五、总线
+    数据总线
+    （1）是CPU与内存或其他器件之间的数据传送的通道。
+    （2）数据总线的宽度决定了CPU和外界的数据传送速度。
+    （3）每条传输线一次只能传输1位二进制数据。eg: 8根数据线一次可传送一个8位二进制数据(即一个字节)。
+    （4）数据总线是数据线数量之和。
+ 
+    地址总线
+    （1）CPU是通过地址总线来指定存储单元的。
+    （2）地址总线决定了cpu所能访问的最大内存空间的大小。eg: 10根地址线能访问的最大的内存为1024位二进制数据(1B)
+    （3）地址总线是地址线数量之和。
+ 
+    控制总线
+    （1）CPU通过控制总线对外部器件进行控制。
+    （2）控制总线的宽度决定了CPU对外部器件的控制能力。
+    （3）控制总线是控制线数量之和。
  */
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    struct A {
+        char c;
+        int i;
+    };
+    /*
+     假设变量a存放在内存中的起始地址为0x00，那么其成员变量c的起始地址为0x00，成员变量i的起始地址为0x01，变量a一共占用了5个字节。当CPU要对成员变量c进行访问时，只需要一个读周期即可。而如若要对成员变量i进行访问，那么情况就变得有点复杂了，首先CPU用了一个读周期，从0x00处读取了4个字节(注意由于是32位架构)，然后将0x01-0x03的3个字节暂存，接着又花费了一个读周期读取了从0x04-0x07的4字节数据，将0x04这个字节与刚刚暂存的3个字节进行拼接从而读取到成员变量i的值。为了读取这个成员变量i，CPU花费了整整2个读周期。试想一下，如果数据成员i的起始地址被放在了0x04处，那么读取其所花费的周期就变成了1，显然引入字节对齐可以避免读取效率的下降，但这同时也浪费了3个字节的空间(0x01-0x03)。
+     
+     */
 }
 
 
