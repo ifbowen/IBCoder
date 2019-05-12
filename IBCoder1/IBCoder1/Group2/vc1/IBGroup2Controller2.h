@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface IBGroup2ViewController2 : UIViewController
+@interface IBGroup2Controller2 : UIViewController
 
 @end
 
