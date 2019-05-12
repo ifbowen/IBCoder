@@ -67,7 +67,35 @@
  3、结构体的总大小为结构体最宽基本类型成员大小的整数倍，
     如有需要编译器会在成员末尾加上填充字节
  
- 四、编译程序的工作过程可划分五个阶段：
+ 四、内存字节对齐
+ 选择对齐模式会以牺牲空间的代价提升时间效率.
+ 64位8字节对齐：http://stackoverflow.com/questions/21219130/is-8-byte-alignment-for-double-type-necessary
+ The interface to memory might be eight bytes wide and only able to access memory at multiples of eight bytes.
+ Loading an unaligned eight-byte double then requires two reads on the bus. Stores are worse, because an
+ aligned eight-byte store can simply write eight bytes to memory, but an unaligned eight-byte store must
+ read two eight-byte pieces, merge the new data with the old data, and write two eight-byte pieces.
+ 
+ 32位4字节对齐：
+ 因为地址总线的关系，有2根总线不参与寻址，导致只能获取到4的整数倍的地址，所以默认是4字节对齐
+ 
+ 五、总线
+ 数据总线
+ （1）是CPU与内存或其他器件之间的数据传送的通道。
+ （2）数据总线的宽度决定了CPU和外界的数据传送速度。
+ （3）每条传输线一次只能传输1位二进制数据。eg: 8根数据线一次可传送一个8位二进制数据(即一个字节)。
+ （4）数据总线是数据线数量之和。
+ 
+ 地址总线
+ （1）CPU是通过地址总线来指定存储单元的。
+ （2）地址总线决定了cpu所能访问的最大内存空间的大小。eg: 10根地址线能访问的最大的内存为1024位二进制数据(1B)
+ （3）地址总线是地址线数量之和。
+ 
+ 控制总线
+ （1）CPU通过控制总线对外部器件进行控制。
+ （2）控制总线的宽度决定了CPU对外部器件的控制能力。
+ （3）控制总线是控制线数量之和。
+ 
+ 六、编译程序的工作过程可划分五个阶段：
  1、词法分析：从左到右一个字符一个字符的读入源程序，对构成源程序的字符串进行扫描
             和分解，从而识别出一个个单词（也称单词符号或简称符号）。
  2、语法分析：在词法分析的基础上将单词序列分解成各类语法短语，如“程序”，“语句”，“表达式”等等。
@@ -79,7 +107,7 @@
  4、代码优化：为了使生成的目标代码更为高效，可以对产生的中间代码进行变换或进行改造。
  5、目标代码生成：把中间代码变换成特定机器上的绝对指令代码或可重定位的指令代码或汇编指令代码。
  
-五、SS1，SS2原则
+七、SS1，SS2原则
  1、side effects：（副作用）
     副作用就是程序中的变量产生的改变，赋值，自增，自减表达式，函数调用表达式
  2、sequence points：（序列点）
@@ -102,7 +130,7 @@
  
  总之，谨记，在实际应用中应该遵守“一条语句只做一件事的原则”。
  
- 六、优先级，结合方向，执行顺序
+ 八、优先级，结合方向，执行顺序
  C语言中组成程序的基本单位是表达式（expression），表达式是指用操作符（operator）和操作数（operand）连接起来的式子。
  C标准给出了最基本的操作符，通过这些操作符可以组成简单表达式，同样也可以通过复合产生复杂表达式。
  优先级和结合方向只是解决操作符和操作数如何组合起来的。

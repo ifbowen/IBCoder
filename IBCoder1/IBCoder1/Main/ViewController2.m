@@ -32,7 +32,7 @@
 }
 
 - (void)initialize {
-    self.tableArray = @[@"单例，进制转换，原码、反码、补码", @"内存空间分布和结构体内存"];
+    self.tableArray = @[@"单例，进制转换，原码、反码、补码", @"内存空间分布和结构体内存及SS1和SS2"];
 }
 
 - (void)setupUI {
