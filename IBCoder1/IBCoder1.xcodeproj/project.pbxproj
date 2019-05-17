@@ -106,6 +106,10 @@
 		4A726B8120BBBF7E0013F431 /* IBCoreSpotlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A726B8020BBBF7E0013F431 /* IBCoreSpotlight.m */; };
 		4A726B8420BC1F480013F431 /* IBController31.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A726B8320BC1F480013F431 /* IBController31.m */; };
 		4A7D36EB213FC44B00310E7B /* 类，元类，根元类关系图.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7D36EA213FC44B00310E7B /* 类，元类，根元类关系图.png */; };
+		4A89D65F228ED21F0072FB23 /* IBGroup2Controller3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A89D65E228ED21F0072FB23 /* IBGroup2Controller3.m */; };
+		4A89D667228EF9D60072FB23 /* AFOAuthCredential.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A89D664228EF9D50072FB23 /* AFOAuthCredential.m */; };
+		4A89D668228EF9D60072FB23 /* AFHTTPRequestSerializer+OAuth2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A89D665228EF9D50072FB23 /* AFHTTPRequestSerializer+OAuth2.m */; };
+		4A89D669228EF9D60072FB23 /* AFOAuth2Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A89D666228EF9D50072FB23 /* AFOAuth2Manager.m */; };
 		4A8B1E9620B6E73800FACAFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B1E9520B6E73800FACAFD /* AppDelegate.m */; };
 		4A8B1E9920B6E73800FACAFD /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B1E9820B6E73800FACAFD /* ViewController1.m */; };
 		4A8B1E9C20B6E73800FACAFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8B1E9A20B6E73800FACAFD /* Main.storyboard */; };
@@ -450,6 +454,14 @@
 		4A726B8220BC1F480013F431 /* IBController31.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController31.h; sourceTree = "<group>"; };
 		4A726B8320BC1F480013F431 /* IBController31.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController31.m; sourceTree = "<group>"; };
 		4A7D36EA213FC44B00310E7B /* 类，元类，根元类关系图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "类，元类，根元类关系图.png"; sourceTree = "<group>"; };
+		4A89D65D228ED21F0072FB23 /* IBGroup2Controller3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller3.h; sourceTree = "<group>"; };
+		4A89D65E228ED21F0072FB23 /* IBGroup2Controller3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller3.m; sourceTree = "<group>"; };
+		4A89D661228EF9D50072FB23 /* AFHTTPRequestSerializer+OAuth2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestSerializer+OAuth2.h"; sourceTree = "<group>"; };
+		4A89D662228EF9D50072FB23 /* AFOAuthCredential.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOAuthCredential.h; sourceTree = "<group>"; };
+		4A89D663228EF9D50072FB23 /* AFOAuth2Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOAuth2Manager.h; sourceTree = "<group>"; };
+		4A89D664228EF9D50072FB23 /* AFOAuthCredential.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuthCredential.m; sourceTree = "<group>"; };
+		4A89D665228EF9D50072FB23 /* AFHTTPRequestSerializer+OAuth2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestSerializer+OAuth2.m"; sourceTree = "<group>"; };
+		4A89D666228EF9D50072FB23 /* AFOAuth2Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuth2Manager.m; sourceTree = "<group>"; };
 		4A8B1E9120B6E73800FACAFD /* IBCoder1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBCoder1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A8B1E9420B6E73800FACAFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A8B1E9520B6E73800FACAFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -998,6 +1010,19 @@
 			path = CoreSpotlight;
 			sourceTree = "<group>";
 		};
+		4A89D660228EF9D50072FB23 /* AFOAuth2Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4A89D661228EF9D50072FB23 /* AFHTTPRequestSerializer+OAuth2.h */,
+				4A89D665228EF9D50072FB23 /* AFHTTPRequestSerializer+OAuth2.m */,
+				4A89D663228EF9D50072FB23 /* AFOAuth2Manager.h */,
+				4A89D666228EF9D50072FB23 /* AFOAuth2Manager.m */,
+				4A89D662228EF9D50072FB23 /* AFOAuthCredential.h */,
+				4A89D664228EF9D50072FB23 /* AFOAuthCredential.m */,
+			);
+			path = AFOAuth2Manager;
+			sourceTree = "<group>";
+		};
 		4A8B1E8820B6E73800FACAFD = {
 			isa = PBXGroup;
 			children = (
@@ -1415,6 +1440,7 @@
 			children = (
 				4AA030C620DA391C008DC539 /* AFHTTPSessionManager+RACSupport.h */,
 				4AA030D520DA391C008DC539 /* AFHTTPSessionManager+RACSupport.m */,
+				4A89D660228EF9D50072FB23 /* AFOAuth2Manager */,
 				4AA030C720DA391C008DC539 /* AFNetworking */,
 				4AA0300620DA391C008DC539 /* ReactiveObjC */,
 			);
@@ -1568,6 +1594,8 @@
 				4AD239F5227C5D890076BB6D /* IBGroup2Controller1.m */,
 				F327F5E12284A45B00104711 /* IBGroup2Controller2.h */,
 				F327F5E22284A45B00104711 /* IBGroup2Controller2.m */,
+				4A89D65D228ED21F0072FB23 /* IBGroup2Controller3.h */,
+				4A89D65E228ED21F0072FB23 /* IBGroup2Controller3.m */,
 			);
 			path = vc1;
 			sourceTree = "<group>";
@@ -1737,6 +1765,7 @@
 				4A8B1F8720B6E77A00FACAFD /* IBController11.m in Sources */,
 				4A8B1FC820B6E77B00FACAFD /* SDWebImageWebPCoder.m in Sources */,
 				4A6896F420F5DF35005FBB66 /* RACScopedDisposable.m in Sources */,
+				4A89D669228EF9D60072FB23 /* AFOAuth2Manager.m in Sources */,
 				4A6896E520F5DF35005FBB66 /* RACEmptySequence.m in Sources */,
 				4A68970320F5DF36005FBB66 /* RACCompoundDisposable.m in Sources */,
 				4A8B1F9C20B6E77A00FACAFD /* IBController17.m in Sources */,
@@ -1762,6 +1791,7 @@
 				4A6896FC20F5DF35005FBB66 /* RACDisposable.m in Sources */,
 				4A8B1F7B20B6E77A00FACAFD /* Target_AViewController.m in Sources */,
 				4A8B1FC920B6E77B00FACAFD /* IBView.m in Sources */,
+				4A89D65F228ED21F0072FB23 /* IBGroup2Controller3.m in Sources */,
 				4A6896CB20F5DF35005FBB66 /* UIControl+RACSignalSupportPrivate.m in Sources */,
 				4A8B1FAD20B6E77A00FACAFD /* MKAnnotationView+WebCache.m in Sources */,
 				4A8B1F9220B6E77A00FACAFD /* IBController10.m in Sources */,
@@ -1859,6 +1889,7 @@
 				4A8B1FB520B6E77B00FACAFD /* UIImage+MultiFormat.m in Sources */,
 				4A8B1F8020B6E77A00FACAFD /* BViewController.m in Sources */,
 				4A53474321742EAA00FD4439 /* ASCameraButton.m in Sources */,
+				4A89D668228EF9D60072FB23 /* AFHTTPRequestSerializer+OAuth2.m in Sources */,
 				4A8B1FB620B6E77B00FACAFD /* SDWebImageCoderHelper.m in Sources */,
 				4A8B1F9820B6E77A00FACAFD /* IBController16.m in Sources */,
 				4A8B1F7E20B6E77A00FACAFD /* AViewController.m in Sources */,
@@ -1904,6 +1935,7 @@
 				4AA0313620DA391D008DC539 /* AFSecurityPolicy.m in Sources */,
 				4A8D7E4A20CA4A90004CCF4C /* IBCAReplicatorLayer.m in Sources */,
 				4A8D7E4120C936F9004CCF4C /* IBCATextLayer.m in Sources */,
+				4A89D667228EF9D60072FB23 /* AFOAuthCredential.m in Sources */,
 				4A6896DB20F5DF35005FBB66 /* RACSignal.m in Sources */,
 				4A68970120F5DF35005FBB66 /* RACEagerSequence.m in Sources */,
 				4A726B7D20BBBE700013F431 /* IBController30.m in Sources */,
