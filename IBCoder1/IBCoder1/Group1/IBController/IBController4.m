@@ -155,7 +155,8 @@ typedef void (^Block)(void);
      访问外界变量
     __NSStackBlock__ 栈区 (内部使用了外部变量)(MRC模式下)
     栈区的特点就是创建的对象随时可能被销毁,一旦被销毁后续再次调用空对象就可能会造成程序崩溃
-    __NSMallocBlock__ 堆区(系统也会默认对Block进行copy操作)(ARC模式下)
+    __NSMallocBlock__ 堆区(有强指针引用，系统也会默认对Block进行copy操作)(ARC模式下)
+    __NSStackBlock__ 栈区（无强指针引用）(ARC模式下)
      */
     int i = 10;
     void (^block2)(void) = ^{
