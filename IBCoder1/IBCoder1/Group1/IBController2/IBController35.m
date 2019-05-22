@@ -23,7 +23,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    Person *p = [[Person alloc] init];
+    Personal *p = [[Personal alloc] init];
     p.name = @"bowen";
     p.age = 26;
     p.sex = @"男";

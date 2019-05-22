@@ -237,6 +237,7 @@
 		4AAA27C7210AB94A00B0C256 /* IBController38.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27C6210AB94A00B0C256 /* IBController38.m */; };
 		4AAA27CB210B315600B0C256 /* IBController39.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27CA210B315600B0C256 /* IBController39.m */; };
 		4AAA27CE210B3B3E00B0C256 /* IBController40.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27CD210B3B3E00B0C256 /* IBController40.m */; };
+		4AB6644D229513EF0067DA85 /* Person.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6644C229513EF0067DA85 /* Person.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4AC3CAFD20CFA0720059B029 /* IBCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CAFB20CFA0720059B029 /* IBCViewController.m */; };
 		4AC3CAFE20CFA0720059B029 /* IBCMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CAFC20CFA0720059B029 /* IBCMediator.m */; };
 		4AC3CB0220CFA83C0059B029 /* IBGrahpicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB0120CFA83C0059B029 /* IBGrahpicsView.m */; };
@@ -729,6 +730,8 @@
 		4AAA27CA210B315600B0C256 /* IBController39.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController39.m; sourceTree = "<group>"; };
 		4AAA27CC210B3B3E00B0C256 /* IBController40.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController40.h; sourceTree = "<group>"; };
 		4AAA27CD210B3B3E00B0C256 /* IBController40.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController40.m; sourceTree = "<group>"; };
+		4AB6644B229513EF0067DA85 /* Person.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.pbobjc.h; sourceTree = "<group>"; };
+		4AB6644C229513EF0067DA85 /* Person.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.pbobjc.m; sourceTree = "<group>"; };
 		4AC3CAF920CFA0720059B029 /* IBCMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCMediator.h; sourceTree = "<group>"; };
 		4AC3CAFA20CFA0720059B029 /* IBCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCViewController.h; sourceTree = "<group>"; };
 		4AC3CAFB20CFA0720059B029 /* IBCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCViewController.m; sourceTree = "<group>"; };
@@ -1509,6 +1512,15 @@
 			path = IBcontroller3;
 			sourceTree = "<group>";
 		};
+		4AB664472295129B0067DA85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AB6644B229513EF0067DA85 /* Person.pbobjc.h */,
+				4AB6644C229513EF0067DA85 /* Person.pbobjc.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4AC3CAF820CFA0720059B029 /* IBCMediator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1582,6 +1594,7 @@
 		4AD239F2227C5C370076BB6D /* Group2 */ = {
 			isa = PBXGroup;
 			children = (
+				4AB664472295129B0067DA85 /* Model */,
 				4AD239F3227C5D490076BB6D /* vc1 */,
 			);
 			path = Group2;
@@ -1628,6 +1641,8 @@
 				4A8B1E8D20B6E73800FACAFD /* Sources */,
 				4A8B1E8E20B6E73800FACAFD /* Frameworks */,
 				4A8B1E8F20B6E73800FACAFD /* Resources */,
+				FE02AAF97ABEE1F21E9E0C52 /* [CP] Embed Pods Frameworks */,
+				197F3FBC2E395427E7FE3BA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1687,6 +1702,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		197F3FBC2E395427E7FE3BA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IBCoder1/Pods-IBCoder1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B30A845BC7F1EFD47F9E2EB8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1703,6 +1737,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE02AAF97ABEE1F21E9E0C52 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IBCoder1/Pods-IBCoder1-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1741,6 +1794,7 @@
 				4A6896BB20F5DF35005FBB66 /* NSDictionary+RACSequenceAdditions.m in Sources */,
 				4A8B1F7220B6E77A00FACAFD /* BClothesProvider.m in Sources */,
 				4A8B1FBF20B6E77B00FACAFD /* NSData+ImageContentType.m in Sources */,
+				4AB6644D229513EF0067DA85 /* Person.pbobjc.m in Sources */,
 				4A6896C520F5DF35005FBB66 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				4A8B1F7420B6E77A00FACAFD /* BProxy.m in Sources */,
 				4A8B1FA620B6E77A00FACAFD /* MASLayoutConstraint.m in Sources */,

@@ -16,7 +16,7 @@
 
 @end
 
-@interface Person : NSObject
+@interface Personal : NSObject
 
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,assign) int age;

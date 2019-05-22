@@ -7,6 +7,7 @@
 //
 
 #import "IBGroup2Controller3.h"
+#import "Person.pbobjc.h"
 
 @interface IBGroup2Controller3 ()
 
@@ -79,4 +80,67 @@
     NSLog(@"%@", nil ?: @"456");
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    // 创建对象
+    Person *person = [Person new];
+    person.name = @"bowen";
+    person.uid = 20170810;
+    person.email = @"bowen@qq.com";
+    
+    // 序列化为Data
+    NSData *data = [person data];
+    NSLog(@"NSData= %@", data);
+    
+    // 反序列化为对象
+    Person *person2 = [Person parseFromData:data error:NULL];
+    NSLog(@"name:%@ uid:%d email:%@",person2.name,person2.uid,person2.email);
+}
+
 @end
+
+/*
+ 配置protobuf编译器
+ 方法一
+ 1、首先将文件下载下来https://github.com/google/protobuf/releases
+ 2、然后依次执行：
+ $ ./configure
+ $ make
+ $ make check
+ $ make install
+ 
+ 方法二
+ 1、首先将文件下载下来https://github.com/protocolbuffers/protobuf
+ 2、然后依次执行：
+ $ ./autogen.sh
+ $ ./configure
+ $ make
+ $ make install
+ 
+ 
+ 3、使用PB编译器编译.proto文件
+ $ touch Person.proto
+ $ protoc *.proto --objc_out=../ //生成model
+ 
+ 例子：
+ syntax = "proto3";
+ message Person {
+    string name = 1;
+    int32 uid = 2;
+    string email = 3;
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+ }
+ message PhoneNumber {
+    string number = 1;
+    PhoneType type = 2;
+ }
+ repeated PhoneNumber phone = 4;
+ 
+ }
+ 
+ 4、把Model引入工程，Compile Source把Model的.m文件设置为-fno-objc-arc
+ 
+ */

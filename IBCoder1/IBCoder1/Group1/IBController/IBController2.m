@@ -8,7 +8,7 @@
 
 #import "IBController2.h"
 
-@implementation Person
+@implementation Personal
 
 - (void)setName:(NSString *)name {
     _name = name;
@@ -27,15 +27,15 @@
 
 @interface IBController2 ()<PersonDelegate>
 
-@property (nonatomic, strong) Person *person;
+@property (nonatomic, strong) Personal *person;
 
 @end
 
 @implementation IBController2
 
-- (Person *)person {
+- (Personal *)person {
     if (!_person) {
-        _person = [[Person alloc] init];
+        _person = [[Personal alloc] init];
     }
     return _person;
 }
