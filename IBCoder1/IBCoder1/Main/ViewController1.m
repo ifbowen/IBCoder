@@ -24,6 +24,7 @@
     [super viewDidLoad];
     [self initialize];
     [self setupUI];
+    NSLog(@"%s", __func__);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -32,6 +33,7 @@
     if ([Student shareInstance].arr.count > 0) {
         [Student shareInstance].arr[0]();
     }
+    NSLog(@"%s", __func__);
 }
 
 - (void)fitVersion {

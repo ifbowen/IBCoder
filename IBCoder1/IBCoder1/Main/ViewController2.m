@@ -24,10 +24,12 @@
     [super viewDidLoad];
     [self initialize];
     [self setupUI];
+    NSLog(@"%s", __func__);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    NSLog(@"%s", __func__);
 
 }
 

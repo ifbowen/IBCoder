@@ -1525,9 +1525,9 @@
 			isa = PBXGroup;
 			children = (
 				4AC3CAF920CFA0720059B029 /* IBCMediator.h */,
+				4AC3CAFC20CFA0720059B029 /* IBCMediator.m */,
 				4AC3CAFA20CFA0720059B029 /* IBCViewController.h */,
 				4AC3CAFB20CFA0720059B029 /* IBCViewController.m */,
-				4AC3CAFC20CFA0720059B029 /* IBCMediator.m */,
 			);
 			name = IBCMediator;
 			path = IBCoder1/IBModule/mediator/IBCMediator;
@@ -2143,7 +2143,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				DEVELOPMENT_TEAM = ZW2AQ67NC5;
 				INFOPLIST_FILE = IBCoder1/other/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2162,7 +2162,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				DEVELOPMENT_TEAM = ZW2AQ67NC5;
 				INFOPLIST_FILE = IBCoder1/other/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
