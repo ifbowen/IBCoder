@@ -6,5 +6,6 @@ target 'IBCoder1' do
   pod 'FMDB/FTS' 
   pod 'FMDB/SQLCipher'
   pod 'Protobuf'
+  pod 'libextobjc', '~> 0.6'
 
 end
