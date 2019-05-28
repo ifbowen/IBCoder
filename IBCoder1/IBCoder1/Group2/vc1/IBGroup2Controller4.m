@@ -135,6 +135,7 @@ ADT(Multicolor,
         NSLog(@"test1");
     }
     
+    
     if (@checkselector([NSURL class], URLWithString:)) {
         NSLog(@"test2");
     }
