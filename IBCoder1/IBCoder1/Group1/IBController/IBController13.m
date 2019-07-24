@@ -271,6 +271,13 @@
     free(methods);
 }
 
+/*
+ Class cls = NSClassFromString(@"LinkHandler");
+ SEL selector = @selector(handleLink:source:from:);
+ IMP imp = [cls methodForSelector:selector];
+ ((id(*)(id, SEL, NSString *, id, int))imp)(cls, selector, linkUrl, room.roomInnerWebVC, 0);
+ */
+
 
 @end
 
