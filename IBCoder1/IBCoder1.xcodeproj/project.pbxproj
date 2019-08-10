@@ -238,6 +238,7 @@
 		4AAA27CB210B315600B0C256 /* IBController39.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27CA210B315600B0C256 /* IBController39.m */; };
 		4AAA27CE210B3B3E00B0C256 /* IBController40.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA27CD210B3B3E00B0C256 /* IBController40.m */; };
 		4AB6644D229513EF0067DA85 /* Person.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB6644C229513EF0067DA85 /* Person.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4ABF2FCD22FEFA5400645809 /* IBGroup2Controller5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABF2FCC22FEFA5400645809 /* IBGroup2Controller5.m */; };
 		4AC3CAFD20CFA0720059B029 /* IBCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CAFB20CFA0720059B029 /* IBCViewController.m */; };
 		4AC3CAFE20CFA0720059B029 /* IBCMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CAFC20CFA0720059B029 /* IBCMediator.m */; };
 		4AC3CB0220CFA83C0059B029 /* IBGrahpicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB0120CFA83C0059B029 /* IBGrahpicsView.m */; };
@@ -733,6 +734,8 @@
 		4AAA27CD210B3B3E00B0C256 /* IBController40.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController40.m; sourceTree = "<group>"; };
 		4AB6644B229513EF0067DA85 /* Person.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.pbobjc.h; sourceTree = "<group>"; };
 		4AB6644C229513EF0067DA85 /* Person.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.pbobjc.m; sourceTree = "<group>"; };
+		4ABF2FCB22FEFA5400645809 /* IBGroup2Controller5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller5.h; sourceTree = "<group>"; };
+		4ABF2FCC22FEFA5400645809 /* IBGroup2Controller5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller5.m; sourceTree = "<group>"; };
 		4AC3CAF920CFA0720059B029 /* IBCMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCMediator.h; sourceTree = "<group>"; };
 		4AC3CAFA20CFA0720059B029 /* IBCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBCViewController.h; sourceTree = "<group>"; };
 		4AC3CAFB20CFA0720059B029 /* IBCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBCViewController.m; sourceTree = "<group>"; };
@@ -1614,6 +1617,8 @@
 				4A89D65E228ED21F0072FB23 /* IBGroup2Controller3.m */,
 				4AF7C8B2229CF28C00ACC350 /* IBGroup2Controller4.h */,
 				4AF7C8B3229CF28C00ACC350 /* IBGroup2Controller4.m */,
+				4ABF2FCB22FEFA5400645809 /* IBGroup2Controller5.h */,
+				4ABF2FCC22FEFA5400645809 /* IBGroup2Controller5.m */,
 			);
 			path = vc1;
 			sourceTree = "<group>";
@@ -1781,6 +1786,7 @@
 				4AC3CB0C20D0DB320059B029 /* IBController36.m in Sources */,
 				4A8B1FAF20B6E77A00FACAFD /* UIImageView+HighlightedWebCache.m in Sources */,
 				4A8B1F7720B6E77A00FACAFD /* Son+Cate.m in Sources */,
+				4ABF2FCD22FEFA5400645809 /* IBGroup2Controller5.m in Sources */,
 				4A8B1F7A20B6E77A00FACAFD /* Father+Cate.m in Sources */,
 				4A6896FA20F5DF35005FBB66 /* RACTestScheduler.m in Sources */,
 				4A8B1F8C20B6E77A00FACAFD /* IBController8.m in Sources */,
