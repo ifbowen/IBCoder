@@ -142,7 +142,7 @@
     
     //设置动画执行路径
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddEllipseInRect(path, NULL, CGRectMake(100, 100, 100, 100));
+    CGPathAddEllipseInRect(path, NULL, CGRectMake(50, 200, 100, 100));
     animation.path = path;
     CGPathRelease(path);
     

@@ -8,6 +8,22 @@
 
 #import "IBController4.h"
 
+#ifndef weakify
+#if __has_feature(objc_arc)
+#define weakify(object) __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+
+#ifndef strongify
+#if __has_feature(objc_arc)
+#define strongify(object) __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) __typeof__(object) object = block##_##object;
+#endif
+#endif
+
 
 @implementation Student
 
@@ -48,6 +64,9 @@ typedef void (^Block)(void);
 
 @property (nonatomic, assign) Block block;
 @property (nonatomic, strong) Student *student;
+@property (nonatomic, copy) dispatch_block_t block1;
+@property (nonatomic, copy) dispatch_block_t block2;
+@property (nonatomic, copy) dispatch_block_t block3;
 
 @end
 
@@ -58,13 +77,52 @@ typedef void (^Block)(void);
     self.view.backgroundColor = [UIColor whiteColor];
     self.student = [Student shareInstance];
     
+    weakify(self)
+    self.block1 = ^{
+        strongify(self)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"执行中 strongify %@", self);
+        });
+    };
+    self.block2 = ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            NSString *error;
+            if ([weak_self isKindOfClass:NSNull.class]) {
+                error = @"NSNull";
+            } else if (weak_self == nil) {
+                error = @"nil";
+            }
+            NSLog(@"执行中 weakify %@", error);
+        });
+    };
+    [Student shareInstance].pblock = ^{
+        strongify(self)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"没执行 strongify %@", self);
+        });
+    };
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self test1];
 //    [self test2];
 //    [self test3];
-    [self testBlock];
+//    [self testBlock];
+    [self testWeak];
+}
+
+- (void)testWeak
+{
+    /*
+     strong 只保证，在block 里面 走的时候，不会 走一半 突然空了，
+     如果 block 没走之前 weakSelf 为空，block里面的strong(self)，也为空。
+     */
+    self.block1();
+    self.block2();
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [Student shareInstance].pblock();
+    });
 }
 
 /*
