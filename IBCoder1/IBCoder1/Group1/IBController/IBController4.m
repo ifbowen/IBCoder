@@ -55,6 +55,11 @@
     NSLog(@"%s",__func__);
 }
 
+- (NSString *)description
+{
+    return @"123456";
+}
+
 @end
 
 
@@ -76,30 +81,29 @@ typedef void (^Block)(void);
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.student = [Student shareInstance];
-    
     weakify(self)
     self.block1 = ^{
         strongify(self)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSLog(@"执行中 strongify %@", self);
         });
     };
     self.block2 = ^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            NSString *error;
-            if ([weak_self isKindOfClass:NSNull.class]) {
-                error = @"NSNull";
-            } else if (weak_self == nil) {
-                error = @"nil";
-            }
-            NSLog(@"执行中 weakify %@", error);
+            NSLog(@"执行中 weakify %@", weak_self);
+        });
+    };
+    
+    self.block3 = ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            strongify(self)
+            NSLog(@"当前对象调用 没执行 strongify %@", self);
         });
     };
     [Student shareInstance].pblock = ^{
         strongify(self)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSLog(@"没执行 strongify %@", self);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"其他对象调用 没执行 strongify %@", self);
         });
     };
 }
@@ -117,9 +121,16 @@ typedef void (^Block)(void);
     /*
      strong 只保证，在block 里面 走的时候，不会 走一半 突然空了，
      如果 block 没走之前 weakSelf 为空，block里面的strong(self)，也为空。
+     存在的情况，block在未来某一时间调用，但是对象可能释放
      */
-    self.block1();
-    self.block2();
+    self.block1(); // block走完
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.block3();
+    });
+    
+    self.block2(); // block走一半空了
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [Student shareInstance].pblock();
     });
