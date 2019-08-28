@@ -275,13 +275,16 @@
 //    [self test3];
 //    [self test4];
 //    [self test4_1];
-    [self test4_2];
+//    [self test4_2];
 //    [self test4_3];
 //    [self test5];
 //    [self test6];
 //    [self test7];
 //    [self test8];
 //    [self test9];
+    [self test9_1];
+//    [self test9_2];
+//    [self test9_3];
 //    [self test10];
 //    [self test11];
 //    [self test12];
@@ -474,7 +477,70 @@ static void create_task_safely(dispatch_block_t block) {
     NSLog(@"1111111111111111111111111111111111111");
 }
 
+/**
+ 不同串行队列，不死锁
+ */
+- (void)test9_3 {
+    NSLog(@"----begin1----");
+    dispatch_queue_t queue = dispatch_queue_create("123", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue1 = dispatch_queue_create("123", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"----sync2----%@",[NSThread currentThread]);
+        });
+        dispatch_sync(queue1, ^{
+            NSLog(@"----sync3----%@",[NSThread currentThread]);
+        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"----sync4----%@",[NSThread currentThread]);
+        });
+        NSLog(@"----async5----%@",[NSThread currentThread]);
+    });
+    NSLog(@"----end6----");
+}
 
+/**
+ 考察：sync3死锁
+ */
+- (void)test9_2 {
+    NSLog(@"----begin1----");
+    dispatch_queue_t queue = dispatch_queue_create("123", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"----sync2----%@",[NSThread currentThread]);
+        });
+        dispatch_sync(queue, ^{
+            NSLog(@"----sync3----%@",[NSThread currentThread]);
+        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"----sync4----%@",[NSThread currentThread]);
+        });
+        NSLog(@"----async5----%@",[NSThread currentThread]);
+    });
+    NSLog(@"----end6----");
+}
+
+/**
+ 考察：sync2立马到主线程中执行
+ */
+- (void)test9_1 {
+    NSLog(@"----begin1----");
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(queue, ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"----sync2----%@",[NSThread currentThread]);
+        });
+        dispatch_sync(queue, ^{
+            NSLog(@"----sync3----%@",[NSThread currentThread]);
+        });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"----sync4----%@",[NSThread currentThread]);
+        });
+        NSLog(@"----async5----%@",[NSThread currentThread]);
+    });
+    NSLog(@"----end6----");
+}
 
 /**
  同步主队列 --- 不能用(死锁)
