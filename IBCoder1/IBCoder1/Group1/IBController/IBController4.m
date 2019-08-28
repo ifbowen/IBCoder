@@ -18,9 +18,9 @@
 
 #ifndef strongify
 #if __has_feature(objc_arc)
-#define strongify(object) __typeof__(object) object = weak##_##object;
+#define strongify(object) __typeof__(object) object = weak##_##object; if (!object) return;
 #else
-#define strongify(object) __typeof__(object) object = block##_##object;
+#define strongify(object) __typeof__(object) object = block##_##object; if (!object) return;
 #endif
 #endif
 
@@ -102,6 +102,7 @@ typedef void (^Block)(void);
     };
     [Student shareInstance].pblock = ^{
         strongify(self)
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSLog(@"其他对象调用 没执行 strongify %@", self);
         });
