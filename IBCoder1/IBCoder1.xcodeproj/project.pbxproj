@@ -248,6 +248,7 @@
 		4AD239B022773B450076BB6D /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD239AF22773B450076BB6D /* ViewController3.m */; };
 		4AD239F6227C5D890076BB6D /* IBGroup2Controller1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD239F5227C5D890076BB6D /* IBGroup2Controller1.m */; };
 		4ADB21AC2264B5DA0039480F /* IBController43.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB21AB2264B5DA0039480F /* IBController43.m */; };
+		4ADE1A15231626590082B69E /* IBGroup2Controller6.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE1A14231626590082B69E /* IBGroup2Controller6.m */; };
 		4AE24BD7214B616E006448DC /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE24BD6214B616E006448DC /* IBController41.m */; };
 		4AF7C8B4229CF28C00ACC350 /* IBGroup2Controller4.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7C8B3229CF28C00ACC350 /* IBGroup2Controller4.m */; };
 		9260DD9E398D2EFD865553DE /* libPods-IBCoder1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B568EA09BE717D445EE24A2A /* libPods-IBCoder1.a */; };
@@ -756,6 +757,8 @@
 		4AD239F5227C5D890076BB6D /* IBGroup2Controller1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller1.m; sourceTree = "<group>"; };
 		4ADB21AA2264B5DA0039480F /* IBController43.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController43.h; sourceTree = "<group>"; };
 		4ADB21AB2264B5DA0039480F /* IBController43.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController43.m; sourceTree = "<group>"; };
+		4ADE1A13231626590082B69E /* IBGroup2Controller6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller6.h; sourceTree = "<group>"; };
+		4ADE1A14231626590082B69E /* IBGroup2Controller6.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller6.m; sourceTree = "<group>"; };
 		4AE24BD5214B616E006448DC /* IBController41.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBController41.h; sourceTree = "<group>"; };
 		4AE24BD6214B616E006448DC /* IBController41.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBController41.m; sourceTree = "<group>"; };
 		4AF7C8B2229CF28C00ACC350 /* IBGroup2Controller4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller4.h; sourceTree = "<group>"; };
@@ -1619,6 +1622,8 @@
 				4AF7C8B3229CF28C00ACC350 /* IBGroup2Controller4.m */,
 				4ABF2FCB22FEFA5400645809 /* IBGroup2Controller5.h */,
 				4ABF2FCC22FEFA5400645809 /* IBGroup2Controller5.m */,
+				4ADE1A13231626590082B69E /* IBGroup2Controller6.h */,
+				4ADE1A14231626590082B69E /* IBGroup2Controller6.m */,
 			);
 			path = vc1;
 			sourceTree = "<group>";
@@ -1843,6 +1848,7 @@
 				4A726B8420BC1F480013F431 /* IBController31.m in Sources */,
 				4A6896BA20F5DF35005FBB66 /* NSArray+RACSequenceAdditions.m in Sources */,
 				4A6896DC20F5DF35005FBB66 /* RACTargetQueueScheduler.m in Sources */,
+				4ADE1A15231626590082B69E /* IBGroup2Controller6.m in Sources */,
 				4A8B1E9920B6E73800FACAFD /* ViewController1.m in Sources */,
 				4A8D7E4D20CA54B6004CCF4C /* IBCAScrollLayer.m in Sources */,
 				4A26255820C0F447006783DF /* IBController32.m in Sources */,
