@@ -245,6 +245,7 @@
 		4AC3CB0220CFA83C0059B029 /* IBGrahpicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB0120CFA83C0059B029 /* IBGrahpicsView.m */; };
 		4AC3CB0C20D0DB320059B029 /* IBController36.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB0B20D0DB320059B029 /* IBController36.m */; };
 		4AC3CB1220D0DBAA0059B029 /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC3CB1020D0DBAA0059B029 /* LoggerClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4AC495652339B642002E0248 /* IBGroup2Controller8.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC495642339B642002E0248 /* IBGroup2Controller8.m */; };
 		4AD239AD22773B380076BB6D /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD239AC22773B380076BB6D /* ViewController2.m */; };
 		4AD239B022773B450076BB6D /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD239AF22773B450076BB6D /* ViewController3.m */; };
 		4AD239F6227C5D890076BB6D /* IBGroup2Controller1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD239F5227C5D890076BB6D /* IBGroup2Controller1.m */; };
@@ -752,6 +753,8 @@
 		4AC3CB0F20D0DBAA0059B029 /* LoggerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerCommon.h; sourceTree = "<group>"; };
 		4AC3CB1020D0DBAA0059B029 /* LoggerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerClient.m; sourceTree = "<group>"; };
 		4AC3CB1120D0DBAA0059B029 /* NSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSLogger.h; sourceTree = "<group>"; };
+		4AC495632339B642002E0248 /* IBGroup2Controller8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller8.h; sourceTree = "<group>"; };
+		4AC495642339B642002E0248 /* IBGroup2Controller8.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller8.m; sourceTree = "<group>"; };
 		4AD239AB22773B380076BB6D /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		4AD239AC22773B380076BB6D /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		4AD239AE22773B450076BB6D /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
@@ -1538,6 +1541,8 @@
 			children = (
 				4ABB59BA2338A4390012CC4B /* IBGroup2Controller7.h */,
 				4ABB59BB2338A4390012CC4B /* IBGroup2Controller7.m */,
+				4AC495632339B642002E0248 /* IBGroup2Controller8.h */,
+				4AC495642339B642002E0248 /* IBGroup2Controller8.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1955,6 +1960,7 @@
 				4AA0313120DA391D008DC539 /* AFURLResponseSerialization.m in Sources */,
 				4A8B1FBB20B6E77B00FACAFD /* SDAnimatedImageRep.m in Sources */,
 				4A8B1F8A20B6E77A00FACAFD /* IBController6.m in Sources */,
+				4AC495652339B642002E0248 /* IBGroup2Controller8.m in Sources */,
 				4A6896CA20F5DF35005FBB66 /* UIImagePickerController+RACSignalSupport.m in Sources */,
 				4A6896FF20F5DF35005FBB66 /* RACSubscriber.m in Sources */,
 				4ADB21AC2264B5DA0039480F /* IBController43.m in Sources */,
