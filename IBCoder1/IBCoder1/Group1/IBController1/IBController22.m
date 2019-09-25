@@ -177,6 +177,59 @@ void quickSort(int a[], int low, int high){
     return 0;
 }
 
-
+/*                           i       k
+ 数组1： 已经比较存在相同的元素   尚未比较  已经比较不存在相同的元素
+ j
+ 数组2： 已经比较存在相同的元素   待比较元素
+ 
+ 算法流程：
+ 从数组1的尚未比较的元素中拿出第一个元素array1(i)，用array1(i)与array2(j)进行比较（其中j>i且j<array2的长度），可能出现下面两种情况，
+ 1.数组2中找到了一个与array1(i)相等的元素，则将array2(j)与array2(i)进行交换，i加一，进行下次迭代
+ 2.数组2直到结尾也没找到与array1(i)相等的元素，则将array1(i)与尚未进行比较的最后一个元素array1(k)进行交换，i不加一，进行下次迭代。
+ */
+- (void)getDifferenceSet
+{
+    //定义两个数组
+    int array1[] = {7,1,2,5,4,3,5,6,3,4,5,6,7,3,2,5,6,6};
+    int size1 = 18;
+    int array2[] = {8,2,1,3,4,5,3,2,4,5,3,2,1,3,5,4,6,9};
+    int size2 = 18;
+    int end = size1;
+    bool swap = false;//标识变量，表示两种情况中的哪一种
+    
+    for (int i = 0; i < end; ) {
+        swap = false;//开始假设是第一种情况
+        for (int j = i; j < size2; j++) { //找到与该元素存在相同的元素，将这个相同的元素交换到与该元素相同下标的位置上
+            if (array1[i] == array2[j]) { //第二种情况，找到了相等的元素
+                int tmp = array2[i];//对数组2进行交换
+                array2[i] = array2[j];
+                array2[j] = tmp;
+                swap = true;//设置标志
+                break;
+            }
+        }
+        if (swap != true) { //第一种情况，没有相同元素存在时，将这个元素交换到尚未进行比较的尾部
+            int tmp = array1[i];
+            array1[i] = array1[--end];
+            array1[end] = tmp;
+        } else {
+            i++;
+        }
+    }
+    // 结果就是在end表示之前的元素都找到了匹配，而end元素之后的元素都未被匹配
+    
+    // 先输出差集
+    NSLog(@"only in array1");
+    for(int i = end; i < size1; i++) {
+        printf("%d ", array1[i]);
+    }
+    printf("\n");
+    
+    NSLog(@"only in array2");
+    for(int i = end ; i < size2; i++) {
+        printf("%d ", array2[i]);
+    }
+    printf("\n");
+}
 
 @end

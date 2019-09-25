@@ -29,15 +29,23 @@
     double dfNumber = dnumber.doubleValue; // 打断点看f的值
     NSLog(@"NSDecimalNumber: %lf", dfNumber);
     
-    NSNumber *number = @6.9;
-    double fNumber = number.doubleValue; // 打断点看f的值
+    NSNumber *number = @7.9;
+    double fNumber = number.doubleValue; // 打断点看f的值，不是精确的7.9
     NSLog(@"NSNumber: %lf", fNumber);
+    
+    double ceshi = 6.9;
 
     NSString *numStr = @"5.9";
     float fStr = numStr.floatValue;
     NSLog(@"NSString: %lf", fStr);
     NSLog(@"=============================");
 }
+
+/*
+ 原因：
+ https://blog.csdn.net/jye13/article/details/8190321
+ 代码之谜（五）- 浮点数（谁偷了你的精度？）
+ */
 
 #pragma mark correct decimal number
 
