@@ -1,0 +1,6 @@
+module Pods_MBCoder {
+  umbrella header "Pods-MBCoder-umbrella.h"
+
+  export *
+  module * { export * }
+}

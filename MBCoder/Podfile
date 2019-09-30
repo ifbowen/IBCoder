@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+inhibit_all_warnings!  # 关闭所有警告
+
+target 'MBCoder' do
+#  use_frameworks!
+
+  pod 'FMDB'
+  pod 'FMDB/FTS'
+  pod 'FMDB/SQLCipher'
+  
+  pod 'Protobuf'
+  pod 'libextobjc'
+  pod 'YogaKit'
+  pod 'PromiseKit'
+  pod 'PromiseKit/Foundation'
+  pod 'PromiseKit/UIKit'
+  pod 'lottie-ios', '~> 2.5.3'
+  pod 'Kiwi'
+
+end

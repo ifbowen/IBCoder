@@ -1,0 +1,103 @@
+PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/FTS (2.7.5):
+    - FMDB/standard
+  - FMDB/SQLCipher (2.7.5):
+    - SQLCipher
+  - FMDB/standard (2.7.5)
+  - Kiwi (3.0.0)
+  - libextobjc (0.6):
+    - libextobjc/EXTADT (= 0.6)
+    - libextobjc/EXTConcreteProtocol (= 0.6)
+    - libextobjc/EXTKeyPathCoding (= 0.6)
+    - libextobjc/EXTNil (= 0.6)
+    - libextobjc/EXTSafeCategory (= 0.6)
+    - libextobjc/EXTScope (= 0.6)
+    - libextobjc/EXTSelectorChecking (= 0.6)
+    - libextobjc/EXTSynthesize (= 0.6)
+    - "libextobjc/NSInvocation+EXT (= 0.6)"
+    - "libextobjc/NSMethodSignature+EXT (= 0.6)"
+    - libextobjc/RuntimeExtensions (= 0.6)
+    - libextobjc/UmbrellaHeader (= 0.6)
+  - libextobjc/EXTADT (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.6):
+    - libextobjc/RuntimeExtensions
+  - "libextobjc/NSInvocation+EXT (0.6)":
+    - libextobjc/RuntimeExtensions
+  - "libextobjc/NSMethodSignature+EXT (0.6)":
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.6)
+  - libextobjc/UmbrellaHeader (0.6)
+  - lottie-ios (2.5.3)
+  - PromiseKit (6.11.0):
+    - PromiseKit/CorePromise (= 6.11.0)
+    - PromiseKit/Foundation (= 6.11.0)
+    - PromiseKit/UIKit (= 6.11.0)
+  - PromiseKit/CorePromise (6.11.0)
+  - PromiseKit/Foundation (6.11.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.11.0):
+    - PromiseKit/CorePromise
+  - Protobuf (3.9.2)
+  - SQLCipher (4.2.0):
+    - SQLCipher/standard (= 4.2.0)
+  - SQLCipher/common (4.2.0)
+  - SQLCipher/standard (4.2.0):
+    - SQLCipher/common
+  - Yoga (1.14.0)
+  - YogaKit (1.14.0):
+    - Yoga (~> 1.14)
+
+DEPENDENCIES:
+  - FMDB
+  - FMDB/FTS
+  - FMDB/SQLCipher
+  - Kiwi
+  - libextobjc
+  - lottie-ios (~> 2.5.3)
+  - PromiseKit
+  - PromiseKit/Foundation
+  - PromiseKit/UIKit
+  - Protobuf
+  - YogaKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FMDB
+    - Kiwi
+    - libextobjc
+    - lottie-ios
+    - PromiseKit
+    - Protobuf
+    - SQLCipher
+    - Yoga
+    - YogaKit
+
+SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
+  libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
+  Protobuf: 67fb42ba613def994e61854de2b3164f13790cc4
+  SQLCipher: 0187a2180ac288ea686b670b7141da62cd013b16
+  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+  YogaKit: 5d1dc899cecd5946e5a758a0c3997704a4b48d01
+
+PODFILE CHECKSUM: 50c473689228c9251cfe68f3247fbff852948933
+
+COCOAPODS: 1.7.2
