@@ -18,5 +18,10 @@ target 'MBCoder' do
   pod 'PromiseKit/UIKit'
   pod 'lottie-ios', '~> 2.5.3'
   pod 'Kiwi'
+  pod 'UITableView+FDTemplateLayoutCell'
+  pod 'YYKit'
+  pod 'FDFullscreenPopGesture'
+  pod 'TZScrollViewPopGesture' # 和FDFullscreenPopGesture库不冲突
+  
 
 end

@@ -219,7 +219,6 @@
 		4ACBB9272341FA0D002D7955 /* Person.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB7FB2341FA0C002D7955 /* Person.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4ACBB9282341FA0D002D7955 /* IBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB7FF2341FA0C002D7955 /* IBView.m */; };
 		4ACBB9292341FA0D002D7955 /* BClothesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB8032341FA0D002D7955 /* BClothesProvider.m */; };
-		4ACBB92A2341FA0D002D7955 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB8042341FA0D002D7955 /* YYWeakProxy.m */; };
 		4ACBB92B2341FA0D002D7955 /* BProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB8072341FA0D002D7955 /* BProxy.m */; };
 		4ACBB92C2341FA0D002D7955 /* Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB8092341FA0D002D7955 /* Calculate.m */; };
 		4ACBB92D2341FA0D002D7955 /* BBookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB80C2341FA0D002D7955 /* BBookProvider.m */; };
@@ -258,6 +257,7 @@
 		4ACBB9542342068A002D7955 /* RACTestScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB73B2341FA0C002D7955 /* RACTestScheduler.m */; };
 		4ACBB9552342077D002D7955 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4ACBB95723420849002D7955 /* XCTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4ACBB95A234D845F002D7955 /* IBGroup2Controller9.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 /* End PBXBuildFile section */
 
@@ -721,13 +721,11 @@
 		4ACBB7FE2341FA0C002D7955 /* IBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBView.h; sourceTree = "<group>"; };
 		4ACBB7FF2341FA0C002D7955 /* IBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBView.m; sourceTree = "<group>"; };
 		4ACBB8032341FA0D002D7955 /* BClothesProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BClothesProvider.m; sourceTree = "<group>"; };
-		4ACBB8042341FA0D002D7955 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		4ACBB8052341FA0D002D7955 /* BBookProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBookProvider.h; sourceTree = "<group>"; };
 		4ACBB8062341FA0D002D7955 /* ADD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADD.h; sourceTree = "<group>"; };
 		4ACBB8072341FA0D002D7955 /* BProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BProxy.m; sourceTree = "<group>"; };
 		4ACBB8082341FA0D002D7955 /* ADD1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADD1.h; sourceTree = "<group>"; };
 		4ACBB8092341FA0D002D7955 /* Calculate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculate.m; sourceTree = "<group>"; };
-		4ACBB80A2341FA0D002D7955 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		4ACBB80B2341FA0D002D7955 /* BClothesProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BClothesProvider.h; sourceTree = "<group>"; };
 		4ACBB80C2341FA0D002D7955 /* BBookProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBookProvider.m; sourceTree = "<group>"; };
 		4ACBB80D2341FA0D002D7955 /* Calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculate.h; sourceTree = "<group>"; };
@@ -794,6 +792,8 @@
 		4ACBB94E2341FB0F002D7955 /* UIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMacros.h; sourceTree = "<group>"; };
 		4ACBB94F234201DA002D7955 /* PromiseFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseFoundation.swift; sourceTree = "<group>"; };
 		4ACBB951234204B1002D7955 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4ACBB958234D845F002D7955 /* IBGroup2Controller9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller9.h; sourceTree = "<group>"; };
+		4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller9.m; sourceTree = "<group>"; };
 		68F55995B515EF5A59C8491C /* libPods-MBCoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79E841B58080BB70062A103 /* Pods-MBCoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1473,6 +1473,8 @@
 				4ACBB7EB2341FA0C002D7955 /* IBGroup2Controller7.m */,
 				4ACBB7EC2341FA0C002D7955 /* IBGroup2Controller8.h */,
 				4ACBB7EA2341FA0C002D7955 /* IBGroup2Controller8.m */,
+				4ACBB958234D845F002D7955 /* IBGroup2Controller9.h */,
+				4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1531,18 +1533,16 @@
 		4ACBB8022341FA0D002D7955 /* Proxy */ = {
 			isa = PBXGroup;
 			children = (
-				4ACBB8032341FA0D002D7955 /* BClothesProvider.m */,
-				4ACBB8042341FA0D002D7955 /* YYWeakProxy.m */,
-				4ACBB8052341FA0D002D7955 /* BBookProvider.h */,
 				4ACBB8062341FA0D002D7955 /* ADD.h */,
-				4ACBB8072341FA0D002D7955 /* BProxy.m */,
 				4ACBB8082341FA0D002D7955 /* ADD1.h */,
-				4ACBB8092341FA0D002D7955 /* Calculate.m */,
-				4ACBB80A2341FA0D002D7955 /* YYWeakProxy.h */,
-				4ACBB80B2341FA0D002D7955 /* BClothesProvider.h */,
+				4ACBB8052341FA0D002D7955 /* BBookProvider.h */,
 				4ACBB80C2341FA0D002D7955 /* BBookProvider.m */,
-				4ACBB80D2341FA0D002D7955 /* Calculate.h */,
+				4ACBB80B2341FA0D002D7955 /* BClothesProvider.h */,
+				4ACBB8032341FA0D002D7955 /* BClothesProvider.m */,
 				4ACBB80E2341FA0D002D7955 /* BProxy.h */,
+				4ACBB8072341FA0D002D7955 /* BProxy.m */,
+				4ACBB80D2341FA0D002D7955 /* Calculate.h */,
+				4ACBB8092341FA0D002D7955 /* Calculate.m */,
 			);
 			path = Proxy;
 			sourceTree = "<group>";
@@ -2012,7 +2012,6 @@
 				4ACBB8692341FA0D002D7955 /* IBController23.m in Sources */,
 				4ACBB9222341FA0D002D7955 /* IBGroup2Controller1.m in Sources */,
 				4ACBB8922341FA0D002D7955 /* MASConstraint.m in Sources */,
-				4ACBB92A2341FA0D002D7955 /* YYWeakProxy.m in Sources */,
 				4ACBB8BC2341FA0D002D7955 /* RACEmptySequence.m in Sources */,
 				4ACBB9062341FA0D002D7955 /* SDWebImageCodersManager.m in Sources */,
 				4ACBB8EB2341FA0D002D7955 /* NSData+RACSupport.m in Sources */,
@@ -2021,6 +2020,7 @@
 				4ACBB8B72341FA0D002D7955 /* RACGroupedSignal.m in Sources */,
 				4ACBB8E82341FA0D002D7955 /* NSOrderedSet+RACSequenceAdditions.m in Sources */,
 				4ACBB9362341FA0D002D7955 /* IBCATextLayer.m in Sources */,
+				4ACBB95A234D845F002D7955 /* IBGroup2Controller9.m in Sources */,
 				4ACBB8FD2341FA0D002D7955 /* AFNetworkReachabilityManager.m in Sources */,
 				4ACBB93B2341FA0D002D7955 /* IBCAScrollLayer.m in Sources */,
 				4ACBB8D32341FA0D002D7955 /* RACDisposable.m in Sources */,
