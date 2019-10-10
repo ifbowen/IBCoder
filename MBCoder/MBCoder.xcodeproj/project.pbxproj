@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */; };
 		4ACBB8542341FA0D002D7955 /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62A2341FA0B002D7955 /* IBController41.m */; };
 		4ACBB8552341FA0D002D7955 /* IBController39.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62C2341FA0B002D7955 /* IBController39.m */; };
 		4ACBB8562341FA0D002D7955 /* IBController42.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62D2341FA0B002D7955 /* IBController42.m */; };
@@ -276,6 +277,8 @@
 
 /* Begin PBXFileReference section */
 		0C51F03E7F37A6C6381A23E8 /* Pods-MBCoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.release.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.release.xcconfig"; sourceTree = "<group>"; };
+		4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller10.h; sourceTree = "<group>"; };
+		4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller10.m; sourceTree = "<group>"; };
 		4ACBB60F2341F972002D7955 /* MBCoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBCoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACBB62A2341FA0B002D7955 /* IBController41.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBController41.m; sourceTree = "<group>"; };
 		4ACBB62B2341FA0B002D7955 /* IBController43.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBController43.h; sourceTree = "<group>"; };
@@ -1475,6 +1478,8 @@
 				4ACBB7EA2341FA0C002D7955 /* IBGroup2Controller8.m */,
 				4ACBB958234D845F002D7955 /* IBGroup2Controller9.h */,
 				4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */,
+				4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */,
+				4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1864,6 +1869,7 @@
 				4ACBB8AA2341FA0D002D7955 /* UIRefreshControl+RACCommandSupport.m in Sources */,
 				4ACBB8A52341FA0D002D7955 /* UIDatePicker+RACSignalSupport.m in Sources */,
 				4ACBB9232341FA0D002D7955 /* IBGroup2Controller6.m in Sources */,
+				4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */,
 				4ACBB8B42341FA0D002D7955 /* RACIndexSetSequence.m in Sources */,
 				4ACBB8C52341FA0D002D7955 /* RACBlockTrampoline.m in Sources */,
 				4ACBB8E62341FA0D002D7955 /* NSString+RACSupport.m in Sources */,
