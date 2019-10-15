@@ -17,6 +17,7 @@ target 'MBCoder' do
   pod 'PromiseKit/Foundation'
   pod 'PromiseKit/UIKit'
   pod 'lottie-ios', '~> 2.5.3'
+  pod 'SVGAPlayer', '~> 2.3.5'
   pod 'Kiwi'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'YYKit'

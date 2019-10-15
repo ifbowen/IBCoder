@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AA6B7F62355975900C40DCB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */; };
+		4AB0C9B0234F30C0002356B7 /* IBGroup2Controller11.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */; };
+		4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B5234F4266002356B7 /* home_colourline.svga */; };
+		4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B7234F5912002356B7 /* LottieLogo.json */; };
 		4ACBB8542341FA0D002D7955 /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62A2341FA0B002D7955 /* IBController41.m */; };
 		4ACBB8552341FA0D002D7955 /* IBController39.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62C2341FA0B002D7955 /* IBController39.m */; };
 		4ACBB8562341FA0D002D7955 /* IBController42.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62D2341FA0B002D7955 /* IBController42.m */; };
@@ -256,29 +260,18 @@
 		4ACBB94C2341FA0D002D7955 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB8512341FA0D002D7955 /* AppDelegate.m */; };
 		4ACBB950234201DA002D7955 /* PromiseFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB94F234201DA002D7955 /* PromiseFoundation.swift */; };
 		4ACBB9542342068A002D7955 /* RACTestScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB73B2341FA0C002D7955 /* RACTestScheduler.m */; };
-		4ACBB9552342077D002D7955 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		4ACBB95723420849002D7955 /* XCTest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4ACBB95A234D845F002D7955 /* IBGroup2Controller9.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		4ACBB9562342082E002D7955 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4ACBB95723420849002D7955 /* XCTest.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C51F03E7F37A6C6381A23E8 /* Pods-MBCoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.release.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.release.xcconfig"; sourceTree = "<group>"; };
 		4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller10.h; sourceTree = "<group>"; };
 		4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller10.m; sourceTree = "<group>"; };
+		4AB0C9AE234F30C0002356B7 /* IBGroup2Controller11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller11.h; sourceTree = "<group>"; };
+		4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller11.m; sourceTree = "<group>"; };
+		4AB0C9B5234F4266002356B7 /* home_colourline.svga */ = {isa = PBXFileReference; lastKnownFileType = file; path = home_colourline.svga; sourceTree = "<group>"; };
+		4AB0C9B7234F5912002356B7 /* LottieLogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo.json; sourceTree = "<group>"; };
 		4ACBB60F2341F972002D7955 /* MBCoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBCoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACBB62A2341FA0B002D7955 /* IBController41.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBController41.m; sourceTree = "<group>"; };
 		4ACBB62B2341FA0B002D7955 /* IBController43.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBController43.h; sourceTree = "<group>"; };
@@ -806,7 +799,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ACBB9552342077D002D7955 /* XCTest.framework in Frameworks */,
+				4AA6B7F62355975900C40DCB /* XCTest.framework in Frameworks */,
 				CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1384,65 +1377,65 @@
 		4ACBB7A62341FA0C002D7955 /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
-				4ACBB7A72341FA0C002D7955 /* SDAnimatedImageRep.h */,
-				4ACBB7A82341FA0C002D7955 /* UIImage+WebP.m */,
+				4ACBB7C62341FA0C002D7955 /* MKAnnotationView+WebCache.h */,
 				4ACBB7A92341FA0C002D7955 /* MKAnnotationView+WebCache.m */,
 				4ACBB7AA2341FA0C002D7955 /* NSButton+WebCache.h */,
-				4ACBB7AB2341FA0C002D7955 /* SDWebImageCoder.h */,
-				4ACBB7AC2341FA0C002D7955 /* NSImage+WebCache.h */,
-				4ACBB7AD2341FA0C002D7955 /* UIImageView+WebCache.h */,
-				4ACBB7AE2341FA0C002D7955 /* NSData+ImageContentType.h */,
-				4ACBB7AF2341FA0C002D7955 /* SDWebImageTransition.h */,
-				4ACBB7B02341FA0C002D7955 /* SDWebImageManager.m */,
-				4ACBB7B12341FA0C002D7955 /* SDWebImageDownloaderOperation.h */,
-				4ACBB7B22341FA0C002D7955 /* UIImageView+HighlightedWebCache.m */,
-				4ACBB7B32341FA0C002D7955 /* SDWebImageFrame.m */,
-				4ACBB7B42341FA0C002D7955 /* SDImageCache.h */,
-				4ACBB7B52341FA0C002D7955 /* UIImage+ForceDecode.m */,
-				4ACBB7B62341FA0C002D7955 /* SDImageCacheConfig.h */,
-				4ACBB7B72341FA0C002D7955 /* SDWebImageCodersManager.m */,
-				4ACBB7B82341FA0C002D7955 /* SDWebImageDownloader.m */,
-				4ACBB7B92341FA0C002D7955 /* SDWebImageGIFCoder.h */,
-				4ACBB7BA2341FA0C002D7955 /* SDWebImageWebPCoder.h */,
-				4ACBB7BB2341FA0C002D7955 /* UIImage+GIF.m */,
-				4ACBB7BC2341FA0C002D7955 /* UIButton+WebCache.h */,
-				4ACBB7BD2341FA0C002D7955 /* UIImage+MultiFormat.m */,
-				4ACBB7BE2341FA0C002D7955 /* SDWebImageCoderHelper.m */,
-				4ACBB7BF2341FA0C002D7955 /* SDWebImageCompat.m */,
-				4ACBB7C02341FA0C002D7955 /* SDWebImageImageIOCoder.h */,
-				4ACBB7C12341FA0C002D7955 /* SDWebImagePrefetcher.m */,
-				4ACBB7C22341FA0C002D7955 /* UIView+WebCache.h */,
-				4ACBB7C32341FA0C002D7955 /* UIView+WebCacheOperation.h */,
-				4ACBB7C42341FA0C002D7955 /* SDWebImageCoder.m */,
 				4ACBB7C52341FA0C002D7955 /* NSButton+WebCache.m */,
-				4ACBB7C62341FA0C002D7955 /* MKAnnotationView+WebCache.h */,
-				4ACBB7C72341FA0C002D7955 /* UIImage+WebP.h */,
-				4ACBB7C82341FA0C002D7955 /* SDAnimatedImageRep.m */,
-				4ACBB7C92341FA0C002D7955 /* SDImageCache.m */,
-				4ACBB7CA2341FA0C002D7955 /* SDWebImageFrame.h */,
-				4ACBB7CB2341FA0C002D7955 /* UIImageView+HighlightedWebCache.h */,
-				4ACBB7CC2341FA0C002D7955 /* SDWebImageDownloaderOperation.m */,
-				4ACBB7CD2341FA0C002D7955 /* SDWebImageTransition.m */,
-				4ACBB7CE2341FA0C002D7955 /* SDWebImageManager.h */,
+				4ACBB7AE2341FA0C002D7955 /* NSData+ImageContentType.h */,
 				4ACBB7CF2341FA0C002D7955 /* NSData+ImageContentType.m */,
-				4ACBB7D02341FA0C002D7955 /* UIImageView+WebCache.m */,
-				4ACBB7D12341FA0C002D7955 /* SDWebImageOperation.h */,
+				4ACBB7AC2341FA0C002D7955 /* NSImage+WebCache.h */,
 				4ACBB7D22341FA0C002D7955 /* NSImage+WebCache.m */,
-				4ACBB7D32341FA0C002D7955 /* SDWebImageGIFCoder.m */,
-				4ACBB7D42341FA0C002D7955 /* SDWebImageDownloader.h */,
+				4ACBB7A72341FA0C002D7955 /* SDAnimatedImageRep.h */,
+				4ACBB7C82341FA0C002D7955 /* SDAnimatedImageRep.m */,
+				4ACBB7B42341FA0C002D7955 /* SDImageCache.h */,
+				4ACBB7C92341FA0C002D7955 /* SDImageCache.m */,
+				4ACBB7B62341FA0C002D7955 /* SDImageCacheConfig.h */,
 				4ACBB7D52341FA0C002D7955 /* SDImageCacheConfig.m */,
-				4ACBB7D62341FA0C002D7955 /* SDWebImageCodersManager.h */,
-				4ACBB7D72341FA0C002D7955 /* UIImage+ForceDecode.h */,
-				4ACBB7D82341FA0C002D7955 /* UIView+WebCacheOperation.m */,
-				4ACBB7D92341FA0C002D7955 /* UIView+WebCache.m */,
-				4ACBB7DA2341FA0C002D7955 /* SDWebImagePrefetcher.h */,
-				4ACBB7DB2341FA0C002D7955 /* SDWebImageImageIOCoder.m */,
-				4ACBB7DC2341FA0C002D7955 /* SDWebImageCompat.h */,
+				4ACBB7AB2341FA0C002D7955 /* SDWebImageCoder.h */,
+				4ACBB7C42341FA0C002D7955 /* SDWebImageCoder.m */,
 				4ACBB7DD2341FA0C002D7955 /* SDWebImageCoderHelper.h */,
-				4ACBB7DE2341FA0C002D7955 /* UIImage+MultiFormat.h */,
-				4ACBB7DF2341FA0C002D7955 /* UIButton+WebCache.m */,
+				4ACBB7BE2341FA0C002D7955 /* SDWebImageCoderHelper.m */,
+				4ACBB7D62341FA0C002D7955 /* SDWebImageCodersManager.h */,
+				4ACBB7B72341FA0C002D7955 /* SDWebImageCodersManager.m */,
+				4ACBB7DC2341FA0C002D7955 /* SDWebImageCompat.h */,
+				4ACBB7BF2341FA0C002D7955 /* SDWebImageCompat.m */,
+				4ACBB7D42341FA0C002D7955 /* SDWebImageDownloader.h */,
+				4ACBB7B82341FA0C002D7955 /* SDWebImageDownloader.m */,
+				4ACBB7B12341FA0C002D7955 /* SDWebImageDownloaderOperation.h */,
+				4ACBB7CC2341FA0C002D7955 /* SDWebImageDownloaderOperation.m */,
+				4ACBB7CA2341FA0C002D7955 /* SDWebImageFrame.h */,
+				4ACBB7B32341FA0C002D7955 /* SDWebImageFrame.m */,
+				4ACBB7B92341FA0C002D7955 /* SDWebImageGIFCoder.h */,
+				4ACBB7D32341FA0C002D7955 /* SDWebImageGIFCoder.m */,
+				4ACBB7C02341FA0C002D7955 /* SDWebImageImageIOCoder.h */,
+				4ACBB7DB2341FA0C002D7955 /* SDWebImageImageIOCoder.m */,
+				4ACBB7CE2341FA0C002D7955 /* SDWebImageManager.h */,
+				4ACBB7B02341FA0C002D7955 /* SDWebImageManager.m */,
+				4ACBB7D12341FA0C002D7955 /* SDWebImageOperation.h */,
+				4ACBB7DA2341FA0C002D7955 /* SDWebImagePrefetcher.h */,
+				4ACBB7C12341FA0C002D7955 /* SDWebImagePrefetcher.m */,
+				4ACBB7AF2341FA0C002D7955 /* SDWebImageTransition.h */,
+				4ACBB7CD2341FA0C002D7955 /* SDWebImageTransition.m */,
+				4ACBB7BA2341FA0C002D7955 /* SDWebImageWebPCoder.h */,
 				4ACBB7E02341FA0C002D7955 /* SDWebImageWebPCoder.m */,
+				4ACBB7BC2341FA0C002D7955 /* UIButton+WebCache.h */,
+				4ACBB7DF2341FA0C002D7955 /* UIButton+WebCache.m */,
+				4ACBB7D72341FA0C002D7955 /* UIImage+ForceDecode.h */,
+				4ACBB7B52341FA0C002D7955 /* UIImage+ForceDecode.m */,
 				4ACBB7E12341FA0C002D7955 /* UIImage+GIF.h */,
+				4ACBB7BB2341FA0C002D7955 /* UIImage+GIF.m */,
+				4ACBB7DE2341FA0C002D7955 /* UIImage+MultiFormat.h */,
+				4ACBB7BD2341FA0C002D7955 /* UIImage+MultiFormat.m */,
+				4ACBB7C72341FA0C002D7955 /* UIImage+WebP.h */,
+				4ACBB7A82341FA0C002D7955 /* UIImage+WebP.m */,
+				4ACBB7CB2341FA0C002D7955 /* UIImageView+HighlightedWebCache.h */,
+				4ACBB7B22341FA0C002D7955 /* UIImageView+HighlightedWebCache.m */,
+				4ACBB7AD2341FA0C002D7955 /* UIImageView+WebCache.h */,
+				4ACBB7D02341FA0C002D7955 /* UIImageView+WebCache.m */,
+				4ACBB7C22341FA0C002D7955 /* UIView+WebCache.h */,
+				4ACBB7D92341FA0C002D7955 /* UIView+WebCache.m */,
+				4ACBB7C32341FA0C002D7955 /* UIView+WebCacheOperation.h */,
+				4ACBB7D82341FA0C002D7955 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
 			sourceTree = "<group>";
@@ -1480,6 +1473,10 @@
 				4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */,
 				4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */,
 				4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */,
+				4AB0C9AE234F30C0002356B7 /* IBGroup2Controller11.h */,
+				4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */,
+				4AB0C9B7234F5912002356B7 /* LottieLogo.json */,
+				4AB0C9B5234F4266002356B7 /* home_colourline.svga */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1698,7 +1695,6 @@
 				4ACBB60B2341F972002D7955 /* Sources */,
 				4ACBB60C2341F972002D7955 /* Frameworks */,
 				4ACBB60D2341F972002D7955 /* Resources */,
-				4ACBB9562342082E002D7955 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1748,8 +1744,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ACBB8762341FA0D002D7955 /* 类，元类，根元类关系图.png in Resources */,
+				4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */,
 				4ACBB8752341FA0D002D7955 /* IBController1.xib in Resources */,
 				4ACBB9472341FA0D002D7955 /* Assets.xcassets in Resources */,
+				4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */,
 				4ACBB94A2341FA0D002D7955 /* Main.storyboard in Resources */,
 				4ACBB9492341FA0D002D7955 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -1884,6 +1882,7 @@
 				4ACBB8ED2341FA0D002D7955 /* NSDictionary+RACSequenceAdditions.m in Sources */,
 				4ACBB89F2341FA0D002D7955 /* UITextView+RACSignalSupport.m in Sources */,
 				4ACBB8582341FA0D002D7955 /* IBController40.m in Sources */,
+				4AB0C9B0234F30C0002356B7 /* IBGroup2Controller11.m in Sources */,
 				4ACBB8802341FA0D002D7955 /* IBController4.m in Sources */,
 				4ACBB9422341FA0D002D7955 /* IBCMediator.m in Sources */,
 				4ACBB8772341FA0D002D7955 /* IBController6.m in Sources */,

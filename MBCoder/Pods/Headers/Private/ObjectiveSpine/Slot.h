@@ -1,0 +1,1 @@
+../../../ObjectiveSpine/Libraries/spine-c/Slot.h
