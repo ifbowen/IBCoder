@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4AA6B7F62355975900C40DCB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4A49639F235B6403001338AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4A4963A4235B6441001338AB /* MBSpineFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4963A2235B642C001338AB /* MBSpineFramework.framework */; };
+		4A4963A5235B6441001338AB /* MBSpineFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4963A2235B642C001338AB /* MBSpineFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4A4963A7235B64BC001338AB /* common in Resources */ = {isa = PBXBuildFile; fileRef = 4A4963A6235B64BC001338AB /* common */; };
 		4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */; };
 		4AB0C9B0234F30C0002356B7 /* IBGroup2Controller11.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */; };
 		4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B5234F4266002356B7 /* home_colourline.svga */; };
@@ -264,8 +267,24 @@
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4A4963A1235B6403001338AB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A4963A5235B6441001338AB /* MBSpineFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0C51F03E7F37A6C6381A23E8 /* Pods-MBCoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.release.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.release.xcconfig"; sourceTree = "<group>"; };
+		4A4963A2235B642C001338AB /* MBSpineFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBSpineFramework.framework; sourceTree = "<group>"; };
+		4A4963A6235B64BC001338AB /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = "<group>"; };
 		4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller10.h; sourceTree = "<group>"; };
 		4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller10.m; sourceTree = "<group>"; };
 		4AB0C9AE234F30C0002356B7 /* IBGroup2Controller11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller11.h; sourceTree = "<group>"; };
@@ -799,8 +818,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA6B7F62355975900C40DCB /* XCTest.framework in Frameworks */,
 				CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */,
+				4A4963A4235B6441001338AB /* MBSpineFramework.framework in Frameworks */,
+				4A49639F235B6403001338AB /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -983,6 +1003,7 @@
 		4ACBB68C2341FA0C002D7955 /* HelperFile */ = {
 			isa = PBXGroup;
 			children = (
+				4A4963A2235B642C001338AB /* MBSpineFramework.framework */,
 				4ACBB6CB2341FA0C002D7955 /* AFNetworking-RACExtensions */,
 				4ACBB68D2341FA0C002D7955 /* CameraButton */,
 				4ACBB6C52341FA0C002D7955 /* CoreSpotlight */,
@@ -1475,8 +1496,6 @@
 				4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */,
 				4AB0C9AE234F30C0002356B7 /* IBGroup2Controller11.h */,
 				4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */,
-				4AB0C9B7234F5912002356B7 /* LottieLogo.json */,
-				4AB0C9B5234F4266002356B7 /* home_colourline.svga */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1661,6 +1680,9 @@
 				4ACBB84E2341FA0D002D7955 /* Main.storyboard */,
 				4ACBB8532341FA0D002D7955 /* ViewController.h */,
 				4ACBB84B2341FA0D002D7955 /* ViewController.m */,
+				4AB0C9B7234F5912002356B7 /* LottieLogo.json */,
+				4AB0C9B5234F4266002356B7 /* home_colourline.svga */,
+				4A4963A6235B64BC001338AB /* common */,
 				4ACBB94F234201DA002D7955 /* PromiseFoundation.swift */,
 			);
 			path = other;
@@ -1695,6 +1717,7 @@
 				4ACBB60B2341F972002D7955 /* Sources */,
 				4ACBB60C2341F972002D7955 /* Frameworks */,
 				4ACBB60D2341F972002D7955 /* Resources */,
+				4A4963A1235B6403001338AB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1750,6 +1773,7 @@
 				4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */,
 				4ACBB94A2341FA0D002D7955 /* Main.storyboard in Resources */,
 				4ACBB9492341FA0D002D7955 /* LaunchScreen.storyboard in Resources */,
+				4A4963A7235B64BC001338AB /* common in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2177,6 +2201,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Q62N6S7X8;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MBCoder/HelperFile",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/MBCoder/other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2200,6 +2228,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7Q62N6S7X8;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MBCoder/HelperFile",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/MBCoder/other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -9,8 +9,12 @@
 #import "IBGroup2Controller11.h"
 #import <SVGA.h>
 #import <Lottie/Lottie.h>
+#import <MBSpineFramework/MBSpineFramework.h>
 
-@interface IBGroup2Controller11 ()
+@interface IBGroup2Controller11 ()<MBSpinePlayerDelegate>
+
+@property(nonatomic, strong) MBSpinePlayer *player;
+@property (nonatomic, strong) UIView *spineView;
 
 @end
 
@@ -20,8 +24,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
-    [self startLottie];
-    [self startSVGA];
+//    [self startLottie];
+//    [self startSVGA];
     
     [self startSpine];
 }
@@ -56,8 +60,43 @@
 
 - (void)startSpine
 {
+    self.spineView = [[UIView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.spineView];
+    self.player = [MBSpinePlayer player];
+    self.player.delegate = self;
 
+    [self runSpine];
 }
+
+- (void)runSpine
+{
+    [self.player setSpineDisplayView:self.spineView];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"common" ofType:nil];
+    [self.player setSpineName:@"spineboy" bundlePath:path];
+    [self.player startAnimation];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.player stopAnimation];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)animationDidComplete {
+    
+    [self.player stopAnimation];
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self runSpine];
+    });
+}
+
+- (void)dealloc
+{
+    [self.player stopAnimation];
+    NSLog(@"%s", __func__);
+}
+
 
 @end
 
