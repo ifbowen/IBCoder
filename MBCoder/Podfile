@@ -18,11 +18,15 @@ target 'MBCoder' do
   pod 'PromiseKit/UIKit'
   pod 'lottie-ios', '~> 2.5.3'
   pod 'SVGAPlayer', '~> 2.3.5'
-  pod 'Kiwi'
   pod 'UITableView+FDTemplateLayoutCell'
+  pod 'VasSonic'
   pod 'YYKit'
   pod 'FDFullscreenPopGesture'
   pod 'TZScrollViewPopGesture' # 和FDFullscreenPopGesture库不冲突
   
+  target 'MBCoderUITests' do
+    inherit! :search_paths
+    pod 'Kiwi'
+  end
 
 end

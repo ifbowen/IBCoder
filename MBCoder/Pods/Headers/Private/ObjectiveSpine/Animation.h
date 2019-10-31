@@ -1,1 +1,0 @@
-../../../ObjectiveSpine/Libraries/spine-c/Animation.h

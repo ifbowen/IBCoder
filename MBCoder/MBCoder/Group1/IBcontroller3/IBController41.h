@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN // 只对 显式赋值nil 这种情况编译器会给出
 
 @interface controller41 : NSObject
 
++ (void)study NS_UNAVAILABLE;
+
 + (void)test:(NSString *)name NS_AVAILABLE_IOS(8_0);
 + (void)run:(NSString *)time NS_DEPRECATED_IOS(5_0,8_0);
 

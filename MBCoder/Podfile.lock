@@ -44,7 +44,6 @@ PODS:
   - libextobjc/RuntimeExtensions (0.6)
   - libextobjc/UmbrellaHeader (0.6)
   - lottie-ios (2.5.3)
-  - ObjectiveSpine (1.0.0)
   - PromiseKit (6.11.0):
     - PromiseKit/CorePromise (= 6.11.0)
     - PromiseKit/Foundation (= 6.11.0)
@@ -55,8 +54,6 @@ PODS:
   - PromiseKit/UIKit (6.11.0):
     - PromiseKit/CorePromise
   - Protobuf (3.9.2)
-  - SpineSpriteKit (1.0.0):
-    - ObjectiveSpine (~> 1.0.0)
   - SQLCipher (4.2.0):
     - SQLCipher/standard (= 4.2.0)
   - SQLCipher/common (4.2.0)
@@ -73,6 +70,7 @@ PODS:
     - Protobuf (~> 3.4)
   - TZScrollViewPopGesture (1.0.6)
   - "UITableView+FDTemplateLayoutCell (1.6)"
+  - VasSonic (3.1.1)
   - Yoga (1.14.0)
   - YogaKit (1.14.0):
     - Yoga (~> 1.14)
@@ -92,10 +90,10 @@ DEPENDENCIES:
   - PromiseKit/Foundation
   - PromiseKit/UIKit
   - Protobuf
-  - SpineSpriteKit (~> 1.0.0)
   - SVGAPlayer (~> 2.3.5)
   - TZScrollViewPopGesture
   - "UITableView+FDTemplateLayoutCell"
+  - VasSonic
   - YogaKit
   - YYKit
 
@@ -106,15 +104,14 @@ SPEC REPOS:
     - Kiwi
     - libextobjc
     - lottie-ios
-    - ObjectiveSpine
     - PromiseKit
     - Protobuf
-    - SpineSpriteKit
     - SQLCipher
     - SSZipArchive
     - SVGAPlayer
     - TZScrollViewPopGesture
     - "UITableView+FDTemplateLayoutCell"
+    - VasSonic
     - Yoga
     - YogaKit
     - YYKit
@@ -125,19 +122,18 @@ SPEC CHECKSUMS:
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
-  ObjectiveSpine: d78489071cc9fb51afd5e80b97cc826c9c065004
   PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
   Protobuf: 67fb42ba613def994e61854de2b3164f13790cc4
-  SpineSpriteKit: 2d28c3456bbe28833f3297c2703718df774143a9
   SQLCipher: 0187a2180ac288ea686b670b7141da62cd013b16
   SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
   SVGAPlayer: bae4048710c948dc4de98971e35207d3bbed85ad
   TZScrollViewPopGesture: d36355038259e89372a1f4a2db7e9ca675de2278
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  VasSonic: 1b0e5d45602627e8f39ac120a892050a10d42bab
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: 5d1dc899cecd5946e5a758a0c3997704a4b48d01
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: b740bf4e67e60f25c1e428f7e385f958f4f5c53a
+PODFILE CHECKSUM: dcecc504f7fcec7f3e54d32bc0e10f189d63e6af
 
 COCOAPODS: 1.7.2

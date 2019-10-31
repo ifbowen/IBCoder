@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A49639F235B6403001338AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4A4963A4235B6441001338AB /* MBSpineFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4963A2235B642C001338AB /* MBSpineFramework.framework */; };
 		4A4963A5235B6441001338AB /* MBSpineFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4963A2235B642C001338AB /* MBSpineFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A4963A7235B64BC001338AB /* common in Resources */ = {isa = PBXBuildFile; fileRef = 4A4963A6235B64BC001338AB /* common */; };
+		4A64EF722369CDCC00431CEA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; };
+		4A64EF792369CEDC00431CEA /* Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF782369CEDC00431CEA /* Coder.swift */; };
+		4A64EF842369D14E00431CEA /* VVStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF832369D14E00431CEA /* VVStack.m */; };
+		4A9D220C23682F47006B9771 /* IBGroup2Controller12.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D220B23682F47006B9771 /* IBGroup2Controller12.m */; };
+		4A9D29AE236966A4006B9771 /* 1004.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D29AD236966A4006B9771 /* 1004.m4a */; };
+		4A9D2B632369904C006B9771 /* IBGroup2Controller13.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D2B622369904C006B9771 /* IBGroup2Controller13.m */; };
+		4A9D2B662369A2FE006B9771 /* IBGroup2Controller14.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D2B652369A2FE006B9771 /* IBGroup2Controller14.m */; };
+		4A9D2C462369CB09006B9771 /* MBCoderUITests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D2C452369CB09006B9771 /* MBCoderUITests.mm */; };
+		4A9D2C502369CBB8006B9771 /* VVStackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D2C4F2369CBB8006B9771 /* VVStackSpec.m */; };
+		4AA84921236A799B00AF5BC9 /* VVStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF832369D14E00431CEA /* VVStack.m */; };
+		4AA849F5236A7F1400AF5BC9 /* SimpleStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA849F4236A7F1400AF5BC9 /* SimpleStringSpec.m */; };
 		4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */; };
 		4AB0C9B0234F30C0002356B7 /* IBGroup2Controller11.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */; };
 		4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B5234F4266002356B7 /* home_colourline.svga */; };
@@ -264,8 +274,19 @@
 		4ACBB950234201DA002D7955 /* PromiseFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB94F234201DA002D7955 /* PromiseFoundation.swift */; };
 		4ACBB9542342068A002D7955 /* RACTestScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB73B2341FA0C002D7955 /* RACTestScheduler.m */; };
 		4ACBB95A234D845F002D7955 /* IBGroup2Controller9.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */; };
+		5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A64EF862369D2F100431CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ACBB6072341F972002D7955 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ACBB60E2341F972002D7955;
+			remoteInfo = MBCoder;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4A4963A1235B6403001338AB /* Embed Frameworks */ = {
@@ -279,12 +300,40 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A9D221A23683473006B9771 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C51F03E7F37A6C6381A23E8 /* Pods-MBCoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.release.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.release.xcconfig"; sourceTree = "<group>"; };
+		0DA9753AC2921CE9092B03E4 /* Pods-MBCoder-MBCoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder-MBCoderUITests.release.xcconfig"; path = "Target Support Files/Pods-MBCoder-MBCoderUITests/Pods-MBCoder-MBCoderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3A938C28382BA5ABC025F4E2 /* Pods-MBCoder-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder-MBCoderUITests/Pods-MBCoder-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A4963A2235B642C001338AB /* MBSpineFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBSpineFramework.framework; sourceTree = "<group>"; };
 		4A4963A6235B64BC001338AB /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = "<group>"; };
+		4A64EF772369CEDC00431CEA /* MBCoderUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBCoderUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4A64EF782369CEDC00431CEA /* Coder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coder.swift; sourceTree = "<group>"; };
+		4A64EF822369D14E00431CEA /* VVStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVStack.h; sourceTree = "<group>"; };
+		4A64EF832369D14E00431CEA /* VVStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVStack.m; sourceTree = "<group>"; };
+		4A9D220A23682F47006B9771 /* IBGroup2Controller12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller12.h; sourceTree = "<group>"; };
+		4A9D220B23682F47006B9771 /* IBGroup2Controller12.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller12.m; sourceTree = "<group>"; };
+		4A9D29AD236966A4006B9771 /* 1004.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1004.m4a; sourceTree = "<group>"; };
+		4A9D2B612369904C006B9771 /* IBGroup2Controller13.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller13.h; sourceTree = "<group>"; };
+		4A9D2B622369904C006B9771 /* IBGroup2Controller13.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller13.m; sourceTree = "<group>"; };
+		4A9D2B642369A2FE006B9771 /* IBGroup2Controller14.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller14.h; sourceTree = "<group>"; };
+		4A9D2B652369A2FE006B9771 /* IBGroup2Controller14.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller14.m; sourceTree = "<group>"; };
+		4A9D2C432369CB09006B9771 /* MBCoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBCoderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A9D2C452369CB09006B9771 /* MBCoderUITests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MBCoderUITests.mm; sourceTree = "<group>"; };
+		4A9D2C472369CB09006B9771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A9D2C4F2369CBB8006B9771 /* VVStackSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVStackSpec.m; sourceTree = "<group>"; };
+		4AA849F4236A7F1400AF5BC9 /* SimpleStringSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleStringSpec.m; sourceTree = "<group>"; };
 		4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller10.h; sourceTree = "<group>"; };
 		4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller10.m; sourceTree = "<group>"; };
 		4AB0C9AE234F30C0002356B7 /* IBGroup2Controller11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller11.h; sourceTree = "<group>"; };
@@ -810,27 +859,61 @@
 		4ACBB958234D845F002D7955 /* IBGroup2Controller9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller9.h; sourceTree = "<group>"; };
 		4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller9.m; sourceTree = "<group>"; };
 		68F55995B515EF5A59C8491C /* libPods-MBCoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D89D083E41EFA39D866CFD /* Pods-MBCoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.release.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79E841B58080BB70062A103 /* Pods-MBCoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4A9D2C402369CB09006B9771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A64EF722369CDCC00431CEA /* XCTest.framework in Frameworks */,
+				5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ACBB60C2341F972002D7955 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */,
 				4A4963A4235B6441001338AB /* MBSpineFramework.framework in Frameworks */,
-				4A49639F235B6403001338AB /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A64EF812369D14000431CEA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4A64EF822369D14E00431CEA /* VVStack.h */,
+				4A64EF832369D14E00431CEA /* VVStack.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4A9D2C442369CB09006B9771 /* MBCoderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A9D2C452369CB09006B9771 /* MBCoderUITests.mm */,
+				4A9D2C4F2369CBB8006B9771 /* VVStackSpec.m */,
+				4AA849F4236A7F1400AF5BC9 /* SimpleStringSpec.m */,
+				4A64EF782369CEDC00431CEA /* Coder.swift */,
+				4A9D2C472369CB09006B9771 /* Info.plist */,
+				4A64EF772369CEDC00431CEA /* MBCoderUITests-Bridging-Header.h */,
+			);
+			path = MBCoderUITests;
+			sourceTree = "<group>";
+		};
 		4ACBB6062341F972002D7955 = {
 			isa = PBXGroup;
 			children = (
 				4ACBB6112341F972002D7955 /* MBCoder */,
+				4A9D2C442369CB09006B9771 /* MBCoderUITests */,
 				4ACBB6102341F972002D7955 /* Products */,
 				FDD18DD111DDF637C668F237 /* Pods */,
 				E0C3398B810AB45FA06458BC /* Frameworks */,
@@ -841,6 +924,7 @@
 			isa = PBXGroup;
 			children = (
 				4ACBB60F2341F972002D7955 /* MBCoder.app */,
+				4A9D2C432369CB09006B9771 /* MBCoderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1496,6 +1580,12 @@
 				4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */,
 				4AB0C9AE234F30C0002356B7 /* IBGroup2Controller11.h */,
 				4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */,
+				4A9D220A23682F47006B9771 /* IBGroup2Controller12.h */,
+				4A9D220B23682F47006B9771 /* IBGroup2Controller12.m */,
+				4A9D2B612369904C006B9771 /* IBGroup2Controller13.h */,
+				4A9D2B622369904C006B9771 /* IBGroup2Controller13.m */,
+				4A9D2B642369A2FE006B9771 /* IBGroup2Controller14.h */,
+				4A9D2B652369A2FE006B9771 /* IBGroup2Controller14.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1540,6 +1630,7 @@
 		4ACBB8012341FA0D002D7955 /* IBModule */ = {
 			isa = PBXGroup;
 			children = (
+				4A64EF812369D14000431CEA /* model */,
 				4ACBB80F2341FA0D002D7955 /* animation */,
 				4ACBB8322341FA0D002D7955 /* Gesture */,
 				4ACBB8352341FA0D002D7955 /* graphics */,
@@ -1671,6 +1762,7 @@
 		4ACBB8482341FA0D002D7955 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				4A9D29AD236966A4006B9771 /* 1004.m4a */,
 				4ACBB8492341FA0D002D7955 /* AppDelegate.h */,
 				4ACBB8512341FA0D002D7955 /* AppDelegate.m */,
 				4ACBB84A2341FA0D002D7955 /* Assets.xcassets */,
@@ -1693,6 +1785,7 @@
 			children = (
 				4ACBB951234204B1002D7955 /* XCTest.framework */,
 				68F55995B515EF5A59C8491C /* libPods-MBCoder.a */,
+				CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1702,6 +1795,10 @@
 			children = (
 				D79E841B58080BB70062A103 /* Pods-MBCoder.debug.xcconfig */,
 				0C51F03E7F37A6C6381A23E8 /* Pods-MBCoder.release.xcconfig */,
+				3A938C28382BA5ABC025F4E2 /* Pods-MBCoder-MBCoderUITests.debug.xcconfig */,
+				0DA9753AC2921CE9092B03E4 /* Pods-MBCoder-MBCoderUITests.release.xcconfig */,
+				A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */,
+				A4D89D083E41EFA39D866CFD /* Pods-MBCoderUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1709,6 +1806,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4A9D2C422369CB09006B9771 /* MBCoderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A9D2C4C2369CB09006B9771 /* Build configuration list for PBXNativeTarget "MBCoderUITests" */;
+			buildPhases = (
+				F23481A1CAC0BE2E87B08AD8 /* [CP] Check Pods Manifest.lock */,
+				4A9D2C3F2369CB09006B9771 /* Sources */,
+				4A9D2C402369CB09006B9771 /* Frameworks */,
+				4A9D2C412369CB09006B9771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A64EF872369D2F100431CEA /* PBXTargetDependency */,
+			);
+			name = MBCoderUITests;
+			productName = MBCoderUITests;
+			productReference = 4A9D2C432369CB09006B9771 /* MBCoderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		4ACBB60E2341F972002D7955 /* MBCoder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4ACBB6252341F973002D7955 /* Build configuration list for PBXNativeTarget "MBCoder" */;
@@ -1718,6 +1834,7 @@
 				4ACBB60C2341F972002D7955 /* Frameworks */,
 				4ACBB60D2341F972002D7955 /* Resources */,
 				4A4963A1235B6403001338AB /* Embed Frameworks */,
+				4A9D221A23683473006B9771 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -1737,6 +1854,11 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = inke;
 				TargetAttributes = {
+					4A9D2C422369CB09006B9771 = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
+						TestTargetID = 4ACBB60E2341F972002D7955;
+					};
 					4ACBB60E2341F972002D7955 = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
@@ -1757,11 +1879,19 @@
 			projectRoot = "";
 			targets = (
 				4ACBB60E2341F972002D7955 /* MBCoder */,
+				4A9D2C422369CB09006B9771 /* MBCoderUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4A9D2C412369CB09006B9771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ACBB60D2341F972002D7955 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1774,6 +1904,7 @@
 				4ACBB94A2341FA0D002D7955 /* Main.storyboard in Resources */,
 				4ACBB9492341FA0D002D7955 /* LaunchScreen.storyboard in Resources */,
 				4A4963A7235B64BC001338AB /* common in Resources */,
+				4A9D29AE236966A4006B9771 /* 1004.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1802,9 +1933,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F23481A1CAC0BE2E87B08AD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MBCoderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4A9D2C3F2369CB09006B9771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AA84921236A799B00AF5BC9 /* VVStack.m in Sources */,
+				4A9D2C462369CB09006B9771 /* MBCoderUITests.mm in Sources */,
+				4A64EF792369CEDC00431CEA /* Coder.swift in Sources */,
+				4A9D2C502369CBB8006B9771 /* VVStackSpec.m in Sources */,
+				4AA849F5236A7F1400AF5BC9 /* SimpleStringSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ACBB60B2341F972002D7955 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1831,11 +1996,13 @@
 				4ACBB8EE2341FA0D002D7955 /* NSString+RACSequenceAdditions.m in Sources */,
 				4ACBB8682341FA0D002D7955 /* IBController16.m in Sources */,
 				4ACBB87C2341FA0D002D7955 /* IBController7.m in Sources */,
+				4A9D2B662369A2FE006B9771 /* IBGroup2Controller14.m in Sources */,
 				4ACBB8FB2341FA0D002D7955 /* AFURLSessionManager.m in Sources */,
 				4ACBB8F12341FA0D002D7955 /* NSString+RACKeyPathUtilities.m in Sources */,
 				4ACBB9312341FA0D002D7955 /* Son.m in Sources */,
 				4ACBB8BD2341FA0D002D7955 /* RACDynamicSequence.m in Sources */,
 				4ACBB8722341FA0D002D7955 /* IBController5.m in Sources */,
+				4A9D2B632369904C006B9771 /* IBGroup2Controller13.m in Sources */,
 				4ACBB8F62341FA0D002D7955 /* AFOAuthCredential.m in Sources */,
 				4ACBB8C62341FA0D002D7955 /* RACKVOChannel.m in Sources */,
 				4ACBB8992341FA0D002D7955 /* IBCoreSpotlight.m in Sources */,
@@ -1866,6 +2033,7 @@
 				4ACBB8B22341FA0D002D7955 /* RACSignal.m in Sources */,
 				4ACBB9272341FA0D002D7955 /* Person.pbobjc.m in Sources */,
 				4ACBB8782341FA0D002D7955 /* IBController12.m in Sources */,
+				4A9D220C23682F47006B9771 /* IBGroup2Controller12.m in Sources */,
 				4ACBB8842341FA0D002D7955 /* ASCameraButton.m in Sources */,
 				4ACBB89A2341FA0D002D7955 /* NSObject+Log.m in Sources */,
 				4ACBB88C2341FA0D002D7955 /* ViewController+MASAdditions.m in Sources */,
@@ -1890,6 +2058,7 @@
 				4ACBB8712341FA0D002D7955 /* IBController25.m in Sources */,
 				4ACBB8AA2341FA0D002D7955 /* UIRefreshControl+RACCommandSupport.m in Sources */,
 				4ACBB8A52341FA0D002D7955 /* UIDatePicker+RACSignalSupport.m in Sources */,
+				4A64EF842369D14E00431CEA /* VVStack.m in Sources */,
 				4ACBB9232341FA0D002D7955 /* IBGroup2Controller6.m in Sources */,
 				4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */,
 				4ACBB8B42341FA0D002D7955 /* RACIndexSetSequence.m in Sources */,
@@ -2060,6 +2229,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4A64EF872369D2F100431CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ACBB60E2341F972002D7955 /* MBCoder */;
+			targetProxy = 4A64EF862369D2F100431CEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		4ACBB84C2341FA0D002D7955 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -2080,6 +2257,111 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4A9D2C4A2369CB09006B9771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					"\"${PODS_ROOT}/YYKit/Vendor\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/Kiwi\"",
+					"\"${PODS_ROOT}/Headers/Public/PromiseKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
+					"\"${PODS_ROOT}/Headers/Public/SQLCipher\"",
+					"\"${PODS_ROOT}/Headers/Public/SSZipArchive\"",
+					"\"${PODS_ROOT}/Headers/Public/SVGAPlayer\"",
+					"\"${PODS_ROOT}/Headers/Public/TZScrollViewPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell\"",
+					"\"${PODS_ROOT}/Headers/Public/VasSonic\"",
+					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"\"${PODS_ROOT}/Headers/Public/lottie-ios\"",
+					SQLCipher,
+					"$(PODS_ROOT)/SQLCipher",
+				);
+				INFOPLIST_FILE = MBCoderUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bowen.MBCoderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MBCoderUITests/MBCoderUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MBCoder;
+			};
+			name = Debug;
+		};
+		4A9D2C4B2369CB09006B9771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4D89D083E41EFA39D866CFD /* Pods-MBCoderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					"\"${PODS_ROOT}/YYKit/Vendor\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/Kiwi\"",
+					"\"${PODS_ROOT}/Headers/Public/PromiseKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
+					"\"${PODS_ROOT}/Headers/Public/SQLCipher\"",
+					"\"${PODS_ROOT}/Headers/Public/SSZipArchive\"",
+					"\"${PODS_ROOT}/Headers/Public/SVGAPlayer\"",
+					"\"${PODS_ROOT}/Headers/Public/TZScrollViewPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell\"",
+					"\"${PODS_ROOT}/Headers/Public/VasSonic\"",
+					"\"${PODS_ROOT}/Headers/Public/YYKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"\"${PODS_ROOT}/Headers/Public/lottie-ios\"",
+					SQLCipher,
+					"$(PODS_ROOT)/SQLCipher",
+				);
+				INFOPLIST_FILE = MBCoderUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bowen.MBCoderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "MBCoderUITests/MBCoderUITests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MBCoder;
+			};
+			name = Release;
+		};
 		4ACBB6232341F973002D7955 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2248,6 +2530,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4A9D2C4C2369CB09006B9771 /* Build configuration list for PBXNativeTarget "MBCoderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A9D2C4A2369CB09006B9771 /* Debug */,
+				4A9D2C4B2369CB09006B9771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4ACBB60A2341F972002D7955 /* Build configuration list for PBXProject "MBCoder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

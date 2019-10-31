@@ -1,1 +1,0 @@
-../../../SpineSpriteKit/Classes/DZSpineSpriteKitMaps.h
