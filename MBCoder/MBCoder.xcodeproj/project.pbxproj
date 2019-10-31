@@ -21,6 +21,9 @@
 		4A9D2C502369CBB8006B9771 /* VVStackSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D2C4F2369CBB8006B9771 /* VVStackSpec.m */; };
 		4AA84921236A799B00AF5BC9 /* VVStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF832369D14E00431CEA /* VVStack.m */; };
 		4AA849F5236A7F1400AF5BC9 /* SimpleStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA849F4236A7F1400AF5BC9 /* SimpleStringSpec.m */; };
+		4AA84ACC236ABFC800AF5BC9 /* IBGroup2Controller15.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA84ACB236ABFC800AF5BC9 /* IBGroup2Controller15.m */; };
+		4AA84ACE236AEDFD00AF5BC9 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AA84ACD236AEDFC00AF5BC9 /* data.json */; };
+		4AA84AD1236AF07100AF5BC9 /* IBGroup2Controller15Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */; };
 		4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */; };
 		4AB0C9B0234F30C0002356B7 /* IBGroup2Controller11.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */; };
 		4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B5234F4266002356B7 /* home_colourline.svga */; };
@@ -334,6 +337,11 @@
 		4A9D2C472369CB09006B9771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A9D2C4F2369CBB8006B9771 /* VVStackSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVStackSpec.m; sourceTree = "<group>"; };
 		4AA849F4236A7F1400AF5BC9 /* SimpleStringSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleStringSpec.m; sourceTree = "<group>"; };
+		4AA84ACA236ABFC800AF5BC9 /* IBGroup2Controller15.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller15.h; sourceTree = "<group>"; };
+		4AA84ACB236ABFC800AF5BC9 /* IBGroup2Controller15.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller15.m; sourceTree = "<group>"; };
+		4AA84ACD236AEDFC00AF5BC9 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		4AA84ACF236AF07100AF5BC9 /* IBGroup2Controller15Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller15Cell.h; sourceTree = "<group>"; };
+		4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller15Cell.m; sourceTree = "<group>"; };
 		4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller10.h; sourceTree = "<group>"; };
 		4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller10.m; sourceTree = "<group>"; };
 		4AB0C9AE234F30C0002356B7 /* IBGroup2Controller11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller11.h; sourceTree = "<group>"; };
@@ -1586,6 +1594,10 @@
 				4A9D2B622369904C006B9771 /* IBGroup2Controller13.m */,
 				4A9D2B642369A2FE006B9771 /* IBGroup2Controller14.h */,
 				4A9D2B652369A2FE006B9771 /* IBGroup2Controller14.m */,
+				4AA84ACA236ABFC800AF5BC9 /* IBGroup2Controller15.h */,
+				4AA84ACB236ABFC800AF5BC9 /* IBGroup2Controller15.m */,
+				4AA84ACF236AF07100AF5BC9 /* IBGroup2Controller15Cell.h */,
+				4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1772,6 +1784,7 @@
 				4ACBB84E2341FA0D002D7955 /* Main.storyboard */,
 				4ACBB8532341FA0D002D7955 /* ViewController.h */,
 				4ACBB84B2341FA0D002D7955 /* ViewController.m */,
+				4AA84ACD236AEDFC00AF5BC9 /* data.json */,
 				4AB0C9B7234F5912002356B7 /* LottieLogo.json */,
 				4AB0C9B5234F4266002356B7 /* home_colourline.svga */,
 				4A4963A6235B64BC001338AB /* common */,
@@ -1899,6 +1912,7 @@
 				4ACBB8762341FA0D002D7955 /* 类，元类，根元类关系图.png in Resources */,
 				4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */,
 				4ACBB8752341FA0D002D7955 /* IBController1.xib in Resources */,
+				4AA84ACE236AEDFD00AF5BC9 /* data.json in Resources */,
 				4ACBB9472341FA0D002D7955 /* Assets.xcassets in Resources */,
 				4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */,
 				4ACBB94A2341FA0D002D7955 /* Main.storyboard in Resources */,
@@ -2036,6 +2050,7 @@
 				4A9D220C23682F47006B9771 /* IBGroup2Controller12.m in Sources */,
 				4ACBB8842341FA0D002D7955 /* ASCameraButton.m in Sources */,
 				4ACBB89A2341FA0D002D7955 /* NSObject+Log.m in Sources */,
+				4AA84ACC236ABFC800AF5BC9 /* IBGroup2Controller15.m in Sources */,
 				4ACBB88C2341FA0D002D7955 /* ViewController+MASAdditions.m in Sources */,
 				4ACBB8BF2341FA0D002D7955 /* RACCompoundDisposableProvider.d in Sources */,
 				4ACBB8BA2341FA0D002D7955 /* RACSignalSequence.m in Sources */,
@@ -2162,6 +2177,7 @@
 				4ACBB9322341FA0D002D7955 /* Father+Cate.m in Sources */,
 				4ACBB9252341FA0D002D7955 /* IBGroup2Controller3.m in Sources */,
 				4ACBB9002341FA0D002D7955 /* UIImage+WebP.m in Sources */,
+				4AA84AD1236AF07100AF5BC9 /* IBGroup2Controller15Cell.m in Sources */,
 				4ACBB9192341FA0D002D7955 /* UIView+WebCache.m in Sources */,
 				4ACBB8642341FA0D002D7955 /* IBController15.m in Sources */,
 				4ACBB8542341FA0D002D7955 /* IBController41.m in Sources */,

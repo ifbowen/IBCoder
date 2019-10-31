@@ -37,7 +37,7 @@
 }
 
 - (void)initialize {
-    self.tableArray = @[@"单例，进制转换，原码、反码、补码", @"内存空间分布和结构体内存及SS1和SS2",@"OAuth2基本概念和运作流程和Protobuf",@"libextobjc",@"图片解压缩和内存占用",@"崩溃信息总结",@"手势",@"json解析小数丢失精度的问题",@"全局返回和滑动界面侧滑返回",@"Flexbox（YogaKit）",@"SVGA,Lottie,Spine", @"后台持续震动，语音播报", @"PromiseKit", @"行为驱动开发(BDD)-Kiwi"];
+    self.tableArray = @[@"单例，进制转换，原码、反码、补码", @"内存空间分布和结构体内存及SS1和SS2",@"OAuth2基本概念和运作流程和Protobuf",@"libextobjc",@"图片解压缩和内存占用",@"崩溃信息总结",@"手势",@"json解析小数丢失精度的问题",@"全局返回和滑动界面侧滑返回",@"Flexbox（YogaKit）",@"SVGA,Lottie,Spine", @"后台持续震动，语音播报", @"PromiseKit", @"行为驱动开发(BDD)-Kiwi", @"UITableView+FDTemplateLayoutCell"];
 }
 
 - (void)setupUI {
