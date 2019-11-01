@@ -20,6 +20,7 @@ target 'MBCoder' do
   pod 'SVGAPlayer', '~> 2.3.5'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'VasSonic'
+  pod 'HybridPageKit'
   pod 'YYKit'
   pod 'FDFullscreenPopGesture'
   pod 'TZScrollViewPopGesture' # 和FDFullscreenPopGesture库不冲突

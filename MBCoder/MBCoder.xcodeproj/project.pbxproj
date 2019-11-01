@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A37DE14236BD860005CEF7B /* IBGroup2Controller16.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DE13236BD860005CEF7B /* IBGroup2Controller16.m */; };
+		4A37DFC2236C68C1005CEF7B /* SonicOfflineCacheConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DFBA236C68BF005CEF7B /* SonicOfflineCacheConnection.m */; };
+		4A37DFC3236C68C1005CEF7B /* SonicJSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DFBB236C68BF005CEF7B /* SonicJSContext.m */; };
+		4A37DFC4236C68C1005CEF7B /* SonicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DFBD236C68C0005CEF7B /* SonicWebViewController.m */; };
+		4A37DFC5236C68C1005CEF7B /* SonicEventObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DFBE236C68C0005CEF7B /* SonicEventObserver.m */; };
+		4A37DFC8236C6A6E005CEF7B /* SonicSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DFC7236C6A6E005CEF7B /* SonicSetup.m */; };
+		4A37DFCA236C6C53005CEF7B /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A37DFC9236C6C53005CEF7B /* main.html */; };
 		4A4963A4235B6441001338AB /* MBSpineFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4963A2235B642C001338AB /* MBSpineFramework.framework */; };
 		4A4963A5235B6441001338AB /* MBSpineFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4963A2235B642C001338AB /* MBSpineFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A4963A7235B64BC001338AB /* common in Resources */ = {isa = PBXBuildFile; fileRef = 4A4963A6235B64BC001338AB /* common */; };
@@ -319,6 +326,19 @@
 		0C51F03E7F37A6C6381A23E8 /* Pods-MBCoder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.release.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.release.xcconfig"; sourceTree = "<group>"; };
 		0DA9753AC2921CE9092B03E4 /* Pods-MBCoder-MBCoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder-MBCoderUITests.release.xcconfig"; path = "Target Support Files/Pods-MBCoder-MBCoderUITests/Pods-MBCoder-MBCoderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3A938C28382BA5ABC025F4E2 /* Pods-MBCoder-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder-MBCoderUITests/Pods-MBCoder-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A37DE12236BD860005CEF7B /* IBGroup2Controller16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller16.h; sourceTree = "<group>"; };
+		4A37DE13236BD860005CEF7B /* IBGroup2Controller16.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller16.m; sourceTree = "<group>"; };
+		4A37DFBA236C68BF005CEF7B /* SonicOfflineCacheConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SonicOfflineCacheConnection.m; sourceTree = "<group>"; };
+		4A37DFBB236C68BF005CEF7B /* SonicJSContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SonicJSContext.m; sourceTree = "<group>"; };
+		4A37DFBC236C68C0005CEF7B /* SonicOfflineCacheConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SonicOfflineCacheConnection.h; sourceTree = "<group>"; };
+		4A37DFBD236C68C0005CEF7B /* SonicWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SonicWebViewController.m; sourceTree = "<group>"; };
+		4A37DFBE236C68C0005CEF7B /* SonicEventObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SonicEventObserver.m; sourceTree = "<group>"; };
+		4A37DFBF236C68C0005CEF7B /* SonicWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SonicWebViewController.h; sourceTree = "<group>"; };
+		4A37DFC0236C68C0005CEF7B /* SonicJSContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SonicJSContext.h; sourceTree = "<group>"; };
+		4A37DFC1236C68C1005CEF7B /* SonicEventObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SonicEventObserver.h; sourceTree = "<group>"; };
+		4A37DFC6236C6A6E005CEF7B /* SonicSetup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SonicSetup.h; sourceTree = "<group>"; };
+		4A37DFC7236C6A6E005CEF7B /* SonicSetup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SonicSetup.m; sourceTree = "<group>"; };
+		4A37DFC9236C6C53005CEF7B /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
 		4A4963A2235B642C001338AB /* MBSpineFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBSpineFramework.framework; sourceTree = "<group>"; };
 		4A4963A6235B64BC001338AB /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = "<group>"; };
 		4A64EF772369CEDC00431CEA /* MBCoderUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBCoderUITests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -895,6 +915,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A37DFB9236C686D005CEF7B /* web */ = {
+			isa = PBXGroup;
+			children = (
+				4A37DFC1236C68C1005CEF7B /* SonicEventObserver.h */,
+				4A37DFBE236C68C0005CEF7B /* SonicEventObserver.m */,
+				4A37DFC0236C68C0005CEF7B /* SonicJSContext.h */,
+				4A37DFBB236C68BF005CEF7B /* SonicJSContext.m */,
+				4A37DFBC236C68C0005CEF7B /* SonicOfflineCacheConnection.h */,
+				4A37DFBA236C68BF005CEF7B /* SonicOfflineCacheConnection.m */,
+				4A37DFC6236C6A6E005CEF7B /* SonicSetup.h */,
+				4A37DFC7236C6A6E005CEF7B /* SonicSetup.m */,
+				4A37DFBF236C68C0005CEF7B /* SonicWebViewController.h */,
+				4A37DFBD236C68C0005CEF7B /* SonicWebViewController.m */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
 		4A64EF812369D14000431CEA /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1598,6 +1635,8 @@
 				4AA84ACB236ABFC800AF5BC9 /* IBGroup2Controller15.m */,
 				4AA84ACF236AF07100AF5BC9 /* IBGroup2Controller15Cell.h */,
 				4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */,
+				4A37DE12236BD860005CEF7B /* IBGroup2Controller16.h */,
+				4A37DE13236BD860005CEF7B /* IBGroup2Controller16.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1642,6 +1681,7 @@
 		4ACBB8012341FA0D002D7955 /* IBModule */ = {
 			isa = PBXGroup;
 			children = (
+				4A37DFB9236C686D005CEF7B /* web */,
 				4A64EF812369D14000431CEA /* model */,
 				4ACBB80F2341FA0D002D7955 /* animation */,
 				4ACBB8322341FA0D002D7955 /* Gesture */,
@@ -1787,6 +1827,7 @@
 				4AA84ACD236AEDFC00AF5BC9 /* data.json */,
 				4AB0C9B7234F5912002356B7 /* LottieLogo.json */,
 				4AB0C9B5234F4266002356B7 /* home_colourline.svga */,
+				4A37DFC9236C6C53005CEF7B /* main.html */,
 				4A4963A6235B64BC001338AB /* common */,
 				4ACBB94F234201DA002D7955 /* PromiseFoundation.swift */,
 			);
@@ -1919,6 +1960,7 @@
 				4ACBB9492341FA0D002D7955 /* LaunchScreen.storyboard in Resources */,
 				4A4963A7235B64BC001338AB /* common in Resources */,
 				4A9D29AE236966A4006B9771 /* 1004.m4a in Resources */,
+				4A37DFCA236C6C53005CEF7B /* main.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1998,6 +2040,7 @@
 				4ACBB89B2341FA0D002D7955 /* UIStepper+RACSignalSupport.m in Sources */,
 				4ACBB8982341FA0D002D7955 /* GCDSemaphore.m in Sources */,
 				4ACBB9402341FA0D002D7955 /* Target_AViewController.m in Sources */,
+				4A37DFC3236C68C1005CEF7B /* SonicJSContext.m in Sources */,
 				4ACBB8B32341FA0D002D7955 /* RACTargetQueueScheduler.m in Sources */,
 				4ACBB9102341FA0D002D7955 /* SDImageCache.m in Sources */,
 				4ACBB8DD2341FA0D002D7955 /* RACImmediateScheduler.m in Sources */,
@@ -2042,6 +2085,7 @@
 				4ACBB8552341FA0D002D7955 /* IBController39.m in Sources */,
 				4ACBB8CC2341FA0D002D7955 /* RACDynamicSignal.m in Sources */,
 				4ACBB8662341FA0D002D7955 /* IBController24.m in Sources */,
+				4A37DE14236BD860005CEF7B /* IBGroup2Controller16.m in Sources */,
 				4ACBB88E2341FA0D002D7955 /* MASConstraintMaker.m in Sources */,
 				4ACBB8DC2341FA0D002D7955 /* RACEmptySignal.m in Sources */,
 				4ACBB8B22341FA0D002D7955 /* RACSignal.m in Sources */,
@@ -2056,6 +2100,7 @@
 				4ACBB8BA2341FA0D002D7955 /* RACSignalSequence.m in Sources */,
 				4ACBB8CB2341FA0D002D7955 /* RACScopedDisposable.m in Sources */,
 				4ACBB8F42341FA0D002D7955 /* NSObject+RACSelectorSignal.m in Sources */,
+				4A37DFC8236C6A6E005CEF7B /* SonicSetup.m in Sources */,
 				4ACBB9282341FA0D002D7955 /* IBView.m in Sources */,
 				4ACBB9182341FA0D002D7955 /* UIView+WebCacheOperation.m in Sources */,
 				4ACBB8B92341FA0D002D7955 /* RACChannel.m in Sources */,
@@ -2080,6 +2125,7 @@
 				4ACBB8C52341FA0D002D7955 /* RACBlockTrampoline.m in Sources */,
 				4ACBB8E62341FA0D002D7955 /* NSString+RACSupport.m in Sources */,
 				4ACBB8BB2341FA0D002D7955 /* RACUnarySequence.m in Sources */,
+				4A37DFC5236C68C1005CEF7B /* SonicEventObserver.m in Sources */,
 				4ACBB92D2341FA0D002D7955 /* BBookProvider.m in Sources */,
 				4ACBB91E2341FA0D002D7955 /* UIView+Ext.m in Sources */,
 				4ACBB8C82341FA0D002D7955 /* RACMulticastConnection.m in Sources */,
@@ -2122,9 +2168,11 @@
 				4ACBB91F2341FA0D002D7955 /* IBGroup2Controller8.m in Sources */,
 				4ACBB8572341FA0D002D7955 /* IBController43.m in Sources */,
 				4ACBB8B02341FA0D002D7955 /* RACStringSequence.m in Sources */,
+				4A37DFC2236C68C1005CEF7B /* SonicOfflineCacheConnection.m in Sources */,
 				4ACBB8FC2341FA0D002D7955 /* AFURLRequestSerialization.m in Sources */,
 				4ACBB9392341FA0D002D7955 /* IBCAReplicatorLayer.m in Sources */,
 				4ACBB8962341FA0D002D7955 /* GCDTimer.m in Sources */,
+				4A37DFC4236C68C1005CEF7B /* SonicWebViewController.m in Sources */,
 				4ACBB8972341FA0D002D7955 /* GCDGroup.m in Sources */,
 				4ACBB90D2341FA0D002D7955 /* SDWebImageCoder.m in Sources */,
 				4ACBB8792341FA0D002D7955 /* IBController8.m in Sources */,

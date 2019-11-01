@@ -11,6 +11,7 @@
 #import "ViewController1.h"
 #import "ViewController2.h"
 #import "ViewController3.h"
+#import "SonicSetup.h"
 
 extern CFAbsoluteTime StartTime;
 
@@ -23,6 +24,8 @@ extern CFAbsoluteTime StartTime;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [SonicSetup setup];
     
     UITabBarController *tabbarVC = [[UITabBarController alloc] init];
     ViewController1 *vc1 = ViewController1.new;
