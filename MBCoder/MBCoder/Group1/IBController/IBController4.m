@@ -76,6 +76,9 @@ typedef void (^Block)(void);
 @end
 
 @implementation IBController4
+
+// https://www.jianshu.com/p/d96d27819679(源码解析)
+
 //如果需要在block内部改变外部栈区变量的话，需要在用__block修饰外部变量。
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -114,7 +117,39 @@ typedef void (^Block)(void);
 //    [self test2];
 //    [self test3];
 //    [self testBlock];
-    [self testWeak];
+//    [self testWeak];
+    [self test4];
+}
+
+
+/// obj = nil，执行之前：都有值。
+///        执行之后：strongobj=nil（block体内弱引用），&strongobj有值（strongobj作为指针，地址是存在的，只不过指向的内存空间不存在了）。
+- (void)test5
+{
+    NSObject *obj = [[NSObject alloc] init];
+    NSLog(@"%@--%p", obj, &obj);
+    __weak typeof(obj)weakobj = obj;
+    void(^block)(void) = ^{
+        __strong typeof(weakobj) strongobj = weakobj;
+        NSLog(@"%@--%p",strongobj, &strongobj);
+    };
+    block();
+    obj = nil;
+    block();
+}
+
+
+/// 都有值，block内部会持有这个对象
+- (void)test4
+{
+    NSObject *obj = [[NSObject alloc] init];
+    NSLog(@"%@--%p", obj, &obj);
+    void(^block)(void) = ^{
+        NSLog(@"%@--%p",obj, &obj);
+    };
+    block();
+    obj = nil;
+    block();
 }
 
 - (void)testWeak
@@ -299,6 +334,22 @@ typedef void (^Block)(void);
 
 
 /**
+1、block是什么？
+ 堆上Bolck：__NSMallocBlock__ -> __NSMallocBlock -> NSBlock -> NSObject
+ 栈上Bolck：__NSStackBlock__ -> __NSStackBlock -> NSBlock -> NSObject
+ 全局Bolck：__NSGlobalBlock__ -> __NSGlobalBlock -> NSBlock -> NSObject
+ 验证：object_getSuperclass()
+ 结论是对象。
+ Block就是一个里面存储了指向定义的block时的代码块的函数指针，以及block外部上下文变量信息的结构体
+ 函数的作用是回调，结构体的作用是存储变量信息。
+ 
+ 2、内存分布
+ 无外部变量：block在全局区
+ 有外部变量：全局变量、全局静态变量、局部静态变量、block依然在全局区
+           普通外部变量，copy、strong修饰的block在堆区，weak修饰的block在栈区
+ 
+ 3、 block结构见下文
+ 
  Block变量的声明格式为: 返回值类型(^Block名字)(参数列表);
  Block变量的赋值格式为: Block变量 = ^返回值类型(参数列表){函数体}
  
@@ -320,7 +371,7 @@ typedef void (^Block)(void);
  这种情况下，__block就在栈上。
  MRC环境下，只有copy，__block才会被复制到堆上，否则，__block一直都在栈上，block也只是__NSStackBlock，
  这个时候__forwarding指针就只指向自己了。
- 
+  
  __block结构体中的变量就是它修饰的变量，这两者没有指针指向关系。指针是__forwarding，作用是针对堆的block
  
  __block对象释放：
