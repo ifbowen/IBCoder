@@ -7,6 +7,7 @@
 //
 
 #import "IBController4.h"
+#import <objc/runtime.h>
 
 #ifndef weakify
 #if __has_feature(objc_arc)
@@ -120,6 +121,23 @@ typedef void (^Block)(void);
 //    [self testWeak];
     [self test4];
 }
+
+- (void)test6
+{
+    __block char key = 0;  ///&(结构体->forwarding->key)在栈区
+    
+    objc_setAssociatedObject(self, &key, @1, OBJC_ASSOCIATION_ASSIGN);
+    
+    void (^block)(void) = ^{
+        objc_setAssociatedObject(self, &key, @2, OBJC_ASSOCIATION_ASSIGN);
+    };  /// 在堆区
+    
+    id m = objc_getAssociatedObject(self, &key);  ///&(结构体->forwarding->key)
+    block();
+    id n = objc_getAssociatedObject(self, &key);
+    NSLog(@"m= %@ n=%@", m,n);
+}
+
 
 
 /// obj = nil，执行之前：都有值。
