@@ -7,8 +7,136 @@
 //
 
 #import "IBController38.h"
+#import <KVOController.h>
 
-@interface IBController38 ()
+/*************************模型*****************************/
+
+@interface CellModel : NSObject
+ 
+@property (nonatomic, copy) NSString *title;
+  
+@end
+ 
+@implementation CellModel
+
+@end
+
+/*************************cell声明*****************************/
+
+@interface TableViewCell : UITableViewCell
+ 
+@property (nonatomic, weak) UILabel *lable;
+@property (nonatomic, strong) CellModel *model;
+
++ (instancetype)cellWithTableView:(UITableView *)tableView;
+
+@end
+
+/*************************视图模型*****************************/
+
+@interface CellViewModel : NSObject
+
+@property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) NSString *selectedData;
+
+- (NSInteger)numberOfItemsInSection:(NSInteger)section;
+- (TableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
+@implementation CellViewModel
+  
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self setupData];
+    }
+    return self;
+}
+ 
+- (void)setupData
+{
+    self.dataSource = @[].mutableCopy;
+    for (int i = 0; i < 20; i++) {
+        CellModel *model = [[CellModel alloc] init];
+        model.title = [NSString stringWithFormat:@"标题%d", i];
+        [self.dataSource addObject:model];
+    }
+}
+  
+- (NSInteger)numberOfItemsInSection:(NSInteger)section
+{
+    return self.dataSource.count;
+}
+ 
+- (TableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TableViewCell *cell = [TableViewCell cellWithTableView:tableView];
+    cell.model = self.dataSource[indexPath.row];
+    return cell;
+}
+ 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *str = [NSString stringWithFormat:@"点击了第%ld行", (long)indexPath.row];
+    self.selectedData = str;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50.0f;
+}
+
+@end
+
+/*************************视图*****************************/
+ 
+@implementation TableViewCell
+
++ (NSString *)identifier
+{
+    return NSStringFromClass(self);
+}
+ 
++ (instancetype)cellWithTableView:(UITableView *)tableView
+{
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self identifier]];
+    if (!cell) {
+        cell = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[self identifier]];
+    }
+    return cell;
+}
+ 
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 30)];
+        label.font = [UIFont systemFontOfSize:20.0f];
+        [self.contentView addSubview:label];
+        self.lable = label;
+        self.backgroundColor = [UIColor whiteColor];
+    }
+    
+    return self;
+}
+ 
+- (void)setModel:(CellModel *)model
+{
+    _model = model;
+    self.lable.text = model.title;
+}
+
+@end
+
+@interface IBController38 ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) CellViewModel *viewModel;
+@property (nonatomic, strong) UILabel *toastLabel;
 
 @end
 
@@ -16,13 +144,65 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.viewModel = [[CellViewModel alloc] init];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+    
+    self.toastLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-75, 100, 150, 30)];
+    self.toastLabel.alpha = 0.0;
+    self.toastLabel.textAlignment = NSTextAlignmentCenter;
+    self.toastLabel.layer.cornerRadius = 5;
+    self.toastLabel.layer.masksToBounds = YES;
+    self.toastLabel.backgroundColor = UIColor.blackColor;
+    self.toastLabel.textColor = UIColor.whiteColor;
+    [self.view addSubview:self.toastLabel];
+
+    [self.KVOController observe:self.viewModel keyPath:@"selectedData" options:NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary<NSString *,id> * change) {
+        [self showToast:change[@"new"]];
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)showToast:(NSString *)toast
+{
+    self.toastLabel.text = toast;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.toastLabel.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.25 animations:^{
+            self.toastLabel.alpha = 0.0;
+        }];
+    }];
+    
 }
+ 
+#pragma mark - UITableViewDataSource
+ 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.viewModel numberOfItemsInSection:section];
+}
+ 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.viewModel tableView:tableView cellForRowAtIndexPath:indexPath];
+}
+ 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.viewModel tableView:tableView didSelectRowAtIndexPath:indexPath];
+}
+ 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.viewModel tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+ 
+@end
 
 /*
  一、MVC:
@@ -76,7 +256,7 @@
  4、view接受事件响应，通知viewController，再通知viewModel进行数据处理。
  优缺点：
  优点：低耦合，可重用性，可测试
- 缺点：
+ 缺点：数据绑定使得 MVVM 变得复杂和难用
 
    ViewModel是MVVM模式的核心，它是连接view和model的桥梁。它有两个方向：一是将【模型】转化成【视图】，
  即将后端传递的数据转化成所看到的页面。实现的方式是：数据绑定。二是将【视图】转化成【模型】，即将所看
@@ -87,7 +267,3 @@
  并且MVVM中的View 和 ViewModel可以互相通信
 
 */
-
-
-
-@end

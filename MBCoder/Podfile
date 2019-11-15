@@ -24,6 +24,7 @@ target 'MBCoder' do
   pod 'YYKit'
   pod 'FDFullscreenPopGesture'
   pod 'TZScrollViewPopGesture' # 和FDFullscreenPopGesture库不冲突
+  pod 'KVOController'
   
   target 'MBCoderUITests' do
     inherit! :search_paths
