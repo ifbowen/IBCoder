@@ -20,6 +20,8 @@
 		4A64EF722369CDCC00431CEA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; };
 		4A64EF792369CEDC00431CEA /* Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF782369CEDC00431CEA /* Coder.swift */; };
 		4A64EF842369D14E00431CEA /* VVStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF832369D14E00431CEA /* VVStack.m */; };
+		4A86C071237D442300498C20 /* MBPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A86C070237D442300498C20 /* MBPresenter.m */; };
+		4A86C074237D953500498C20 /* IBGroup2Controller17.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A86C073237D953500498C20 /* IBGroup2Controller17.m */; };
 		4A9D220C23682F47006B9771 /* IBGroup2Controller12.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D220B23682F47006B9771 /* IBGroup2Controller12.m */; };
 		4A9D29AE236966A4006B9771 /* 1004.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D29AD236966A4006B9771 /* 1004.m4a */; };
 		4A9D2B632369904C006B9771 /* IBGroup2Controller13.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D2B622369904C006B9771 /* IBGroup2Controller13.m */; };
@@ -345,6 +347,10 @@
 		4A64EF782369CEDC00431CEA /* Coder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coder.swift; sourceTree = "<group>"; };
 		4A64EF822369D14E00431CEA /* VVStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVStack.h; sourceTree = "<group>"; };
 		4A64EF832369D14E00431CEA /* VVStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVStack.m; sourceTree = "<group>"; };
+		4A86C06F237D442300498C20 /* MBPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPresenter.h; sourceTree = "<group>"; };
+		4A86C070237D442300498C20 /* MBPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBPresenter.m; sourceTree = "<group>"; };
+		4A86C072237D953500498C20 /* IBGroup2Controller17.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller17.h; sourceTree = "<group>"; };
+		4A86C073237D953500498C20 /* IBGroup2Controller17.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller17.m; sourceTree = "<group>"; };
 		4A9D220A23682F47006B9771 /* IBGroup2Controller12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller12.h; sourceTree = "<group>"; };
 		4A9D220B23682F47006B9771 /* IBGroup2Controller12.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller12.m; sourceTree = "<group>"; };
 		4A9D29AD236966A4006B9771 /* 1004.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1004.m4a; sourceTree = "<group>"; };
@@ -939,6 +945,15 @@
 				4A64EF832369D14E00431CEA /* VVStack.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		4A86C06E237D440800498C20 /* present */ = {
+			isa = PBXGroup;
+			children = (
+				4A86C06F237D442300498C20 /* MBPresenter.h */,
+				4A86C070237D442300498C20 /* MBPresenter.m */,
+			);
+			path = present;
 			sourceTree = "<group>";
 		};
 		4A9D2C442369CB09006B9771 /* MBCoderUITests */ = {
@@ -1637,6 +1652,8 @@
 				4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */,
 				4A37DE12236BD860005CEF7B /* IBGroup2Controller16.h */,
 				4A37DE13236BD860005CEF7B /* IBGroup2Controller16.m */,
+				4A86C072237D953500498C20 /* IBGroup2Controller17.h */,
+				4A86C073237D953500498C20 /* IBGroup2Controller17.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -1681,6 +1698,7 @@
 		4ACBB8012341FA0D002D7955 /* IBModule */ = {
 			isa = PBXGroup;
 			children = (
+				4A86C06E237D440800498C20 /* present */,
 				4A37DFB9236C686D005CEF7B /* web */,
 				4A64EF812369D14000431CEA /* model */,
 				4ACBB80F2341FA0D002D7955 /* animation */,
@@ -2049,6 +2067,7 @@
 				4ACBB9082341FA0D002D7955 /* UIImage+GIF.m in Sources */,
 				4ACBB8A32341FA0D002D7955 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
 				4ACBB8AD2341FA0D002D7955 /* UIButton+RACCommandSupport.m in Sources */,
+				4A86C071237D442300498C20 /* MBPresenter.m in Sources */,
 				4ACBB8A42341FA0D002D7955 /* UICollectionReusableView+RACSignalSupport.m in Sources */,
 				4ACBB8EE2341FA0D002D7955 /* NSString+RACSequenceAdditions.m in Sources */,
 				4ACBB8682341FA0D002D7955 /* IBController16.m in Sources */,
@@ -2256,6 +2275,7 @@
 				4ACBB88D2341FA0D002D7955 /* MASCompositeConstraint.m in Sources */,
 				4ACBB8E42341FA0D002D7955 /* NSUserDefaults+RACSupport.m in Sources */,
 				4ACBB8A92341FA0D002D7955 /* UIGestureRecognizer+RACSignalSupport.m in Sources */,
+				4A86C074237D953500498C20 /* IBGroup2Controller17.m in Sources */,
 				4ACBB9292341FA0D002D7955 /* BClothesProvider.m in Sources */,
 				4ACBB8AF2341FA0D002D7955 /* RACSubscriptionScheduler.m in Sources */,
 				4ACBB8DA2341FA0D002D7955 /* RACCompoundDisposable.m in Sources */,
