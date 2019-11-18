@@ -35,7 +35,7 @@
 
 //****************************Protocol*****************************//
 
-@protocol PresenterProtocol <MBPresenterProtocol>
+@protocol PresenterProtocol <MBPresenterViewProtocol>
 
 - (void)setNameText:(NSString *)nameText;
 
@@ -130,7 +130,7 @@ static int i = 0;
 
 //****************************Controller*****************************//
 
-@interface IBGroup2Controller17 ()
+@interface IBGroup2Controller17 ()<MBPresenterControllerProtocol>
 
 @property (nonatomic, strong) TestView *testView;
 @property (nonatomic, strong) Presenter *presenter;
@@ -144,7 +144,8 @@ static int i = 0;
     
     [self setupViews];
     
-    self.presenter = [Presenter setup:self.testView];
+    self.presenter = [Presenter setup:self];
+    [self.presenter attachView:self.testView];
     [self.presenter fetchData];
 }
 

@@ -8,19 +8,23 @@
 
 #import "MBPresenter.h"
 
+@interface MBPresenter ()
+
+@end
+
 @implementation MBPresenter
 
-+ (instancetype)setup:(id<MBPresenterProtocol>)view
++ (instancetype)setup:(id<MBPresenterControllerProtocol>)controller
 {
     MBPresenter *present = [[self alloc] init];
-    present.attachView = view;
-    [view attachPresenter:present];
+    present.controller = controller;
     return present;
 }
 
-- (void)attachView:(id)view
+- (void)attachView:(id<MBPresenterViewProtocol>)view
 {
     self.attachView = view;
+    [self.attachView attachPresenter:self];
 }
 
 - (void)detachView
