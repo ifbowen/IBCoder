@@ -100,6 +100,22 @@
  1.1.13
  $ git push origin --delete [branch-name] // 删除远程分支
  
+ 1.1.14
+ $ git checkout mywork
+ $ git rebase origin
+ 这些命令会把你的”mywork“分支里的每个提交(commit)取消掉，
+ 并且把它们临时 保存为补丁(patch)(这些补丁放到”.git/rebase“目录中),
+ 然后把”mywork“分支更新 到最新的”origin“分支，最后把保存的这些补丁应用到”mywork“分支上。
+ 当’mywork‘分支更新之后，它会指向这些新创建的提交(commit),而那些老的提交会被丢弃。
+ 
+ 出现冲突
+ 在rebase的过程中，也许会出现冲突(conflict)。在这种情况，Git会停止rebase并会让你去解决冲突；
+ 在解决完冲突后，用”git add“命令去更新这些内容的索引(index), 然后，你无需执行 git commit,只要执行:
+ $ git rebase --continue
+
+ 在任何时候，可以用--abort参数来终止rebase的操作，并且”mywork“ 分支会回到rebase开始前的状态。
+ $ git rebase --abort
+ 
  
  二、Gitflow总览
  1、分支
