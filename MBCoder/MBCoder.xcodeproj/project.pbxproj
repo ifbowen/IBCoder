@@ -286,6 +286,7 @@
 		4ACBB950234201DA002D7955 /* PromiseFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB94F234201DA002D7955 /* PromiseFoundation.swift */; };
 		4ACBB9542342068A002D7955 /* RACTestScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB73B2341FA0C002D7955 /* RACTestScheduler.m */; };
 		4ACBB95A234D845F002D7955 /* IBGroup2Controller9.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */; };
+		4AE6D5ED23823A52006ED648 /* IBGroup2Controller18.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE6D5EC23823A52006ED648 /* IBGroup2Controller18.m */; };
 		5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 /* End PBXBuildFile section */
@@ -892,6 +893,8 @@
 		4ACBB951234204B1002D7955 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4ACBB958234D845F002D7955 /* IBGroup2Controller9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller9.h; sourceTree = "<group>"; };
 		4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller9.m; sourceTree = "<group>"; };
+		4AE6D5EB23823A52006ED648 /* IBGroup2Controller18.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller18.h; sourceTree = "<group>"; };
+		4AE6D5EC23823A52006ED648 /* IBGroup2Controller18.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller18.m; sourceTree = "<group>"; };
 		68F55995B515EF5A59C8491C /* libPods-MBCoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D89D083E41EFA39D866CFD /* Pods-MBCoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.release.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1654,6 +1657,8 @@
 				4A37DE13236BD860005CEF7B /* IBGroup2Controller16.m */,
 				4A86C072237D953500498C20 /* IBGroup2Controller17.h */,
 				4A86C073237D953500498C20 /* IBGroup2Controller17.m */,
+				4AE6D5EB23823A52006ED648 /* IBGroup2Controller18.h */,
+				4AE6D5EC23823A52006ED648 /* IBGroup2Controller18.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -2246,6 +2251,7 @@
 				4ACBB9002341FA0D002D7955 /* UIImage+WebP.m in Sources */,
 				4AA84AD1236AF07100AF5BC9 /* IBGroup2Controller15Cell.m in Sources */,
 				4ACBB9192341FA0D002D7955 /* UIView+WebCache.m in Sources */,
+				4AE6D5ED23823A52006ED648 /* IBGroup2Controller18.m in Sources */,
 				4ACBB8642341FA0D002D7955 /* IBController15.m in Sources */,
 				4ACBB8542341FA0D002D7955 /* IBController41.m in Sources */,
 				4ACBB8822341FA0D002D7955 /* ViewController1.m in Sources */,
