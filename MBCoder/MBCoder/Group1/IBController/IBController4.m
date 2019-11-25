@@ -119,7 +119,9 @@ typedef void (^Block)(void);
 //    [self test3];
 //    [self testBlock];
 //    [self testWeak];
-    [self test4];
+//    [self test4];
+//    [self test5];
+    [self test6];
 }
 
 - (void)test6
