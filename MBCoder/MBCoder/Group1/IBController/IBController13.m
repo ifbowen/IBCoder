@@ -13,6 +13,31 @@
  一、isa指针问题
  isa：是一个Class 类型的指针. 每个实例对象有个isa的指针,他指向对象的类,而Class里也有个isa的指针, 指向meteClass(元类)。元类保存了类方法的列表。当类方法被调 用时,先会从本身查找类方法的实现,如果没有,元类会向他父类查找该方法。同时注意的是:元类(meteClass)也是类,它也是对象。元类也有isa指针,它的isa指针最终指向的是一个根元类(root meteClass)。根元类的isa指针指向本身,这样形成了一个封闭的内循环。
  
+ 1)引用计数的存储
+ 在arm64架构之前，isa就是一个普通的指针，存储着Class、Meta-Class对象的内存地址
+ 从arm64架构开始，对isa进行了优化，变成了一个共用体（union）结构，还使用位域来存储更多的信息
+ union isa_t {
+    Class cls;
+    uintptr_t bits;
+    struct {
+        uintptr_t nonpointer        : 1; 0，代表普通的指针，存储着对象的内存地址；1，代表优化过，使用位域存储更多的信息
+        uintptr_t has_assoc         : 1; 是否有设置过关联对象，如果没有，释放时会更快
+        uintptr_t has_cxx_dtor      : 1; 是否有C++的析构函数（.cxx_destruct），如果没有，释放时会更快
+        uintptr_t shiftcls          : 44;存储着对象的内存地址信息
+        uintptr_t magic             : 6; 用于在调试时分辨对象是否未完成初始化
+        uintptr_t weakly_referenced : 1; 用于在调试时分辨对象是否未完成初始化
+        uintptr_t deallocating      : 1; 对象是否正在释放
+        uintptr_t has_sidetable_rc  : 1; 引用计数器是否过大无法存储在isa中,如果为1，那么引用计数会存储在一个叫SideTable的类的属性中
+        uintptr_t extra_rc          : 8  里面存储的值是引用计数
+    };
+ };
+ 在64bit中，引用计数可以直接存储在优化过的isa指针中，也可能存储在SideTable类中
+ struct SideTable {
+    spinlock_t slock;
+    RefcountMap refcnts; refcnts是一个存放着对象引用计数的散列表
+    weak_table_t weak_table;
+ }
+ 
  二、Runtime实现的机制是什么，怎么用，一般用于干嘛？
  1). 使用时需要导入的头文件 <objc/message.h> <objc/runtime.h>
  2). Runtime 运行时机制，它是一套C语言库。
