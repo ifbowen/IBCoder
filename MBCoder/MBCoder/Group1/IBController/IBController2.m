@@ -28,6 +28,7 @@
 @interface IBController2 ()<PersonDelegate>
 
 @property (nonatomic, strong) Personal *person;
+@property (nonatomic, copy) NSString *name;
 
 @end
 
@@ -54,6 +55,60 @@
 //    NSLog(@"%@",self.person.delegate);
     [self test3];
     
+}
+
+/**
+ Tagged Pointer
+ 1、从64bit开始，iOS引入了Tagged Pointer技术，用于优化NSNumber、NSDate、NSString等小对象的存储
+ 2、在没有使用Tagged Pointer之前， NSNumber等对象需要动态分配内存、维护引用计数等，NSNumber指针存储的是堆中NSNumber对象的地址值
+ 3、使用Tagged Pointer之后，NSNumber指针里面存储的数据变成了：Tag + Data，也就是将数据直接存储在了指针中
+ 4、当指针不够存储数据时，才会使用动态分配内存的方式来存储数据
+ 5、objc_msgSend能识别Tagged Pointer，比如NSNumber的intValue方法，直接从指针提取数据，节省了以前的调用开销
+
+ 6、如何判断一个指针是否为Tagged Pointer？
+ 1）iOS平台，最高有效位是1（第64bit），#define  _OBJC_TAG_MASK (1UL<<63)
+ 2）Mac平台，最低有效位是1，                 #define  _OBJC_TAG_MASK (1UL)
+ 方法：
+ BOOL isTaggedPointer(id pointer)
+ {
+    return (long)(__bridge void *)pointer & _OBJC_TAG_MASK == _OBJC_TAG_MASK;
+ }
+
+- (void)setName:(NSString *)name
+{
+    if (_name != name) {
+        [_name release];
+        _name = [name retain];
+    }
+}
+ */
+
+- (void)test4
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    
+    /**
+     会崩溃
+     1、是对象
+     2、异步执行，但不是原子操作
+     */
+//    for (int i = 0; i < 1000; i++) {
+//        dispatch_async(queue, ^{
+//            // 加锁
+//            self.name = [NSString stringWithFormat:@"abcdefghijk"];
+//            // 解锁
+//        });
+//    }
+    
+    /**
+     不会崩溃
+     1、Tagged Pointer，不是对象，指针赋值
+     */
+    for (int i = 0; i < 1000; i++) {
+        dispatch_async(queue, ^{
+            self.name = [NSString stringWithFormat:@"abc"];
+        });
+    }
 }
 
 - (void)test3 {

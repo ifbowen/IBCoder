@@ -289,6 +289,7 @@
 		4AE6D5ED23823A52006ED648 /* IBGroup2Controller18.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE6D5EC23823A52006ED648 /* IBGroup2Controller18.m */; };
 		5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
+		F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -900,6 +901,8 @@
 		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79E841B58080BB70062A103 /* Pods-MBCoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.debug.xcconfig"; sourceTree = "<group>"; };
+		F3A3E32E238C441200925ACC /* IBGroup2Controller19.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller19.h; sourceTree = "<group>"; };
+		F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller19.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1659,6 +1662,8 @@
 				4A86C073237D953500498C20 /* IBGroup2Controller17.m */,
 				4AE6D5EB23823A52006ED648 /* IBGroup2Controller18.h */,
 				4AE6D5EC23823A52006ED648 /* IBGroup2Controller18.m */,
+				F3A3E32E238C441200925ACC /* IBGroup2Controller19.h */,
+				F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -2058,6 +2063,7 @@
 				4ACBB89C2341FA0D002D7955 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				4ACBB94C2341FA0D002D7955 /* AppDelegate.m in Sources */,
 				4ACBB8F92341FA0D002D7955 /* AFURLResponseSerialization.m in Sources */,
+				F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */,
 				4ACBB85A2341FA0D002D7955 /* IBController30.m in Sources */,
 				4ACBB9132341FA0D002D7955 /* NSData+ImageContentType.m in Sources */,
 				4ACBB89B2341FA0D002D7955 /* UIStepper+RACSignalSupport.m in Sources */,
