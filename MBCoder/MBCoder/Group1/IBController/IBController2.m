@@ -18,7 +18,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"person dealloc");
+    NSLog(@"person %@ dealloc", self.name);
 }
 
 @end
@@ -53,7 +53,8 @@
     
 //    [self test2];
 //    NSLog(@"%@",self.person.delegate);
-    [self test3];
+//    [self test3];
+    [self test3_1];
     
 }
 
@@ -109,6 +110,19 @@
             self.name = [NSString stringWithFormat:@"abc"];
         });
     }
+}
+
+- (void)test3_1 {
+    @autoreleasepool {
+        Personal *p = [[Personal alloc] init];
+        p.name = @"猫";
+    }
+    NSLog(@"@autoreleasepool之后");
+    {
+        Personal *p = [[Personal alloc] init];
+        p.name = @"狗";
+    }
+    NSLog(@"花括号之后");
 }
 
 - (void)test3 {
