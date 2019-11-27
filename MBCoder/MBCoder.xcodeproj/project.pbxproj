@@ -33,6 +33,7 @@
 		4AA84ACC236ABFC800AF5BC9 /* IBGroup2Controller15.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA84ACB236ABFC800AF5BC9 /* IBGroup2Controller15.m */; };
 		4AA84ACE236AEDFD00AF5BC9 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AA84ACD236AEDFC00AF5BC9 /* data.json */; };
 		4AA84AD1236AF07100AF5BC9 /* IBGroup2Controller15Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */; };
+		4AAA1243238E590300DC5478 /* IBGroup2Controller20.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA1242238E590300DC5478 /* IBGroup2Controller20.m */; };
 		4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */; };
 		4AB0C9B0234F30C0002356B7 /* IBGroup2Controller11.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */; };
 		4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B5234F4266002356B7 /* home_colourline.svga */; };
@@ -370,6 +371,8 @@
 		4AA84ACD236AEDFC00AF5BC9 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		4AA84ACF236AF07100AF5BC9 /* IBGroup2Controller15Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller15Cell.h; sourceTree = "<group>"; };
 		4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller15Cell.m; sourceTree = "<group>"; };
+		4AAA1241238E590300DC5478 /* IBGroup2Controller20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller20.h; sourceTree = "<group>"; };
+		4AAA1242238E590300DC5478 /* IBGroup2Controller20.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller20.m; sourceTree = "<group>"; };
 		4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller10.h; sourceTree = "<group>"; };
 		4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller10.m; sourceTree = "<group>"; };
 		4AB0C9AE234F30C0002356B7 /* IBGroup2Controller11.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller11.h; sourceTree = "<group>"; };
@@ -1664,6 +1667,8 @@
 				4AE6D5EC23823A52006ED648 /* IBGroup2Controller18.m */,
 				F3A3E32E238C441200925ACC /* IBGroup2Controller19.h */,
 				F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */,
+				4AAA1241238E590300DC5478 /* IBGroup2Controller20.h */,
+				4AAA1242238E590300DC5478 /* IBGroup2Controller20.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -2095,6 +2100,7 @@
 				4ACBB8992341FA0D002D7955 /* IBCoreSpotlight.m in Sources */,
 				4ACBB8872341FA0D002D7955 /* IBDatabaseManager.m in Sources */,
 				4ACBB9202341FA0D002D7955 /* IBGroup2Controller7.m in Sources */,
+				4AAA1243238E590300DC5478 /* IBGroup2Controller20.m in Sources */,
 				4ACBB91A2341FA0D002D7955 /* SDWebImageImageIOCoder.m in Sources */,
 				4ACBB88A2341FA0D002D7955 /* LoggerClient.m in Sources */,
 				4ACBB85D2341FA0D002D7955 /* IBController29.m in Sources */,
