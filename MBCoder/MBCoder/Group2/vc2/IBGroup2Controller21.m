@@ -175,7 +175,7 @@
  spec.libraries = 'sqlite3.0', 'resolv'
  spec.vendored_frameworks = 'GMHttpDNSModule/Frameworks/\*.framework'
  spec.vendored_libraries =  'GMHttpDNSModule/lib/\*.a'
- s.resource_bundles = {'GMHttpDNS' => ['**\/GMHttpDNSModule/Resources/\**\/\*.{png,jpg}', '**\/IKKTV/\**\/\*.{xib,storyboard}']}
+ spec.resource_bundles = {'GMHttpDNS' => ['**\/GMHttpDNSModule/Resources/\**\/\*.{png,jpg}', '**\/GMHttpDNSModule/\**\/\*.{xib,storyboard}']}
 
  */
 
