@@ -288,6 +288,7 @@
 		4ACBB9542342068A002D7955 /* RACTestScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB73B2341FA0C002D7955 /* RACTestScheduler.m */; };
 		4ACBB95A234D845F002D7955 /* IBGroup2Controller9.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */; };
 		4AE6D5ED23823A52006ED648 /* IBGroup2Controller18.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE6D5EC23823A52006ED648 /* IBGroup2Controller18.m */; };
+		4AF2076223967AE800EFB85D /* IBGroup2Controller21.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2076123967AE800EFB85D /* IBGroup2Controller21.m */; };
 		5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 		F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */; };
@@ -899,6 +900,8 @@
 		4ACBB959234D845F002D7955 /* IBGroup2Controller9.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller9.m; sourceTree = "<group>"; };
 		4AE6D5EB23823A52006ED648 /* IBGroup2Controller18.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller18.h; sourceTree = "<group>"; };
 		4AE6D5EC23823A52006ED648 /* IBGroup2Controller18.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller18.m; sourceTree = "<group>"; };
+		4AF2076023967AE800EFB85D /* IBGroup2Controller21.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller21.h; sourceTree = "<group>"; };
+		4AF2076123967AE800EFB85D /* IBGroup2Controller21.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller21.m; sourceTree = "<group>"; };
 		68F55995B515EF5A59C8491C /* libPods-MBCoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D89D083E41EFA39D866CFD /* Pods-MBCoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.release.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1669,6 +1672,8 @@
 				F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */,
 				4AAA1241238E590300DC5478 /* IBGroup2Controller20.h */,
 				4AAA1242238E590300DC5478 /* IBGroup2Controller20.m */,
+				4AF2076023967AE800EFB85D /* IBGroup2Controller21.h */,
+				4AF2076123967AE800EFB85D /* IBGroup2Controller21.m */,
 			);
 			path = vc2;
 			sourceTree = "<group>";
@@ -2257,6 +2262,7 @@
 				4ACBB8CE2341FA0D002D7955 /* RACQueueScheduler.m in Sources */,
 				4ACBB950234201DA002D7955 /* PromiseFoundation.swift in Sources */,
 				4ACBB90E2341FA0D002D7955 /* NSButton+WebCache.m in Sources */,
+				4AF2076223967AE800EFB85D /* IBGroup2Controller21.m in Sources */,
 				4ACBB8C42341FA0D002D7955 /* RACArraySequence.m in Sources */,
 				4ACBB9322341FA0D002D7955 /* Father+Cate.m in Sources */,
 				4ACBB9252341FA0D002D7955 /* IBGroup2Controller3.m in Sources */,
