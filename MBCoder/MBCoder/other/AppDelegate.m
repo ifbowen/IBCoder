@@ -12,6 +12,7 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "SonicSetup.h"
+#import "TPCallTrace.h"
 
 extern CFAbsoluteTime StartTime;
 
@@ -50,6 +51,8 @@ extern CFAbsoluteTime StartTime;
     NSLog(@"%@",NSHomeDirectory());
     double launchTime = (CFAbsoluteTimeGetCurrent() - StartTime);
     NSLog(@"main函数之后启动时间：%lf",launchTime);
+    
+    startTrace();
     
     return YES;
 }

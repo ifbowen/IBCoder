@@ -295,6 +295,15 @@
 		4AF209282397C7FA00EFB85D /* MBPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF209272397C7FA00EFB85D /* MBPercentDrivenInteractiveTransition.m */; };
 		4AF20AE12398B7EC00EFB85D /* IBGroup2Controller23.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF20AE02398B7EC00EFB85D /* IBGroup2Controller23.m */; };
 		4AF2132E2399207800EFB85D /* MBMmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2132D2399207800EFB85D /* MBMmap.m */; };
+		4AF213422399F2E800EFB85D /* TPRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF213322399F2E800EFB85D /* TPRecordCell.m */; };
+		4AF213432399F2E800EFB85D /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 4AF213342399F2E800EFB85D /* fishhook.c */; };
+		4AF213442399F2E800EFB85D /* UIWindow+CallRecordShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF213372399F2E800EFB85D /* UIWindow+CallRecordShake.m */; };
+		4AF213452399F2E800EFB85D /* TPCallTrace.c in Sources */ = {isa = PBXBuildFile; fileRef = 4AF213392399F2E800EFB85D /* TPCallTrace.c */; };
+		4AF213462399F2E800EFB85D /* TPRecordHierarchyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2133A2399F2E800EFB85D /* TPRecordHierarchyModel.m */; };
+		4AF213472399F2E800EFB85D /* TPRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2133B2399F2E800EFB85D /* TPRecordModel.m */; };
+		4AF2134A2399F2E800EFB85D /* TimeProfilerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF213402399F2E800EFB85D /* TimeProfilerVC.m */; };
+		4AF2134E2399F31600EFB85D /* TPExpandIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF2134C2399F31600EFB85D /* TPExpandIcon.png */; };
+		4AF2134F2399F31600EFB85D /* TPNOExpandIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF2134D2399F31600EFB85D /* TPNOExpandIcon.png */; };
 		5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 		F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */; };
@@ -920,6 +929,22 @@
 		4AF20AE02398B7EC00EFB85D /* IBGroup2Controller23.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller23.m; sourceTree = "<group>"; };
 		4AF2132C2399207800EFB85D /* MBMmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMmap.h; sourceTree = "<group>"; };
 		4AF2132D2399207800EFB85D /* MBMmap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMmap.m; sourceTree = "<group>"; };
+		4AF213302399F2E800EFB85D /* TPRecordHierarchyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPRecordHierarchyModel.h; sourceTree = "<group>"; };
+		4AF213312399F2E800EFB85D /* TPCallTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPCallTrace.h; sourceTree = "<group>"; };
+		4AF213322399F2E800EFB85D /* TPRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPRecordCell.m; sourceTree = "<group>"; };
+		4AF213342399F2E800EFB85D /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		4AF213352399F2E800EFB85D /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		4AF213362399F2E800EFB85D /* TPRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPRecordModel.h; sourceTree = "<group>"; };
+		4AF213372399F2E800EFB85D /* UIWindow+CallRecordShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CallRecordShake.m"; sourceTree = "<group>"; };
+		4AF213382399F2E800EFB85D /* TimeProfilerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeProfilerVC.h; sourceTree = "<group>"; };
+		4AF213392399F2E800EFB85D /* TPCallTrace.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TPCallTrace.c; sourceTree = "<group>"; };
+		4AF2133A2399F2E800EFB85D /* TPRecordHierarchyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPRecordHierarchyModel.m; sourceTree = "<group>"; };
+		4AF2133B2399F2E800EFB85D /* TPRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPRecordModel.m; sourceTree = "<group>"; };
+		4AF2133F2399F2E800EFB85D /* TPRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPRecordCell.h; sourceTree = "<group>"; };
+		4AF213402399F2E800EFB85D /* TimeProfilerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeProfilerVC.m; sourceTree = "<group>"; };
+		4AF213412399F2E800EFB85D /* UIWindow+CallRecordShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CallRecordShake.h"; sourceTree = "<group>"; };
+		4AF2134C2399F31600EFB85D /* TPExpandIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TPExpandIcon.png; sourceTree = "<group>"; };
+		4AF2134D2399F31600EFB85D /* TPNOExpandIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TPNOExpandIcon.png; sourceTree = "<group>"; };
 		68F55995B515EF5A59C8491C /* libPods-MBCoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D89D083E41EFA39D866CFD /* Pods-MBCoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.release.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1737,6 +1762,7 @@
 		4ACBB8012341FA0D002D7955 /* IBModule */ = {
 			isa = PBXGroup;
 			children = (
+				4AF2132F2399F2E800EFB85D /* TimeProfiler */,
 				4AF2132823991DB900EFB85D /* mmap */,
 				4AF2091F2397B46700EFB85D /* PresentationController */,
 				4A86C06E237D440800498C20 /* present */,
@@ -1926,6 +1952,45 @@
 			path = mmap;
 			sourceTree = "<group>";
 		};
+		4AF2132F2399F2E800EFB85D /* TimeProfiler */ = {
+			isa = PBXGroup;
+			children = (
+				4AF213332399F2E800EFB85D /* fishhook */,
+				4AF2134B2399F31600EFB85D /* icon */,
+				4AF213382399F2E800EFB85D /* TimeProfilerVC.h */,
+				4AF213402399F2E800EFB85D /* TimeProfilerVC.m */,
+				4AF213392399F2E800EFB85D /* TPCallTrace.c */,
+				4AF213312399F2E800EFB85D /* TPCallTrace.h */,
+				4AF2133F2399F2E800EFB85D /* TPRecordCell.h */,
+				4AF213322399F2E800EFB85D /* TPRecordCell.m */,
+				4AF213302399F2E800EFB85D /* TPRecordHierarchyModel.h */,
+				4AF2133A2399F2E800EFB85D /* TPRecordHierarchyModel.m */,
+				4AF213362399F2E800EFB85D /* TPRecordModel.h */,
+				4AF2133B2399F2E800EFB85D /* TPRecordModel.m */,
+				4AF213412399F2E800EFB85D /* UIWindow+CallRecordShake.h */,
+				4AF213372399F2E800EFB85D /* UIWindow+CallRecordShake.m */,
+			);
+			path = TimeProfiler;
+			sourceTree = "<group>";
+		};
+		4AF213332399F2E800EFB85D /* fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				4AF213342399F2E800EFB85D /* fishhook.c */,
+				4AF213352399F2E800EFB85D /* fishhook.h */,
+			);
+			path = fishhook;
+			sourceTree = "<group>";
+		};
+		4AF2134B2399F31600EFB85D /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				4AF2134C2399F31600EFB85D /* TPExpandIcon.png */,
+				4AF2134D2399F31600EFB85D /* TPNOExpandIcon.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
 		E0C3398B810AB45FA06458BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2046,8 +2111,10 @@
 				4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */,
 				4ACBB8752341FA0D002D7955 /* IBController1.xib in Resources */,
 				4AA84ACE236AEDFD00AF5BC9 /* data.json in Resources */,
+				4AF2134E2399F31600EFB85D /* TPExpandIcon.png in Resources */,
 				4ACBB9472341FA0D002D7955 /* Assets.xcassets in Resources */,
 				4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */,
+				4AF2134F2399F31600EFB85D /* TPNOExpandIcon.png in Resources */,
 				4ACBB94A2341FA0D002D7955 /* Main.storyboard in Resources */,
 				4ACBB9492341FA0D002D7955 /* LaunchScreen.storyboard in Resources */,
 				4A4963A7235B64BC001338AB /* common in Resources */,
@@ -2124,6 +2191,7 @@
 			files = (
 				4ACBB9542342068A002D7955 /* RACTestScheduler.m in Sources */,
 				4ACBB86A2341FA0D002D7955 /* IBController27.m in Sources */,
+				4AF213442399F2E800EFB85D /* UIWindow+CallRecordShake.m in Sources */,
 				4ACBB89C2341FA0D002D7955 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				4ACBB94C2341FA0D002D7955 /* AppDelegate.m in Sources */,
 				4ACBB8F92341FA0D002D7955 /* AFURLResponseSerialization.m in Sources */,
@@ -2192,6 +2260,7 @@
 				4ACBB89A2341FA0D002D7955 /* NSObject+Log.m in Sources */,
 				4AA84ACC236ABFC800AF5BC9 /* IBGroup2Controller15.m in Sources */,
 				4ACBB88C2341FA0D002D7955 /* ViewController+MASAdditions.m in Sources */,
+				4AF213432399F2E800EFB85D /* fishhook.c in Sources */,
 				4ACBB8BF2341FA0D002D7955 /* RACCompoundDisposableProvider.d in Sources */,
 				4ACBB8BA2341FA0D002D7955 /* RACSignalSequence.m in Sources */,
 				4ACBB8CB2341FA0D002D7955 /* RACScopedDisposable.m in Sources */,
@@ -2215,7 +2284,9 @@
 				4ACBB8AA2341FA0D002D7955 /* UIRefreshControl+RACCommandSupport.m in Sources */,
 				4ACBB8A52341FA0D002D7955 /* UIDatePicker+RACSignalSupport.m in Sources */,
 				4A64EF842369D14E00431CEA /* VVStack.m in Sources */,
+				4AF213452399F2E800EFB85D /* TPCallTrace.c in Sources */,
 				4ACBB9232341FA0D002D7955 /* IBGroup2Controller6.m in Sources */,
+				4AF213422399F2E800EFB85D /* TPRecordCell.m in Sources */,
 				4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */,
 				4ACBB8B42341FA0D002D7955 /* RACIndexSetSequence.m in Sources */,
 				4ACBB8C52341FA0D002D7955 /* RACBlockTrampoline.m in Sources */,
@@ -2242,6 +2313,7 @@
 				4ACBB8FA2341FA0D002D7955 /* AFHTTPSessionManager.m in Sources */,
 				4ACBB8F52341FA0D002D7955 /* NSIndexSet+RACSequenceAdditions.m in Sources */,
 				4ACBB8D02341FA0D002D7955 /* RACValueTransformer.m in Sources */,
+				4AF213462399F2E800EFB85D /* TPRecordHierarchyModel.m in Sources */,
 				4ACBB8A12341FA0D002D7955 /* UIImagePickerController+RACSignalSupport.m in Sources */,
 				4ACBB8742341FA0D002D7955 /* IBController1.m in Sources */,
 				4ACBB8862341FA0D002D7955 /* FMEncryptHelper.m in Sources */,
@@ -2303,6 +2375,7 @@
 				4ACBB85F2341FA0D002D7955 /* IBController32.m in Sources */,
 				4ACBB93D2341FA0D002D7955 /* IBCATiledLayer.m in Sources */,
 				4ACBB8B12341FA0D002D7955 /* RACScheduler.m in Sources */,
+				4AF213472399F2E800EFB85D /* TPRecordModel.m in Sources */,
 				4ACBB8BE2341FA0D002D7955 /* RACSequence.m in Sources */,
 				4ACBB8AE2341FA0D002D7955 /* UIActionSheet+RACSignalSupport.m in Sources */,
 				4AF209252397BFE000EFB85D /* MBPresentationControllerTransition.m in Sources */,
@@ -2368,6 +2441,7 @@
 				4ACBB92B2341FA0D002D7955 /* BProxy.m in Sources */,
 				4AF209282397C7FA00EFB85D /* MBPercentDrivenInteractiveTransition.m in Sources */,
 				4ACBB8D22341FA0D002D7955 /* RACReturnSignal.m in Sources */,
+				4AF2134A2399F2E800EFB85D /* TimeProfilerVC.m in Sources */,
 				4ACBB8632341FA0D002D7955 /* IBController31.m in Sources */,
 				4ACBB8C32341FA0D002D7955 /* RACErrorSignal.m in Sources */,
 				4ACBB8592341FA0D002D7955 /* IBController34.m in Sources */,
