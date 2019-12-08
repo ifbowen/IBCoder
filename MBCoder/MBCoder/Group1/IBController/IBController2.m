@@ -54,8 +54,8 @@
 //    [self test2];
 //    NSLog(@"%@",self.person.delegate);
 //    [self test3];
-    [self test3_1];
-    
+//    [self test3_1];
+    [self test3_2];
 }
 
 /**
@@ -112,7 +112,28 @@
     }
 }
 
+// MRC 文件置为-fno-objc-arc
+- (void)test3_2
+{    
+    @autoreleasepool {
+        Personal *p = [[[Personal alloc] init] autorelease];
+        p.name = @"猫";
+    }
+    NSLog(@"@autoreleasepool之后");
+    {
+        // 这个Personal什么时候调用release，是由RunLoop来控制的
+        // 它可能是在某次RunLoop循环中，RunLoop休眠之前调用了release
+        Personal *p = [[[Personal alloc] init] autorelease];
+        p.name = @"狗";
+    }
+    NSLog(@"花括号之后");
+}
+
+/**
+ ARC，编译器会在花括号结束之前主动调用release
+ */
 - (void)test3_1 {
+    
     @autoreleasepool {
         Personal *p = [[Personal alloc] init];
         p.name = @"猫";
@@ -161,19 +182,70 @@
  5.ARC时代，系统自动管理自己的autoreleasepool，runloop就是iOS中的消息循环机制，当一个runloop结束时系统才会一次性清理掉被
    autorelease处理过的对象
  */
+
+extern void _objc_autoreleasePoolPrint(void);
+
 - (void)test1 {
     NSMutableArray *arr = @[].mutableCopy;
     for (int i = 0; i<10e6; i++) {
         @autoreleasepool {
             NSString *str = [NSString stringWithFormat:@"%d", i];
             [arr addObject:str];
+            _objc_autoreleasePoolPrint();
         }
     }
     NSLog(@"123");
     NSLog(@"123");
 }
 
-
-
-
 @end
+
+/**
+ 
+ 自动释放池的主要底层数据结构是：__AtAutoreleasePool、AutoreleasePoolPage
+ 
+ 一、__AtAutoreleasePool的结构
+ 
+ struct __AtAutoreleasePool {
+ 
+ void * atautoreleasepoolobj;
+
+ __AtAutoreleasePool() { // 构造函数，在创建结构体的时候调用
+    atautoreleasepoolobj = objc_autoreleasePoolPush();
+ }
+ 
+ ~__AtAutoreleasePool() { // 析构函数，在结构体销毁的时候调用
+    objc_autoreleasePoolPop(atautoreleasepoolobj);
+ }
+ 
+ };
+
+ 二、AutoreleasePoolPage的结构
+ 
+ class AutoreleasePoolPage
+ {
+    magic_t const magic;
+    id *next;
+    pthread_t const thread;
+    AutoreleasePoolPage * const parent;
+    AutoreleasePoolPage *child;
+    uint32_t const depth;
+    uint32_t hiwat;
+ }
+ 
+ 0、调用了autorelease的对象最终都是通过AutoreleasePoolPage对象来管理的
+ 1、每个AutoreleasePoolPage对象占用4096字节内存，除了用来存放它内部的成员变量，剩下的空间用来存放autorelease对象的地址
+ 2、所有的AutoreleasePoolPage对象通过双向链表的形式连接在一起
+ 3、调用push方法会将一个POOL_BOUNDARY入栈，并且返回其存放的内存地址
+ 4、调用pop方法时传入一个POOL_BOUNDARY的内存地址，会从最后一个入栈的对象开始发送release消息，直到遇到这个POOL_BOUNDARY
+ 5、id *next指向了下一个能存放autorelease对象地址的区域
+ 
+ 三、Runloop和AutoreleasePool
+ iOS在主线程的Runloop中注册了2个Observer
+ 第1个Observer监听了kCFRunLoopEntry事件，会调用objc_autoreleasePoolPush()
+ 第2个Observer
+ 监听了kCFRunLoopBeforeWaiting事件，会调用objc_autoreleasePoolPop()、objc_autoreleasePoolPush()
+ 监听了kCFRunLoopBeforeExit事件，会调用objc_autoreleasePoolPop()
+
+
+*/

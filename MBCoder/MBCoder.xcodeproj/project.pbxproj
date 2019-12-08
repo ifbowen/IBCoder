@@ -76,7 +76,7 @@
 		4ACBB8772341FA0D002D7955 /* IBController6.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6722341FA0C002D7955 /* IBController6.m */; };
 		4ACBB8782341FA0D002D7955 /* IBController12.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6732341FA0C002D7955 /* IBController12.m */; };
 		4ACBB8792341FA0D002D7955 /* IBController8.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6762341FA0C002D7955 /* IBController8.m */; };
-		4ACBB87A2341FA0D002D7955 /* IBController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6772341FA0C002D7955 /* IBController2.m */; };
+		4ACBB87A2341FA0D002D7955 /* IBController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6772341FA0C002D7955 /* IBController2.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4ACBB87B2341FA0D002D7955 /* IBController13.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6782341FA0C002D7955 /* IBController13.m */; };
 		4ACBB87C2341FA0D002D7955 /* IBController7.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6792341FA0C002D7955 /* IBController7.m */; };
 		4ACBB87D2341FA0D002D7955 /* IBController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB67D2341FA0C002D7955 /* IBController3.m */; };
