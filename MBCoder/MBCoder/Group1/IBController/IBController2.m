@@ -131,11 +131,13 @@
 
 /**
  ARC，编译器会在花括号结束之前主动调用release
+ ARC有效时，用@autoreleasepool块代替NSAutoreleasePool类，用__autoreleasing修饰的变量替代autorelease方法，把对象注册到autoreleasepool中
+ 调用alloc，对象引用计数加一，用p指针指向这个对象引用计数不变，因为编译器没有调用retain。p1=p操作编译器会处理为p1 = [p retain];
  */
 - (void)test3_1 {
     
     @autoreleasepool {
-        Personal *p = [[Personal alloc] init];
+        __autoreleasing Personal *p = [[Personal alloc] init];
         p.name = @"猫";
     }
     NSLog(@"@autoreleasepool之后");
@@ -184,6 +186,7 @@
  */
 
 extern void _objc_autoreleasePoolPrint(void);
+extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计数
 
 - (void)test1 {
     NSMutableArray *arr = @[].mutableCopy;
