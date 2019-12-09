@@ -117,8 +117,25 @@
  如UIEvent、UI绘制等会统一在主线程的runloop对象的即将进入休眠前的时间点触发各自对应的代理回调方法，然后
  runloop进入休眠，直到被timer定时器或Source1发来的内核消息事件唤醒，再分别对Timer、Source0、Source1
  发来的事件进行处理回调。
-
  
+ 十三、RunLoop的运行逻辑（打断点，bt调试查看详细信息）
+ 01、通知Observers：进入Loop
+ 02、通知Observers：即将处理Timers
+ 03、通知Observers：即将处理Sources
+ 04、处理Blocks
+ 05、处理Source0（可能会再次处理Blocks）
+ 06、如果存在Source1，就跳转到第8步
+ 07、通知Observers：开始休眠（等待消息唤醒）
+ 08、通知Observers：结束休眠（被某个消息唤醒）
+    01> 处理Timer
+    02> 处理GCD （GCD有自己的处理逻辑，只有Async To Main Queue这一个情况是runloop处理）
+    03> 处理Source1
+ 09、处理Blocks
+ 10、根据前面的执行结果，决定如何操作
+    01> 回到第02步
+    02> 退出Loop
+ 11、通知Observers：退出Loop
+
  */
 
 
@@ -156,11 +173,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    [self registerObserver];
+}
+
+- (void)registerObserver
+{
+    // 创建Observer
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        switch (activity) {
+            case kCFRunLoopEntry:
+                NSLog(@"kCFRunLoopEntry");
+                break;
+            case kCFRunLoopBeforeTimers:
+                NSLog(@"kCFRunLoopBeforeTimers");
+                break;
+            case kCFRunLoopBeforeSources:
+                NSLog(@"kCFRunLoopBeforeSources");
+                break;
+            case kCFRunLoopBeforeWaiting:
+                NSLog(@"kCFRunLoopBeforeWaiting");
+                break;
+            case kCFRunLoopAfterWaiting:
+                NSLog(@"kCFRunLoopAfterWaiting");
+                break;
+            case kCFRunLoopExit:
+                NSLog(@"kCFRunLoopExit");
+                break;
+            default:
+                break;
+        }
+    });
+    // 添加Observer到RunLoop中
+    CFRunLoopAddObserver(CFRunLoopGetMain(), observer, kCFRunLoopCommonModes);
+    // 释放
+    CFRelease(observer);
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
