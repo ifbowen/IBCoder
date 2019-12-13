@@ -11,9 +11,24 @@
 #import <objc/message.h>
 /*
  一、isa指针问题
- isa：是一个Class 类型的指针. 每个实例对象有个isa的指针,他指向对象的类,而Class里也有个isa的指针, 指向meteClass(元类)。元类保存了类方法的列表。当类方法被调 用时,先会从本身查找类方法的实现,如果没有,元类会向他父类查找该方法。同时注意的是:元类(meteClass)也是类,它也是对象。元类也有isa指针,它的isa指针最终指向的是一个根元类(root meteClass)。根元类的isa指针指向本身,这样形成了一个封闭的内循环。
+ isa：是一个Class类型的指针。
+ 当调用对象方法时，通过instance的isa找到class，然后调用对象方法的实现；如果没有，通过superclass找到父类的class，最后找到对象方法的实现进行调用
+ 当调用类方法时，通过class的isa找到meta-class，然后调用类方法的实现；如果没有，通过superclass找到父类的meta-class，最后找到类方法的实现进行调用
+ 注意的是:元类(meteClass)也是类，它也是对象。元类也有isa指针,它的isa指针最终指向的是一个根元类(root meteClass)。根元类的isa指针指向本身，
+        这样形成了一个封闭的内循环。
+
+ 1、isa、superclass总结
+ 1）instance的isa指向class
+ 2）class的isa指向meta-class
+ 3）meta-class的isa指向基类的meta-class
+ 4）class的superclass指向父类的class，如果没有父类，superclass指针为nil
+ 5）meta-class的superclass指向父类的meta-class，基类的meta-class的superclass指向基类的class
+ 6）instance调用对象方法的轨迹：isa找到class，方法不存在，就通过superclass找父类
+ 7）class调用类方法的轨迹：isa找meta-class，方法不存在，就通过superclass找父类
+
+ 注意：从64bit开始，isa需要进行一次位运算（&ISA_MASK），才能计算出真实地址
  
- 1)引用计数的存储
+ 2、引用计数的存储
  在arm64架构之前，isa就是一个普通的指针，存储着Class、Meta-Class对象的内存地址
  从arm64架构开始，对isa进行了优化，变成了一个共用体（union）结构，还使用位域来存储更多的信息
  union isa_t {
@@ -31,6 +46,7 @@
         uintptr_t extra_rc          : 8  里面存储的值是引用计数
     };
  };
+ 
  在64bit中，引用计数可以直接存储在优化过的isa指针中，也可能存储在SideTable类中
  struct SideTable {
     spinlock_t slock;
@@ -76,8 +92,8 @@
  9.字典转模型
  
  六、runtime如何实现weak属性？
- weak策略表明该属性定义了一种“非拥有关系” (nonowning relationship)。为这种属性设置新值时，设置方法既不保留新值，也不释放旧值。此特质
- 同assign类似;然而在属性所指的对象遭到摧毁时，属性值也会清空(nil out)
+ weak策略表明该属性定义了一种“非拥有关系” (nonowning relationship)。为这种属性设置新值时，设置方法既不保留新值，也不释放旧值。
+ 此特质同assign类似;然而在属性所指的对象遭到摧毁时，属性值也会清空(nil out)
  那么runtime如何实现weak变量的自动置nil？
  runtime对注册的类，会进行布局，会将 weak 对象放入一个hash表中。用weak指向的对象内存地址作为key，当此对象的引用计数为0的时候会调
  用对象的dealloc方法，假设weak指向的对象内存地址是a，那么就会以a为key，在这个weak hash表中搜索，找到所有以a为key的weak对象，
