@@ -110,5 +110,17 @@
  _class_initialize
  callInitialize
  objc_msgSend(cls, SEL_initialize)
+ 
+ 四、load和initialize区别
+ 1、调用方式
+ 1）load根据函数地址调用
+ 2）initialize是通过objc_msgSend调用
+ 
+ 2、调用时刻
+ 1）load是runtime加载类，分类的时候调用（只调用一次）
+ 2）initialize是类第一次接收到消息的时候调用，每一个类只会initialize一次（父类的initialize方法可能会被调用多次）
+ 
+ 3、调用顺序
+ 如上
 
 */
