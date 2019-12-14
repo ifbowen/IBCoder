@@ -7,6 +7,7 @@
 //
 
 #import "IBController22.h"
+#import "Son.h"
 
 /*
  最常见的多项式时间算法复杂度关系为：
@@ -230,6 +231,37 @@ void quickSort(int a[], int low, int high){
         printf("%d ", array2[i]);
     }
     printf("\n");
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    test();
+}
+
+void test() {
+    NSArray *names = @[@"夏侯惇", @"貂蝉", @"诸葛亮", @"张三", @"李四", @"流火绯瞳"];
+    NSArray *ages = @[@"2018-01-29", @"2018-01-30", @"2018-01-28", @"2018-01-21", @"2018-02-01", @"2018-02-01"];
+    NSArray *heights = @[@"170", @"163", @"180", @"165", @"163", @"176"];
+    
+    NSMutableArray *peoples = [NSMutableArray arrayWithCapacity:names.count];
+    for (int i = 0; i< names.count; i++) {
+        Son *son = [[Son alloc]init];
+        [son setValue:@"nan" forKey:@"sex"];
+        son.name = names[i];
+        son.age = ages[i];
+        son.height = heights[i];
+        [peoples addObject:son];
+    }
+    //双重排列的的属性类型必须一样
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:NO];
+    NSSortDescriptor *sort1 = [NSSortDescriptor sortDescriptorWithKey:@"height" ascending:YES];
+    
+    [peoples sortUsingDescriptors:@[sort,sort1]];
+    
+    // 输出排序结果
+    for (Son *temp in peoples) {
+        NSLog(@"age: %@, height: %@, sex: %@, name: %@", temp.age, temp.height, temp.sex, temp.name);
+    }
+
 }
 
 @end

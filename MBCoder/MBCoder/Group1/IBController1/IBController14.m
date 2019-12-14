@@ -8,9 +8,9 @@
 
 #import "IBController14.h"
 #import "Son.h"
-
+ 
 @interface IBController14 ()
-
+ 
 @end
 
 @implementation IBController14
@@ -23,36 +23,92 @@
     [son sleep];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    test();
-}
-
-void test() {
-    NSArray *names = @[@"夏侯惇", @"貂蝉", @"诸葛亮", @"张三", @"李四", @"流火绯瞳", @"流火", @"李白", @"张飞", @"韩信", @"范冰冰", @"赵丽颖"];
-    NSArray *ages = @[@"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58", @"2018-01-30 19:49:58"];
-    NSArray *heights = @[@"170", @"163", @"180", @"165", @"163", @"176", @"174", @"183", @"186", @"178", @"167", @"160"];
-    
-    NSMutableArray *peoples = [NSMutableArray arrayWithCapacity:names.count];
-    for (int i = 0; i<names.count; i++) {
-        
-        Son *son = [[Son alloc]init];
-        [son setValue:@"nan" forKey:@"sex"];
-        son.name = names[i];
-        son.age = ages[i];
-        son.height = heights[i];
-        [peoples addObject:son];
-    }
-    //双重排列的的属性类型必须一样
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:NO];
-    NSSortDescriptor *sort1 = [NSSortDescriptor sortDescriptorWithKey:@"height" ascending:YES];
-    
-    [peoples sortUsingDescriptors:@[sort,sort1]];
-    
-    // 输出排序结果
-    for (Son *temp in peoples) {
-        NSLog(@"age: %@, height: %@, sex: %@, name: %@", temp.age, temp.height, temp.sex, temp.name);
-    }
-
-}
-
 @end
+
+/**
+ 一、分类category
+ 1、数据结构
+ struct category_t {
+    const char *name;
+    classref_t cls;
+    struct method_list_t *instanceMethods;
+    struct method_list_t *classMethods;
+    struct protocol_list_t *protocols;
+    struct property_list_t *instanceProperties;
+    // Fields below this point are not always present on disk.
+    struct property_list_t *_classProperties;
+ };
+ 
+ 2、Category的加载处理过程
+ 1）通过Runtime加载某个类的所有Category数据
+ 2）把所有Category的方法、属性、协议数据，合并到一个大数组中，后面参与编译的Category数据，会在数组的前面
+ 3）将合并后的分类数据（方法、属性、协议），插入到类原来数据的前面
+ 
+ 3、源码解读顺序
+ objc-os.mm
+ _objc_init
+ map_images
+ map_images_nolock
+ 
+ objc-runtime-new.mm
+ _read_images
+ remethodizeClass
+ attachCategories
+ attachLists
+ realloc、memmove、 memcpy
+ 
+ 二、+load方法
+ 1、概括
+ +load方法会在runtime加载类、分类时调用
+ 每个类、分类的+load，在程序运行过程中只调用一次
+
+ 2、调用顺序
+ 1）先调用类的+load
+ 2.1.1按照编译先后顺序调用（先编译，先调用）
+ 2.1.2调用子类的+load之前会先调用父类的+load
+
+ 2）再调用分类的+load
+ 2.2.1按照编译先后顺序调用（先编译，先调用）
+ 
+ 3、objc4源码解读过程：objc-os.mm
+ _objc_init
+
+ load_images
+
+ prepare_load_methods
+ schedule_class_load
+ add_class_to_loadable_list
+ add_category_to_loadable_list
+
+ call_load_methods
+ call_class_loads
+ call_category_loads
+ (*load_method)(cls, SEL_load)
+
+ +load方法是根据方法地址直接调用，并不是经过objc_msgSend函数调用
+ 
+ 三、+initialize方法
+ 1、概括
+ +initialize方法会在类第一次接收到消息时调用
+ 
+ 2、调用顺序
+ 1）先调用父类的+initialize，再调用子类的+initialize
+ (先初始化父类，再初始化子类，每个类只会初始化1次)
+ 
+ 2）+initialize和+load的很大区别是，+initialize是通过objc_msgSend进行调用的，所以有以下特点
+ 如果子类没有实现+initialize，会调用父类的+initialize（所以父类的+initialize可能会被调用多次）
+ 如果分类实现了+initialize，就覆盖类本身的+initialize调用
+ 
+ 3、objc4源码解读过程
+ objc-msg-arm64.s
+ objc_msgSend
+
+ objc-runtime-new.mm
+ class_getInstanceMethod
+ lookUpImpOrNil
+ lookUpImpOrForward
+ _class_initialize
+ callInitialize
+ objc_msgSend(cls, SEL_initialize)
+
+*/
