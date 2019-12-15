@@ -41,17 +41,48 @@
  一、关联对象原理
  
  1、实现关联对象技术的核心对象
- AssociationsManager
- AssociationsHashMap
- ObjectAssociationMap
- ObjcAssociation
- 解释：
-    1）通过传递进来的对象作为地址 取出这个对象所对应的关联列表,然后通过key 取出这个关联列表的关联属性 ObjcAssociation,
- ObjcAssociation 包含了关联策略和关联值.
-    2） 一个实例对象就对应一个ObjectAssociationMap，而ObjectAssociationMap中存储着多个此实例对象的关联对象的key以及
+ 
+ 1）AssociationsManager
+ 
+ class AssociationsManager {
+     static AssociationsHashMap *_map;
+ public:
+     AssociationsManager()   { AssociationsManagerLock.lock(); }
+     ~AssociationsManager()  { AssociationsManagerLock.unlock(); }
+     
+     AssociationsHashMap &associations() {
+         if (_map == NULL)
+             _map = new AssociationsHashMap();
+         return *_map;
+     }
+ };
+ 
+ 2）AssociationsHashMap
+ 
+ class AssociationsHashMap : public unordered_map<disguised_ptr_t, ObjectAssociationMap *> {
+ };
+ 
+ 3）ObjectAssociationMap
+ 
+ class ObjectAssociationMap : public std::map<void *key, ObjcAssociation> {
+
+ };
+ 
+ 4）ObjcAssociation
+ 
+ class ObjcAssociation {
+     uintptr_t _policy;
+     id _value;
+ };
+
+ 4）解释：
+ 1）通过传递进来的对象在AssociationsManager中的AssociationsHashMap中取出ObjectAssociationMap，
+ 然后key取出这个关联表的关联属性ObjcAssociation，ObjcAssociation包含了关联策略和关联值。
+ 2）一个实例对象就对应一个ObjectAssociationMap，而ObjectAssociationMap中存储着多个此实例对象的关联对象的key以及
  ObjcAssociation，为ObjcAssociation中存储着关联对象的value和policy策略。
-    3）关联对象并不是存储在被关联对象本身内存中，而是存储在全局的统一的一个AssociationsManager中，如果设置关联对象为nil，
+ 3）关联对象并不是存储在被关联对象本身内存中，而是存储在全局的统一的一个AssociationsManager中，如果设置关联对象为nil，
  就相当于是移除关联对象。
+ 4）AssociationsManager的构造函数和析构函数有自旋锁，控制存储值线程安全
 
  */
 
