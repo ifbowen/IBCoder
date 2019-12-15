@@ -950,6 +950,8 @@
 		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79E841B58080BB70062A103 /* Pods-MBCoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.debug.xcconfig"; sourceTree = "<group>"; };
+		F33CE4C723A6961500D34C36 /* MJClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
+		F33CE4C823A6B74C00D34C36 /* __forwarding__.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __forwarding__.c; sourceTree = "<group>"; };
 		F3A3E32E238C441200925ACC /* IBGroup2Controller19.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller19.h; sourceTree = "<group>"; };
 		F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller19.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1668,6 +1670,8 @@
 				4ACBB94E2341FB0F002D7955 /* UIMacros.h */,
 				4ACBB7E62341FA0C002D7955 /* UIView+Ext.h */,
 				4ACBB7E42341FA0C002D7955 /* UIView+Ext.m */,
+				F33CE4C723A6961500D34C36 /* MJClassInfo.h */,
+				F33CE4C823A6B74C00D34C36 /* __forwarding__.c */,
 			);
 			path = IBTool;
 			sourceTree = "<group>";

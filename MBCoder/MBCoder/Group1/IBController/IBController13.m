@@ -30,15 +30,15 @@
  
  2、引用计数的存储
  在arm64架构之前，isa就是一个普通的指针，存储着Class、Meta-Class对象的内存地址
- 从arm64架构开始，对isa进行了优化，变成了一个共用体（union）结构，还使用位域来存储更多的信息
+ 从arm64架构开始，对isa进行了内存优化，变成了一个共用体（union）结构，还使用位域来存储更多的信息
  union isa_t {
     Class cls;
     uintptr_t bits;
     struct {
-        uintptr_t nonpointer        : 1; 0，代表普通的指针，存储着对象的内存地址；1，代表优化过，使用位域存储更多的信息
+        uintptr_t nonpointer        : 1; 0代表普通指针，存储类，元类对象的内存地址；1代表优化过，使用位域存储引用计数，析构状态等信息
         uintptr_t has_assoc         : 1; 是否有设置过关联对象，如果没有，释放时会更快
         uintptr_t has_cxx_dtor      : 1; 是否有C++的析构函数（.cxx_destruct），如果没有，释放时会更快
-        uintptr_t shiftcls          : 44;存储着对象的内存地址信息
+        uintptr_t shiftcls          : 44;存储着Class、Meta-Class对象的内存地址信息
         uintptr_t magic             : 6; 用于在调试时分辨对象是否未完成初始化
         uintptr_t weakly_referenced : 1; 用于在调试时分辨对象是否未完成初始化
         uintptr_t deallocating      : 1; 对象是否正在释放
@@ -55,26 +55,26 @@
  }
  
  二、Runtime实现的机制是什么，怎么用，一般用于干嘛？
- 1). 使用时需要导入的头文件 <objc/message.h> <objc/runtime.h>
- 2). Runtime 运行时机制，它是一套C语言库。
- 3). 实际上我们编写的所有OC代码，最终都是转成了runtime库的东西。
+ 1) 使用时需要导入的头文件 <objc/message.h> <objc/runtime.h>
+ 2) Runtime 运行时机制，它是一套C语言库。
+ 3) 实际上我们编写的所有OC代码，最终都是转成了runtime库的东西。
     比如：
     类转成了 Runtime 库里面的结构体等数据类型，
     方法转成了 Runtime 库里面的C语言函数，
     平时调方法都是转成了 objc_msgSend 函数（所以说OC有个消息发送机制）
     // OC是动态语言，每个方法在运行时会被动态转为消息发送，即：objc_msgSend(receiver, selector)。
     // [stu show];  在objc动态编译时，会被转意为：objc_msgSend(stu, @selector(show));
- 4). 因此，可以说 Runtime 是OC的底层实现，是OC的幕后执行者。
+ 4) 因此，可以说 Runtime 是OC的底层实现，是OC的幕后执行者。
  
  三、什么是 Method Swizzle（黑魔法），什么情况下会使用？
- 1). 在没有一个类的实现源码的情况下，想改变其中一个方法的实现，除了继承它重写、和借助类别重名方法暴力抢先之外，还有更加灵活的方法 Method Swizzle。
- 2). Method Swizzle 指的是改变一个已存在的选择器对应的实现的过程。OC中方法的调用能够在运行时通过改变，通过改变类的调度表中选择器到最终函数间的映射关系。
- 3). 在OC中调用一个方法，其实是向一个对象发送消息，查找消息的唯一依据是selector的名字。利用OC的动态特性，可以实现在运行时偷换selector对应的方法实现。
- 4). 每个类都有一个方法列表，存放着selector的名字和方法实现的映射关系。IMP有点类似函数指针，指向具体的方法实现。
- 5). 我们可以利用 method_exchangeImplementations 来交换2个方法中的IMP。
- 6). 我们可以利用 class_replaceMethod 来修改类。
- 7). 我们可以利用 method_setImplementation 来直接设置某个方法的IMP。
- 8). 归根结底，都是偷换了selector的IMP。
+ 1) 在没有一个类的实现源码的情况下，想改变其中一个方法的实现，除了继承它重写、和借助类别重名方法暴力抢先之外，还有更加灵活的方法 Method Swizzle。
+ 2) Method Swizzle 指的是改变一个已存在的选择器对应的实现的过程。OC中方法的调用能够在运行时通过改变，通过改变类的调度表中选择器到最终函数间的映射关系。
+ 3) 在OC中调用一个方法，其实是向一个对象发送消息，查找消息的唯一依据是selector的名字。利用OC的动态特性，可以实现在运行时偷换selector对应的方法实现。
+ 4) 每个类都有一个方法列表，存放着selector的名字和方法实现的映射关系。IMP有点类似函数指针，指向具体的方法实现。
+ 5) 我们可以利用 method_exchangeImplementations 来交换2个方法中的IMP。
+ 6) 我们可以利用 class_replaceMethod 来修改类。
+ 7) 我们可以利用 method_setImplementation 来直接设置某个方法的IMP。
+ 8) 归根结底，都是偷换了selector的IMP。
  
  四、_objc_msgForward 函数是做什么的，直接调用它将会发生什么？
  答：_objc_msgForward是 IMP 类型，用于消息转发的：当向一个对象发送一条消息，但它并没有实现的时候，_objc_msgForward会尝试做消息转发。
@@ -117,27 +117,6 @@
     无论在MRC下还是ARC下均不需要，被关联的对象在生命周期内要比对象本身释放的晚很多，它们会在被 NSObject -dealloc调用
  的object_dispose()方法中释放
  
- 补充：对象的内存销毁时间表，分四个步骤
- 1、调用 -release：引用计数变为零
- * 对象正在被销毁，生命周期即将结束.
- * 不能再有新的__weak弱引用，否则将指向nil.
- * 调用[self dealloc]
- 
- 2、 父类调用-dealloc
- * 继承关系中最直接继承的父类再调用 -dealloc
- * 如果是MRC代码，则会手动释放实例变量们（iVars）
- * 继承关系中每一层的父类都再调用 -dealloc
- 
- 3、NSObject调 -dealloc
- * 只做一件事：调用Objective-C的runtime中object_dispose()方法
- 
- 4. 调用 object_dispose()
- * 为C++的实例变量们（iVars）调用destructors
- * 为ARC状态下的实例变量们（iVars）调用-release
- * 解除所有使用runtime Associate方法关联的对象
- * 解除所有__weak引用
- * 调用free()
- 
  九、_objc_msgForward函数是做什么的？直接调用它将会发生什么？
     _objc_msgForward是IMP类型，用于消息转发的：当向一个对象发送一条消息，但它并没有实现的时候，_objc_msgForward会尝试做消息转发
  直接调用_objc_msgForward是非常危险的事，这是把双刃刀，如果用不好会直接导致程序Crash，但是如果用得好，能做很多非常酷的事
@@ -161,7 +140,101 @@
  
  注意点，一般使用频繁的方法用静态方法，用的少的方法用动态的。静态的速度快，占内存。动态的速度相对慢些，
  但调用完后，立即释放类，可以节省内存，可以根据自己的需要选择是用动态方法还是静态方法。
-    
+ 
+ 十一、类结构
+ 1、
+ struct objc_object {
+ private:
+     isa_t isa;
+ };
+ 2、
+ struct objc_class : objc_object {
+    Class superclass;
+    cache_t cache;
+    class_data_bits_t bits;
+ };
+ 3、
+ struct class_data_bits_t {
+    uintptr_t bits;
+ public:
+     class_rw_t* data() {
+         return (class_rw_t *)(bits & FAST_DATA_MASK);
+     }
+ };
+ 4、
+ struct class_rw_t {
+    uint32_t flags;
+    uint32_t version;
+
+    const class_ro_t *ro;
+
+    method_array_t methods;
+    property_array_t properties;
+    protocol_array_t protocols;
+
+ };
+ 5、
+ struct class_ro_t {
+     uint32_t flags;
+     uint32_t instanceStart;
+     uint32_t instanceSize;
+
+     const uint8_t * ivarLayout;
+     
+     const char * name;
+     method_list_t * baseMethodList;
+     protocol_list_t * baseProtocols;
+     const ivar_list_t * ivars;
+
+     const uint8_t * weakIvarLayout;
+     property_list_t *baseProperties;
+ };
+ 6、
+ struct property_t {
+     const char *name;
+     const char *attributes;
+ };
+7、
+ struct ivar_t {
+    int32_t *offset;
+    const char *name;
+    const char *type;
+    uint32_t alignment_raw;
+    uint32_t size;
+ };
+ 8、
+ struct method_t {
+     SEL name;          // 函数名
+     const char *types; // 编码（返回值和参数类型）
+     MethodListIMP imp; // 函数指针
+ };
+ 9、
+ struct cache_t {
+    struct bucket_t *_buckets; // 散列表
+    mask_t _mask;              // 散列表长度
+    mask_t _occupied;          // 已缓存的方法数量
+ };
+ 10、
+ struct bucket_t {
+    cache_key_t _key;    // SEL作为key
+    MethodCacheIMP _imp; // 函数的内存地址
+ };
+ 
+ 十二、super
+`1、结构
+ struct objc_super {
+     id receiver;
+     Class super_class;
+ };
+ objc_msgSendSuper2(struct objc_super * _Nonnull super, SEL _Nonnull op, ...)
+
+ 1、[super class]为什么打印当前类？
+ 1）消息接收者仍是子类对象
+ 2）从父类开始查找方法的实现
+ 3）class实现：
+ - (Class)class {
+     return object_getClass(self);
+ }
  
  */
 
@@ -335,6 +408,22 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    // 类与元类
+    NSLog(@"%d", [NSObject isKindOfClass:[NSObject class]]); // 1
+    NSLog(@"%d", [NSObject isMemberOfClass:[NSObject class]]); // 0
+    NSLog(@"%d", [IBController13 isKindOfClass:[NSObject class]]); // 1
+    NSLog(@"%d", [IBController13 isKindOfClass:[IBController13 class]]); // 0
+    NSLog(@"%d", [IBController13 isMemberOfClass:[IBController13 class]]); // 0
+    NSLog(@"%d", [IBController13 isKindOfClass:[IBController13 class]]); // 0
+    NSLog(@"%d", [IBController13 isMemberOfClass:[IBController13 class]]); // 0
+    NSLog(@"%d", [IBController13 isKindOfClass:object_getClass([IBController13 class])]); // 1
+    NSLog(@"%d", [IBController13 isMemberOfClass:object_getClass([IBController13 class])]); // 1
+    
+    NSLog(@"++++++++++++++++++++++++++++++++++++++++++++++");
+    // 实例与对象
+    NSLog(@"%d", [[[NSObject alloc] init] isKindOfClass:[NSObject class]]); // 1
+    NSLog(@"%d", [[[NSObject alloc] init]  isMemberOfClass:[NSObject class]]); // 1
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
