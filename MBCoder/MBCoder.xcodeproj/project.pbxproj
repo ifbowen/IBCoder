@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,8 @@
 		4AA84ACC236ABFC800AF5BC9 /* IBGroup2Controller15.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA84ACB236ABFC800AF5BC9 /* IBGroup2Controller15.m */; };
 		4AA84ACE236AEDFD00AF5BC9 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AA84ACD236AEDFC00AF5BC9 /* data.json */; };
 		4AA84AD1236AF07100AF5BC9 /* IBGroup2Controller15Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */; };
+		4AA857E123B20C23003D610F /* GMMarqueeCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA857E023B20C23003D610F /* GMMarqueeCardView.m */; };
+		4AA858EB23B24D2D003D610F /* UIImage+HSB.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA858EA23B24D2D003D610F /* UIImage+HSB.m */; };
 		4AAA1243238E590300DC5478 /* IBGroup2Controller20.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAA1242238E590300DC5478 /* IBGroup2Controller20.m */; };
 		4AB0C9AD234ECE80002356B7 /* IBGroup2Controller10.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AC234ECE80002356B7 /* IBGroup2Controller10.m */; };
 		4AB0C9B0234F30C0002356B7 /* IBGroup2Controller11.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */; };
@@ -387,6 +389,10 @@
 		4AA84ACD236AEDFC00AF5BC9 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		4AA84ACF236AF07100AF5BC9 /* IBGroup2Controller15Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller15Cell.h; sourceTree = "<group>"; };
 		4AA84AD0236AF07100AF5BC9 /* IBGroup2Controller15Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller15Cell.m; sourceTree = "<group>"; };
+		4AA857DF23B20C23003D610F /* GMMarqueeCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMarqueeCardView.h; sourceTree = "<group>"; };
+		4AA857E023B20C23003D610F /* GMMarqueeCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMMarqueeCardView.m; sourceTree = "<group>"; };
+		4AA858E923B24D2D003D610F /* UIImage+HSB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+HSB.h"; sourceTree = "<group>"; };
+		4AA858EA23B24D2D003D610F /* UIImage+HSB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HSB.m"; sourceTree = "<group>"; };
 		4AAA1241238E590300DC5478 /* IBGroup2Controller20.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller20.h; sourceTree = "<group>"; };
 		4AAA1242238E590300DC5478 /* IBGroup2Controller20.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller20.m; sourceTree = "<group>"; };
 		4AB0C9AB234ECE80002356B7 /* IBGroup2Controller10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller10.h; sourceTree = "<group>"; };
@@ -1024,6 +1030,17 @@
 				4A64EF772369CEDC00431CEA /* MBCoderUITests-Bridging-Header.h */,
 			);
 			path = MBCoderUITests;
+			sourceTree = "<group>";
+		};
+		4AA857DE23B20BED003D610F /* card */ = {
+			isa = PBXGroup;
+			children = (
+				4AA857DF23B20C23003D610F /* GMMarqueeCardView.h */,
+				4AA857E023B20C23003D610F /* GMMarqueeCardView.m */,
+				4AA858E923B24D2D003D610F /* UIImage+HSB.h */,
+				4AA858EA23B24D2D003D610F /* UIImage+HSB.m */,
+			);
+			path = card;
 			sourceTree = "<group>";
 		};
 		4ACBB6062341F972002D7955 = {
@@ -1766,6 +1783,7 @@
 		4ACBB8012341FA0D002D7955 /* IBModule */ = {
 			isa = PBXGroup;
 			children = (
+				4AA857DE23B20BED003D610F /* card */,
 				4AF2132F2399F2E800EFB85D /* TimeProfiler */,
 				4AF2132823991DB900EFB85D /* mmap */,
 				4AF2091F2397B46700EFB85D /* PresentationController */,
@@ -1827,28 +1845,28 @@
 		4ACBB81B2341FA0D002D7955 /* layer */ = {
 			isa = PBXGroup;
 			children = (
-				4ACBB81C2341FA0D002D7955 /* IBAVPlayerLayer.m */,
-				4ACBB81D2341FA0D002D7955 /* IBCAScrollLayer.h */,
-				4ACBB81E2341FA0D002D7955 /* IBCAEmitterLayer.m */,
-				4ACBB81F2341FA0D002D7955 /* IBCAEAGLLayer.m */,
-				4ACBB8202341FA0D002D7955 /* IBCALayer.h */,
-				4ACBB8212341FA0D002D7955 /* IBCATextLayer.m */,
-				4ACBB8222341FA0D002D7955 /* IBCAShapeLayer.m */,
-				4ACBB8232341FA0D002D7955 /* IBCATransformLayer.m */,
-				4ACBB8242341FA0D002D7955 /* IBCAReplicatorLayer.m */,
-				4ACBB8252341FA0D002D7955 /* IBCAGradientLayer.m */,
-				4ACBB8262341FA0D002D7955 /* IBCATiledLayer.h */,
-				4ACBB8272341FA0D002D7955 /* IBCAEAGLLayer.h */,
-				4ACBB8282341FA0D002D7955 /* IBCAEmitterLayer.h */,
-				4ACBB8292341FA0D002D7955 /* IBCAScrollLayer.m */,
 				4ACBB82A2341FA0D002D7955 /* IBAVPlayerLayer.h */,
-				4ACBB82B2341FA0D002D7955 /* IBCAShapeLayer.h */,
-				4ACBB82C2341FA0D002D7955 /* IBCATransformLayer.h */,
-				4ACBB82D2341FA0D002D7955 /* IBCATextLayer.h */,
+				4ACBB81C2341FA0D002D7955 /* IBAVPlayerLayer.m */,
+				4ACBB8272341FA0D002D7955 /* IBCAEAGLLayer.h */,
+				4ACBB81F2341FA0D002D7955 /* IBCAEAGLLayer.m */,
+				4ACBB8282341FA0D002D7955 /* IBCAEmitterLayer.h */,
+				4ACBB81E2341FA0D002D7955 /* IBCAEmitterLayer.m */,
+				4ACBB8312341FA0D002D7955 /* IBCAGradientLayer.h */,
+				4ACBB8252341FA0D002D7955 /* IBCAGradientLayer.m */,
+				4ACBB8202341FA0D002D7955 /* IBCALayer.h */,
 				4ACBB82E2341FA0D002D7955 /* IBCALayer.m */,
 				4ACBB82F2341FA0D002D7955 /* IBCAReplicatorLayer.h */,
+				4ACBB8242341FA0D002D7955 /* IBCAReplicatorLayer.m */,
+				4ACBB81D2341FA0D002D7955 /* IBCAScrollLayer.h */,
+				4ACBB8292341FA0D002D7955 /* IBCAScrollLayer.m */,
+				4ACBB82B2341FA0D002D7955 /* IBCAShapeLayer.h */,
+				4ACBB8222341FA0D002D7955 /* IBCAShapeLayer.m */,
+				4ACBB82D2341FA0D002D7955 /* IBCATextLayer.h */,
+				4ACBB8212341FA0D002D7955 /* IBCATextLayer.m */,
+				4ACBB8262341FA0D002D7955 /* IBCATiledLayer.h */,
 				4ACBB8302341FA0D002D7955 /* IBCATiledLayer.m */,
-				4ACBB8312341FA0D002D7955 /* IBCAGradientLayer.h */,
+				4ACBB82C2341FA0D002D7955 /* IBCATransformLayer.h */,
+				4ACBB8232341FA0D002D7955 /* IBCATransformLayer.m */,
 			);
 			path = layer;
 			sourceTree = "<group>";
@@ -2050,6 +2068,7 @@
 				4ACBB60D2341F972002D7955 /* Resources */,
 				4A4963A1235B6403001338AB /* Embed Frameworks */,
 				4A9D221A23683473006B9771 /* Embed App Extensions */,
+				A854908796906713D66CB258 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2130,6 +2149,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A854908796906713D66CB258 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MBCoder/Pods-MBCoder-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MBCoder/Pods-MBCoder-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MBCoder/Pods-MBCoder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B242AB52C1E5DBC2670D5939 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2233,6 +2269,7 @@
 				4ACBB8872341FA0D002D7955 /* IBDatabaseManager.m in Sources */,
 				4ACBB9202341FA0D002D7955 /* IBGroup2Controller7.m in Sources */,
 				4AAA1243238E590300DC5478 /* IBGroup2Controller20.m in Sources */,
+				4AA857E123B20C23003D610F /* GMMarqueeCardView.m in Sources */,
 				4ACBB91A2341FA0D002D7955 /* SDWebImageImageIOCoder.m in Sources */,
 				4ACBB88A2341FA0D002D7955 /* LoggerClient.m in Sources */,
 				4ACBB85D2341FA0D002D7955 /* IBController29.m in Sources */,
@@ -2459,6 +2496,7 @@
 				4ACBB8BC2341FA0D002D7955 /* RACEmptySequence.m in Sources */,
 				4ACBB9062341FA0D002D7955 /* SDWebImageCodersManager.m in Sources */,
 				4ACBB8EB2341FA0D002D7955 /* NSData+RACSupport.m in Sources */,
+				4AA858EB23B24D2D003D610F /* UIImage+HSB.m in Sources */,
 				4ACBB9032341FA0D002D7955 /* UIImageView+HighlightedWebCache.m in Sources */,
 				4ACBB90B2341FA0D002D7955 /* SDWebImageCompat.m in Sources */,
 				4ACBB8B72341FA0D002D7955 /* RACGroupedSignal.m in Sources */,

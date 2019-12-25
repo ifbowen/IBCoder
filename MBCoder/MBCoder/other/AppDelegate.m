@@ -52,7 +52,7 @@ extern CFAbsoluteTime StartTime;
     double launchTime = (CFAbsoluteTimeGetCurrent() - StartTime);
     NSLog(@"main函数之后启动时间：%lf",launchTime);
     
-    startTrace();
+//    startTrace();
     
     return YES;
 }
