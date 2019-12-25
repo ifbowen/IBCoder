@@ -79,5 +79,30 @@
     return [UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
 }
 
+-(void)doCIColorMatrixFilter
+{
+    // Make the input image recipe
+    CIImage *inputImage = [CIImage imageWithCGImage:[UIImage imageNamed:@"facedetectionpic.jpg"].CGImage]; // 1
+
+    // Make the filter
+    CIFilter *colorMatrixFilter = [CIFilter filterWithName:@"CIColorMatrix"]; // 2
+    [colorMatrixFilter setDefaults]; // 3
+    [colorMatrixFilter setValue:inputImage forKey:kCIInputImageKey]; // 4
+    [colorMatrixFilter setValue:[CIVector vectorWithX:1 Y:1 Z:1 W:0] forKey:@"inputRVector"]; // 5
+    [colorMatrixFilter setValue:[CIVector vectorWithX:0 Y:1 Z:0 W:0] forKey:@"inputGVector"]; // 6
+    [colorMatrixFilter setValue:[CIVector vectorWithX:0 Y:0 Z:1 W:0] forKey:@"inputBVector"]; // 7
+    [colorMatrixFilter setValue:[CIVector vectorWithX:0 Y:0 Z:0 W:1] forKey:@"inputAVector"]; // 8
+
+    // Get the output image recipe
+    CIImage *outputImage = [colorMatrixFilter outputImage];  // 9
+
+    // Create the context and instruct CoreImage to draw the output image recipe into a CGImage
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]]; // 10
+    UIImage *newImage = [UIImage imageWithCGImage:cgimg];
+    
+    CGImageRelease(cgimg);
+}
+
 
 @end
