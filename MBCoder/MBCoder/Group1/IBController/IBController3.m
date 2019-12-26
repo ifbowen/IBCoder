@@ -271,6 +271,7 @@
     
 //    [self test0];
 //    [self test1];
+    [self test1_1];
 //    [self test2];
 //    [self test3];
 //    [self test4];
@@ -282,7 +283,7 @@
 //    [self test7];
 //    [self test8];
 //    [self test9];
-    [self test9_21];
+//    [self test9_21];
 //    [self test9_2];
 //    [self test9_3];
 //    [self test10];
@@ -825,8 +826,42 @@ static void create_task_safely(dispatch_block_t block) {
     });
 }
 
+/// 监听网络统一返回，并行请求
+- (void)test1_1
+{
+    dispatch_group_t group1 = dispatch_group_create();
+    dispatch_queue_t queue1 = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_group_enter(group1);
+    dispatch_group_async(group1, queue1, ^{
+        dispatch_group_leave(group1);
+        NSLog(@"group1 --- 1---%@",[NSThread currentThread]);
+    });
+    NSLog(@"============ 分割线1 ==============");
+    dispatch_group_enter(group1);
+    dispatch_group_async(group1, queue1, ^{
+        dispatch_group_leave(group1);
+        NSLog(@"group1 --- 2---%@",[NSThread currentThread]);
 
+    });
+    NSLog(@"============ 分割线2 ==============");
+    dispatch_group_enter(group1);
+    dispatch_group_async(group1, queue1, ^{
+        dispatch_group_leave(group1);
+        NSLog(@"group1 --- 3---%@",[NSThread currentThread]);
+    });
+    NSLog(@"============ 分割线3 ==============");
+    dispatch_group_enter(group1);
+    dispatch_group_async(group1, queue1, ^{
+        dispatch_group_leave(group1);
+        NSLog(@"group1 --- 4---%@",[NSThread currentThread]);
+    });
+    
+    dispatch_group_notify(group1, queue1, ^{
+       NSLog(@"group1 --- 结束 ---%@",[NSThread currentThread]);
+    });
 
+}
 
 /**
  组内并行，组间串行
