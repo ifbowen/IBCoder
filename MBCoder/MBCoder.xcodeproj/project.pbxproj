@@ -308,6 +308,7 @@
 		4AF2134F2399F31600EFB85D /* TPNOExpandIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF2134D2399F31600EFB85D /* TPNOExpandIcon.png */; };
 		5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
+		F324A32823FD200A00B68E88 /* IBGroup2Controller24.m in Sources */ = {isa = PBXBuildFile; fileRef = F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */; };
 		F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */; };
 /* End PBXBuildFile section */
 
@@ -956,6 +957,8 @@
 		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79E841B58080BB70062A103 /* Pods-MBCoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.debug.xcconfig"; sourceTree = "<group>"; };
+		F324A32623FD200A00B68E88 /* IBGroup2Controller24.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller24.h; sourceTree = "<group>"; };
+		F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller24.m; sourceTree = "<group>"; };
 		F33CE4C723A6961500D34C36 /* MJClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
 		F33CE4C823A6B74C00D34C36 /* __forwarding__.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __forwarding__.c; sourceTree = "<group>"; };
 		F3A3E32E238C441200925ACC /* IBGroup2Controller19.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller19.h; sourceTree = "<group>"; };
@@ -1948,6 +1951,8 @@
 				4AF209192397676600EFB85D /* IBGroup2Controller22.m */,
 				4AF20ADF2398B7EC00EFB85D /* IBGroup2Controller23.h */,
 				4AF20AE02398B7EC00EFB85D /* IBGroup2Controller23.m */,
+				F324A32623FD200A00B68E88 /* IBGroup2Controller24.h */,
+				F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */,
 			);
 			path = vc3;
 			sourceTree = "<group>";
@@ -2426,6 +2431,7 @@
 				4ACBB8A02341FA0D002D7955 /* MKAnnotationView+RACSignalSupport.m in Sources */,
 				4ACBB86F2341FA0D002D7955 /* IBController14.m in Sources */,
 				4ACBB9452341FA0D002D7955 /* BViewController.m in Sources */,
+				F324A32823FD200A00B68E88 /* IBGroup2Controller24.m in Sources */,
 				4ACBB8EC2341FA0D002D7955 /* NSArray+RACSequenceAdditions.m in Sources */,
 				4ACBB8A82341FA0D002D7955 /* UIAlertView+RACSignalSupport.m in Sources */,
 				4ACBB9162341FA0D002D7955 /* SDWebImageGIFCoder.m in Sources */,
