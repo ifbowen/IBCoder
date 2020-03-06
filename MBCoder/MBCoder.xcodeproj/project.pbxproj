@@ -309,6 +309,7 @@
 		5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 		F324A32823FD200A00B68E88 /* IBGroup2Controller24.m in Sources */ = {isa = PBXBuildFile; fileRef = F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */; };
+		F3954B052412471A009EC505 /* llvm.c in Sources */ = {isa = PBXBuildFile; fileRef = F3954B042412471A009EC505 /* llvm.c */; };
 		F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */; };
 /* End PBXBuildFile section */
 
@@ -961,6 +962,7 @@
 		F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller24.m; sourceTree = "<group>"; };
 		F33CE4C723A6961500D34C36 /* MJClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
 		F33CE4C823A6B74C00D34C36 /* __forwarding__.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __forwarding__.c; sourceTree = "<group>"; };
+		F3954B042412471A009EC505 /* llvm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = llvm.c; sourceTree = "<group>"; };
 		F3A3E32E238C441200925ACC /* IBGroup2Controller19.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller19.h; sourceTree = "<group>"; };
 		F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller19.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1691,6 +1693,7 @@
 				4ACBB7E62341FA0C002D7955 /* UIView+Ext.h */,
 				4ACBB7E42341FA0C002D7955 /* UIView+Ext.m */,
 				F33CE4C723A6961500D34C36 /* MJClassInfo.h */,
+				F3954B042412471A009EC505 /* llvm.c */,
 				F33CE4C823A6B74C00D34C36 /* __forwarding__.c */,
 			);
 			path = IBTool;
@@ -2462,6 +2465,7 @@
 				4ACBB8562341FA0D002D7955 /* IBController42.m in Sources */,
 				4ACBB87E2341FA0D002D7955 /* IBController9.m in Sources */,
 				4ACBB8B82341FA0D002D7955 /* RACTupleSequence.m in Sources */,
+				F3954B052412471A009EC505 /* llvm.c in Sources */,
 				4ACBB8D62341FA0D002D7955 /* RACSubscriber.m in Sources */,
 				4ACBB8E52341FA0D002D7955 /* NSEnumerator+RACSequenceAdditions.m in Sources */,
 				4ACBB8CF2341FA0D002D7955 /* RACKVOProxy.m in Sources */,
