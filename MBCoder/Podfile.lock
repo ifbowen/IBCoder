@@ -1,4 +1,9 @@
 PODS:
+  - FBAllocationTracker (0.1.5)
+  - FBMemoryProfiler (0.1.3):
+    - FBAllocationTracker (~> 0.1)
+    - FBRetainCycleDetector (~> 0.1)
+  - FBRetainCycleDetector (0.1.4)
   - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
@@ -47,6 +52,8 @@ PODS:
   - libextobjc/RuntimeExtensions (0.6)
   - libextobjc/UmbrellaHeader (0.6)
   - lottie-ios (2.5.3)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - MMKV (1.0.23)
   - PromiseKit (6.12.0):
     - PromiseKit/CorePromise (= 6.12.0)
@@ -83,6 +90,7 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - FBMemoryProfiler
   - FDFullscreenPopGesture
   - FMDB
   - FMDB/FTS
@@ -93,6 +101,7 @@ DEPENDENCIES:
   - KVOController
   - libextobjc
   - lottie-ios (~> 2.5.3)
+  - MLeaksFinder
   - MMKV
   - PromiseKit
   - PromiseKit/Foundation
@@ -106,7 +115,7 @@ DEPENDENCIES:
   - YYKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - FDFullscreenPopGesture
     - FMDB
     - GPUImage
@@ -127,8 +136,16 @@ SPEC REPOS:
     - Yoga
     - YogaKit
     - YYKit
+  trunk:
+    - FBAllocationTracker
+    - FBMemoryProfiler
+    - FBRetainCycleDetector
+    - MLeaksFinder
 
 SPEC CHECKSUMS:
+  FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
+  FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
@@ -137,6 +154,7 @@ SPEC CHECKSUMS:
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
   PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
   Protobuf: 20d79da7f20b5928b80043b05080b816e802659e
@@ -150,6 +168,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: de2c45a1800f438aaa11bb04f9654f8ead907f37
+PODFILE CHECKSUM: fcef19ec3c5d457c14474717bd1fa2d8539cc8c8
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.8.4

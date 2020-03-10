@@ -310,6 +310,9 @@
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 		F324A32823FD200A00B68E88 /* IBGroup2Controller24.m in Sources */ = {isa = PBXBuildFile; fileRef = F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */; };
 		F3954B052412471A009EC505 /* llvm.c in Sources */ = {isa = PBXBuildFile; fileRef = F3954B042412471A009EC505 /* llvm.c */; };
+		F3955286241608AA009EC505 /* IBGroup2Controller25.m in Sources */ = {isa = PBXBuildFile; fileRef = F3955285241608AA009EC505 /* IBGroup2Controller25.m */; };
+		F3955AFF24179C17009EC505 /* MBMemoryProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = F3955AFC24179C17009EC505 /* MBMemoryProfiler.m */; };
+		F3955B0024179C17009EC505 /* MBRetainCycleLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F3955AFD24179C17009EC505 /* MBRetainCycleLoggerPlugin.m */; };
 		F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */; };
 /* End PBXBuildFile section */
 
@@ -963,6 +966,12 @@
 		F33CE4C723A6961500D34C36 /* MJClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJClassInfo.h; sourceTree = "<group>"; };
 		F33CE4C823A6B74C00D34C36 /* __forwarding__.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = __forwarding__.c; sourceTree = "<group>"; };
 		F3954B042412471A009EC505 /* llvm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = llvm.c; sourceTree = "<group>"; };
+		F3955284241608AA009EC505 /* IBGroup2Controller25.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller25.h; sourceTree = "<group>"; };
+		F3955285241608AA009EC505 /* IBGroup2Controller25.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller25.m; sourceTree = "<group>"; };
+		F3955AFB24179C17009EC505 /* MBRetainCycleLoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRetainCycleLoggerPlugin.h; sourceTree = "<group>"; };
+		F3955AFC24179C17009EC505 /* MBMemoryProfiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMemoryProfiler.m; sourceTree = "<group>"; };
+		F3955AFD24179C17009EC505 /* MBRetainCycleLoggerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRetainCycleLoggerPlugin.m; sourceTree = "<group>"; };
+		F3955AFE24179C17009EC505 /* MBMemoryProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMemoryProfiler.h; sourceTree = "<group>"; };
 		F3A3E32E238C441200925ACC /* IBGroup2Controller19.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller19.h; sourceTree = "<group>"; };
 		F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller19.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1226,13 +1235,14 @@
 		4ACBB68C2341FA0C002D7955 /* HelperFile */ = {
 			isa = PBXGroup;
 			children = (
-				4A4963A2235B642C001338AB /* MBSpineFramework.framework */,
+				F3955AFA24179C17009EC505 /* MBMemoryProfiler */,
 				4ACBB6CB2341FA0C002D7955 /* AFNetworking-RACExtensions */,
 				4ACBB68D2341FA0C002D7955 /* CameraButton */,
 				4ACBB6C52341FA0C002D7955 /* CoreSpotlight */,
 				4ACBB6BA2341FA0C002D7955 /* GCD */,
 				4ACBB6C82341FA0C002D7955 /* Log */,
 				4ACBB6A02341FA0C002D7955 /* Masonry */,
+				4A4963A2235B642C001338AB /* MBSpineFramework.framework */,
 				4ACBB69B2341FA0C002D7955 /* NSLogger */,
 				4ACBB7A62341FA0C002D7955 /* SDWebImage */,
 				4ACBB6902341FA0C002D7955 /* SQLEncrypt */,
@@ -1956,6 +1966,8 @@
 				4AF20AE02398B7EC00EFB85D /* IBGroup2Controller23.m */,
 				F324A32623FD200A00B68E88 /* IBGroup2Controller24.h */,
 				F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */,
+				F3955284241608AA009EC505 /* IBGroup2Controller25.h */,
+				F3955285241608AA009EC505 /* IBGroup2Controller25.m */,
 			);
 			path = vc3;
 			sourceTree = "<group>";
@@ -2029,6 +2041,17 @@
 				CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3955AFA24179C17009EC505 /* MBMemoryProfiler */ = {
+			isa = PBXGroup;
+			children = (
+				F3955AFE24179C17009EC505 /* MBMemoryProfiler.h */,
+				F3955AFC24179C17009EC505 /* MBMemoryProfiler.m */,
+				F3955AFB24179C17009EC505 /* MBRetainCycleLoggerPlugin.h */,
+				F3955AFD24179C17009EC505 /* MBRetainCycleLoggerPlugin.m */,
+			);
+			path = MBMemoryProfiler;
 			sourceTree = "<group>";
 		};
 		FDD18DD111DDF637C668F237 /* Pods */ = {
@@ -2244,6 +2267,7 @@
 				4ACBB94C2341FA0D002D7955 /* AppDelegate.m in Sources */,
 				4ACBB8F92341FA0D002D7955 /* AFURLResponseSerialization.m in Sources */,
 				F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */,
+				F3955B0024179C17009EC505 /* MBRetainCycleLoggerPlugin.m in Sources */,
 				4ACBB85A2341FA0D002D7955 /* IBController30.m in Sources */,
 				4ACBB9132341FA0D002D7955 /* NSData+ImageContentType.m in Sources */,
 				4ACBB89B2341FA0D002D7955 /* UIStepper+RACSignalSupport.m in Sources */,
@@ -2325,6 +2349,7 @@
 				4ACBB87F2341FA0D002D7955 /* IBController10.m in Sources */,
 				4ACBB9042341FA0D002D7955 /* SDWebImageFrame.m in Sources */,
 				4ACBB8892341FA0D002D7955 /* FMEncryptQueue.m in Sources */,
+				F3955AFF24179C17009EC505 /* MBMemoryProfiler.m in Sources */,
 				4ACBB8852341FA0D002D7955 /* FMDBMigrationManager.m in Sources */,
 				4ACBB8DE2341FA0D002D7955 /* RACTuple.m in Sources */,
 				4ACBB9122341FA0D002D7955 /* SDWebImageTransition.m in Sources */,
@@ -2415,6 +2440,7 @@
 				4ACBB8FF2341FA0D002D7955 /* AFHTTPSessionManager+RACSupport.m in Sources */,
 				4ACBB9212341FA0D002D7955 /* IBGroup2Controller5.m in Sources */,
 				4ACBB92F2341FA0D002D7955 /* Son+Cate.m in Sources */,
+				F3955286241608AA009EC505 /* IBGroup2Controller25.m in Sources */,
 				4ACBB8A72341FA0D002D7955 /* UITextField+RACSignalSupport.m in Sources */,
 				4ACBB8CD2341FA0D002D7955 /* RACPassthroughSubscriber.m in Sources */,
 				4ACBB8C92341FA0D002D7955 /* RACSignalProvider.d in Sources */,
@@ -2780,6 +2806,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MBCoder/HelperFile",
+					"$(PROJECT_DIR)/MBCoder/HelperFile/MBMemoryProfiler",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MBCoder/other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2807,6 +2834,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MBCoder/HelperFile",
+					"$(PROJECT_DIR)/MBCoder/HelperFile/MBMemoryProfiler",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MBCoder/other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

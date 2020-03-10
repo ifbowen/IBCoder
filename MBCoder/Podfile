@@ -27,6 +27,8 @@ target 'MBCoder' do
   pod 'KVOController'
   pod 'MMKV'
   pod 'GPUImage'
+  pod 'FBMemoryProfiler'
+  pod 'MLeaksFinder'
   
   target 'MBCoderUITests' do
     inherit! :search_paths

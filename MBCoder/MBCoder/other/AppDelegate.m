@@ -13,6 +13,7 @@
 #import "ViewController3.h"
 #import "SonicSetup.h"
 #import "TPCallTrace.h"
+#import "MBMemoryProfiler.h"
 
 extern CFAbsoluteTime StartTime;
 
@@ -27,6 +28,7 @@ extern CFAbsoluteTime StartTime;
     // Override point for customization after application launch.
     
     [SonicSetup setup];
+    [[MBMemoryProfiler profiler] setup];
     
     UITabBarController *tabbarVC = [[UITabBarController alloc] init];
     ViewController1 *vc1 = ViewController1.new;

@@ -234,10 +234,10 @@ void quickSort(int a[], int low, int high){
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    test();
+    testDemo();
 }
 
-void test() {
+void testDemo() {
     NSArray *names = @[@"夏侯惇", @"貂蝉", @"诸葛亮", @"张三", @"李四", @"流火绯瞳"];
     NSArray *ages = @[@"2018-01-29", @"2018-01-30", @"2018-01-28", @"2018-01-21", @"2018-02-01", @"2018-02-01"];
     NSArray *heights = @[@"170", @"163", @"180", @"165", @"163", @"176"];
