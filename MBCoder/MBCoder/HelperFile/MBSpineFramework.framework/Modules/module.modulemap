@@ -1,6 +1,0 @@
-framework module MBSpineFramework {
-  umbrella header "MBSpineFramework.h"
-
-  export *
-  module * { export * }
-}

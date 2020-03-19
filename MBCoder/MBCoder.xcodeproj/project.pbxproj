@@ -14,8 +14,6 @@
 		4A37DFC5236C68C1005CEF7B /* SonicEventObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DFBE236C68C0005CEF7B /* SonicEventObserver.m */; };
 		4A37DFC8236C6A6E005CEF7B /* SonicSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DFC7236C6A6E005CEF7B /* SonicSetup.m */; };
 		4A37DFCA236C6C53005CEF7B /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A37DFC9236C6C53005CEF7B /* main.html */; };
-		4A4963A4235B6441001338AB /* MBSpineFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4963A2235B642C001338AB /* MBSpineFramework.framework */; };
-		4A4963A5235B6441001338AB /* MBSpineFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4963A2235B642C001338AB /* MBSpineFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4A4963A7235B64BC001338AB /* common in Resources */ = {isa = PBXBuildFile; fileRef = 4A4963A6235B64BC001338AB /* common */; };
 		4A64EF722369CDCC00431CEA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; };
 		4A64EF792369CEDC00431CEA /* Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF782369CEDC00431CEA /* Coder.swift */; };
@@ -40,6 +38,11 @@
 		4AB0C9B0234F30C0002356B7 /* IBGroup2Controller11.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */; };
 		4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B5234F4266002356B7 /* home_colourline.svga */; };
 		4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B7234F5912002356B7 /* LottieLogo.json */; };
+		4AC303C82423232B004911D6 /* IBGroup2Controller26.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC303C72423232B004911D6 /* IBGroup2Controller26.m */; };
+		4AC303CC24233227004911D6 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CA2423321E004911D6 /* WebRTC.framework */; };
+		4AC303CD24233227004911D6 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CA2423321E004911D6 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AC303D0242332AD004911D6 /* MBSpineFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CE242332AA004911D6 /* MBSpineFramework.framework */; };
+		4AC303D1242332AD004911D6 /* MBSpineFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CE242332AA004911D6 /* MBSpineFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4ACBB8542341FA0D002D7955 /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62A2341FA0B002D7955 /* IBController41.m */; };
 		4ACBB8552341FA0D002D7955 /* IBController39.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62C2341FA0B002D7955 /* IBController39.m */; };
 		4ACBB8562341FA0D002D7955 /* IBController42.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62D2341FA0B002D7955 /* IBController42.m */; };
@@ -333,7 +336,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4A4963A5235B6441001338AB /* MBSpineFramework.framework in Embed Frameworks */,
+				4AC303D1242332AD004911D6 /* MBSpineFramework.framework in Embed Frameworks */,
+				4AC303CD24233227004911D6 /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +371,6 @@
 		4A37DFC6236C6A6E005CEF7B /* SonicSetup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SonicSetup.h; sourceTree = "<group>"; };
 		4A37DFC7236C6A6E005CEF7B /* SonicSetup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SonicSetup.m; sourceTree = "<group>"; };
 		4A37DFC9236C6C53005CEF7B /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
-		4A4963A2235B642C001338AB /* MBSpineFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBSpineFramework.framework; sourceTree = "<group>"; };
 		4A4963A6235B64BC001338AB /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = "<group>"; };
 		4A64EF772369CEDC00431CEA /* MBCoderUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBCoderUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4A64EF782369CEDC00431CEA /* Coder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coder.swift; sourceTree = "<group>"; };
@@ -406,6 +409,10 @@
 		4AB0C9AF234F30C0002356B7 /* IBGroup2Controller11.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller11.m; sourceTree = "<group>"; };
 		4AB0C9B5234F4266002356B7 /* home_colourline.svga */ = {isa = PBXFileReference; lastKnownFileType = file; path = home_colourline.svga; sourceTree = "<group>"; };
 		4AB0C9B7234F5912002356B7 /* LottieLogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo.json; sourceTree = "<group>"; };
+		4AC303C62423232B004911D6 /* IBGroup2Controller26.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller26.h; sourceTree = "<group>"; };
+		4AC303C72423232B004911D6 /* IBGroup2Controller26.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller26.m; sourceTree = "<group>"; };
+		4AC303CA2423321E004911D6 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		4AC303CE242332AA004911D6 /* MBSpineFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBSpineFramework.framework; sourceTree = "<group>"; };
 		4ACBB60F2341F972002D7955 /* MBCoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBCoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACBB62A2341FA0B002D7955 /* IBController41.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBController41.m; sourceTree = "<group>"; };
 		4ACBB62B2341FA0B002D7955 /* IBController43.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBController43.h; sourceTree = "<group>"; };
@@ -991,7 +998,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */,
-				4A4963A4235B6441001338AB /* MBSpineFramework.framework in Frameworks */,
+				4AC303D0242332AD004911D6 /* MBSpineFramework.framework in Frameworks */,
+				4AC303CC24233227004911D6 /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,6 +1063,22 @@
 				4AA858EA23B24D2D003D610F /* UIImage+HSB.m */,
 			);
 			path = card;
+			sourceTree = "<group>";
+		};
+		4AC303C124232222004911D6 /* WebRTC */ = {
+			isa = PBXGroup;
+			children = (
+				4AC303CA2423321E004911D6 /* WebRTC.framework */,
+			);
+			path = WebRTC;
+			sourceTree = "<group>";
+		};
+		4AC303C9242330C8004911D6 /* spine */ = {
+			isa = PBXGroup;
+			children = (
+				4AC303CE242332AA004911D6 /* MBSpineFramework.framework */,
+			);
+			path = spine;
 			sourceTree = "<group>";
 		};
 		4ACBB6062341F972002D7955 = {
@@ -1235,6 +1259,8 @@
 		4ACBB68C2341FA0C002D7955 /* HelperFile */ = {
 			isa = PBXGroup;
 			children = (
+				4AC303C124232222004911D6 /* WebRTC */,
+				4AC303C9242330C8004911D6 /* spine */,
 				F3955AFA24179C17009EC505 /* MBMemoryProfiler */,
 				4ACBB6CB2341FA0C002D7955 /* AFNetworking-RACExtensions */,
 				4ACBB68D2341FA0C002D7955 /* CameraButton */,
@@ -1242,7 +1268,6 @@
 				4ACBB6BA2341FA0C002D7955 /* GCD */,
 				4ACBB6C82341FA0C002D7955 /* Log */,
 				4ACBB6A02341FA0C002D7955 /* Masonry */,
-				4A4963A2235B642C001338AB /* MBSpineFramework.framework */,
 				4ACBB69B2341FA0C002D7955 /* NSLogger */,
 				4ACBB7A62341FA0C002D7955 /* SDWebImage */,
 				4ACBB6902341FA0C002D7955 /* SQLEncrypt */,
@@ -1968,6 +1993,8 @@
 				F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */,
 				F3955284241608AA009EC505 /* IBGroup2Controller25.h */,
 				F3955285241608AA009EC505 /* IBGroup2Controller25.m */,
+				4AC303C62423232B004911D6 /* IBGroup2Controller26.h */,
+				4AC303C72423232B004911D6 /* IBGroup2Controller26.m */,
 			);
 			path = vc3;
 			sourceTree = "<group>";
@@ -2272,6 +2299,7 @@
 				4ACBB9132341FA0D002D7955 /* NSData+ImageContentType.m in Sources */,
 				4ACBB89B2341FA0D002D7955 /* UIStepper+RACSignalSupport.m in Sources */,
 				4ACBB8982341FA0D002D7955 /* GCDSemaphore.m in Sources */,
+				4AC303C82423232B004911D6 /* IBGroup2Controller26.m in Sources */,
 				4AF20AE12398B7EC00EFB85D /* IBGroup2Controller23.m in Sources */,
 				4ACBB9402341FA0D002D7955 /* Target_AViewController.m in Sources */,
 				4A37DFC3236C68C1005CEF7B /* SonicJSContext.m in Sources */,
@@ -2807,6 +2835,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MBCoder/HelperFile",
 					"$(PROJECT_DIR)/MBCoder/HelperFile/MBMemoryProfiler",
+					"$(PROJECT_DIR)/MBCoder/IBModule/WebRTC",
+					"$(PROJECT_DIR)/MBCoder/HelperFile/WebRTC",
+					"$(PROJECT_DIR)/MBCoder/HelperFile/spine",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MBCoder/other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2835,6 +2866,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MBCoder/HelperFile",
 					"$(PROJECT_DIR)/MBCoder/HelperFile/MBMemoryProfiler",
+					"$(PROJECT_DIR)/MBCoder/IBModule/WebRTC",
+					"$(PROJECT_DIR)/MBCoder/HelperFile/WebRTC",
+					"$(PROJECT_DIR)/MBCoder/HelperFile/spine",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/MBCoder/other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
