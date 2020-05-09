@@ -175,7 +175,12 @@
  spec.libraries = 'sqlite3.0', 'resolv'
  spec.vendored_frameworks = 'GMHttpDNSModule/Frameworks/\*.framework'
  spec.vendored_libraries =  'GMHttpDNSModule/lib/\*.a'
+ // 资源文件（配置的文件会放到你自己指定的bundle中）
  spec.resource_bundles = {'GMHttpDNS' => ['**\/GMHttpDNSModule/Resources/\**\/\*.{png,jpg}', '**\/GMHttpDNSModule/\**\/\*.{xib,storyboard}']}
+  // 资源文件（配置的文件都会被放到mainBundle中）
+ spec.resource = ['**\/GMHttpDNSModule/Resources/\**\/\*.{png,jpg}', '**\/GMHttpDNSModule/\**\/\*.{xib,storyboard}']
+
+ 
 
  */
 
