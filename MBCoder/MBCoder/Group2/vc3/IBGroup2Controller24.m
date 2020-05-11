@@ -105,9 +105,26 @@
  5: linker, {4}, image
  6: bind-arch, "x86_64", {5}, image
  
+ 1）预处理：
+ 这阶段的工作主要是头文件导入，宏展开/替换，预编译指令处理，以及注释的去除。
+
+ 2）编译：
+ 这阶段做的事情比较多，主要有：
+ a. 词法分析（Lexical Analysis）：将代码转换成一系列 token
+ b. 语法分析（Semantic Analysis）：将 token 流组成抽象语法树 AST；
+ c. 静态分析（Static Analysis）：检查代码错误，例如参数类型是否错误，调用对象方法是否有实现；
+ d. 中间代码生成（Code Generation）：将语法树自顶向下遍历逐步翻译成 LLVM IR。
+
+ 3）生成汇编代码：
+ LLVM 将 LLVM IR 生成当前平台的汇编代码，期间 LLVM 根据编译设置的优化级别 Optimization Level 做对应的优化（Optimize）
+
+ 4）生成目标文件：
+ 汇编器（Assembler）将汇编代码转换为机器代码，它会创建一个目标对象文件，以 .o 结尾。
+ 
+ 5）链接：
+ 链接器（Linker）把若干个目标文件链接在一起，生成可执行文件。
+ 
  4.2 查看preprocessor(预处理)的结果:$ clang -E llvm.c
- a、将 import 引入的文件代码放入对应文件
- b、自定义宏替换
  
  4.3 词法分析，生成Token: $ clang -fmodules -E -Xclang -dump-tokens llvm.c
  ????
@@ -202,21 +219,36 @@
  
  三、iOS项目编译过程
  
- 1、编译信息写入辅助文件，创建编译后的文件架构
- 2、运行预设脚本：这些脚本都在 Build Phases 中可以看到
- 3、编译文件：针对每一个文件进行编译，生成可执行文件 Mach-O，这过程 LLVM 的完整流程，前端、优化器、后端；
- 4、链接文件：将项目中的多个可执行文件合并成一个文件；
- 5、拷贝资源文件：将项目中的资源文件拷贝到目标包；
- 6、编译、链接nib文件：将编译后的nib文件链接成一个文件；
- 7、编译 Asset 文件：将Assets.xcassets的图片编译成机器码，除了 icon 和 launchImage；
- 8、运行 Cocoapods 脚本：将在编译项目之前已经编译好的依赖库和相关资源拷贝到包中。
- 9、生成 .app 包
- 10、将 Swift 标准库拷贝到包中
- 11、对包进行签名
- 12、完成打包
+ 3.1、子工程编译过程
+ 1）Write auxiliary files
+    生成一些辅助文件，主要是 .hmap、LinkFileList 文件，用于辅助执行编译用的，可以提高二次编译速度。
+ 2）编译 .m 文件
+   .m 是主要的源文件，经过预编译操作后，这里的 .m 是展开后的，可以独立编译生成最后的 .o 文件。这里 CompileC 命令和 clang 命令
+ 3）编译 xxx-dummy.m 文件
+    xxx-dummy.m 文件是 CocoaPods 使用的用于区分不同 pod 的编译文件，每个第三方库有不同的 target，
+    所以每次编译第三方库时，都会新增几个文件：包含编译选项的.xcconfig文件，
+    同时拥有编译设置和 CocoaPods 配置的私有 .xcconfig 文件，编译所必须的prefix.pch文件以及编译必须的文件 dummy.m
+ 4）写入LinkFileList，列出了编译后的每一个.o目标文件的信息
+ 5）创建当前架构的静态库.a文件
  
- 总结，2 - 8 步骤的数量和顺序并不固定，这个过程可以在 Build Phases 中指定。Phases：阶段、步骤。
- 参考：https://objccn.io/issue-6-1/
+ 3.2、主工程编译过程
+ 1）创建.app包
+ 2）创建Entitlements.plist，为你的App授予特定的能力以及一些安全方面的权限
+ 3）Process Product Packaging
+ 4）Write Auxiliary File，主要是script.sh(Check Pods Manifest.lock)、header.hmap、LinkFileList、all-product-headers.yaml 文件
+ 5）Run custom shell script '[CP] Check Pods Manifest.lock'
+ 6）Precompile xxx.pch （9s）
+ 7）编译文件：针对每一个文件进行编译，生成可执行文件 Mach-O，这过程 LLVM 的完整流程，前端、优化器、后端（具体分析）
+ 8）链接文件：链接器做的事就是把这些目标文件和所用的一些库链接在一起形成一个完整的可执行文件（33s）
+ 9）Compile AssetCatalog（36s）
+ 10）拷贝资源文件：将项目中的资源文件拷贝到目标包（耗时很大）
+ 11）Process Info.plist
+ 12）Run custom shell script '[CP] Copy Pods Resources' （5s）
+ 13）Generate app.dSYM
+ 14）Run custom shell script '[CP] Embed Pods Frameworks'（32s）
+ 15）Run custom shell script 'Run Script' （4s）
+ 16）Sign xxx.app
+
  
  四、编译速度优化
  
