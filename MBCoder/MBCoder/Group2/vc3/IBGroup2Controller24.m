@@ -124,6 +124,9 @@
  5）链接：
  链接器（Linker）把若干个目标文件链接在一起，生成可执行文件。
  
+ 6）机器码
+ 生成对应平台(x86_64)的机器码（Match-o）
+ 
  4.2 查看preprocessor(预处理)的结果:$ clang -E llvm.c
  
  4.3 词法分析，生成Token: $ clang -fmodules -E -Xclang -dump-tokens llvm.c
