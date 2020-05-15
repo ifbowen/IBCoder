@@ -120,8 +120,8 @@ typedef void (^Block)(void);
 //    [self testBlock];
 //    [self testWeak];
 //    [self test4];
-//    [self test5];
-    [self test6];
+    [self test5];
+//    [self test6];
 }
 
 - (void)test6

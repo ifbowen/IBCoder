@@ -271,7 +271,7 @@
     
 //    [self test0];
 //    [self test1];
-    [self test1_1];
+//    [self test1_1];
 //    [self test2];
 //    [self test3];
 //    [self test4];
@@ -285,7 +285,7 @@
 //    [self test9];
 //    [self test9_21];
 //    [self test9_2];
-//    [self test9_3];
+    [self test9_3];
 //    [self test10];
 //    [self test11];
 //    [self test12];

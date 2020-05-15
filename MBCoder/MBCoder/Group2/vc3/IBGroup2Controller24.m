@@ -86,15 +86,6 @@
  
  4、OC源文件的编译过程，测试文件（llvm.c）
  
- #define bowen 3
-
- #include <stdio.h>
-
- int test(int a, int b) {
-     int c = a + b - bowen;
-     return c;
- }
- 
  4.1 命令行查看编译的过程:$ clang -ccc-print-phases llvm.c
  
  0: input, "llvm.c", c
@@ -125,100 +116,26 @@
  链接器（Linker）把若干个目标文件链接在一起，生成可执行文件。
  
  6）机器码
- 生成对应平台(x86_64)的机器码（Match-o）
+ 通过不同的架构生成对应的可执行文件（机器码Match-o）
  
  4.2 查看preprocessor(预处理)的结果:$ clang -E llvm.c
  
  4.3 词法分析，生成Token: $ clang -fmodules -E -Xclang -dump-tokens llvm.c
- ????
-     ?'        Loc=<llvm.c:11:1>
- int 'int'     [StartOfLine]    Loc=<llvm.c:13:1>
- identifier 'test'     [LeadingSpace]    Loc=<llvm.c:13:5>
- l_paren '('        Loc=<llvm.c:13:9>
- int 'int'        Loc=<llvm.c:13:10>
- identifier 'a'     [LeadingSpace]    Loc=<llvm.c:13:14>
- comma ','        Loc=<llvm.c:13:15>
- int 'int'     [LeadingSpace]    Loc=<llvm.c:13:17>
- identifier 'b'     [LeadingSpace]    Loc=<llvm.c:13:21>
- r_paren ')'        Loc=<llvm.c:13:22>
- l_brace '{'     [LeadingSpace]    Loc=<llvm.c:13:24>
- int 'int'     [StartOfLine] [LeadingSpace]    Loc=<llvm.c:14:5>
- identifier 'c'     [LeadingSpace]    Loc=<llvm.c:14:9>
- equal '='     [LeadingSpace]    Loc=<llvm.c:14:11>
- identifier 'a'     [LeadingSpace]    Loc=<llvm.c:14:13>
- plus '+'     [LeadingSpace]    Loc=<llvm.c:14:15>
- identifier 'b'     [LeadingSpace]    Loc=<llvm.c:14:17>
- minus '-'     [LeadingSpace]    Loc=<llvm.c:14:19>
- numeric_constant '3'     [LeadingSpace]    Loc=<llvm.c:14:21 <Spelling=llvm.c:9:15>>
- semi ';'        Loc=<llvm.c:14:26>
- return 'return'     [StartOfLine] [LeadingSpace]    Loc=<llvm.c:15:5>
- identifier 'c'     [LeadingSpace]    Loc=<llvm.c:15:12>
- semi ';'        Loc=<llvm.c:15:13>
- r_brace '}'     [StartOfLine]    Loc=<llvm.c:16:1>
- eof ''        Loc=<llvm.c:16:2>
 
  4.4 语法分析，生成语法树(AST，Abstract Syntax Tree): $ clang -fmodules -fsyntax-only -Xclang -ast-dump llvm.c
- 
- -ImportDecl 0x7fe00911e960 <llvm.c:11:1> col:1 implicit Darwin.C.stdio
- |-FunctionDecl 0x7fe00911eb30 <line:13:1, line:16:1> line:13:5 test 'int (int, int)'
- | |-ParmVarDecl 0x7fe00911e9b0 <col:10, col:14> col:14 used a 'int'
- | |-ParmVarDecl 0x7fe00911ea28 <col:17, col:21> col:21 used b 'int'
- | `-CompoundStmt 0x7fe00911edf0 <col:24, line:16:1>
- |   |-DeclStmt 0x7fe00911ed78 <line:14:5, col:26>
- |   | `-VarDecl 0x7fe00911ec48 <col:5, line:9:15> line:14:9 used c 'int' cinit
- |   |   `-BinaryOperator 0x7fe00911ed58 <col:13, line:9:15> 'int' '-'
- |   |     |-BinaryOperator 0x7fe00911ed18 <line:14:13, col:17> 'int' '+'
- |   |     | |-ImplicitCastExpr 0x7fe00911ece8 <col:13> 'int' <LValueToRValue>
- |   |     | | `-DeclRefExpr 0x7fe00911eca8 <col:13> 'int' lvalue ParmVar 0x7fe00911e9b0 'a' 'int'
- |   |     | `-ImplicitCastExpr 0x7fe00911ed00 <col:17> 'int' <LValueToRValue>
- |   |     |   `-DeclRefExpr 0x7fe00911ecc8 <col:17> 'int' lvalue ParmVar 0x7fe00911ea28 'b' 'int'
- |   |     `-IntegerLiteral 0x7fe00911ed38 <line:9:15> 'int' 3
- |   `-ReturnStmt 0x7fe00911ede0 <line:15:5, col:12>
- |     `-ImplicitCastExpr 0x7fe00911edc8 <col:12> 'int' <LValueToRValue>
- |       `-DeclRefExpr 0x7fe00911ed90 <col:12> 'int' lvalue Var 0x7fe00911ec48 'c' 'int'
- `-<undeserialized declarations>
  
  4.4 中间代码（LLVM IR）
  
  LLVM IR有3种表示形式
- text:便于阅读的文本格式，类似于汇编语言，拓展名.ll， $ clang -S -emit-llvm llvm.c
+ text:便于阅读的文本格式，类似于汇编语言，拓展名.ll
+    未优IR：$ clang -S -emit-llvm llvm.c
+    优化IR：$ clang -O3 -S -emit-llvm llvm.c
  memory:内存格式
  bitcode:二进制格式，拓展名.bc， $ clang -c -emit-llvm llvm.c
- 
- 未优化的代码IR：
- define i32 @test(i32, i32) #0 {
-   %3 = alloca i32, align 4
-   %4 = alloca i32, align 4
-   %5 = alloca i32, align 4
-   store i32 %0, i32* %3, align 4
-   store i32 %1, i32* %4, align 4
-   %6 = load i32, i32* %3, align 4
-   %7 = load i32, i32* %4, align 4
-   %8 = add nsw i32 %6, %7
-   %9 = sub nsw i32 %8, 3
-   store i32 %9, i32* %5, align 4
-   %10 = load i32, i32* %5, align 4
-   ret i32 %10
- }
- 
- IR基本语法
- 注释以分号 ; 开头
- 全局标识符以@开头，局部标识符以%开头
- alloca，在当前函数栈帧中分配内存
- i32，32bit，4个字节的意思
- align，内存对齐
- store，写入数据
- load，读取数据
- 
+
  官方语法参考：
  https://llvm.org/docs/LangRef.html
  
- 优化IR：clang -O3 -S -emit-llvm llvm.c
- define i32 @test(i32, i32) local_unnamed_addr #0 {
-   %3 = add i32 %0, -3
-   %4 = add i32 %3, %1
-   ret i32 %4
- }
  
  三、iOS项目编译过程
  
@@ -252,8 +169,39 @@
  15）Run custom shell script 'Run Script' （4s）
  16）Sign xxx.app
 
+ 四、替换Clang：
+ 操作步骤：
+ 1. 下载llvm进行编译，下载网页：http://releases.llvm.org/download.html。
+    也可以在Pre-Built Binaries目录下下载已经编译好的
+ 2. 解压后，在 Xcode 的 Build Settings 下的 User-Defined 添加键 CC,值就就是你刚解压的clang的位置 {解压路径}/bin/clang
+ 3. 在 Build Settings 里搜索 OTHER_CFLAGS 添加参数 -ftime-trace
+ 4. 这个时候编译会报这个错误，Unknown argument: '-index-store-path'，在Build Setting 中搜索index并将Enable Index-While-Building Functionality选项设置为NO
+ 5. chrome://tracing
+ 这个时候就可以编译了，如果当前工程依赖其他工程，比如Pods工程，如果编译出现一些链接错误的话，那就也把这些工程改为下载的clang编译，重复上面的2、3、4步。
  
- 四、编译速度优化
+ 脚本修改：
+ post_install do |installer|
+   
+   puts "##### post_install start #####"
+   
+   installer.pod_targets.each do |target|
+     installer.generated_projects.flat_map { |p| p.targets }.each do |target|
+       puts "targetName: #{target.name}"
+       target.build_configurations.each do |config|
+         config.build_settings['CC'] = '/Users/bowencoder/Desktop/llvm_release/bin/clang'
+         config.build_settings['CXX'] = '/Users/bowencoder/Desktop/llvm_release/bin/clang'
+         config.build_settings['OTHER_CFLAGS'] = '-ftime-trace'
+         config.build_settings['COMPILER_INDEX_STORE_ENABLE'] = 'NO'
+       end
+     end
+   end
+   
+   puts "##### post_install end #####"
+   
+ end #installer
+
+ 
+ 五、编译速度优化
  
  1、修改工程配置
  1.1 编译时长优化Architectures：多余
@@ -274,10 +222,13 @@
     这一项设置的是是否将调试信息加入到可执行文件中，改为DWARF后，如果程序崩溃，将无法输出崩溃位置对应的函数堆栈，
     但由于Debug模式下可以在XCode中查看调试信息，所以改为DWARF影响并不大。这一项更改完之后，可以大幅提升编译速度。
  
- 1.5、采用新构建系统（New Build System）
+ 1.5、Debug模式关闭 Link Time Optimization
+    注意：编译优化的代价是损失build时间，参考：https://www.jianshu.com/p/58fef052291a
+ 
+ 1.6、采用新构建系统（New Build System）
       参考：https://blog.csdn.net/tugele/article/details/84885211
  
- 1.6、增加XCode执行的线程数
+ 1.7、增加XCode执行的线程数
  
  
  2、项目优化（开发者密切相关）
