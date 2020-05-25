@@ -40,19 +40,18 @@
  };
  
  2、Category的加载处理过程
- 1）通过Runtime加载某个类的所有Category数据
+ 1）从__DATA 或者 __DATA_CONST 或者 __DATA_DIRTY 数据段中取出和mach_header_64类型匹配的sectname为__objc_catlist的数据
  2）把所有Category的方法、属性、协议数据，合并到一个大数组中，后面参与编译的Category数据，会在数组的前面
  3）将合并后的分类数据（方法、属性、协议），插入到类原来数据的前面
  
  3、源码解读顺序
  objc-os.mm
  _objc_init
- map_images
- map_images_nolock
- 
  objc-runtime-new.mm
- _read_images
- remethodizeClass
+ load_images
+ loadAllCategories
+ load_categories_nolock
+ getDataSection
  attachCategories
  attachLists
  realloc、memmove、 memcpy
@@ -107,7 +106,9 @@
  class_getInstanceMethod
  lookUpImpOrNil
  lookUpImpOrForward
- _class_initialize
+ initializeAndLeaveLocked
+ initializeAndMaybeRelock
+ initializeNonMetaClass
  callInitialize
  objc_msgSend(cls, SEL_initialize)
  
