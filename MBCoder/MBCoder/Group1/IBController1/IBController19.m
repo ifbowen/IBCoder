@@ -42,13 +42,13 @@
  .macro CheckMiss
  STATIC_ENTRY __objc_msgSend_uncached
  .macro MethodTableLookup
- __class_lookupMethodAndLoadCache3
+ _class_lookupMethodAndLoadCache3
 
  objc-runtime-new.mm
  _class_lookupMethodAndLoadCache3
  lookUpImpOrForward
- getMethodNoSuper_nolock、search_method_list（已排序方法二分查找，否则遍历查找 ）、log_and_fill_cache
- cache_getImp、log_and_fill_cache、getMethodNoSuper_nolock、log_and_fill_cache
+ getMethodNoSuper_nolock、search_method_list_inline（已排序方法二分查找，否则遍历查找 ）、log_and_fill_cache
+ log_and_fill_cache、cache_fill
  _class_resolveInstanceMethod
  _objc_msgForward_impcache
 

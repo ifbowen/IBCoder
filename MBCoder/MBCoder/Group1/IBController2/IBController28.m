@@ -23,7 +23,7 @@
     [self createDataBase];
     [self createOneToOneTable];
 //    [self createOneToMoreTable];
-//    [self createMoreToMoreTable];
+    [self createMoreToMoreTable];
     
 }
 
