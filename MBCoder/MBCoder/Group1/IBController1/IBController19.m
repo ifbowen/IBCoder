@@ -24,6 +24,9 @@
     NSLog(@"%s",__func__);
 }
 
+- (void)walk {
+    NSLog(@"%s",__func__);
+}
 
 
 @end
@@ -95,6 +98,7 @@
     [self performSelector:@selector(run:) withObject:@"haha"];
     [self performSelector:@selector(eat) withObject:@"hehe"];
     [self performSelector:@selector(sleep) withObject:@"heihei"];
+    [self performSelector:@selector(walk) withObject:@"heihei"];
 
 }
 
@@ -128,12 +132,11 @@ void newRun(id self,SEL sel,NSString *str) {
     }
     return [super resolveInstanceMethod:sel];
 }
-*/
+ - (void)newRun:(NSString *)str {
+     NSLog(@"---%s---%@",__func__,str);
+ }
 
-//函数
-- (void)newRun:(NSString *)str {
-    NSLog(@"---%s---%@",__func__,str);
-}
+*/
 
 
 #pragma mark - 消息转发重定向、备援接收者
