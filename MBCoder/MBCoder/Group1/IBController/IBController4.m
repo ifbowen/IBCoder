@@ -61,6 +61,14 @@
     return @"123456";
 }
 
+
++ (void)performBlock:(dispatch_block_t)block
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        block();
+    });
+}
+
 @end
 
 
@@ -77,6 +85,8 @@ typedef void (^Block)(void);
 @end
 
 @implementation IBController4
+
+static int count = 0;
 
 // https://www.jianshu.com/p/d96d27819679(源码解析)
 
@@ -111,6 +121,11 @@ typedef void (^Block)(void);
             NSLog(@"其他对象调用 没执行 strongify %@", self);
         });
     };
+    
+    [Student performBlock:^{
+        NSLog(@"bowen %d", count);
+        count++;
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
