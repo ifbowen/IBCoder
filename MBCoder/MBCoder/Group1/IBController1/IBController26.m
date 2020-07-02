@@ -16,6 +16,7 @@
 #import "IBCAReplicatorLayer.h"
 #import "IBCATiledLayer.h"
 #import "IBCAEmitterLayer.h"
+#import "UIMacros.h"
 
 @interface IBController26 ()
 
@@ -42,7 +43,59 @@
 //    [self test5];
 //    [self test6];
 //    [self test7];
-    [self test8];
+//    [self test8];
+    [self test9];
+}
+
+- (void)test9
+{
+    UIImage *image = [UIImage imageNamed:@"flashchat_search_oval"];
+    
+    UIView *view = [[UIView alloc] initWithFrame:self.view.bounds];
+    view.backgroundColor = k16RGB(0x142a44);
+    [self.view addSubview:view];
+    
+    CGFloat width = image.size.width;
+    CGFloat height = image.size.height;
+    CGFloat x = self.view.width/2 - width/2;
+    CGFloat y = self.view.height/2 - height/2;
+    CGRect rect = CGRectMake(x, y, width, height);
+    CGRect rect1 = CGRectMake(x+1, y+1, width-2, height-2);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:view.bounds];
+    UIBezierPath *path1 = [UIBezierPath bezierPathWithOvalInRect:rect1];
+    [path appendPath:path1];
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.fillRule = kCAFillRuleEvenOdd;
+    shapeLayer.path = path.CGPath;
+    shapeLayer.frame = view.bounds;
+    view.layer.mask = shapeLayer;
+
+    UIImageView *view0 = [[UIImageView alloc] initWithFrame:rect];
+    view0.image = image;
+    [self.view addSubview:view0];
+    
+}
+
+- (void)test8_1
+{
+    UIView *view = [[UIView alloc] initWithFrame:self.view.bounds];
+    view.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:view];
+    
+    CGFloat height = view.frame.size.height;
+    CGFloat width = view.frame.size.width;
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path appendPath:[UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, width, height)]];
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.fillRule = kCAFillRuleEvenOdd;
+    shapeLayer.fillColor = [UIColor whiteColor].CGColor;
+    shapeLayer.path = path.CGPath;
+    shapeLayer.frame = view.bounds;
+    [view.layer addSublayer:shapeLayer];
+    
+//    view.layer.mask = shapeLayer;
 }
 
 - (void)test8 {

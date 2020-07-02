@@ -13,6 +13,11 @@
 
 #define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
+#define k16RGB(rgbValue) k16RGBA(rgbValue, 1.0)
+#define k16RGBA(rgbValue, alphaValue) \
+    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
+                    green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 \
+                     blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:alphaValue]
 
 #define IPHONEX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
