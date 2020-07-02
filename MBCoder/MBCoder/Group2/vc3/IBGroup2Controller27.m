@@ -64,7 +64,7 @@
  2. 模态弹窗ViewController 默认样式改变
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
  3. 黑暗模式的适配
- 4. LaunchImage即将废弃
+ 4. LaunchImage即将废弃（https://www.jianshu.com/p/ef5f877b2412）
  5. 新增一直使用蓝牙的权限申请
  6. Sign With Apple
  7. 推送Device Token适配
