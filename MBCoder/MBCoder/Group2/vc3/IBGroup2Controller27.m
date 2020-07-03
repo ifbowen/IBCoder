@@ -30,10 +30,17 @@
     }
     self.whiteView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 80, 44)];
+        view.layer.borderColor = [UIColor orangeColor].CGColor;
+        view.layer.borderWidth = 10.0;
         view.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:view];
         view;
     });
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 260, 80, 44)];
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
+
 }
 
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
