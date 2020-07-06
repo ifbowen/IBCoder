@@ -18,9 +18,8 @@
  而不是根据scrollview的frame来确定。 因此布局得到的并不是想要得到的结果。（其间相互依赖，导致结果异常）
 
  个人经验：
- 在自动布局的情况下，contentSize的大小并不是原先设置的那样，而是由内容约束来定义的。
- 因此UIScrollView的子视图约束不能影响以前设置好的contentSize，所以子视图约束约束
- 的参照物不能全是UIScrollView。
+ UIScrollView的约束基于父视图，设置frame
+ UIScrollView的子视图约束基于本身，撑起contentSize
  
  */
 

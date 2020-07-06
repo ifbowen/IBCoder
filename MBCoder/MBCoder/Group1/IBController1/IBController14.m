@@ -39,7 +39,7 @@
     struct property_list_t *_classProperties;
  };
  
- 2、Category的加载处理过程
+ 2、Category的加载处理过程(按需加载，程序启动先加载实现load方法，或者静态实例的分类，后面调用方法在加载某一个分类）
  1）从__DATA 或者 __DATA_CONST 或者 __DATA_DIRTY 数据段中取出和mach_header_64类型匹配的sectname为__objc_catlist的数据
  2）把所有Category的方法、属性、协议数据，合并到一个大数组中，后面参与编译的Category数据，会在数组的前面
  3）将合并后的分类数据（方法、属性、协议），插入到类原来数据的前面
