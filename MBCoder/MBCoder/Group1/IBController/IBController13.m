@@ -51,7 +51,7 @@
  struct SideTable {
     spinlock_t slock;
     RefcountMap refcnts; refcnts是一个存放着对象引用计数的散列表
-    weak_table_t weak_table;
+    weak_table_t weak_table; weak_table 弱引用哈希表
  }
  
  二、Runtime实现的机制是什么，怎么用，一般用于干嘛？
@@ -98,7 +98,9 @@
  runtime对注册的类，会进行布局，会将 weak 对象放入一个hash表中。用weak指向的对象内存地址作为key，当此对象的引用计数为0的时候会调
  用对象的dealloc方法，假设weak指向的对象内存地址是a，那么就会以a为key，在这个weak hash表中搜索，找到所有以a为key的weak对象，
  从而设置为 nil。具体细节：http://www.cocoachina.com/ios/20170328/18962.html
- 存放weak指针的是一个数组或者hash表
+ 
+ (静态变量)SideTablesMap->(对象地址找到)SideTable->weak_table_t（以对象地址hash算法找索引，取出weak_entry_t）
+ ->weak_entry_t（定长数组，动态数组（以弱指针的地址hash算法找索引，取出weak_referrer_t））-> weak_referrer_t
  
  weak属性需要在dealloc中置nil么
  在ARC环境无论是强指针还是弱指针都无需在dealloc设置为nil，ARC会自动帮我们处理
