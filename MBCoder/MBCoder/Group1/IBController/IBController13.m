@@ -416,8 +416,6 @@
     NSLog(@"%d", [IBController13 isKindOfClass:[NSObject class]]); // 1
     NSLog(@"%d", [IBController13 isKindOfClass:[IBController13 class]]); // 0
     NSLog(@"%d", [IBController13 isMemberOfClass:[IBController13 class]]); // 0
-    NSLog(@"%d", [IBController13 isKindOfClass:[IBController13 class]]); // 0
-    NSLog(@"%d", [IBController13 isMemberOfClass:[IBController13 class]]); // 0
     NSLog(@"%d", [IBController13 isKindOfClass:object_getClass([IBController13 class])]); // 1
     NSLog(@"%d", [IBController13 isMemberOfClass:object_getClass([IBController13 class])]); // 1
     
