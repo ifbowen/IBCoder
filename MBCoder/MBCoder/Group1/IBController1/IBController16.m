@@ -42,11 +42,10 @@
  
  具体主要分为三大步
  当一个对象调用setValue方法时，方法内部会做以下操作：
- 1). 检查是否存在相应的key的set方法，如果存在，就调用set方法。
- 2). 如果set方法不存在，就会查找与key相同名称并且带下划线的成员变量，如果有，则直接给成员变量属性赋值。
- 3). 如果没有找到_key，就会查找相同名称的属性key，如果有就直接赋值。
- 4). 如果还没有找到，则调用valueForUndefinedKey:和setValue:forUndefinedKey:方法。
- 这些方法的默认实现都是抛出异常，我们可以根据需要重写它们。
+ 首先会查找setKey:或者_setKey: (按顺序查找)，如果有直接调用
+ 如果没有，先查看accessInstanceVariablesDirectly方法
+ 如果可以访问会按照 _key、_isKey、key、iskey的顺序查找成员变量，找到直接复制
+ 未找到报错NSUnkonwKeyException错误
  
  KVC:设置不了类型为指针类型的成员变量
  
