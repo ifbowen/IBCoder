@@ -50,12 +50,13 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self test1];
-    
+    [self test1_1];
+//    [self test1_2];
 //    [self test2];
 //    NSLog(@"%@",self.person.delegate);
 //    [self test3];
 //    [self test3_1];
-    [self test3_2];
+//    [self test3_2];
 }
 
 /**
@@ -218,6 +219,58 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
     }
     NSLog(@"123");
     NSLog(@"123");
+}
+
+
+/*
+ 1、关于 release 之后仍然为 1的疑问
+ 向一个被回收的对象发送retaincount消息，输出结果不确定，
+ 如果这块内存被复用了，那么这里就会造成程序崩溃。
+ 最后一次release之后，系统知道这块内存要进行回收了，但是只是进行一个标记，并不会将retaincount减去1，也没必要这么做了。
+ 直接标记，可以减少一次内存操作，加速对对象的回收.
+ 
+ 2、什么对象自动加入到 autoreleasepool中
+ 1）当使用alloc/new/copy/mutableCopy开始的方法进行初始化时，会生成并持有对象(也就是不需要pool管理，系统会自动的帮他在合适位置release)
+    NSObject *stu = [[NSObject alloc] init];
+   那么对于其他情况，会自动将返回值的对象注册到autorealeasepool
+   id obj = [NSMutableArray array];
+ 2）__weak修饰符只持有对象的弱引用，而在访问引用对象的过程中，该对象可能被废弃。
+    那么如果把对象注册到autorealeasepool中，那么在@autorealeasepool块结束之前都能确保对象的存在。
+ 3）id的指针或对象的指针在没有显式指定时会被附加上__autorealeasing修饰符
+ 
+ 3、子线程默认不会开启 Runloop，那出现 Autorelease 对象如何处理？不手动处理会内存泄漏吗？
+ 在子线程你创建了 Pool 的话，产生的 Autorelease 对象就会交给 pool 去管理。
+ 如果你没有创建 Pool ，但是产生了 Autorelease 对象，就会调用 autoreleaseNoPage 方法。
+ 在这个方法中，会自动帮你创建一个 hotpage（hotPage 可以理解为当前正在使用的 AutoreleasePoolPage）
+ 线程退出的时候释放
+ 4、ARC与@autoreleasepool的关系
+ 不管是在MRC还是ARC环境下，对象retain count为0的时候，对象都会被释放，
+ 为什么我们还要使用@autoreleasepool呢，不是多此一举吗？
+ 正常情况下，一个被标记为“autorelease”的对象，在retain count为0的时候，要等到当前runloop结束的时候，才会被释放。
+ 而在当前runloop结束之前，可能会出现无数个等待被释放而没有被释放的对象，这时候内存占用率就会比较高。
+ 恰当的使用@autoreleasepool可以及时释放这些对象，降低内存的使用率。
+
+ */
+- (void)test1_2
+{
+    NSObject *obj = [[NSObject alloc] init];
+    NSLog(@"%lu", [obj retainCount]);
+    [obj release];
+    NSLog(@"%lu", [obj retainCount]);
+}
+
+- (void)test1_1 {
+    // 子线程在退出的时候，才会清理autoreleasepool里面的内存，防止峰值
+    dispatch_queue_t queue = dispatch_queue_create("123456", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        for (int i = 0; i<10e6; i++) {
+            @autoreleasepool {
+                NSString *str = [NSString stringWithFormat:@"控制器动态标记索引+%d", i];
+                NSLog(@"%@", str);
+            }
+        }
+        NSLog(@"");
+    });
 }
 
 @end
