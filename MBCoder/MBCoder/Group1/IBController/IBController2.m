@@ -217,6 +217,7 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
             _objc_autoreleasePoolPrint();
         }
     }
+    
     NSLog(@"123");
     NSLog(@"123");
 }
@@ -230,13 +231,17 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
  直接标记，可以减少一次内存操作，加速对对象的回收.
  
  2、什么对象自动加入到 autoreleasepool中
- 1）当使用alloc/new/copy/mutableCopy开始的方法进行初始化时，会生成并持有对象(也就是不需要pool管理，系统会自动的帮他在合适位置release)
-    NSObject *stu = [[NSObject alloc] init];
-   那么对于其他情况，会自动将返回值的对象注册到autorealeasepool
+ 当使用alloc/new/copy/mutableCopy开始的方法进行初始化时，会生成并持有对象(也就是不需要pool管理，系统会自动的帮他在合适位置release)
+ NSObject *stu = [[NSObject alloc] init];
+ 
+ 0）主动使用__autoreleasing修饰符
+ 1）取得非自己生成并持有的对象，会自动将返回值的对象注册到autorealeasepool
    id obj = [NSMutableArray array];
  2）__weak修饰符只持有对象的弱引用，而在访问引用对象的过程中，该对象可能被废弃。
     那么如果把对象注册到autorealeasepool中，那么在@autorealeasepool块结束之前都能确保对象的存在。
  3）id的指针或对象的指针在没有显式指定时会被附加上__autorealeasing修饰符
+    id *obj 等同于 id __autoreleasing *obj
+    NSError **error 等同于 NSError *__autoreleasing *error
  
  3、子线程默认不会开启 Runloop，那出现 Autorelease 对象如何处理？不手动处理会内存泄漏吗？
  在子线程你创建了 Pool 的话，产生的 Autorelease 对象就会交给 pool 去管理。
