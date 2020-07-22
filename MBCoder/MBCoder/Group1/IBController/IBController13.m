@@ -630,5 +630,43 @@ void food(id self, SEL _cmd, NSString *food) {
 
 
 
+@end
+
+/*
+#import <Foundation/Foundation.h>
+
+@interface Test: NSObject
+
+@property (nonatomic, copy) NSString *name;
+
+- (void)test;
 
 @end
+
+@implementation Test
+
+- (void)test
+{
+    NSLog(@"%@", self.name);
+}
+
+@end
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+         // NSObject *object = [[NSObject alloc] init];
+        id cls = [Test class];
+        void *obj = &cls;
+        [(__bridge Test*)obj test];
+    }
+    return 0;
+}
+ 不加object会在打印的时候崩溃
+ 
+ 加object就打印object
+ 当触发NSLog(@"my name is %@",self.name); 的时候self内部查找name变量进行打印，因为在栈空间中内存是连续的，isa后面接着就是_name变量，
+ 所以instance跳过isa8个字节找到name进行打印。回到原题我们可以看出，cls此时就是充当的实例对象，obj就是充当的指向该实例对象的指针，
+ 所以此时调用self.name相当于在cls内部跳过8个字节来找到进行输出，因为栈控件在内存中连续并且是从高地址开始分配内存，
+ 所以obj跳过8个字节就找到了NSObject *object
+
+*/
