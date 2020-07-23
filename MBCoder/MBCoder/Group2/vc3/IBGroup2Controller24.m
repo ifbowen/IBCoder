@@ -101,7 +101,7 @@
 
  2）编译：
  这阶段做的事情比较多，主要有：
- a. 词法分析（Lexical Analysis）：将代码转换成一系列 token
+ a. 词法分析（Lexical Analysis）：将代码转换成一系列单词（token）
  b. 语法分析（Semantic Analysis）：将 token 流组成抽象语法树 AST；
  c. 静态分析（Static Analysis）：检查代码错误，例如参数类型是否错误，调用对象方法是否有实现；
  d. 中间代码生成（Code Generation）：将语法树自顶向下遍历逐步翻译成 LLVM IR。
