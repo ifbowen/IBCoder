@@ -22,9 +22,12 @@
  线程：进程中的一个执行序列，执行调度的最小单元（在iOS上一般开启3~5个线程）
  
  线程与进程的区别：
- a.地址空间和其它资源：进程间拥有独立内存，进程是资源分配的基本单位；线程隶属于某一进程，且同一进程的各线程间共享内存（资源），线程是cpu调度的基本单位。
- b.通信：进程间相互独立，通信困难，常用的方法有：管道，信号，套接字，共享内存，消息队列等；线程间可以直接读写进程数据段（如全局变量）来进行通信——需要进程同步和互斥手段的辅助，以保证数据的一致性。
- c.调度和切换：线程上下文切换比进程上下文切换要快。进程间切换要保存上下文，加载另一个进程；而线程则共享了进程的上下文环境，切换更快。
+ a.地址空间和其它资源：进程间拥有独立内存，进程是资源分配的基本单位；
+   线程隶属于某一进程，且同一进程的各线程间共享内存（资源），线程是cpu调度的基本单位。
+ b.通信：进程间相互独立，通信困难，常用的方法有：管道，信号，套接字，共享内存，消息队列等；
+   线程间可以直接读写进程数据段（如全局变量）来进行通信——需要进程同步和互斥手段的辅助，以保证数据的一致性。
+ c.调度和切换：线程上下文切换比进程上下文切换要快。进程间切换要保存上下文，加载另一个进程；
+   而线程则共享了进程的上下文环境，切换更快。
  
  一、简介
  1.什么是GCD
@@ -302,7 +305,8 @@
 //    [self test7];
 //    [self test8];
 //    [self test9];
-//    [self test9_21];
+//    [self test9_1];
+    [self test9_21];
 //    [self test9_2];
 //    [self test9_3];
 //    [self test10];
@@ -311,7 +315,7 @@
 //    [self test13];
 //    [self test14];
 //    [self test15];
-    [self test16];
+//    [self test16];
     NSLog(@"++++++++++++++++++++++++++++++++++++");
     
 }
@@ -598,6 +602,7 @@ static void create_task_safely(dispatch_block_t block) {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(queue, ^{
+        NSLog(@"----sync1----%@",[NSThread currentThread]);
         dispatch_sync(dispatch_get_main_queue(), ^{
             NSLog(@"----sync2----%@",[NSThread currentThread]);
         });
@@ -607,9 +612,13 @@ static void create_task_safely(dispatch_block_t block) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"----sync4----%@",[NSThread currentThread]);
         });
-        NSLog(@"----async5----%@",[NSThread currentThread]);
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"----async5----%@",[NSThread currentThread]);
+        }
     });
-    NSLog(@"----end6----");
+    for (int i = 0; i < 10; i++) {
+        NSLog(@"----end6----");
+    }
 }
 
 /**
@@ -735,16 +744,16 @@ static void create_task_safely(dispatch_block_t block) {
 - (void)test4 {
     
     dispatch_queue_t queue = dispatch_queue_create("bowen", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_barrier_async(queue, ^{
+    dispatch_async(queue, ^{
         NSLog(@"----1----%@",[NSThread currentThread]);
     });
-    dispatch_barrier_async(queue, ^{
+    dispatch_async(queue, ^{
         NSLog(@"----2----%@",[NSThread currentThread]);
     });
-    dispatch_barrier_async(queue, ^{
+    dispatch_async(queue, ^{
         NSLog(@"----3----%@",[NSThread currentThread]);
     });
-    dispatch_barrier_async(queue, ^{
+    dispatch_async(queue, ^{
         NSLog(@"----4----%@",[NSThread currentThread]);
     });
 }
@@ -794,49 +803,6 @@ static void create_task_safely(dispatch_block_t block) {
 
 - (void)test4_3 {
     
-     __block BOOL thread1 = YES;
-    __block BOOL thread2 = NO;
-    __block BOOL thread3 = NO;
-    
-    dispatch_queue_t queue = dispatch_queue_create("bowen", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_async(queue, ^{
-        [[NSThread currentThread] setName:@"thread1"];
-        while (1) {
-            if (thread1) {
-                thread1 = NO;
-                NSLog(@"----1----%@",[NSThread currentThread]);
-                thread2 = YES;
-            }
-        }
-    });
-    
-    dispatch_async(queue, ^{
-        [[NSThread currentThread] setName:@"thread2"];
-        while (1) {
-            if (thread2) {
-                thread2 = NO;
-                NSLog(@"----2----%@",[NSThread currentThread]);
-                thread3 = YES;
-            }
-        }
-    });
-    
-    dispatch_async(queue, ^{
-        [[NSThread currentThread] setName:@"thread3"];
-        while (1) {
-            if (thread3) {
-                thread3 = NO;
-                NSLog(@"----3----%@",[NSThread currentThread]);
-                thread1 = YES;
-            }
-        }
-
-    });
-}
-
-
-- (void)test4_4 {
-    
     __block BOOL thread1 = YES;
     __block BOOL thread2 = NO;
     __block BOOL thread3 = NO;
@@ -873,7 +839,6 @@ static void create_task_safely(dispatch_block_t block) {
                 thread1 = YES;
             }
         }
-        
     });
 }
 
