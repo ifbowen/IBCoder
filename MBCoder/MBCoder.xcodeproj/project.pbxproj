@@ -319,6 +319,7 @@
 		F3955AFF24179C17009EC505 /* MBMemoryProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = F3955AFC24179C17009EC505 /* MBMemoryProfiler.m */; };
 		F3955B0024179C17009EC505 /* MBRetainCycleLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F3955AFD24179C17009EC505 /* MBRetainCycleLoggerPlugin.m */; };
 		F3A3E330238C441200925ACC /* IBGroup2Controller19.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */; };
+		F3D01E2224D56B770007DD23 /* IBGroup2Controller28.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D01E2124D56B770007DD23 /* IBGroup2Controller28.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -987,6 +988,8 @@
 		F3955AFE24179C17009EC505 /* MBMemoryProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMemoryProfiler.h; sourceTree = "<group>"; };
 		F3A3E32E238C441200925ACC /* IBGroup2Controller19.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller19.h; sourceTree = "<group>"; };
 		F3A3E32F238C441200925ACC /* IBGroup2Controller19.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller19.m; sourceTree = "<group>"; };
+		F3D01E2024D56B770007DD23 /* IBGroup2Controller28.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller28.h; sourceTree = "<group>"; };
+		F3D01E2124D56B770007DD23 /* IBGroup2Controller28.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller28.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1642,19 +1645,19 @@
 		4ACBB7972341FA0C002D7955 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				4ACBB7982341FA0C002D7955 /* AFSecurityPolicy.h */,
-				4ACBB7992341FA0C002D7955 /* AFNetworkReachabilityManager.h */,
-				4ACBB79A2341FA0C002D7955 /* AFURLSessionManager.h */,
-				4ACBB79B2341FA0C002D7955 /* AFURLRequestSerialization.h */,
-				4ACBB79C2341FA0C002D7955 /* AFURLResponseSerialization.m */,
-				4ACBB79D2341FA0C002D7955 /* AFHTTPSessionManager.m */,
-				4ACBB79E2341FA0C002D7955 /* AFURLResponseSerialization.h */,
-				4ACBB79F2341FA0C002D7955 /* AFURLSessionManager.m */,
-				4ACBB7A02341FA0C002D7955 /* AFURLRequestSerialization.m */,
-				4ACBB7A12341FA0C002D7955 /* AFNetworking.h */,
-				4ACBB7A22341FA0C002D7955 /* AFNetworkReachabilityManager.m */,
-				4ACBB7A32341FA0C002D7955 /* AFSecurityPolicy.m */,
 				4ACBB7A42341FA0C002D7955 /* AFHTTPSessionManager.h */,
+				4ACBB79D2341FA0C002D7955 /* AFHTTPSessionManager.m */,
+				4ACBB7A12341FA0C002D7955 /* AFNetworking.h */,
+				4ACBB7992341FA0C002D7955 /* AFNetworkReachabilityManager.h */,
+				4ACBB7A22341FA0C002D7955 /* AFNetworkReachabilityManager.m */,
+				4ACBB7982341FA0C002D7955 /* AFSecurityPolicy.h */,
+				4ACBB7A32341FA0C002D7955 /* AFSecurityPolicy.m */,
+				4ACBB79B2341FA0C002D7955 /* AFURLRequestSerialization.h */,
+				4ACBB7A02341FA0C002D7955 /* AFURLRequestSerialization.m */,
+				4ACBB79E2341FA0C002D7955 /* AFURLResponseSerialization.h */,
+				4ACBB79C2341FA0C002D7955 /* AFURLResponseSerialization.m */,
+				4ACBB79A2341FA0C002D7955 /* AFURLSessionManager.h */,
+				4ACBB79F2341FA0C002D7955 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
@@ -2005,6 +2008,8 @@
 				4AC303C72423232B004911D6 /* IBGroup2Controller26.m */,
 				4A416E2D249888B900C192EF /* IBGroup2Controller27.h */,
 				4A416E2E249888B900C192EF /* IBGroup2Controller27.m */,
+				F3D01E2024D56B770007DD23 /* IBGroup2Controller28.h */,
+				F3D01E2124D56B770007DD23 /* IBGroup2Controller28.m */,
 			);
 			path = vc3;
 			sourceTree = "<group>";
@@ -2370,6 +2375,7 @@
 				4ACBB8842341FA0D002D7955 /* ASCameraButton.m in Sources */,
 				4ACBB89A2341FA0D002D7955 /* NSObject+Log.m in Sources */,
 				4AA84ACC236ABFC800AF5BC9 /* IBGroup2Controller15.m in Sources */,
+				F3D01E2224D56B770007DD23 /* IBGroup2Controller28.m in Sources */,
 				4ACBB88C2341FA0D002D7955 /* ViewController+MASAdditions.m in Sources */,
 				4AF213432399F2E800EFB85D /* fishhook.c in Sources */,
 				4ACBB8BF2341FA0D002D7955 /* RACCompoundDisposableProvider.d in Sources */,
@@ -2842,7 +2848,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7Q62N6S7X8;
+				DEVELOPMENT_TEAM = ZW2AQ67NC5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
