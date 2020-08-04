@@ -9,13 +9,6 @@
 #import "IBController20.h"
 #import "UIImageView+WebCache.h"
 
-/*
- 
- 号外：苹果官方给出了一个下载高清大图的demo,内存消耗很低。感兴趣的朋友也可以看看：
- https://developer.apple.com/library/ios/samplecode/LargeImageDownsizing/Introduction/Intro.html
- 
- */
-
 @interface IBBigImageCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView *imgView;
@@ -47,6 +40,22 @@
 @end
 
 @implementation IBController20
+
+/*
+ 号外：苹果官方给出了一个下载高清大图的demo,内存消耗很低。感兴趣的朋友也可以看看：
+ https://developer.apple.com/library/ios/samplecode/LargeImageDownsizing/Introduction/Intro.html
+
+ 大图处理：
+ 1、解压缩之前降低质量
+ 2、使用CATiledLayer分块加载
+ 
+ 线上问题处理：
+ 1、监控系统告警
+ 2、查看日志
+ 3、复盘
+ 
+ 
+ */
 
 - (void)viewDidLoad {
     [super viewDidLoad];
