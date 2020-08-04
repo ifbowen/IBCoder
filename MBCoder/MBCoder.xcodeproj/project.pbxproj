@@ -19,6 +19,8 @@
 		4A64EF722369CDCC00431CEA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; };
 		4A64EF792369CEDC00431CEA /* Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF782369CEDC00431CEA /* Coder.swift */; };
 		4A64EF842369D14E00431CEA /* VVStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF832369D14E00431CEA /* VVStack.m */; };
+		4A77231524D941BD007E7BD6 /* Mach-O文件结构.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A77231424D941BC007E7BD6 /* Mach-O文件结构.png */; };
+		4A77231724D943C3007E7BD6 /* FatBinary.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A77231624D943C2007E7BD6 /* FatBinary.png */; };
 		4A86C071237D442300498C20 /* MBPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A86C070237D442300498C20 /* MBPresenter.m */; };
 		4A86C074237D953500498C20 /* IBGroup2Controller17.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A86C073237D953500498C20 /* IBGroup2Controller17.m */; };
 		4A9D220C23682F47006B9771 /* IBGroup2Controller12.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D220B23682F47006B9771 /* IBGroup2Controller12.m */; };
@@ -381,6 +383,8 @@
 		4A64EF782369CEDC00431CEA /* Coder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coder.swift; sourceTree = "<group>"; };
 		4A64EF822369D14E00431CEA /* VVStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VVStack.h; sourceTree = "<group>"; };
 		4A64EF832369D14E00431CEA /* VVStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVStack.m; sourceTree = "<group>"; };
+		4A77231424D941BC007E7BD6 /* Mach-O文件结构.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Mach-O文件结构.png"; sourceTree = "<group>"; };
+		4A77231624D943C2007E7BD6 /* FatBinary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FatBinary.png; sourceTree = "<group>"; };
 		4A86C06F237D442300498C20 /* MBPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPresenter.h; sourceTree = "<group>"; };
 		4A86C070237D442300498C20 /* MBPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBPresenter.m; sourceTree = "<group>"; };
 		4A86C072237D953500498C20 /* IBGroup2Controller17.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller17.h; sourceTree = "<group>"; };
@@ -1185,6 +1189,8 @@
 		4ACBB64B2341FA0B002D7955 /* IBController1 */ = {
 			isa = PBXGroup;
 			children = (
+				4A77231424D941BC007E7BD6 /* Mach-O文件结构.png */,
+				4A77231624D943C2007E7BD6 /* FatBinary.png */,
 				4ACBB6542341FA0B002D7955 /* IBController14.h */,
 				4ACBB6622341FA0C002D7955 /* IBController14.m */,
 				4ACBB65B2341FA0C002D7955 /* IBController15.h */,
@@ -2203,12 +2209,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A77231724D943C3007E7BD6 /* FatBinary.png in Resources */,
 				4ACBB8762341FA0D002D7955 /* 类，元类，根元类关系图.png in Resources */,
 				4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */,
 				4ACBB8752341FA0D002D7955 /* IBController1.xib in Resources */,
 				4AA84ACE236AEDFD00AF5BC9 /* data.json in Resources */,
 				4AF2134E2399F31600EFB85D /* TPExpandIcon.png in Resources */,
 				4ACBB9472341FA0D002D7955 /* Assets.xcassets in Resources */,
+				4A77231524D941BD007E7BD6 /* Mach-O文件结构.png in Resources */,
 				4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */,
 				4AF2134F2399F31600EFB85D /* TPNOExpandIcon.png in Resources */,
 				4ACBB94A2341FA0D002D7955 /* Main.storyboard in Resources */,

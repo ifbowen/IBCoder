@@ -115,7 +115,6 @@
  虚拟页没有被缓存在物理内存中（缓存未命中）被称为缺页
  
  
- 
  六、内存占用（Memory Footprint）
  memory footprint = dirty size + compressed size
  
