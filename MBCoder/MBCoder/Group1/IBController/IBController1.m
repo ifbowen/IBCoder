@@ -150,30 +150,8 @@
     [view.layer addSublayer:gl];
     CGFloat xiaoshu = (double)arc4random()/0x100000000;
     NSLog(@"%lf", xiaoshu/100);
-    [self test111];
 
 }
-
-extern void _objc_autoreleasePoolPrint(void);
-
-- (void)test111
-{
-    @autoreleasepool {
-         id obj = [self obj];
-//        id __weak weakO = obj;
-//        id __autoreleasing weakO = obj;
-//        NSLog(@"%@", weakO);
-        _objc_autoreleasePoolPrint();
-    }
-
-}
-
-- (NSObject *)obj
-{
-    NSObject *obj = [[NSObject alloc] init];
-    return obj;
-}
-
 
 /**
  这种方法比较简单，代码量较少，但是操作layer肯定会影响性能，会造成离屏渲染
