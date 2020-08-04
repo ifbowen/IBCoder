@@ -50,8 +50,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    [self test1];
-    [self test1_1];
-//    [self test1_2];
+//    [self test1_1];
+    [self test1_2];
 //    [self test2];
 //    NSLog(@"%@",self.person.delegate);
 //    [self test3];
@@ -224,11 +224,10 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
 
 
 /*
- 1、关于 release 之后仍然为 1的疑问
- 向一个被回收的对象发送retaincount消息，输出结果不确定，
- 如果这块内存被复用了，那么这里就会造成程序崩溃。
- 最后一次release之后，系统知道这块内存要进行回收了，但是只是进行一个标记，并不会将retaincount减去1，也没必要这么做了。
- 直接标记，可以减少一次内存操作，加速对对象的回收.
+ 1、关于 release 之后仍然为 1 的疑问
+ 参考1_3
+ __weak修饰的对象，在通过NSLog的时候，NSLog会引用它，导致引用计数+1
+ 所以我们尽量少使用__weak，或者习惯性使用__strong转换后使用
  
  2、什么对象自动加入到 autoreleasepool中
  当使用alloc/new/copy/mutableCopy开始的方法进行初始化时，会生成并持有对象(也就是不需要pool管理，系统会自动的帮他在合适位置release)
@@ -256,12 +255,55 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
  恰当的使用@autoreleasepool可以及时释放这些对象，降低内存的使用率。
 
  */
+
 - (void)test1_2
 {
+    {   NSObject *obj = [[NSObject alloc] init];
+        id __weak o = obj;
+        NSLog(@"1 %@ retainCount : %lu",o,_objc_rootRetainCount(o));
+        NSLog(@"2 %@ retainCount : %lu",o,_objc_rootRetainCount(o));
+        
+    }
+    {   NSObject *obj = [[NSObject alloc] init];
+        id __weak tmp = obj;
+        id o = tmp;
+        NSLog(@"3 %@ retainCount : %lu",o,_objc_rootRetainCount(o));
+        NSLog(@"4 %@ retainCount : %lu",o,_objc_rootRetainCount(o));
+    }
+    
+    // 没有验证出来
+    {
+        id obj = [self obj];
+        _objc_autoreleasePoolPrint();
+        NSLog(@"%@",obj);
+    }
+    
+    // MRC下会自动加入释放池
+    {
+        NSObject *obj = [[NSObject alloc] init];
+        id __weak weakO = obj; // id __autoreleasing weakO = obj
+        _objc_autoreleasePoolPrint();
+        NSLog(@"%@", weakO);
+    }
+    
+    // ARC下会加到自动释放池
+    @autoreleasepool {
+        NSObject *obj;
+        [self sendData:&obj];
+        _objc_autoreleasePoolPrint();
+        NSLog(@"%@",obj);
+    }
+}
+
+- (NSObject *)obj
+{
     NSObject *obj = [[NSObject alloc] init];
-    NSLog(@"%lu", [obj retainCount]);
-    [obj release];
-    NSLog(@"%lu", [obj retainCount]);
+    return obj;
+}
+
+- (void)sendData:(NSObject **)obj
+{
+    *obj = [[NSObject alloc] init];
 }
 
 - (void)test1_1 {
@@ -281,6 +323,7 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
 @end
 
 /**
+ 原理：https://blog.csdn.net/shengpeng3344/article/details/95993638
  
  自动释放池的主要底层数据结构是：__AtAutoreleasePool、AutoreleasePoolPage
  
@@ -304,21 +347,27 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
  
  class AutoreleasePoolPage
  {
-    magic_t const magic;
-    id *next;
-    pthread_t const thread;
-    AutoreleasePoolPage * const parent;
-    AutoreleasePoolPage *child;
-    uint32_t const depth;
+    magic_t const magic;                  // 用来校验 AutoreleasePoolPage 的结构是否完整
+    id *next;                             // 指向了下一个能存放autorelease对象的地址，初始化时指向 begin()
+    pthread_t const thread;               // 指向当前线程
+    AutoreleasePoolPage * const parent;   // 指向父结点，第一个结点的 parent 值为 nil
+    AutoreleasePoolPage *child;           // 指向子结点，最后一个结点的 child 值为 nil
+    uint32_t const depth;                 // 代表深度，从 0 开始，往后递增 1
     uint32_t hiwat;
  }
  
  0、调用了autorelease的对象最终都是通过AutoreleasePoolPage对象来管理的
- 1、每个AutoreleasePoolPage对象占用4096字节内存，除了用来存放它内部的成员变量，剩下的空间用来存放autorelease对象的地址
+ 1、分配的内存大小PAGE_MAX_SIZE为4096，即虚拟内存一页大小，除了用来存放它内部的成员变量，剩下的空间用来存放autorelease对象的地址
  2、所有的AutoreleasePoolPage对象通过双向链表的形式连接在一起
  3、调用push方法会将一个POOL_BOUNDARY入栈，并且返回其存放的内存地址
  4、调用pop方法时传入一个POOL_BOUNDARY的内存地址，会从最后一个入栈的对象开始发送release消息，直到遇到这个POOL_BOUNDARY
- 5、id *next指向了下一个能存放autorelease对象地址的区域
+ 5、obj->isTaggedPointer()表示Tagged Pointer对象不能加入autoreleasepool
+ 6、当next == begin() 时，表示 AutoreleasePoolPage 为空；当 next == end() 时，表示 AutoreleasePoolPage 已满
+ 
+ 为什么需要设计成双向列表呢？
+ pop哨兵对象时先通过找到当前页，然后再通过child指针找到所有子页进行释放。我们需要使用child指针
+ 由于需要保证释放时是先进后出，所以我们是从最末尾一个page开始，那么会需要取到前一个page，所以用到parent
+ 正好满足双向列表的特性，故使用双向列表。
  
  三、Runloop和AutoreleasePool
  iOS在主线程的Runloop中注册了2个Observer

@@ -21,6 +21,12 @@
 
 @end
 /*
+ Edit scheme -> Run -> Arguments 中
+ 简略的时间：环境变量 DYLD_PRINT_STATISTICS 设为 1
+ 详细的时间，环境变量 DYLD_PRINT_STATISTICS_DETAILS 设为 1
+ 
+ 启动：冷启动、热启动
+ 
  简而言之：APP启动主要流程: 点击icon -> 加载动态链接库等 -> 映像文件加载imageLoader ->  runtime -> load  -> main -> delegate.
  
  1、APP启动时间
