@@ -78,6 +78,7 @@
  
  四、_objc_msgForward 函数是做什么的，直接调用它将会发生什么？
  答：_objc_msgForward是 IMP 类型，用于消息转发的：当向一个对象发送一条消息，但它并没有实现的时候，_objc_msgForward会尝试做消息转发。
+    函数：id _Nullable _objc_msgForward(id _Nonnull receiver, SEL _Nonnull sel, ...)
  
  五、应用
  总结起来，iOS中的RunTime的作用有以下几点：
@@ -119,11 +120,7 @@
     无论在MRC下还是ARC下均不需要，被关联的对象在生命周期内要比对象本身释放的晚很多，它们会在被 NSObject -dealloc调用
  的object_dispose()方法中释放
  
- 九、_objc_msgForward函数是做什么的？直接调用它将会发生什么？
-    _objc_msgForward是IMP类型，用于消息转发的：当向一个对象发送一条消息，但它并没有实现的时候，_objc_msgForward会尝试做消息转发
- 直接调用_objc_msgForward是非常危险的事，这是把双刃刀，如果用不好会直接导致程序Crash，但是如果用得好，能做很多非常酷的事
- 
- 十、简述下Objective-C中调用方法的过程（runtime）
+ 九、简述下Objective-C中调用方法的过程（runtime）
  Objective-C是动态语言，每个方法在运行时会被动态转为消息发送，即：objc_msgSend(receiver, selector)，整个过程介绍如下：
  
  a.实例对象发送消息（对象调用实例方法时，是在对应类对象及其继承链上找方法。）
@@ -143,7 +140,7 @@
  注意点，一般使用频繁的方法用静态方法，用的少的方法用动态的。静态的速度快，占内存。动态的速度相对慢些，
  但调用完后，立即释放类，可以节省内存，可以根据自己的需要选择是用动态方法还是静态方法。
  
- 十一、类结构
+ 十、类结构
  1、
  struct objc_object {
  private:
@@ -222,7 +219,7 @@
     MethodCacheIMP _imp; // 函数的内存地址
  };
  
- 十二、super
+ 十一、super
 `1、结构
  struct objc_super {
      id receiver;
