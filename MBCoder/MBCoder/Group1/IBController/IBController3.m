@@ -306,8 +306,8 @@
 //    [self test8];
 //    [self test9];
 //    [self test9_1];
-    [self test9_21];
-//    [self test9_2];
+//    [self test9_21];
+    [self test9_2];
 //    [self test9_3];
 //    [self test10];
 //    [self test11];
@@ -579,7 +579,12 @@ static void create_task_safely(dispatch_block_t block) {
 - (void)test9_2 {
     NSLog(@"----begin1----");
     dispatch_queue_t queue = dispatch_queue_create("123", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue1 = dispatch_queue_create("234", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue2 = dispatch_queue_create("345", DISPATCH_QUEUE_CONCURRENT);
     dispatch_async(queue, ^{
+        dispatch_sync(queue1, ^{
+            NSLog(@"----sync1----%@",[NSThread currentThread]);
+        });
         dispatch_sync(dispatch_get_main_queue(), ^{
             NSLog(@"----sync2----%@",[NSThread currentThread]);
         });
@@ -589,7 +594,10 @@ static void create_task_safely(dispatch_block_t block) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"----sync4----%@",[NSThread currentThread]);
         });
-        NSLog(@"----async5----%@",[NSThread currentThread]);
+        dispatch_sync(queue2, ^{
+            NSLog(@"----sync5----%@",[NSThread currentThread]);
+        });
+        NSLog(@"----async6----%@",[NSThread currentThread]);
     });
     NSLog(@"----end6----");
 }
