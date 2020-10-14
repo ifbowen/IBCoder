@@ -37,6 +37,8 @@
     @synchronized (self) {
         
     }
+    
+    // 测试2
 }
 
 - (void)RecursiveLock{
