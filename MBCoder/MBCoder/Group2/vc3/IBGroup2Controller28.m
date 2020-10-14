@@ -38,7 +38,6 @@
         
     }
     
-    // 测试12
 }
 
 - (void)RecursiveLock{
