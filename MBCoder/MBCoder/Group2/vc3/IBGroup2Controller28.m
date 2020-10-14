@@ -38,7 +38,6 @@
         
     }
     
-    // 3
 }
 
 - (void)RecursiveLock{
@@ -48,7 +47,6 @@
     
     [lock unlock];
     [lock unlock];
-    // 4
 
 }
 
