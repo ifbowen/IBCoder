@@ -48,6 +48,8 @@
     
     [lock unlock];
     [lock unlock];
+    // 4
+
 }
 
 - (void)conditionLock{
