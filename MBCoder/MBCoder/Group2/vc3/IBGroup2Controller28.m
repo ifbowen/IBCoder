@@ -37,7 +37,7 @@
     @synchronized (self) {
         
     }
-    
+    // 1
 }
 
 - (void)RecursiveLock{
@@ -47,6 +47,7 @@
     
     [lock unlock];
     [lock unlock];
+    // 2
 }
 
 - (void)conditionLock{
