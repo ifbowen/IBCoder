@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    // b
 }
 
 - (void)mutexLock{
@@ -37,6 +38,7 @@
     @synchronized (self) {
         
     }
+    
 }
 
 - (void)RecursiveLock{
@@ -46,6 +48,7 @@
     
     [lock unlock];
     [lock unlock];
+
 }
 
 - (void)conditionLock{

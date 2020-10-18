@@ -116,6 +116,12 @@
  在任何时候，可以用--abort参数来终止rebase的操作，并且”mywork“ 分支会回到rebase开始前的状态。
  $ git rebase --abort
  
+ 1.1.15
+ $ git reset --soft HEAD^
+ --hard : 回退版本库，暂存区，工作区。（因此我们修改过的代码就没了，需要谨慎使用）
+ --mixed: 回退版本库，暂存区。(--mixed为git reset的默认参数，即当任何参数都不加的时候的参数)
+ --soft: 回退版本库。
+ 
  
  二、Gitflow总览
  1、分支
