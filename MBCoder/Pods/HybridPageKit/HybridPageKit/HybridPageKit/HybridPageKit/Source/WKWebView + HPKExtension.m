@@ -40,6 +40,16 @@
 }
 
 - (void)_safeAsyncEvaluateJavaScriptString:(NSString *)script completionBlock:(_HPKWebViewJSCompletionBlock)block {
+    
+    if(![[NSThread currentThread] isMainThread]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //retain self
+            __unused __attribute__((objc_ownership(strong))) __typeof__(self) self_retain_ = self;
+            [self _safeAsyncEvaluateJavaScriptString:script completionBlock:block];
+        });
+        return;
+    }
+    
     if (!script || script.length <= 0) {
         HPKErrorLog(@"invalid script");
         if (block) {
@@ -178,20 +188,6 @@
 #pragma clang diagnostic pop
         }
         
-        //优先使用WKWebView,防止UIWebView iOS12 Crash
-        if (!originalUserAgent || originalUserAgent.length <= 0) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
-            UIWebView *webView;
-            @try {
-                webView = [[UIWebView alloc] init];
-#pragma clang diagnostic pop
-            } @catch (NSException *exception) {
-                HPKErrorLog(@"fail to initialize UIWebView.");
-            }
-            originalUserAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-        }
-
         NSString *appUserAgent =
             [NSString stringWithFormat:@"%@-%@", originalUserAgent, customString];
         NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:appUserAgent, @"UserAgent", nil];

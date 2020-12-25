@@ -13,7 +13,7 @@ PODS:
     - SQLCipher
   - FMDB/standard (2.7.5)
   - GPUImage (0.1.7)
-  - HybridPageKit (1.3)
+  - HybridPageKit (1.4)
   - Kiwi (3.0.0)
   - KVOController (1.2.0)
   - libextobjc (0.6):
@@ -54,23 +54,25 @@ PODS:
   - lottie-ios (2.5.3)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
-  - MMKV (1.0.23)
-  - PromiseKit (6.12.0):
-    - PromiseKit/CorePromise (= 6.12.0)
-    - PromiseKit/Foundation (= 6.12.0)
-    - PromiseKit/UIKit (= 6.12.0)
-  - PromiseKit/CorePromise (6.12.0)
-  - PromiseKit/Foundation (6.12.0):
+  - MMKV (1.2.6):
+    - MMKVCore (~> 1.2.6)
+  - MMKVCore (1.2.6)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.12.0):
+  - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
-  - Protobuf (3.11.1)
-  - SQLCipher (4.2.0):
-    - SQLCipher/standard (= 4.2.0)
-  - SQLCipher/common (4.2.0)
-  - SQLCipher/standard (4.2.0):
+  - Protobuf (3.14.0)
+  - SQLCipher (4.4.2):
+    - SQLCipher/standard (= 4.4.2)
+  - SQLCipher/common (4.4.2)
+  - SQLCipher/standard (4.4.2):
     - SQLCipher/common
-  - SSZipArchive (2.2.2)
+  - SSZipArchive (2.2.3)
   - SVGAPlayer (2.3.5):
     - SVGAPlayer/Core (= 2.3.5)
     - SVGAPlayer/ProtoFiles (= 2.3.5)
@@ -115,7 +117,10 @@ DEPENDENCIES:
   - YYKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
+    - FBAllocationTracker
+    - FBMemoryProfiler
+    - FBRetainCycleDetector
     - FDFullscreenPopGesture
     - FMDB
     - GPUImage
@@ -124,7 +129,9 @@ SPEC REPOS:
     - KVOController
     - libextobjc
     - lottie-ios
+    - MLeaksFinder
     - MMKV
+    - MMKVCore
     - PromiseKit
     - Protobuf
     - SQLCipher
@@ -136,11 +143,6 @@ SPEC REPOS:
     - Yoga
     - YogaKit
     - YYKit
-  trunk:
-    - FBAllocationTracker
-    - FBMemoryProfiler
-    - FBRetainCycleDetector
-    - MLeaksFinder
 
 SPEC CHECKSUMS:
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
@@ -149,17 +151,18 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
-  HybridPageKit: 06b0cf7ca512fdeb022e7849171cd94c6472f884
+  HybridPageKit: f02b606ebf9afd42b57ac2e829edb9f77f0db942
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
-  MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
-  PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
-  Protobuf: 20d79da7f20b5928b80043b05080b816e802659e
-  SQLCipher: 0187a2180ac288ea686b670b7141da62cd013b16
-  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  MMKV: 27f6b9e34849e77e78c5a1cc8f7f513e37f5fa15
+  MMKVCore: c301b04fd2ab9957e6e4d4465b9b60e443b0bb6b
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  Protobuf: 0cde852566359049847168e51bd1c690e0f70056
+  SQLCipher: 1ab0b9486a77d141e72e92ff30681926ed79c07a
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   SVGAPlayer: bae4048710c948dc4de98971e35207d3bbed85ad
   TZScrollViewPopGesture: d36355038259e89372a1f4a2db7e9ca675de2278
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
@@ -168,6 +171,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: fcef19ec3c5d457c14474717bd1fa2d8539cc8c8
+PODFILE CHECKSUM: 692385ef4133721f6b0cc65af5830bbac5151c07
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0
