@@ -176,7 +176,8 @@
 
 /**
  Core Graphics 和 UIBezierPath
- 性能较高
+ GPU损耗低内存占用大，频繁调用CPU损耗大
+ 占用内存：图层宽*图层高*4字节
  */
 - (void)test1 {
 
@@ -196,7 +197,7 @@
 /**
  CAShapeLayer和UIBezierPath
  这种方法的优点：可以操作任何一个角（左上，右上，左下，右下），并且消耗内存较小，渲染较快。
- 缺点：操作了layer，对性能有影响，有离屏渲染
+ 缺点：操作了layer，对性能有影响，mask有离屏渲染。掉帧更严重
  */
 - (void)test2 {
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.imgView.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:self.imgView.bounds.size];
@@ -207,6 +208,9 @@
     //设置图形样子
     maskLayer.path = maskPath.CGPath;
     self.imgView.layer.mask = maskLayer;
+    
+    // 可以尝试
+//    [self.imgView.layer addSublayer:maskLayer];
 }
 
 - (void)test3 {
@@ -231,6 +235,35 @@
 - (void)test4 {
 //    第四种方法：使用带圆形的透明图片.
     
+}
+
+// 仿照SD，目前性能最高
+- (void)test5 {
+    UIImage *image = [UIImage imageNamed:@"icon"];
+
+    CGFloat wh = MIN(MAX(image.size.width, image.size.height), 160);
+    CGSize imageSize = CGSizeMake(wh, wh);
+    CGfloat radius = wh / 2;
+    CGContextRef context = CGBitmapContextCreate( NULL,
+                                                  wh,
+                                                  wh,
+                                                  8,
+                                                  4 * wh,
+                                                  CGColorSpaceCreateDeviceRGB(),
+                                                  kCGImageAlphaPremultipliedFirst );
+    // 绘制圆角
+    CGContextBeginPath(context);
+    addRoundedRectToPath(context, CGRectMake(0, 0, wh, wh), radius, radius);
+    CGContextClosePath(context);
+    CGContextClip(context);
+    CGContextDrawImage(context, CGRectMake(0, 0, w, h), img.CGImage);
+    CGImageRef imageMasked = CGBitmapContextCreateImage(context);
+    image = [UIImage imageWithCGImage:imageMasked];
+    CGContextRelease(context);
+    CGImageRelease(imageMasked);
+    
+    self.imgView.image = newimg;
+
 }
 
 
