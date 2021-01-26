@@ -42,8 +42,6 @@
 		4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B5234F4266002356B7 /* home_colourline.svga */; };
 		4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B7234F5912002356B7 /* LottieLogo.json */; };
 		4AC303C82423232B004911D6 /* IBGroup2Controller26.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC303C72423232B004911D6 /* IBGroup2Controller26.m */; };
-		4AC303CC24233227004911D6 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CA2423321E004911D6 /* WebRTC.framework */; };
-		4AC303CD24233227004911D6 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CA2423321E004911D6 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4AC303D0242332AD004911D6 /* MBSpineFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CE242332AA004911D6 /* MBSpineFramework.framework */; };
 		4AC303D1242332AD004911D6 /* MBSpineFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CE242332AA004911D6 /* MBSpineFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4ACBB8542341FA0D002D7955 /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62A2341FA0B002D7955 /* IBController41.m */; };
@@ -342,7 +340,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				4AC303D1242332AD004911D6 /* MBSpineFramework.framework in Embed Frameworks */,
-				4AC303CD24233227004911D6 /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,7 +417,6 @@
 		4AB0C9B7234F5912002356B7 /* LottieLogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo.json; sourceTree = "<group>"; };
 		4AC303C62423232B004911D6 /* IBGroup2Controller26.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller26.h; sourceTree = "<group>"; };
 		4AC303C72423232B004911D6 /* IBGroup2Controller26.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller26.m; sourceTree = "<group>"; };
-		4AC303CA2423321E004911D6 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
 		4AC303CE242332AA004911D6 /* MBSpineFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBSpineFramework.framework; sourceTree = "<group>"; };
 		4ACBB60F2341F972002D7955 /* MBCoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBCoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACBB62A2341FA0B002D7955 /* IBController41.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBController41.m; sourceTree = "<group>"; };
@@ -1012,7 +1008,6 @@
 			files = (
 				CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */,
 				4AC303D0242332AD004911D6 /* MBSpineFramework.framework in Frameworks */,
-				4AC303CC24233227004911D6 /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,14 +1071,6 @@
 				4AA858EA23B24D2D003D610F /* UIImage+HSB.m */,
 			);
 			path = card;
-			sourceTree = "<group>";
-		};
-		4AC303C124232222004911D6 /* WebRTC */ = {
-			isa = PBXGroup;
-			children = (
-				4AC303CA2423321E004911D6 /* WebRTC.framework */,
-			);
-			path = WebRTC;
 			sourceTree = "<group>";
 		};
 		4AC303C9242330C8004911D6 /* spine */ = {
@@ -1274,7 +1261,6 @@
 		4ACBB68C2341FA0C002D7955 /* HelperFile */ = {
 			isa = PBXGroup;
 			children = (
-				4AC303C124232222004911D6 /* WebRTC */,
 				4AC303C9242330C8004911D6 /* spine */,
 				F3955AFA24179C17009EC505 /* MBMemoryProfiler */,
 				4ACBB6CB2341FA0C002D7955 /* AFNetworking-RACExtensions */,
@@ -2857,8 +2843,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZW2AQ67NC5;
+				DEVELOPMENT_TEAM = 7BPUCN93D6;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MBCoder/HelperFile",
@@ -2873,7 +2860,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bowen.coder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibowen.coder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2890,8 +2877,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZW2AQ67NC5;
+				DEVELOPMENT_TEAM = 7BPUCN93D6;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MBCoder/HelperFile",
@@ -2906,7 +2894,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bowen.coder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibowen.coder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

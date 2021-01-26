@@ -7,7 +7,6 @@
 //
 
 #import "IBGroup2Controller26.h"
-#import <WebRTC/WebRTC.h>
 
 @interface IBGroup2Controller26 ()
 

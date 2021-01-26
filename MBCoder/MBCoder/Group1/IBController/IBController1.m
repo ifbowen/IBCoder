@@ -239,30 +239,30 @@
 
 // 仿照SD，目前性能最高
 - (void)test5 {
-    UIImage *image = [UIImage imageNamed:@"icon"];
-
-    CGFloat wh = MIN(MAX(image.size.width, image.size.height), 160);
-    CGSize imageSize = CGSizeMake(wh, wh);
-    CGfloat radius = wh / 2;
-    CGContextRef context = CGBitmapContextCreate( NULL,
-                                                  wh,
-                                                  wh,
-                                                  8,
-                                                  4 * wh,
-                                                  CGColorSpaceCreateDeviceRGB(),
-                                                  kCGImageAlphaPremultipliedFirst );
-    // 绘制圆角
-    CGContextBeginPath(context);
-    addRoundedRectToPath(context, CGRectMake(0, 0, wh, wh), radius, radius);
-    CGContextClosePath(context);
-    CGContextClip(context);
-    CGContextDrawImage(context, CGRectMake(0, 0, w, h), img.CGImage);
-    CGImageRef imageMasked = CGBitmapContextCreateImage(context);
-    image = [UIImage imageWithCGImage:imageMasked];
-    CGContextRelease(context);
-    CGImageRelease(imageMasked);
-    
-    self.imgView.image = newimg;
+//    UIImage *image = [UIImage imageNamed:@"icon"];
+//
+//    CGFloat wh = MIN(MAX(image.size.width, image.size.height), 160);
+//    CGSize imageSize = CGSizeMake(wh, wh);
+//    CGFloat radius = wh / 2;
+//    CGContextRef context = CGBitmapContextCreate( NULL,
+//                                                  wh,
+//                                                  wh,
+//                                                  8,
+//                                                  4 * wh,
+//                                                  CGColorSpaceCreateDeviceRGB(),
+//                                                  kCGImageAlphaPremultipliedFirst );
+//    // 绘制圆角
+//    CGContextBeginPath(context);
+//    addRoundedRectToPath(context, CGRectMake(0, 0, wh, wh), radius, radius);
+//    CGContextClosePath(context);
+//    CGContextClip(context);
+//    CGContextDrawImage(context, CGRectMake(0, 0, wh, wh), image.CGImage);
+//    CGImageRef imageMasked = CGBitmapContextCreateImage(context);
+//    image = [UIImage imageWithCGImage:imageMasked];
+//    CGContextRelease(context);
+//    CGImageRelease(imageMasked);
+//
+//    self.imgView.image = image;
 
 }
 

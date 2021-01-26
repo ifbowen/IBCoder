@@ -26,10 +26,11 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self test0];
+//    [self test0];
 //    [self test1];
 //    [self test2];
 //    [self test3];
+    [self test3_1];
 }
 
 
@@ -76,6 +77,21 @@
 //    *ptr1 = 3; // 错误
     *ptr2 = 3; // 正确
     
+}
+
+- (void)test3_1 {
+    NSMutableString *str1 = @"1".mutableCopy;
+    
+    NSMutableArray *arr1 = @[str1, @[str1]].mutableCopy;
+    
+    // 一层深拷贝
+    NSMutableArray *arr2 = [[NSMutableArray alloc] initWithArray:arr1 copyItems:YES];
+    
+    NSMutableString *str2 = [arr1 objectAtIndex:0];
+    [str2 appendString:@"1"];
+    
+    NSLog(@"arr2--%@", arr2);
+
 }
 
 - (void)test3 {
