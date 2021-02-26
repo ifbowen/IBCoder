@@ -15,6 +15,7 @@
 		4A37DFC8236C6A6E005CEF7B /* SonicSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37DFC7236C6A6E005CEF7B /* SonicSetup.m */; };
 		4A37DFCA236C6C53005CEF7B /* main.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A37DFC9236C6C53005CEF7B /* main.html */; };
 		4A416E2F249888B900C192EF /* IBGroup2Controller27.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A416E2E249888B900C192EF /* IBGroup2Controller27.m */; };
+		4A43246C25E8FA5F005AD9A0 /* IBGroup2Controller29.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A43246B25E8FA5F005AD9A0 /* IBGroup2Controller29.m */; };
 		4A4963A7235B64BC001338AB /* common in Resources */ = {isa = PBXBuildFile; fileRef = 4A4963A6235B64BC001338AB /* common */; };
 		4A64EF722369CDCC00431CEA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ACBB951234204B1002D7955 /* XCTest.framework */; };
 		4A64EF792369CEDC00431CEA /* Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A64EF782369CEDC00431CEA /* Coder.swift */; };
@@ -375,6 +376,8 @@
 		4A37DFC9236C6C53005CEF7B /* main.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = main.html; sourceTree = "<group>"; };
 		4A416E2D249888B900C192EF /* IBGroup2Controller27.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller27.h; sourceTree = "<group>"; };
 		4A416E2E249888B900C192EF /* IBGroup2Controller27.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller27.m; sourceTree = "<group>"; };
+		4A43246A25E8FA5F005AD9A0 /* IBGroup2Controller29.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller29.h; sourceTree = "<group>"; };
+		4A43246B25E8FA5F005AD9A0 /* IBGroup2Controller29.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller29.m; sourceTree = "<group>"; };
 		4A4963A6235B64BC001338AB /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = "<group>"; };
 		4A64EF772369CEDC00431CEA /* MBCoderUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBCoderUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4A64EF782369CEDC00431CEA /* Coder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coder.swift; sourceTree = "<group>"; };
@@ -2002,6 +2005,8 @@
 				4A416E2E249888B900C192EF /* IBGroup2Controller27.m */,
 				F3D01E2024D56B770007DD23 /* IBGroup2Controller28.h */,
 				F3D01E2124D56B770007DD23 /* IBGroup2Controller28.m */,
+				4A43246A25E8FA5F005AD9A0 /* IBGroup2Controller29.h */,
+				4A43246B25E8FA5F005AD9A0 /* IBGroup2Controller29.m */,
 			);
 			path = vc3;
 			sourceTree = "<group>";
@@ -2450,6 +2455,7 @@
 				4ACBB8572341FA0D002D7955 /* IBController43.m in Sources */,
 				4ACBB8B02341FA0D002D7955 /* RACStringSequence.m in Sources */,
 				4A37DFC2236C68C1005CEF7B /* SonicOfflineCacheConnection.m in Sources */,
+				4A43246C25E8FA5F005AD9A0 /* IBGroup2Controller29.m in Sources */,
 				4ACBB8FC2341FA0D002D7955 /* AFURLRequestSerialization.m in Sources */,
 				4ACBB9392341FA0D002D7955 /* IBCAReplicatorLayer.m in Sources */,
 				4ACBB8962341FA0D002D7955 /* GCDTimer.m in Sources */,

@@ -54,9 +54,9 @@ PODS:
   - lottie-ios (2.5.3)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
-  - MMKV (1.2.6):
-    - MMKVCore (~> 1.2.6)
-  - MMKVCore (1.2.6)
+  - MMKV (1.2.7):
+    - MMKVCore (~> 1.2.7)
+  - MMKVCore (1.2.7)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
     - PromiseKit/Foundation (= 6.13.1)
@@ -157,8 +157,8 @@ SPEC CHECKSUMS:
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
-  MMKV: 27f6b9e34849e77e78c5a1cc8f7f513e37f5fa15
-  MMKVCore: c301b04fd2ab9957e6e4d4465b9b60e443b0bb6b
+  MMKV: 22e5136f7d00197bc0fc9694b7f71519f0d1ca12
+  MMKVCore: 607b7b05f2c2140056b5d338e45f2c14bf3f4232
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   Protobuf: 0cde852566359049847168e51bd1c690e0f70056
   SQLCipher: 1ab0b9486a77d141e72e92ff30681926ed79c07a
