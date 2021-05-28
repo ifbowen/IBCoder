@@ -320,7 +320,7 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
     });
 }
 
-- (void)test1_2 {
+- (void)test1_3 {
     NSMutableArray *array = @[].mutableCopy;
     for (int i = 0; i < 1000000; i++) {
             @autoreleasepool {
