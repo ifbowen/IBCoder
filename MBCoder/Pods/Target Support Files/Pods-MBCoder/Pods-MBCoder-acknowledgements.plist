@@ -788,7 +788,7 @@ standalone and requires a support library to be linked with it.  This
 support library is itself covered by the above license.
 </string>
 			<key>License</key>
-			<string>3-Clause BSD License</string>
+			<string>BSD-3-Clause</string>
 			<key>Title</key>
 			<string>Protobuf</string>
 			<key>Type</key>
@@ -830,7 +830,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2010-2015, Sam Soffes, https://soff.es
+			<string>Copyright (c) 2013-2021, ZipArchive, https://github.com/ZipArchive
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
