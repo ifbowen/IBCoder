@@ -8,6 +8,22 @@
 
 #import "IBController2.h"
 
+/**
+ @property、@synthesize 、@dynamic的应用
+ @property:
+ 是 Objective-C 中用于声明属性的关键字，它的本质是编译器指令，用于自动生成属性的存取方法（getter 和 setter）的声明和实现
+ 本质 @property = ivar + getter + setter；（成员变量 + getter方法 + setter方法）
+ @synthesize:
+ 这个关键字用于告诉编译器生成 getter 和 setter 方法的实现。在早期的 Objective-C 版本中，你需要显式地使用 @synthesize 来生成这些方法。但在现代的 Objective-C 中，如果你没有提供 getter 和 setter 方法的实现，编译器会自动为你生成，所以通常不需要显式地使用 @synthesize
+ 应用场景：
+ - 修改生成的成员变量名字。
+ - 手动添加了 setter/getter 方法。
+ - 实现了带有 property 属性的 protocol。
+ @dynamic:
+ 禁止自动合成getter, setter：告诉编译器属性的 setter 与 getter 方法由用户自己实现，不自动生成。
+ 
+ */
+
 @implementation Personal
 
 - (void)setName:(NSString *)name {
@@ -22,8 +38,6 @@
 }
 
 @end
-
-
 
 @interface IBController2 ()<PersonDelegate>
 

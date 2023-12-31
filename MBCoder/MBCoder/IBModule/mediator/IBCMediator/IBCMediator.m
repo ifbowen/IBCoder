@@ -48,7 +48,7 @@
 }
 
 + (void)releaseTargetCacheWithTargetName:(NSString *)targetName {
-    [[self sharedInstance] releaseTargetCacheWithTargetName:targetName];
+    [[self sharedInstance] releaseCachedTargetWithTargetName:targetName];
 }
 
 - (id)performActionWithUrl:(NSString *)url completion:(void (^)(NSDictionary *))completion
