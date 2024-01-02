@@ -422,9 +422,6 @@ static int count = 0;
  4、在自动释放池中执行 dispose_helper(obj)，释放 block 持有的对象
  5、因为 dispose_helper 只会调用 release 方法，但是这并不会导致我们的 FBBlockStrongRelationDetector 实例被释放掉，反而会标记 _string 属性，在这里我们只需要判断这个属性的真假，将对应索引加入数组，最后再调用 trueRelease 真正的释放对象。
  
- 我的疑问：
- 怎么获取栈上的__block,修改栈上的__block修饰的对象会改变值吗？
- 
  */
 
 

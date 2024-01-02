@@ -51,9 +51,19 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.6)
   - libextobjc/UmbrellaHeader (0.6)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
   - lottie-ios (2.5.3)
-  - MLeaksFinder (1.0.0):
-    - FBRetainCycleDetector
   - MMKV (1.2.13):
     - MMKVCore (~> 1.2.13)
   - MMKVCore (1.2.13)
@@ -88,8 +98,10 @@ PODS:
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
   - YYKit (1.0.9):
+    - libwebp
     - YYKit/no-arc (= 1.0.9)
-  - YYKit/no-arc (1.0.9)
+  - YYKit/no-arc (1.0.9):
+    - libwebp
 
 DEPENDENCIES:
   - FBMemoryProfiler
@@ -103,7 +115,6 @@ DEPENDENCIES:
   - KVOController
   - libextobjc
   - lottie-ios (~> 2.5.3)
-  - MLeaksFinder
   - MMKV
   - PromiseKit
   - PromiseKit/Foundation
@@ -114,7 +125,7 @@ DEPENDENCIES:
   - "UITableView+FDTemplateLayoutCell"
   - VasSonic
   - YogaKit
-  - YYKit
+  - YYKit (from `https://github.com/SAGESSE-CN/YYKit.git`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -129,7 +140,6 @@ SPEC REPOS:
     - KVOController
     - libextobjc
     - lottie-ios
-    - MLeaksFinder
     - MMKV
     - MMKVCore
     - PromiseKit
@@ -142,7 +152,17 @@ SPEC REPOS:
     - VasSonic
     - Yoga
     - YogaKit
-    - YYKit
+  trunk:
+    - libwebp
+
+EXTERNAL SOURCES:
+  YYKit:
+    :git: https://github.com/SAGESSE-CN/YYKit.git
+
+CHECKOUT OPTIONS:
+  YYKit:
+    :commit: 903d9e3c5a20089f152918fe8611fcafd52c2ad1
+    :git: https://github.com/SAGESSE-CN/YYKit.git
 
 SPEC CHECKSUMS:
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
@@ -155,8 +175,8 @@ SPEC CHECKSUMS:
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
-  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   MMKV: aac95d817a100479445633f2b3ed8961b4ac5043
   MMKVCore: 3388952ded307e41b3ed8a05892736a236ed1b8e
   PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
@@ -169,8 +189,8 @@ SPEC CHECKSUMS:
   VasSonic: 1b0e5d45602627e8f39ac120a892050a10d42bab
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
-  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  YYKit: 9ac092a14e3d5af709b707479bdb76b96a62fb41
 
-PODFILE CHECKSUM: d22853d548f85039d65f9cb7b5fdd375e7aded00
+PODFILE CHECKSUM: c9d94105e96525f7e6453b0141b5cd530d3d1778
 
 COCOAPODS: 1.12.1

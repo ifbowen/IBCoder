@@ -240,8 +240,8 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
 /*
  1、关于 release 之后仍然为 1 的疑问
  参考1_3
- __weak修饰的对象，在通过NSLog的时候，NSLog会引用它，导致引用计数+1
- 所以我们尽量少使用__weak，或者习惯性使用__strong转换后使用
+ - 对象被其他地方持有
+ - 对象被添加到自动释放池：如果你调用了一个对象的 autorelease 方法，那么这个对象会被添加到当前的自动释放池中，并且它的引用计数会增加 1
  
  2、什么对象自动加入到 autoreleasepool中
  当使用alloc/new/copy/mutableCopy开始的方法进行初始化时，会生成并持有对象(也就是不需要pool管理，系统会自动的帮他在合适位置release)
@@ -391,9 +391,13 @@ extern uintptr_t _objc_rootRetainCount(id obj); // ARC获取对象的引用计�
  6、当next == begin() 时，表示 AutoreleasePoolPage 为空；当 next == end() 时，表示 AutoreleasePoolPage 已满
  
  为什么需要设计成双向列表呢？
- pop哨兵对象时先通过找到当前页，然后再通过child指针找到所有子页进行释放。我们需要使用child指针
+ - 添加新的对象：
+ 当一个对象被标记为 autorelease 时，它会被添加到当前的 AutoreleasePoolPage 中。如果当前的 AutoreleasePoolPage 已经满了，那么系统会创建一个新的 AutoreleasePoolPage，并且将它添加到链表的末尾。
+ 由于 AutoreleasePoolPage 是双向链表，所以系统可以很容易地找到链表的末尾，并且添加新的 AutoreleasePoolPage。
+ - 销毁自动释放池：
  由于需要保证释放时是先进后出，所以我们是从最末尾一个page开始，那么会需要取到前一个page，所以用到parent
- 正好满足双向列表的特性，故使用双向列表。
+
+ 添加新的对象和销毁自动释放池这两个操作。正好满足双向列表的特性，故使用双向列表。
  
  三、Runloop和AutoreleasePool
  iOS在主线程的Runloop中注册了2个Observer

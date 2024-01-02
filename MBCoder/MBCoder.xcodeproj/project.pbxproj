@@ -43,8 +43,6 @@
 		4AB0C9B6234F4267002356B7 /* home_colourline.svga in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B5234F4266002356B7 /* home_colourline.svga */; };
 		4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0C9B7234F5912002356B7 /* LottieLogo.json */; };
 		4AC303C82423232B004911D6 /* IBGroup2Controller26.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC303C72423232B004911D6 /* IBGroup2Controller26.m */; };
-		4AC303D0242332AD004911D6 /* MBSpineFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CE242332AA004911D6 /* MBSpineFramework.framework */; };
-		4AC303D1242332AD004911D6 /* MBSpineFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AC303CE242332AA004911D6 /* MBSpineFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4ACBB8542341FA0D002D7955 /* IBController41.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62A2341FA0B002D7955 /* IBController41.m */; };
 		4ACBB8552341FA0D002D7955 /* IBController39.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62C2341FA0B002D7955 /* IBController39.m */; };
 		4ACBB8562341FA0D002D7955 /* IBController42.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB62D2341FA0B002D7955 /* IBController42.m */; };
@@ -79,7 +77,7 @@
 		4ACBB8732341FA0D002D7955 /* IBController11.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB66C2341FA0C002D7955 /* IBController11.m */; };
 		4ACBB8742341FA0D002D7955 /* IBController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB66D2341FA0C002D7955 /* IBController1.m */; };
 		4ACBB8752341FA0D002D7955 /* IBController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACBB66E2341FA0C002D7955 /* IBController1.xib */; };
-		4ACBB8762341FA0D002D7955 /* 类，元类，根元类关系图.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACBB6712341FA0C002D7955 /* 类，元类，根元类关系图.png */; };
+		4ACBB8762341FA0D002D7955 /* class_metaclass.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ACBB6712341FA0C002D7955 /* class_metaclass.png */; };
 		4ACBB8772341FA0D002D7955 /* IBController6.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6722341FA0C002D7955 /* IBController6.m */; };
 		4ACBB8782341FA0D002D7955 /* IBController12.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6732341FA0C002D7955 /* IBController12.m */; };
 		4ACBB8792341FA0D002D7955 /* IBController8.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBB6762341FA0C002D7955 /* IBController8.m */; };
@@ -340,7 +338,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4AC303D1242332AD004911D6 /* MBSpineFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,7 +417,6 @@
 		4AB0C9B7234F5912002356B7 /* LottieLogo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo.json; sourceTree = "<group>"; };
 		4AC303C62423232B004911D6 /* IBGroup2Controller26.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller26.h; sourceTree = "<group>"; };
 		4AC303C72423232B004911D6 /* IBGroup2Controller26.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IBGroup2Controller26.m; sourceTree = "<group>"; };
-		4AC303CE242332AA004911D6 /* MBSpineFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBSpineFramework.framework; sourceTree = "<group>"; };
 		4ACBB60F2341F972002D7955 /* MBCoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBCoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACBB62A2341FA0B002D7955 /* IBController41.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBController41.m; sourceTree = "<group>"; };
 		4ACBB62B2341FA0B002D7955 /* IBController43.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBController43.h; sourceTree = "<group>"; };
@@ -490,7 +486,7 @@
 		4ACBB66E2341FA0C002D7955 /* IBController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBController1.xib; sourceTree = "<group>"; };
 		4ACBB66F2341FA0C002D7955 /* IBController7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBController7.h; sourceTree = "<group>"; };
 		4ACBB6702341FA0C002D7955 /* IBController13.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBController13.h; sourceTree = "<group>"; };
-		4ACBB6712341FA0C002D7955 /* 类，元类，根元类关系图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "类，元类，根元类关系图.png"; sourceTree = "<group>"; };
+		4ACBB6712341FA0C002D7955 /* class_metaclass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = class_metaclass.png; sourceTree = "<group>"; };
 		4ACBB6722341FA0C002D7955 /* IBController6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBController6.m; sourceTree = "<group>"; };
 		4ACBB6732341FA0C002D7955 /* IBController12.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBController12.m; sourceTree = "<group>"; };
 		4ACBB6742341FA0C002D7955 /* IBController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBController4.h; sourceTree = "<group>"; };
@@ -976,6 +972,7 @@
 		68F55995B515EF5A59C8491C /* libPods-MBCoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D89D083E41EFA39D866CFD /* Pods-MBCoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.release.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2DEB8132B42D1FE00CEF9BC /* runloop.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = runloop.webp; sourceTree = "<group>"; };
 		CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79E841B58080BB70062A103 /* Pods-MBCoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.debug.xcconfig"; sourceTree = "<group>"; };
 		F324A32623FD200A00B68E88 /* IBGroup2Controller24.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBGroup2Controller24.h; sourceTree = "<group>"; };
@@ -1010,7 +1007,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */,
-				4AC303D0242332AD004911D6 /* MBSpineFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,14 +1070,6 @@
 				4AA858EA23B24D2D003D610F /* UIImage+HSB.m */,
 			);
 			path = card;
-			sourceTree = "<group>";
-		};
-		4AC303C9242330C8004911D6 /* spine */ = {
-			isa = PBXGroup;
-			children = (
-				4AC303CE242332AA004911D6 /* MBSpineFramework.framework */,
-			);
-			path = spine;
 			sourceTree = "<group>";
 		};
 		4ACBB6062341F972002D7955 = {
@@ -1216,7 +1204,6 @@
 		4ACBB6682341FA0C002D7955 /* IBController */ = {
 			isa = PBXGroup;
 			children = (
-				4ACBB6712341FA0C002D7955 /* 类，元类，根元类关系图.png */,
 				4ACBB67A2341FA0C002D7955 /* IBController1.h */,
 				4ACBB66D2341FA0C002D7955 /* IBController1.m */,
 				4ACBB66E2341FA0C002D7955 /* IBController1.xib */,
@@ -1242,8 +1229,10 @@
 				4ACBB66C2341FA0C002D7955 /* IBController11.m */,
 				4ACBB6832341FA0C002D7955 /* IBController12.h */,
 				4ACBB6732341FA0C002D7955 /* IBController12.m */,
+				C2DEB8132B42D1FE00CEF9BC /* runloop.webp */,
 				4ACBB6702341FA0C002D7955 /* IBController13.h */,
 				4ACBB6782341FA0C002D7955 /* IBController13.m */,
+				4ACBB6712341FA0C002D7955 /* class_metaclass.png */,
 			);
 			path = IBController;
 			sourceTree = "<group>";
@@ -1264,7 +1253,6 @@
 		4ACBB68C2341FA0C002D7955 /* HelperFile */ = {
 			isa = PBXGroup;
 			children = (
-				4AC303C9242330C8004911D6 /* spine */,
 				F3955AFA24179C17009EC505 /* MBMemoryProfiler */,
 				4ACBB6CB2341FA0C002D7955 /* AFNetworking-RACExtensions */,
 				4ACBB68D2341FA0C002D7955 /* CameraButton */,
@@ -2201,7 +2189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A77231724D943C3007E7BD6 /* FatBinary.png in Resources */,
-				4ACBB8762341FA0D002D7955 /* 类，元类，根元类关系图.png in Resources */,
+				4ACBB8762341FA0D002D7955 /* class_metaclass.png in Resources */,
 				4AB0C9B8234F5912002356B7 /* LottieLogo.json in Resources */,
 				4ACBB8752341FA0D002D7955 /* IBController1.xib in Resources */,
 				4AA84ACE236AEDFD00AF5BC9 /* data.json in Resources */,

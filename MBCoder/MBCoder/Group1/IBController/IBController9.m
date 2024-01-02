@@ -93,6 +93,10 @@
  受系统限制，缓存的大小为 2.5X Screen Size。
  shouldRasterize适合静态页面显示，动态页面会增加开销。如果设置了shouldRasterize为YES，那也要记住设置rasterizationScale为contentsScale。
  
+ 圆角是否产生离屏渲染
+ 单层内容需要添加圆角和裁切，所以可以不需要用到离屏渲染技术。
+ 但如果加上了背景色、边框或其他有图像内容的图层，就会产生为 多层 添加圆角和裁切，所以还是会触发离屏渲染
+ 
  异步渲染
  在子线程绘制，主线程渲染。例如 VVeboTableViewDemo
  

@@ -67,8 +67,8 @@
  
  六、CFRunloopSourceRef 事件源\输入源，有两种分类模式
  按照函数调用栈的分类source0和source1
- Source0：非基于端口Port的事件；（用于用户主动触发的事件，如：点击按钮或点击屏幕）。
- Source1：基于端口Port的事件；（通过内核和其他线程相互发送消息，与内核相关）。
+ Source0：非基于端口Port的事件；（手动触发的事件，如：点击按钮或点击屏幕）。
+ Source1：基于端口Port的事件；（系统自动触发的事件，如：处理系统信号、处理端口相关事件（网络）、处理其他线程的事件）。
  补充：Source1事件在处理时会分发一些操作给Source0去处理。
  
  七、Runloop相关类（Timer）
@@ -140,7 +140,7 @@
  当调用 NSObject 的 performSelecter:afterDelay: 后，实际上其内部会创建一个 Timer 并添加到当前线程的 RunLoop 中。
  所以如果当前线程没有 RunLoop，则这个方法会失效。
 
- 当调用 performSelector:onThread: 时，实际上其会创建一个 source 加到对应的线程去，
+ 当调用 performSelector:onThread: 时，实际上其会创建一个 source1 加到对应的线程去，
  同样的，如果对应线程没有 RunLoop 该方法也会失效。
  
 

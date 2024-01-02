@@ -308,14 +308,14 @@
 //    [self test9_1];
 //    [self test9_21];
 //    [self test9_2];
-//    [self test9_3];
+    [self test9_3];
 //    [self test10];
 //    [self test11];
 //    [self test12];
 //    [self test13];
 //    [self test14];
 //    [self test15];
-    [self test16];
+//    [self test16];
     NSLog(@"++++++++++++++++++++++++++++++++++++");
     
 }
@@ -325,7 +325,7 @@
 //    dispatch_queue_t queue = dispatch_queue_create("b", DISPATCH_QUEUE_CONCURRENT); //23145
     
     dispatch_async(queue, ^{
-//        sleep(3);
+        sleep(3);
         NSLog(@"1");
         dispatch_sync(queue, ^{
             NSLog(@"2");
@@ -333,8 +333,6 @@
     });
     
     NSLog(@"a");
-    
-
     
     NSLog(@"b");
     
