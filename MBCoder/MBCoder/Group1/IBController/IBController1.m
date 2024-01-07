@@ -30,10 +30,15 @@
  2、校验
  
  YYCache和SDImageCache
- 内存缓存：使用Core Foundation提供的C字典CFMutableDictionaryRef来存储封装的缓存对象，
- 并构造了一个双向链表，维护链表并使用LRU淘汰算法来剔除超过限制的缓存对象，使用pthread_mutext互斥锁来保证线程安全，
- 包括释放对象使用了一个小技巧使得可以在子线程中释放，而不需要在主线程中执行，直接访问ivar而不使用getter/setter，
- 一系列的优化方法使得YYCache的内存缓存效率超过了NSCache及其他第三方库
+ YYCache：这是一个强大的 iOS 缓存库。它支持内存和磁盘两级缓存，并且可以缓存任何类型的对象，如 NSString、NSData、UIImage 等。
+ YYCache 提供了线程安全的操作，并且支持设置缓存的过期时间、缓存的最大数量和最大占用空间等。
+ 此外，YYCache 还提供了一些高级功能，如 LRU（最近最少使用）算法、自动清理过期和超过最大限制的缓存等。
+
+ SDImageCache：
+ 这是 SDWebImage 库中的一个组件，主要用于缓存图片。它也支持内存和磁盘两级缓存，并且提供了线程安全的操作。
+ 但是，SDImageCache 的功能相对于 YYCache 来说较为简单，它主要专注于图片的缓存，不支持缓存其他类型的对象。
+ SDImageCache 支持设置缓存的过期时间和最大占用空间，但不支持设置缓存的最大数量。
+ 此外，SDImageCache 的清理策略也相对简单，它只会在应用进入后台或者收到内存警告时清理过期和超过最大限制的缓存。
 
  磁盘缓存：作者参考了NSURLCache的实现及其他第三方的实现，采用文件系统结合SQLite的实现方式，
  实验发现对于20KB以上的数据，文件系统的读写速度高于SQLite，所以当数据大于20KB时直接将数据保存在文件系统中，
@@ -140,7 +145,6 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 300, 300)];
     view.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:view];
-    
     UIBezierPath *bezier = [UIBezierPath bezierPath];
     [bezier addArcWithCenter:CGPointMake(0, 0) radius:80 startAngle:0 endAngle:M_PI_4 clockwise:YES];
     [bezier addLineToPoint:CGPointMake(0, 0)];
