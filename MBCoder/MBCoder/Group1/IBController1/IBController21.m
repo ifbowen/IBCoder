@@ -107,9 +107,8 @@
      imageViewLayer.shadowPath = CGPathCreateWithRect(imageRect, NULL);
  （2）利用GraphicsContex生成一张带圆角的图片或者view，这里不写具体实现过程，需要的可以度娘Copy，很多现成的代码。
  
- 离屏渲染一定会引起性能问题吗？
-    很少会，比如drawRect这个方法，只会在时图进行重新绘制的时候才会调用。也就是说，假如你的View并不会频繁重绘，那么即使实现了drawRect，
- 也没什么关系。对了，目前iOS设备的硬件越来越好也是一个原因，想要要性能差也挺难的。
+ 离屏渲染的原因：
+ 在于它们需要对视图的像素进行复杂的计算或裁剪操作，无法直接在原始视图的上下文中进行。为了完成这些操作，系统需要将视图的内容渲染到离屏缓冲区中，然后再将结果合成到屏幕上
  
  7）Color Compositing Fast-Path Blue (快速路径)
     颜色标记->蓝色

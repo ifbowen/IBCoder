@@ -305,10 +305,10 @@
 //    [self test7];
 //    [self test8];
 //    [self test9];
-//    [self test9_1];
+    [self test9_1];
 //    [self test9_21];
 //    [self test9_2];
-    [self test9_3];
+//    [self test9_3];
 //    [self test10];
 //    [self test11];
 //    [self test12];
@@ -321,8 +321,8 @@
 }
 
 - (void)test16 {
-    dispatch_queue_t queue = dispatch_queue_create("b", DISPATCH_QUEUE_SERIAL); // 12345
-//    dispatch_queue_t queue = dispatch_queue_create("b", DISPATCH_QUEUE_CONCURRENT); //23145
+//    dispatch_queue_t queue = dispatch_queue_create("b", DISPATCH_QUEUE_SERIAL); // 12345
+    dispatch_queue_t queue = dispatch_queue_create("b", DISPATCH_QUEUE_CONCURRENT); //23145
     
     dispatch_async(queue, ^{
         sleep(3);

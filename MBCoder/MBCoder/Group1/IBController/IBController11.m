@@ -10,8 +10,7 @@
 #import "UIView+Ext.h"
 
 /*
- 一、响应者链（Responder Chain）
- 指的是有响应和处理事件能力的对象。响应者链就是由一系列的响应者对象构成的一个层次结构。
+ 一、响应者链（Responder Chain）是 iOS 中用于处理事件响应和事件传递的一种机制。由一系列的响应者对象组成的链表结构，这些对象都是继承自 UIResponder 类，用于确定事件的传递路径和响应者的顺序
  子View -> UIView -> UIViewController -> UIWindow -> UIApplication -> AppDelegate
  
  二、事件分发（Event Delivery）

@@ -10,10 +10,10 @@
 
 @interface IBController5 ()
 
-@property (nonatomic, copy) NSString *name1;
-@property (nonatomic, copy) NSMutableString *name2;
-@property (nonatomic, strong) NSString *name3; //内容可能被外界修改
-@property (nonatomic, strong) NSMutableString *name4; //可能崩溃
+@property (nonatomic, copy) NSString *nameCopy1;
+@property (nonatomic, copy) NSMutableString *mutableNameCopy2;
+@property (nonatomic, strong) NSString *nameStrong3; //内容可能被外界修改
+@property (nonatomic, strong) NSMutableString *mutableNameStrong4; //可能崩溃
 
 @end
 
@@ -112,11 +112,11 @@
 
 - (void)test2 {
     //不走set方法，就不经过copy，所以还是可变的
-    _name2 = @"bowen".mutableCopy;
-    [_name2 appendString:@"1"];
+    _mutableNameCopy2 = @"bowen".mutableCopy;
+    [_mutableNameCopy2 appendString:@"1"];
     
-    self.name2 = @"bowen".mutableCopy;
-    [self.name2 appendString:@"2"];
+    self.mutableNameCopy2 = @"bowen".mutableCopy;
+    [self.mutableNameCopy2 appendString:@"2"];
 }
 
 - (void)test0 {
@@ -141,36 +141,36 @@
 - (void)test1 {
     
     NSString *temp = @"bowen";
-    NSMutableString *str = @"wenzheng".mutableCopy;
+    NSMutableString *mutablestr = @"wenzheng".mutableCopy;
     //浅拷贝(不可变=不可变）
-    self.name1 = temp;
-    NSLog(@"%p---%p",temp, self.name1);//指针复制
+    self.nameCopy1 = temp;
+    NSLog(@"%p---%p",temp, self.nameCopy1);//指针复制
     
     //深拷贝(不可变 = 可变)
-    self.name1 = str;
-    NSLog(@"%p---%p",str, self.name1);//内存复制
+    self.nameCopy1 = mutablestr;
+    NSLog(@"%p---%p",mutablestr, self.nameCopy1);//内存复制
     
     //浅拷贝（可变 = 不可变）
-    self.name2 = temp;
-    NSLog(@"%p---%p",temp, self.name2);
+    self.mutableNameCopy2 = temp;
+    NSLog(@"%p---%p",temp, self.mutableNameCopy2);
     
     //深拷贝(可变 = 可变)
-    self.name2 = str;
-    NSLog(@"%p---%p",str, self.name1);
+    self.mutableNameCopy2 = mutablestr;
+    NSLog(@"%p---%p",mutablestr, self.mutableNameCopy2);
     
 
     
     //浅拷贝（不可变 = 可变）(strong 会被外界修改)
-    self.name3 = str;
-    NSLog(@"%p---%p",str, self.name3);
-    [str appendString:@"1"];
-    NSLog(@"%@---%@",str, self.name3);
+    self.nameStrong3 = mutablestr;
+    NSLog(@"%p---%p",mutablestr, self.nameStrong3);
+    [mutablestr appendString:@"1"];
+    NSLog(@"%@---%@",mutablestr, self.nameStrong3);
     
     //浅拷贝(可变 = 不可变)(strong 崩溃)
-    self.name4 = temp;
-    NSLog(@"%p---%p",temp, self.name4);
+    self.mutableNameStrong4 = temp;
+    NSLog(@"%p---%p",temp, self.mutableNameStrong4);
     
-    [self.name4 appendString:@"2"];
+    [self.mutableNameStrong4 appendString:@"2"];
 
 
     

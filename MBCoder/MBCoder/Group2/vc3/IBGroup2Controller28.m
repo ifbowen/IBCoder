@@ -9,6 +9,62 @@
 #import "IBGroup2Controller28.h"
 #import <pthread.h>
 
+#import <Foundation/Foundation.h>
+
+@interface IBReaderWriter : NSObject
+
+- (void)startReading;
+- (void)endReading;
+- (void)startWriting;
+- (void)endWriting;
+
+@end
+
+@implementation IBReaderWriter {
+    dispatch_semaphore_t _readLock;
+    dispatch_semaphore_t _writeLock;
+    NSInteger _readCount;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _readLock = dispatch_semaphore_create(1);
+        _writeLock = dispatch_semaphore_create(1);
+        _readCount = 0;
+    }
+    return self;
+}
+
+- (void)startReading {
+    dispatch_semaphore_wait(_readLock, DISPATCH_TIME_FOREVER);
+    _readCount++;
+    if (_readCount == 1) {
+        dispatch_semaphore_wait(_writeLock, DISPATCH_TIME_FOREVER);
+    }
+    dispatch_semaphore_signal(_readLock);
+}
+
+- (void)endReading {
+    dispatch_semaphore_wait(_readLock, DISPATCH_TIME_FOREVER);
+    _readCount--;
+    if (_readCount == 0) {
+        dispatch_semaphore_signal(_writeLock);
+    }
+    dispatch_semaphore_signal(_readLock);
+}
+
+- (void)startWriting {
+    dispatch_semaphore_wait(_writeLock, DISPATCH_TIME_FOREVER);
+}
+
+- (void)endWriting {
+    dispatch_semaphore_signal(_writeLock);
+}
+
+@end
+
+
 @interface IBGroup2Controller28 ()
 
 @end
@@ -18,7 +74,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    // b
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self testReaderWriter];
+}
+
+- (void)testReaderWriter {
+    // 示例使用
+    IBReaderWriter *readerWriter = [[IBReaderWriter alloc] init];
+
+    // 读者线程
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [readerWriter startReading];
+        // 读取共享资源
+        NSLog(@"Reading...");
+        [readerWriter endReading];
+    });
+
+    // 写者线程
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [readerWriter startWriting];
+        // 写入共享资源
+        NSLog(@"Writing...");
+        [readerWriter endWriting];
+    });
 }
 
 - (void)mutexLock{
@@ -83,7 +163,7 @@
 /*
  
  自旋锁
- NSSpinLock
+ NSSpinLock，有安全问题替代锁 os_unfair_lock，它的设计目标是提供一种低开销、高性能的锁机制，特别适合于那些锁持有时间非常短的场景
  信号量
  dispatch_semaphore
  互斥锁

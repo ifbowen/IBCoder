@@ -332,7 +332,7 @@
     // 第一个参数：给哪个对象添加关联
     // 第二个参数：关联的key，通过这个key获取
     // 第三个参数：关联的value
-    // 第四个参数:关联的策略
+    // 第四个参数：关联的策略，无弱引用
     objc_setAssociatedObject(self, "bowen", son, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
