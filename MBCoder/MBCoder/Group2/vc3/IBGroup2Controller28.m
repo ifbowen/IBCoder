@@ -8,7 +8,7 @@
 
 #import "IBGroup2Controller28.h"
 #import <pthread.h>
-
+#import "MBProducerConsumerQueue.h"
 #import <Foundation/Foundation.h>
 
 @interface IBReaderWriter : NSObject
@@ -67,6 +67,8 @@
 
 @interface IBGroup2Controller28 ()
 
+@property (nonatomic, strong) MBProducerConsumerQueue *queue;
+
 @end
 
 @implementation IBGroup2Controller28
@@ -74,10 +76,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.queue = [[MBProducerConsumerQueue alloc] init];
+    UIButton *btn = [[UIButton alloc] init];
+    btn.frame = CGRectMake(0, 100, 50, 44);
+    btn.backgroundColor = [UIColor orangeColor];
+    [btn addTarget:self action:@selector(producer) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    
+    UIButton *btn1 = [[UIButton alloc] init];
+    btn1.frame = CGRectMake(0, 200, 50, 44);
+    btn1.backgroundColor = [UIColor orangeColor];
+    [btn1 addTarget:self action:@selector(consumer) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn1];
+}
+
+- (void)producer {
+    [self.queue scheduleProducerQueue];
+    [self.queue scheduleConsumerQueue];
+}
+
+- (void)consumer {
+    [self.queue scheduleConsumerQueue];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self testReaderWriter];
+//    [self testReaderWriter];
 }
 
 - (void)testReaderWriter {
@@ -196,3 +219,4 @@
  */
 
 @end
+

@@ -311,6 +311,7 @@
 		4AF2134F2399F31600EFB85D /* TPNOExpandIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AF2134D2399F31600EFB85D /* TPNOExpandIcon.png */; };
 		4AF2B56F24ADB0EE00ADFB12 /* IBFlashChatTransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2B56E24ADB0EE00ADFB12 /* IBFlashChatTransitionView.m */; };
 		5C9906227B70649FAE25EC59 /* libPods-MBCoderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */; };
+		C26D33292B6BF082002062F4 /* MBProducerConsumerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C26D33282B6BF082002062F4 /* MBProducerConsumerQueue.m */; };
 		CFCF52D7F7724B5F9C48246D /* libPods-MBCoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F55995B515EF5A59C8491C /* libPods-MBCoder.a */; };
 		F324A32823FD200A00B68E88 /* IBGroup2Controller24.m in Sources */ = {isa = PBXBuildFile; fileRef = F324A32723FD200A00B68E88 /* IBGroup2Controller24.m */; };
 		F3954B052412471A009EC505 /* llvm.c in Sources */ = {isa = PBXBuildFile; fileRef = F3954B042412471A009EC505 /* llvm.c */; };
@@ -972,6 +973,8 @@
 		68F55995B515EF5A59C8491C /* libPods-MBCoder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D89D083E41EFA39D866CFD /* Pods-MBCoderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.release.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E5ED77AC4908741E17981E /* Pods-MBCoderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoderUITests.debug.xcconfig"; path = "Target Support Files/Pods-MBCoderUITests/Pods-MBCoderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C26D33272B6BF082002062F4 /* MBProducerConsumerQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProducerConsumerQueue.h; sourceTree = "<group>"; };
+		C26D33282B6BF082002062F4 /* MBProducerConsumerQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBProducerConsumerQueue.m; sourceTree = "<group>"; };
 		C2DEB8132B42D1FE00CEF9BC /* runloop.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = runloop.webp; sourceTree = "<group>"; };
 		CB6D3053F7803EC8C4E0C644 /* libPods-MBCoderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBCoderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79E841B58080BB70062A103 /* Pods-MBCoder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBCoder.debug.xcconfig"; path = "Target Support Files/Pods-MBCoder/Pods-MBCoder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1035,6 +1038,8 @@
 			children = (
 				4A64EF822369D14E00431CEA /* VVStack.h */,
 				4A64EF832369D14E00431CEA /* VVStack.m */,
+				C26D33272B6BF082002062F4 /* MBProducerConsumerQueue.h */,
+				C26D33282B6BF082002062F4 /* MBProducerConsumerQueue.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2397,6 +2402,7 @@
 				4ACBB8B42341FA0D002D7955 /* RACIndexSetSequence.m in Sources */,
 				4ACBB8C52341FA0D002D7955 /* RACBlockTrampoline.m in Sources */,
 				4ACBB8E62341FA0D002D7955 /* NSString+RACSupport.m in Sources */,
+				C26D33292B6BF082002062F4 /* MBProducerConsumerQueue.m in Sources */,
 				4ACBB8BB2341FA0D002D7955 /* RACUnarySequence.m in Sources */,
 				4A37DFC5236C68C1005CEF7B /* SonicEventObserver.m in Sources */,
 				4ACBB92D2341FA0D002D7955 /* BBookProvider.m in Sources */,
